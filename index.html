@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <style>
   :root{
     --bg:#0e1013;
@@ -370,9 +371,84 @@
     opacity:0; transition:.25s; pointer-events:none;
   }
   .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  /* ---------- login overlay ---------- */
+  .login-overlay{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(14,16,19,0.96);
+    display:flex; align-items:center; justify-content:center;
+    animation:fadeIn .4s ease;
+  }
+  .login-overlay.hidden{ display:none; }
+  .login-card{
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:20px; padding:32px 28px; width:92%; max-width:380px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  }
+  .login-card h2{
+    font-family:'Rajdhani',sans-serif; font-weight:700; font-size:24px;
+    color:var(--ink); margin:0 0 6px;
+  }
+  .login-card .login-sub{
+    font-size:13px; color:var(--ink-dim); margin-bottom:20px; line-height:1.4;
+  }
+  .login-card input[type="email"]{
+    width:100%; padding:12px 14px; border-radius:10px;
+    background:var(--panel-raised); border:1px solid var(--line);
+    color:var(--ink); font-family:'Manrope',sans-serif; font-size:14px;
+    margin-bottom:10px;
+  }
+  .login-card input[type="email"]:focus{ outline:none; border-color:var(--amber); }
+  .login-card input[type="email"]::placeholder{ color:var(--ink-faint); }
+  #login-submit{
+    width:100%; padding:13px; border-radius:10px; border:none;
+    background:var(--amber); color:#1a1300;
+    font-family:'Rajdhani',sans-serif; font-weight:700; font-size:15px;
+    letter-spacing:0.03em; text-transform:uppercase;
+    cursor:pointer; transition:.15s;
+  }
+  #login-submit:hover{ filter:brightness(1.1); }
+  #login-submit:disabled{ opacity:0.5; cursor:not-allowed; }
+  #login-status{
+    font-size:12.5px; color:var(--ink-dim); margin-top:10px; min-height:18px;
+  }
+  #login-status.error{ color:var(--red); }
+  #login-status.success{ color:var(--teal); }
+  #login-skip{
+    margin-top:16px; background:none; border:none;
+    color:var(--ink-faint); font-family:'Manrope',sans-serif;
+    font-size:13px; cursor:pointer; text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  #login-skip:hover{ color:var(--ink-dim); }
+  .logout-btn{
+    background:none; border:none; color:var(--ink-faint);
+    font-size:11px; cursor:pointer; margin-left:6px;
+    text-decoration:underline; text-underline-offset:2px;
+  }
+  .logout-btn:hover{ color:var(--red); }
+  .ranking-calibrating{
+    font-size:12.5px; color:var(--amber); background:var(--amber-dim);
+    border:1px solid rgba(245,166,35,0.3); border-left:3px solid var(--amber);
+    padding:10px 12px; border-radius:0 8px 8px 0; margin-bottom:12px;
+    line-height:1.5;
+  }
 </style>
 </head>
 <body>
+
+<!-- Login overlay -->
+<div class="login-overlay hidden" id="login-overlay">
+  <div class="login-card">
+    <h2>🚗 Painel do Motorista</h2>
+    <div class="login-sub">Faça login pra sincronizar seus dados entre dispositivos. Ou continue sem login — tudo funciona local.</div>
+    <input type="email" id="login-email" placeholder="seu@email.com" autocomplete="email">
+    <button id="login-submit">Enviar magic link</button>
+    <div id="login-status"></div>
+    <button id="login-skip">Continuar sem login →</button>
+  </div>
+</div>
 
 <header>
   <div class="title"><span class="dot"></span>Painel do Motorista</div>
@@ -675,48 +751,109 @@
 
 <script>
 /* ============================================================
-   STORAGE HELPERS
+   SUPABASE CONFIG
+   Replace these with your real Supabase project credentials.
+   These are PUBLIC keys (anon) — RLS policies protect the data.
    ============================================================ */
+const SUPABASE_URL = 'https://lbnxqwggdyojhhtdnlxs.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxibnhxd2dnZHlvamhodGRubHhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5OTU2NTYsImV4cCI6MjA5OTU3MTY1Nn0.zL57RfnSpt-ShGEXFMOfzsjp4z3jKxk91ZxypPM5O_Q';
+
+let supabaseClient = null;
+let supabaseUser = null;
+
+try {
+  if (typeof supabase !== 'undefined' && SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  }
+} catch(e) {
+  console.warn('Supabase init failed:', e);
+}
+
 /* ============================================================
-   STORAGE HELPERS
-   Detecta o ambiente: dentro do Claude usa window.storage (sincroniza
-   por conta), fora (GitHub Pages, arquivo local, etc.) usa localStorage
-   (fica só neste navegador/dispositivo, mas funciona sem depender do Claude
-   e libera permissão de microfone sem bloqueio de iframe).
+   STORAGE HELPERS — 3-layer priority:
+   1. Supabase (if logged in)
+   2. Claude Storage (if inside Claude artifact)
+   3. localStorage (default fallback)
    ============================================================ */
 const HAS_CLAUDE_STORAGE = typeof window.storage !== 'undefined';
 const LS_PREFIX = 'painel-motorista:';
-(function setStorageLabel(){
+
+function updateStorageLabel(){
   const el = document.getElementById('storage-mode-label');
   if(!el) return;
-  el.textContent = HAS_CLAUDE_STORAGE
-    ? 'salvando via Claude (sincroniza com sua conta)'
-    : 'salvando neste navegador (localStorage)';
-})();
+  if(supabaseUser){
+    el.innerHTML = `sincronizando via Supabase (${supabaseUser.email})<button class="logout-btn" id="logout-btn" title="Sair">sair</button>`;
+    const logoutBtn = document.getElementById('logout-btn');
+    if(logoutBtn){
+      logoutBtn.addEventListener('click', async ()=>{
+        if(supabaseClient){
+          await supabaseClient.auth.signOut();
+          supabaseUser = null;
+          updateStorageLabel();
+          toast('Deslogado — usando localStorage');
+        }
+      });
+    }
+  } else if(HAS_CLAUDE_STORAGE){
+    el.textContent = 'salvando via Claude (sincroniza com sua conta)';
+  } else {
+    el.textContent = 'salvando neste navegador (localStorage)';
+  }
+}
+updateStorageLabel();
 
 async function saveData(key, value){
   try{
+    // Priority 1: Supabase
+    if(supabaseClient && supabaseUser){
+      const { error } = await supabaseClient.from('painel_data').upsert({
+        user_id: supabaseUser.id,
+        key: key,
+        value: JSON.stringify(value),
+        updated_at: new Date().toISOString()
+      }, { onConflict: 'user_id,key' });
+      if(error){
+        console.error('Supabase save error:', key, error);
+        // Fallback to localStorage on error
+        localStorage.setItem(LS_PREFIX + key, JSON.stringify(value));
+      }
+      return !error;
+    }
+    // Priority 2: Claude Storage
     if(HAS_CLAUDE_STORAGE){
       const res = await window.storage.set(key, JSON.stringify(value), false);
       if(!res) console.error('Falha ao salvar', key);
       return res;
-    } else {
-      localStorage.setItem(LS_PREFIX + key, JSON.stringify(value));
-      return {key, value};
     }
+    // Priority 3: localStorage
+    localStorage.setItem(LS_PREFIX + key, JSON.stringify(value));
+    return {key, value};
   }catch(e){ console.error('Storage error (set)', key, e); }
 }
+
 async function loadData(key, fallback){
   try{
+    // Priority 1: Supabase
+    if(supabaseClient && supabaseUser){
+      const { data, error } = await supabaseClient.from('painel_data')
+        .select('value')
+        .eq('user_id', supabaseUser.id)
+        .eq('key', key)
+        .single();
+      if(error || !data) return fallback;
+      return JSON.parse(data.value);
+    }
+    // Priority 2: Claude Storage
     if(HAS_CLAUDE_STORAGE){
       const res = await window.storage.get(key, false);
       return res ? JSON.parse(res.value) : fallback;
-    } else {
-      const raw = localStorage.getItem(LS_PREFIX + key);
-      return raw !== null ? JSON.parse(raw) : fallback;
     }
+    // Priority 3: localStorage
+    const raw = localStorage.getItem(LS_PREFIX + key);
+    return raw !== null ? JSON.parse(raw) : fallback;
   }catch(e){ return fallback; }
 }
+
 function toast(msg){
   const t = document.getElementById('toast');
   t.textContent = msg || 'Salvo';
@@ -1460,22 +1597,73 @@ const rankingMovimento = [
   {nome:"Espaço Lambe Cassino", tag:"Balada", avaliacoes:64, horario:"23h59-6h (sex/sáb)", bairro:"Cassino"},
 ];
 
-function renderRanking(){
+function renderRankCard(container, r, index, scoreValue, scoreLabel){
+  const div = document.createElement('div');
+  div.className = 'rank-card';
+  div.innerHTML = `
+    <div class="rank-num">${index+1}</div>
+    <div class="rank-info">
+      <div class="rank-name">${r.nome}</div>
+      <div class="rank-meta"><span class="rank-tag">${r.tag}</span>${r.bairro} · ${r.horario}</div>
+    </div>
+    <div class="rank-score"><div class="rsv">${scoreValue.toLocaleString('pt-BR')}</div><div class="rsl">${scoreLabel}</div></div>
+  `;
+  container.appendChild(div);
+}
+
+async function renderRanking(){
   const container = document.getElementById('ranking-movimento');
+  container.innerHTML = '<div class="ent-loading">Carregando ranking…</div>';
+
+  // Try to load snapshots from the static JSON file
+  let snapshots = [];
+  try {
+    const res = await fetch('./ranking-snapshots.json');
+    if(res.ok) snapshots = await res.json();
+  } catch(e) { /* silently fallback to static */ }
+
+  // Determine if we have enough snapshot data (>=2 dates spanning >=7 days)
+  const dates = [...new Set(snapshots.map(s => s.data))].sort();
+  const hasEnoughData = dates.length >= 2 &&
+    (new Date(dates[dates.length-1]) - new Date(dates[0])) >= 7 * 86400000;
+
   container.innerHTML = '';
-  const sorted = [...rankingMovimento].sort((a,b)=> b.avaliacoes - a.avaliacoes);
-  sorted.forEach((r, i)=>{
-    const div = document.createElement('div');
-    div.className = 'rank-card';
-    div.innerHTML = `
-      <div class="rank-num">${i+1}</div>
-      <div class="rank-info">
-        <div class="rank-name">${r.nome}</div>
-        <div class="rank-meta"><span class="rank-tag">${r.tag}</span>${r.bairro} · ${r.horario}</div>
-      </div>
-      <div class="rank-score"><div class="rsv">${r.avaliacoes.toLocaleString('pt-BR')}</div><div class="rsl">avaliações</div></div>
-    `;
-    container.appendChild(div);
+
+  if(!hasEnoughData){
+    // Fallback: static ranking by total reviews (current behavior)
+    if(snapshots.length > 0){
+      const cal = document.createElement('div');
+      cal.className = 'ranking-calibrating';
+      cal.textContent = '⏳ Calibrando — usando ranking histórico até termos 30 dias de dados coletados.';
+      container.appendChild(cal);
+    }
+    const sorted = [...rankingMovimento].sort((a,b) => b.avaliacoes - a.avaliacoes);
+    sorted.forEach((r, i) => renderRankCard(container, r, i, r.avaliacoes, 'avaliações (total)'));
+    return;
+  }
+
+  // Dynamic ranking: delta of last 30 days
+  const latestDate = dates[dates.length - 1];
+  const target30 = new Date(new Date(latestDate).getTime() - 30 * 86400000);
+
+  const ranking = rankingMovimento.map(r => {
+    const mySnaps = snapshots.filter(s => s.nome === r.nome);
+    const latest = mySnaps.filter(s => s.data === latestDate)[0];
+    // Oldest snapshot closest to 30 days ago
+    const older = mySnaps
+      .filter(s => new Date(s.data) <= target30)
+      .sort((a,b) => new Date(b.data) - new Date(a.data))[0];
+
+    if(latest && older){
+      return { ...r, delta: latest.contagem - older.contagem, hasData: true };
+    }
+    return { ...r, delta: r.avaliacoes, hasData: false };
+  });
+
+  ranking.sort((a,b) => b.delta - a.delta);
+  ranking.forEach((r, i) => {
+    const label = r.hasData ? 'novas (30d)' : 'avaliações (total)';
+    renderRankCard(container, r, i, r.delta, label);
   });
 }
 
@@ -1655,9 +1843,124 @@ document.getElementById('ev-save').addEventListener('click', async ()=>{
 });
 
 /* ============================================================
+   SUPABASE AUTH FLOW
+   ============================================================ */
+function showLogin(){ document.getElementById('login-overlay').classList.remove('hidden'); }
+function hideLogin(){ document.getElementById('login-overlay').classList.add('hidden'); }
+
+// Migrate localStorage data to Supabase on first login
+async function migrateLocalToSupabase(){
+  if(!supabaseClient || !supabaseUser) return;
+  const keys = ['corridas','registros','checklist','events','audio-notes','calc-state','cr-online-horas'];
+  // Check if Supabase already has data for this user
+  const { data: existing } = await supabaseClient.from('painel_data')
+    .select('key')
+    .eq('user_id', supabaseUser.id)
+    .limit(1);
+  if(existing && existing.length > 0){
+    console.log('Supabase already has data — skipping migration.');
+    return;
+  }
+  // Migrate from localStorage
+  let migrated = 0;
+  for(const key of keys){
+    const raw = localStorage.getItem(LS_PREFIX + key);
+    if(raw !== null){
+      try {
+        const value = JSON.parse(raw);
+        await supabaseClient.from('painel_data').upsert({
+          user_id: supabaseUser.id,
+          key: key,
+          value: JSON.stringify(value),
+          updated_at: new Date().toISOString()
+        }, { onConflict: 'user_id,key' });
+        migrated++;
+      } catch(e){ console.warn('Migration failed for', key, e); }
+    }
+  }
+  if(migrated > 0) console.log(`Migrated ${migrated} keys from localStorage to Supabase.`);
+}
+
+async function handleAuth(){
+  if(!supabaseClient){
+    // Supabase not configured — skip login, go straight to app
+    hideLogin();
+    return;
+  }
+
+  // Listen for auth state changes (handles magic link callback automatically)
+  supabaseClient.auth.onAuthStateChange(async (event, session) => {
+    if(event === 'SIGNED_IN' && session){
+      supabaseUser = session.user;
+      updateStorageLabel();
+      hideLogin();
+      await migrateLocalToSupabase();
+      // Reload data from Supabase
+      await initData();
+    } else if(event === 'SIGNED_OUT'){
+      supabaseUser = null;
+      updateStorageLabel();
+    }
+  });
+
+  // Check for existing session
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if(session){
+    supabaseUser = session.user;
+    updateStorageLabel();
+    hideLogin();
+    return;
+  }
+
+  // No session — show login overlay
+  showLogin();
+}
+
+// Login form handlers
+document.getElementById('login-submit').addEventListener('click', async ()=>{
+  const email = document.getElementById('login-email').value.trim();
+  const statusEl = document.getElementById('login-status');
+  const btn = document.getElementById('login-submit');
+  if(!email || !email.includes('@')){
+    statusEl.className = 'error';
+    statusEl.textContent = 'Digite um e-mail válido.';
+    return;
+  }
+  if(!supabaseClient){
+    statusEl.className = 'error';
+    statusEl.textContent = 'Supabase não configurado. Configure SUPABASE_URL e SUPABASE_ANON_KEY.';
+    return;
+  }
+  btn.disabled = true;
+  statusEl.className = '';
+  statusEl.textContent = 'Enviando magic link…';
+  const redirectUrl = window.location.origin + window.location.pathname;
+  const { error } = await supabaseClient.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: redirectUrl }
+  });
+  if(error){
+    statusEl.className = 'error';
+    statusEl.textContent = 'Erro: ' + error.message;
+    btn.disabled = false;
+  } else {
+    statusEl.className = 'success';
+    statusEl.textContent = '✓ Link enviado! Verifique seu e-mail e clique no link pra logar.';
+  }
+});
+
+document.getElementById('login-email').addEventListener('keydown', (e)=>{
+  if(e.key === 'Enter') document.getElementById('login-submit').click();
+});
+
+document.getElementById('login-skip').addEventListener('click', ()=>{
+  hideLogin();
+});
+
+/* ============================================================
    INIT
    ============================================================ */
-async function init(){
+async function initData(){
   calcState = await loadData('calc-state', {...calcDefaults});
   registros = await loadData('registros', []);
   checklist = await loadData('checklist', {});
@@ -1687,6 +1990,11 @@ async function init(){
   renderEvents();
   loadWeather();
   loadHoliday();
+}
+
+async function init(){
+  await handleAuth();
+  await initData();
 }
 init();
 </script>

@@ -1,0 +1,32 @@
+name: Ranking Snapshot
+
+on:
+  schedule:
+    # Every Monday at 09:00 UTC (06:00 BRT)
+    - cron: '0 9 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run snapshot
+        env:
+          PLACES_API_KEY: ${{ secrets.PLACES_API_KEY }}
+        run: node scripts/snapshot-ranking.js
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ranking-snapshots.json
+          git diff --cached --quiet || git commit -m "chore: ranking snapshot $(date -u +%Y-%m-%d)"
+          git push
