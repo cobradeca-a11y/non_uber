@@ -1491,6 +1491,22 @@ function buildHourlyHistogram(){
   return hist;
 }
 
+function buildHourlyDurationStats(){
+  const buckets = Array.from({length:24}, () => []);
+  corridas.forEach(c=>{
+    const h = parseInt((c.hora||'').split(':')[0], 10);
+    if(!isNaN(h) && h>=0 && h<24 && c.duracaoSeg > 0) buckets[h].push(c.duracaoSeg);
+  });
+  return buckets.map(arr=>{
+    if(arr.length < 2) return { n: arr.length, media: arr[0] || 0, cv: null };
+    const media = arr.reduce((a,b)=>a+b, 0) / arr.length;
+    const variancia = arr.reduce((a,b)=>a + (b-media)**2, 0) / arr.length;
+    const desvio = Math.sqrt(variancia);
+    const cv = media > 0 ? desvio/media : null;
+    return { n: arr.length, media, desvio, cv };
+  });
+}
+
 function anchorsForHour(h){
   const tags = [];
   flowPoints.forEach(p=>{
@@ -1507,6 +1523,7 @@ function renderConcentracao(){
   if(!container) return;
   container.innerHTML = '';
   const hist = buildHourlyHistogram();
+  const durStats = buildHourlyDurationStats();
   const totalRegistros = hist.reduce((a,b)=>a+b,0);
   const now = new Date();
   const curH = now.getHours();
@@ -1517,6 +1534,7 @@ function renderConcentracao(){
     const count = hist[h];
     const prevCount = hist[prevH];
     const anchors = anchorsForHour(h);
+    const stat = durStats[h];
 
     let tendencia, cls;
     if(count > prevCount || (anchors.length && count >= prevCount)){ tendencia = 'Subindo'; cls = 'now'; }
@@ -1529,6 +1547,12 @@ function renderConcentracao(){
       ? 'Ainda sem histórico suficiente — registre corridas pra calibrar'
       : (count > 0 ? `${count} corrida(s) suas historicamente nesse horário` : 'Nenhuma corrida sua registrada nesse horário');
     if(anchors.length) desc += ` · perto de: ${anchors.join(', ')}`;
+
+    if(stat.n >= 2){
+      const mediaMin = (stat.media/60).toFixed(0);
+      const variabLabel = stat.cv <= 0.3 ? 'duração previsível' : 'duração instável';
+      desc += ` · ~${mediaMin}min, ${variabLabel}`;
+    }
 
     const div = document.createElement('div');
     div.className = 'flow-card';
