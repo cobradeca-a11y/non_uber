@@ -6,7 +6,7 @@
 <title>Painel do Motorista</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
 <style>
   :root{
     --bg:#0e1013;
@@ -618,6 +618,10 @@
       <div id="holiday-body" class="ent-loading">Carregando calendário…</div>
     </div>
 
+    <h2 class="section-title">Previsão de concentração — próximas horas</h2>
+    <div class="note">Combina seu histórico de corridas (em que horários você mais/menos pegou corrida) com os pontos fixos de fluxo (escola, shopping, hospital). Quanto mais corridas você registrar, mais precisa fica.</div>
+    <div id="concentracao-previsao"></div>
+
     <h2 class="section-title">Pontos de fluxo — contagem regressiva</h2>
     <div id="flow-points"></div>
 
@@ -1165,6 +1169,7 @@ function renderCorridas(){
   document.getElementById('cr-rshora').textContent = BRL(rsHoraMedio);
 
   computeIdleTime();
+  renderConcentracao();
 }
 
 async function computeIdleTime(){
@@ -1473,6 +1478,65 @@ function renderRanking(){
     container.appendChild(div);
   });
 }
+
+/* ============================================================
+   PREVISÃO DE CONCENTRAÇÃO — combina histórico próprio + pontos fixos
+   ============================================================ */
+function buildHourlyHistogram(){
+  const hist = new Array(24).fill(0);
+  corridas.forEach(c=>{
+    const h = parseInt((c.hora||'').split(':')[0], 10);
+    if(!isNaN(h) && h>=0 && h<24) hist[h]++;
+  });
+  return hist;
+}
+
+function anchorsForHour(h){
+  const tags = [];
+  flowPoints.forEach(p=>{
+    (p.times||[]).forEach(t=>{
+      const th = parseInt(t.split(':')[0], 10);
+      if(th === h && !tags.includes(p.name)) tags.push(p.name);
+    });
+  });
+  return tags;
+}
+
+function renderConcentracao(){
+  const container = document.getElementById('concentracao-previsao');
+  if(!container) return;
+  container.innerHTML = '';
+  const hist = buildHourlyHistogram();
+  const totalRegistros = hist.reduce((a,b)=>a+b,0);
+  const now = new Date();
+  const curH = now.getHours();
+
+  for(let i=0; i<4; i++){
+    const h = (curH + i) % 24;
+    const prevH = (h + 23) % 24;
+    const count = hist[h];
+    const prevCount = hist[prevH];
+    const anchors = anchorsForHour(h);
+
+    let tendencia, cls;
+    if(count > prevCount || (anchors.length && count >= prevCount)){ tendencia = 'Subindo'; cls = 'now'; }
+    else if(count < prevCount){ tendencia = 'Caindo'; cls = 'soon'; }
+    else { tendencia = 'Estável'; cls = 'far'; }
+
+    const label = i === 0 ? 'Agora' : `+${i}h`;
+    const hourLabel = `${h.toString().padStart(2,'0')}h`;
+    let desc = totalRegistros === 0
+      ? 'Ainda sem histórico suficiente — registre corridas pra calibrar'
+      : (count > 0 ? `${count} corrida(s) suas historicamente nesse horário` : 'Nenhuma corrida sua registrada nesse horário');
+    if(anchors.length) desc += ` · perto de: ${anchors.join(', ')}`;
+
+    const div = document.createElement('div');
+    div.className = 'flow-card';
+    div.innerHTML = `<div><div class="fn">${label} · ${hourLabel}</div><div class="fd">${desc}</div></div><div class="fc ${cls}">${tendencia}</div>`;
+    container.appendChild(div);
+  }
+}
+setInterval(renderConcentracao, 1800000);
 
 const flowPoints = [
   {name:'FURG · Campus Carreiros', desc:'Saída de aula', times:['12:00','17:30']},
