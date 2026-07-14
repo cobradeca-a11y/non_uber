@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Painel do Motorista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0e1013;
+    --panel:#171a1f;
+    --panel-raised:#1d2127;
+    --line: rgba(255,255,255,0.07);
+    --amber:#f5a623;
+    --amber-dim: rgba(245,166,35,0.15);
+    --teal:#1fd9a8;
+    --teal-dim: rgba(31,217,168,0.15);
+    --red:#ff5d5d;
+    --red-dim: rgba(255,93,93,0.15);
+    --ink:#e8e9ec;
+    --ink-dim:#8b909c;
+    --ink-faint:#585d68;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 6px),
+      radial-gradient(ellipse at top, #191d23 0%, var(--bg) 60%);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  .num{font-family:'IBM Plex Mono', monospace;}
+  .disp{font-family:'Rajdhani', sans-serif; text-transform:uppercase; letter-spacing:0.04em;}
+
+  /* ---------- header ---------- */
+  header{
+    padding:22px 18px 14px;
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:20;
+    background:rgba(14,16,19,0.92);
+    backdrop-filter:blur(10px);
+  }
+  header .title{
+    font-family:'Rajdhani', sans-serif;
+    font-weight:700;
+    font-size:26px;
+    letter-spacing:0.03em;
+    color:var(--ink);
+    display:flex; align-items:center; gap:10px;
+  }
+  header .title .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--teal);
+    box-shadow:0 0 10px var(--teal);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+  header .sub{
+    font-size:12.5px; color:var(--ink-dim); margin-top:4px;
+  }
+
+  nav{
+    display:flex; gap:2px; overflow-x:auto;
+    padding:10px 14px 0; border-bottom:1px solid var(--line);
+    background:rgba(14,16,19,0.92);
+    position:sticky; top:74px; z-index:19;
+    scrollbar-width:none;
+  }
+  nav::-webkit-scrollbar{display:none;}
+  nav button{
+    font-family:'Rajdhani', sans-serif;
+    font-weight:600; font-size:14px; letter-spacing:0.03em; text-transform:uppercase;
+    background:none; border:none; color:var(--ink-faint);
+    padding:10px 14px 12px; cursor:pointer; white-space:nowrap;
+    border-bottom:2px solid transparent;
+    transition:color .2s, border-color .2s;
+  }
+  nav button.active{ color:var(--amber); border-bottom-color:var(--amber); }
+  nav button:hover{ color:var(--ink); }
+
+  main{ padding:18px 14px 60px; max-width:960px; margin:0 auto; }
+  .view{ display:none; animation:fadeIn .35s ease; }
+  .view.active{ display:block; }
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+  h2.section-title{
+    font-family:'Rajdhani',sans-serif; font-weight:700; font-size:15px;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--amber);
+    margin:26px 0 12px; padding-bottom:8px; border-bottom:1px solid var(--line);
+    display:flex; align-items:center; gap:8px;
+  }
+  h2.section-title:first-child{ margin-top:0; }
+  h2.section-title::before{ content:''; width:3px; height:14px; background:var(--amber); display:inline-block; }
+
+  /* ---------- gauge KPI cards ---------- */
+  .kpi-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+  .kpi{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:14px; position:relative; overflow:hidden;
+  }
+  .kpi::after{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(160deg, rgba(255,255,255,0.04), transparent 40%);
+  }
+  .kpi .lbl{ font-size:10.5px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.06em; font-weight:600;}
+  .kpi .val{ font-size:24px; font-weight:600; margin-top:6px; }
+  .kpi .val.amber{ color:var(--amber); }
+  .kpi .val.teal{ color:var(--teal); }
+  .kpi .val.red{ color:var(--red); }
+  .kpi .val.ink{ color:var(--ink); }
+
+  .chart-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:16px 12px 8px; margin-bottom:14px;
+  }
+  .chart-card .chart-title{
+    font-family:'Rajdhani',sans-serif; font-weight:600; font-size:13px; text-transform:uppercase;
+    letter-spacing:0.05em; color:var(--ink-dim); margin-bottom:10px; padding-left:2px;
+  }
+  .chart-wrap{ position:relative; height:220px; }
+  .empty-note{
+    font-size:12.5px; color:var(--ink-faint); text-align:center; padding:30px 10px;
+  }
+
+  /* ---------- forms / inputs ---------- */
+  .field-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+  .field{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:10px 12px; display:flex; align-items:center; justify-content:space-between; gap:10px;
+  }
+  .field label{ font-size:13px; color:var(--ink-dim); flex:1; }
+  .field input, .field select{
+    font-family:'IBM Plex Mono', monospace; font-size:15px; font-weight:600;
+    background:var(--panel-raised); border:1px solid rgba(245,166,35,0.35); color:var(--amber);
+    border-radius:8px; padding:7px 9px; width:110px; text-align:right;
+  }
+  .field select{ text-align:left; width:150px; color:var(--ink); border-color:var(--line); font-family:'Manrope',sans-serif; font-weight:600; font-size:13px;}
+  .field input:focus, .field select:focus{ outline:none; border-color:var(--amber); }
+
+  .result-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 14px; border-radius:12px; margin-top:8px;
+    background:var(--panel-raised); border:1px solid var(--line);
+  }
+  .result-row .rl{ font-size:13px; color:var(--ink-dim); }
+  .result-row .rv{ font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:17px; }
+  .result-row.hi{ border-color:rgba(31,217,168,0.4); background:var(--teal-dim); }
+  .result-row.hi .rv{ color:var(--teal); }
+  .result-row.warn .rv{ color:var(--red); }
+
+  /* ---------- registro diario ---------- */
+  .add-btn{
+    width:100%; padding:13px; border-radius:12px; border:1px dashed rgba(245,166,35,0.5);
+    background:var(--amber-dim); color:var(--amber); font-family:'Rajdhani',sans-serif;
+    font-weight:700; font-size:14px; letter-spacing:0.05em; text-transform:uppercase;
+    cursor:pointer; margin-top:4px;
+  }
+  .add-btn:active{ transform:scale(0.98); }
+  .modal-backdrop{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:50;
+    align-items:flex-end; justify-content:center;
+  }
+  .modal-backdrop.open{ display:flex; }
+  .modal{
+    background:var(--panel); width:100%; max-width:480px; border-radius:18px 18px 0 0;
+    padding:18px 16px 24px; border-top:1px solid var(--line); max-height:88vh; overflow-y:auto;
+    animation:slideUp .28s ease;
+  }
+  @keyframes slideUp{ from{transform:translateY(30px); opacity:0;} to{transform:translateY(0); opacity:1;} }
+  .modal h3{ font-family:'Rajdhani',sans-serif; font-size:19px; margin:0 0 14px; color:var(--ink); }
+  .modal .row2{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .modal-actions{ display:flex; gap:8px; margin-top:16px; }
+  .btn{
+    flex:1; padding:12px; border-radius:10px; border:none; cursor:pointer;
+    font-family:'Rajdhani',sans-serif; font-weight:700; font-size:14px; letter-spacing:0.03em; text-transform:uppercase;
+  }
+  .btn-primary{ background:var(--amber); color:#1a1300; }
+  .btn-ghost{ background:var(--panel-raised); color:var(--ink-dim); border:1px solid var(--line); }
+
+  table{ width:100%; border-collapse:collapse; font-size:12.5px; margin-top:6px;}
+  thead th{
+    font-family:'Rajdhani',sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;
+    color:var(--ink-faint); font-size:10.5px; text-align:right; padding:6px 6px; border-bottom:1px solid var(--line);
+  }
+  thead th:first-child{ text-align:left; }
+  tbody td{ padding:9px 6px; text-align:right; border-bottom:1px solid var(--line); font-family:'IBM Plex Mono',monospace; }
+  tbody td:first-child{ text-align:left; font-family:'Manrope',sans-serif; font-weight:600;}
+  tbody tr:active{ background:rgba(255,255,255,0.03); }
+  .liq-pos{ color:var(--teal); font-weight:600; }
+  .liq-neg{ color:var(--red); font-weight:600; }
+  .del-x{ color:var(--ink-faint); cursor:pointer; padding-left:4px; }
+  .table-scroll{ overflow-x:auto; }
+  .table-scroll table{ min-width:640px; }
+
+  /* ---------- horarios / referencia ---------- */
+  .region-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px; margin-bottom:12px; overflow:hidden;
+  }
+  .region-head{
+    padding:10px 14px; font-family:'Rajdhani',sans-serif; font-weight:700; letter-spacing:0.04em;
+    text-transform:uppercase; font-size:13px; background:var(--panel-raised); color:var(--teal);
+    border-bottom:1px solid var(--line);
+  }
+  .slot{
+    padding:11px 14px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:10px;
+  }
+  .slot:last-child{ border-bottom:none; }
+  .slot .sl{ flex:1; }
+  .slot .st{ font-size:13.5px; font-weight:700; color:var(--ink); }
+  .slot .sd{ font-size:11.5px; color:var(--ink-dim); margin-top:2px; }
+  .slot .sv{ font-family:'IBM Plex Mono',monospace; font-weight:700; color:var(--amber); font-size:13.5px; white-space:nowrap; }
+  .slot .sf{ font-size:10px; color:var(--ink-faint); margin-top:3px; }
+
+  /* ---------- boas praticas ---------- */
+  .practice-group{ margin-bottom:16px; }
+  .practice-group h3{
+    font-family:'Rajdhani',sans-serif; font-size:14.5px; font-weight:700; color:var(--ink);
+    margin:0 0 8px; padding-left:2px;
+  }
+  .practice{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:12px; margin-bottom:8px; display:flex; gap:10px; align-items:flex-start;
+  }
+  .practice .ptxt{ flex:1; }
+  .practice .pt{ font-size:13.5px; font-weight:600; color:var(--ink); }
+  .practice .pd{ font-size:12px; color:var(--ink-dim); margin-top:4px; line-height:1.4; }
+  .chk{
+    width:26px;height:26px;border-radius:7px;border:1.5px solid var(--ink-faint);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; margin-top:1px;
+    font-size:14px; transition:.15s;
+  }
+  .chk.done{ background:var(--teal); border-color:var(--teal); color:#08251c; }
+  .chk.prog{ background:var(--amber-dim); border-color:var(--amber); color:var(--amber); }
+
+  /* ---------- fontes ---------- */
+  .source-item{
+    padding:12px 14px; background:var(--panel); border:1px solid var(--line); border-radius:12px; margin-bottom:8px;
+  }
+  .source-item .sn{ font-size:13.5px; font-weight:600; color:var(--ink); }
+  .source-item .su{ font-size:11.5px; color:var(--ink-faint); margin-top:3px; font-family:'IBM Plex Mono',monospace; }
+  .note{
+    font-size:11.5px; color:var(--ink-faint); background:var(--panel-raised); border-left:2px solid var(--amber);
+    padding:10px 12px; border-radius:0 8px 8px 0; margin-bottom:14px; line-height:1.5;
+  }
+  .entorno-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:14px; margin-bottom:12px;
+  }
+  .ent-head{
+    font-family:'Rajdhani',sans-serif; font-weight:700; font-size:14px; letter-spacing:0.03em;
+    color:var(--ink); margin-bottom:10px;
+  }
+  .ent-loading{ font-size:12.5px; color:var(--ink-faint); }
+  .ent-row{ display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid var(--line); }
+  .ent-row:last-child{ border-bottom:none; }
+  .ent-row .el{ font-size:12.5px; color:var(--ink-dim); }
+  .ent-row .ev{ font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:14px; color:var(--ink); }
+  .ent-alert{
+    margin-top:10px; padding:10px 12px; border-radius:10px; font-size:12.5px; font-weight:600;
+    background:var(--teal-dim); color:var(--teal); border:1px solid rgba(31,217,168,0.4);
+  }
+  .ent-alert.warn{ background:var(--amber-dim); color:var(--amber); border-color:rgba(245,166,35,0.4); }
+  .flow-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:12px 14px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; gap:10px;
+  }
+  .flow-card .fn{ font-size:13.5px; font-weight:700; color:var(--ink); }
+  .flow-card .fd{ font-size:11.5px; color:var(--ink-dim); margin-top:2px; }
+  .flow-card .fc{ font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:15px; text-align:right; white-space:nowrap; }
+  .flow-card .fc.soon{ color:var(--amber); }
+  .flow-card .fc.now{ color:var(--teal); }
+  .flow-card .fc.far{ color:var(--ink-faint); }
+  .event-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:11px 14px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; gap:10px;
+  }
+  .event-card .en{ font-size:13.5px; font-weight:600; color:var(--ink); }
+  .event-card .ed{ font-size:11.5px; color:var(--ink-dim); margin-top:2px; }
+  .rank-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:12px 14px; margin-bottom:8px; display:flex; gap:12px; align-items:center;
+  }
+  .rank-num{
+    font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:16px; color:var(--ink-faint);
+    width:22px; text-align:center; flex-shrink:0;
+  }
+  .rank-info{ flex:1; min-width:0; }
+  .rank-name{ font-size:13.5px; font-weight:700; color:var(--ink); }
+  .rank-meta{ font-size:11.5px; color:var(--ink-dim); margin-top:2px; }
+  .rank-tag{
+    display:inline-block; font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;
+    padding:2px 6px; border-radius:5px; margin-right:5px; background:var(--panel-raised); color:var(--teal);
+  }
+  .rank-score{ text-align:right; flex-shrink:0; }
+  .rank-score .rsv{ font-family:'IBM Plex Mono',monospace; font-weight:700; color:var(--amber); font-size:14px; }
+  .rank-score .rsl{ font-size:9px; color:var(--ink-faint); text-transform:uppercase; }
+  .traffic-link{
+    display:block; text-align:center; padding:13px; border-radius:12px;
+    background:var(--panel-raised); border:1px solid var(--line); color:var(--amber);
+    font-family:'Rajdhani',sans-serif; font-weight:700; font-size:14px; letter-spacing:0.03em;
+    text-decoration:none; text-transform:uppercase;
+  }
+  .decide-card{
+    background:linear-gradient(155deg, var(--panel-raised), var(--panel));
+    border:1px solid rgba(245,166,35,0.3); border-radius:16px; padding:16px; margin-bottom:6px;
+  }
+  .decide-sub{ font-size:12px; color:var(--ink-dim); margin-bottom:12px; line-height:1.4; }
+  .decide-inputs{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+  .decide-field{ display:flex; flex-direction:column; gap:5px; }
+  .decide-field label{ font-size:10px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.04em; font-weight:600; }
+  .decide-field input{
+    font-family:'IBM Plex Mono', monospace; font-size:16px; font-weight:700; text-align:center;
+    background:var(--panel-raised); border:1px solid var(--line); color:var(--amber);
+    border-radius:9px; padding:9px 4px; width:100%;
+  }
+  .decide-field input:focus{ outline:none; border-color:var(--amber); }
+  .decide-result-empty{
+    margin-top:12px; text-align:center; font-size:12px; color:var(--ink-faint); padding:14px 0;
+  }
+  .decide-result{
+    margin-top:12px; border-radius:12px; padding:14px; text-align:center;
+  }
+  .decide-result.accept{ background:var(--teal-dim); border:1px solid rgba(31,217,168,0.5); }
+  .decide-result.borderline{ background:var(--amber-dim); border:1px solid rgba(245,166,35,0.5); }
+  .decide-result.reject{ background:var(--red-dim); border:1px solid rgba(255,93,93,0.5); }
+  .decide-verdict{
+    font-family:'Rajdhani',sans-serif; font-weight:700; font-size:19px; letter-spacing:0.03em; text-transform:uppercase;
+  }
+  .decide-result.accept .decide-verdict{ color:var(--teal); }
+  .decide-result.borderline .decide-verdict{ color:var(--amber); }
+  .decide-result.reject .decide-verdict{ color:var(--red); }
+  .decide-detail{ font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ink); margin-top:6px; }
+  .decide-detail span{ color:var(--ink-dim); font-family:'Manrope',sans-serif; }
+  .rec-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    padding:20px; display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:10px;
+  }
+  .rec-btn{
+    width:64px; height:64px; border-radius:50%; border:2px solid rgba(255,93,93,0.5);
+    background:var(--panel-raised); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; transition:.2s; padding:0;
+  }
+  .rec-btn .rec-dot{
+    width:24px; height:24px; border-radius:50%; background:var(--red); display:block; transition:.2s;
+  }
+  .rec-btn.recording{ border-color:var(--red); animation:recPulse 1.4s ease-in-out infinite; }
+  .rec-btn.recording .rec-dot{ border-radius:6px; width:20px; height:20px; }
+  @keyframes recPulse{
+    0%,100%{ box-shadow:0 0 0 0 rgba(255,93,93,0.45); }
+    50%{ box-shadow:0 0 0 14px rgba(255,93,93,0); }
+  }
+  .rec-status{ font-size:12.5px; color:var(--ink-dim); font-weight:600; }
+  .rec-status.active{ color:var(--red); }
+  .audio-note{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:11px 14px; margin-bottom:8px; display:flex; flex-direction:column; gap:8px;
+  }
+  .audio-note-head{ display:flex; justify-content:space-between; align-items:center; }
+  .audio-note-time{ font-size:12px; color:var(--ink-dim); font-weight:600; }
+  .audio-note audio{ width:100%; height:34px; }
+  .toast{
+    position:fixed; bottom:20px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--panel-raised); border:1px solid var(--teal); color:var(--teal);
+    padding:10px 18px; border-radius:10px; font-size:13px; font-weight:600; z-index:60;
+    opacity:0; transition:.25s; pointer-events:none;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="title"><span class="dot"></span>Painel do Motorista</div>
+  <div class="sub">Ford Fiesta Sedan 2014 1.6 · <span id="storage-mode-label">verificando armazenamento…</span></div>
+</header>
+
+<nav id="tabs">
+  <button data-view="painel" class="active">Painel</button>
+  <button data-view="calc">Calculadora</button>
+  <button data-view="registro">Registro</button>
+  <button data-view="corridas">Corridas</button>
+  <button data-view="horarios">Horários</button>
+  <button data-view="entorno">Entorno</button>
+  <button data-view="praticas">Boas Práticas</button>
+  <button data-view="fontes">Fontes</button>
+</nav>
+
+<main>
+
+  <!-- ===================== PAINEL ===================== -->
+  <section class="view active" id="view-painel">
+    <h2 class="section-title">Aceitar essa corrida?</h2>
+    <div class="decide-card">
+      <div class="decide-sub">Digite o que a tela da Uber/99 já mostra antes de você aceitar. Cálculo instantâneo, nada é enviado a lugar nenhum.</div>
+      <div class="decide-inputs">
+        <div class="decide-field"><label>Valor (R$)</label><input type="number" step="0.01" id="d-valor" inputmode="decimal"></div>
+        <div class="decide-field"><label>Km estimado</label><input type="number" step="0.1" id="d-km" inputmode="decimal"></div>
+        <div class="decide-field"><label>Tempo (min)</label><input type="number" step="1" id="d-tempo" inputmode="numeric"></div>
+      </div>
+      <div id="decide-result" class="decide-result-empty">Preencha os 3 campos pra ver o veredito.</div>
+    </div>
+
+    <h2 class="section-title">Resumo</h2>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="lbl">Ganho líquido total</div><div class="val teal num" id="kpi-liquido">R$ 0,00</div></div>
+      <div class="kpi"><div class="lbl">R$/hora médio</div><div class="val amber num" id="kpi-hora">R$ 0,00</div></div>
+      <div class="kpi"><div class="lbl">R$/km médio</div><div class="val ink num" id="kpi-km">R$ 0,00</div></div>
+      <div class="kpi"><div class="lbl">% km vazio</div><div class="val red num" id="kpi-vazio">0%</div></div>
+    </div>
+
+    <h2 class="section-title">Ganho líquido por dia</h2>
+    <div class="chart-card">
+      <div class="chart-wrap"><canvas id="chartGanho"></canvas></div>
+      <div class="empty-note" id="empty-ganho" style="display:none;">Adicione registros na aba "Registro" para ver este gráfico.</div>
+    </div>
+
+    <h2 class="section-title">Composição de custos por km</h2>
+    <div class="chart-card">
+      <div class="chart-wrap" style="height:240px;"><canvas id="chartCustos"></canvas></div>
+    </div>
+
+    <h2 class="section-title">R$/hora estimado por horário (referência Brasil)</h2>
+    <div class="chart-card">
+      <div class="chart-wrap"><canvas id="chartHorarios"></canvas></div>
+    </div>
+  </section>
+
+  <!-- ===================== CALCULADORA ===================== -->
+  <section class="view" id="view-calc">
+    <h2 class="section-title">Veículo e combustível</h2>
+    <div class="field-grid">
+      <div class="field"><label>Consumo real na cidade (km/l, vazio)</label><input type="number" step="0.1" id="c-consumo"></div>
+      <div class="field"><label>Preço do combustível (R$/l)</label><input type="number" step="0.01" id="c-preco"></div>
+      <div class="field"><label>Fator de carga (consumo c/ passageiro)</label><input type="number" step="0.01" id="c-fator"></div>
+    </div>
+    <div class="result-row"><span class="rl">Consumo efetivo (km/l)</span><span class="rv num" id="r-efetivo">–</span></div>
+    <div class="result-row"><span class="rl">Custo de combustível por km</span><span class="rv num" id="r-combkm">–</span></div>
+
+    <h2 class="section-title">Outros custos por km (reserva)</h2>
+    <div class="field-grid">
+      <div class="field"><label>Manutenção / peças</label><input type="number" step="0.01" id="c-manut"></div>
+      <div class="field"><label>Depreciação do veículo</label><input type="number" step="0.01" id="c-deprec"></div>
+      <div class="field"><label>Seguro (rateado por km)</label><input type="number" step="0.01" id="c-seguro"></div>
+      <div class="field"><label>Lavagem / limpeza</label><input type="number" step="0.01" id="c-lavagem"></div>
+    </div>
+
+    <h2 class="section-title">Meta e ponto de equilíbrio</h2>
+    <div class="field-grid">
+      <div class="field"><label>Meta de ganho líquido por hora</label><input type="number" step="1" id="c-meta"></div>
+      <div class="field"><label>Km médio rodado por hora</label><input type="number" step="1" id="c-kmh"></div>
+    </div>
+    <div class="result-row warn"><span class="rl">Custo total por km (combustível + reserva)</span><span class="rv num" id="r-totalkm">–</span></div>
+    <div class="result-row hi"><span class="rl">Faturamento bruto mínimo por km para bater a meta</span><span class="rv num" id="r-minkm">–</span></div>
+    <p style="font-size:11px;color:var(--ink-faint);margin-top:14px;line-height:1.5;">
+      Fonte: preço médio de combustível e faixas de custo por km — Guia de Economia Pessoal (2026). Metodologia de custo por km baseada em relatos consolidados de motoristas profissionais. Todos os campos são editáveis e salvos automaticamente.
+    </p>
+  </section>
+
+  <!-- ===================== REGISTRO ===================== -->
+  <section class="view" id="view-registro">
+    <h2 class="section-title">Registro diário</h2>
+    <button class="add-btn" id="btn-add">+ Adicionar corrida do dia</button>
+
+    <h2 class="section-title">Notas de voz</h2>
+    <div class="note" id="audio-support-note">Grave uma nota rápida entre corridas — sem precisar digitar. Fica salva neste dispositivo, sem transcrição automática.</div>
+    <div class="rec-card">
+      <button class="rec-btn" id="rec-btn">
+        <span class="rec-dot"></span>
+      </button>
+      <div class="rec-status" id="rec-status">Toque pra gravar</div>
+    </div>
+    <div id="audio-notes-list"></div>
+    <div class="empty-note" id="empty-audio" style="display:none;">Nenhuma nota de voz ainda.</div>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Turno</th><th>Km</th><th>Km vazio</th><th>Bruto</th><th>Líquido</th><th>R$/h</th><th></th></tr>
+        </thead>
+        <tbody id="reg-tbody"></tbody>
+      </table>
+    </div>
+    <div class="empty-note" id="empty-reg" style="display:none;">Nenhum registro ainda. Toque em "Adicionar corrida do dia" para começar.</div>
+  </section>
+
+  <!-- modal -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal">
+      <h3>Novo registro</h3>
+      <div class="field-grid">
+        <div class="field"><label>Data</label><input type="date" id="m-data"></div>
+        <div class="field"><label>Turno</label>
+          <select id="m-turno">
+            <option>Manhã</option><option>Meio-dia</option><option>Tarde</option>
+            <option>Fim de tarde</option><option>Noite</option><option>Madrugada</option>
+            <option>Sex/Sáb noite</option><option>Evento/Feriado</option>
+          </select>
+        </div>
+      </div>
+      <div class="row2" style="margin-top:8px;">
+        <div class="field"><label>Km rodados</label><input type="number" id="m-km"></div>
+        <div class="field"><label>Km vazio</label><input type="number" id="m-kmvazio"></div>
+      </div>
+      <div class="row2" style="margin-top:8px;">
+        <div class="field"><label>Corridas</label><input type="number" id="m-corridas"></div>
+        <div class="field"><label>Horas</label><input type="number" step="0.1" id="m-horas"></div>
+      </div>
+      <div class="field-grid" style="margin-top:8px;">
+        <div class="field"><label>Faturamento bruto (R$)</label><input type="number" step="0.01" id="m-bruto"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="m-cancel">Cancelar</button>
+        <button class="btn btn-primary" id="m-save">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CORRIDAS INDIVIDUAIS ===================== -->
+  <section class="view" id="view-corridas">
+    <h2 class="section-title">Corridas individuais</h2>
+    <div class="note">38 corridas reais extraídas do seu histórico Uber (10-11/jul) — o bruto soma exatamente R$326,22, batendo com o total da semana. Nenhuma foi apagada, só deduplicadas por sobreposição de print.</div>
+
+    <div class="kpi-grid">
+      <div class="kpi"><div class="lbl">Corridas registradas</div><div class="val ink num" id="cr-count">0</div></div>
+      <div class="kpi"><div class="lbl">R$/hora dirigindo (sem espera)</div><div class="val teal num" id="cr-rshora">R$ 0,00</div></div>
+    </div>
+
+    <div class="entorno-card">
+      <div class="ent-head">⏱️ Quanto do seu tempo é espera de verdade?</div>
+      <div class="field" style="margin-bottom:8px;">
+        <label>Horas online (do relatório Uber)</label>
+        <input type="number" step="0.01" id="cr-online-horas" placeholder="ex: 12.6">
+      </div>
+      <div id="cr-idle-result" class="ent-loading">Preencha as horas online pra calcular o tempo ocioso real.</div>
+    </div>
+
+    <button class="add-btn" id="btn-add-corrida">+ Adicionar corrida</button>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Hora</th><th>Valor</th><th>Km</th><th>Duração</th><th>Líquido</th><th>R$/h</th><th></th></tr>
+        </thead>
+        <tbody id="corridas-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- modal corrida -->
+  <div class="modal-backdrop" id="modal-corrida-backdrop">
+    <div class="modal">
+      <h3>Nova corrida</h3>
+      <div class="field-grid">
+        <div class="field"><label>Data</label><input type="date" id="c-data"></div>
+        <div class="field"><label>Hora</label><input type="time" id="c-hora"></div>
+      </div>
+      <div class="row2" style="margin-top:8px;">
+        <div class="field"><label>Valor (R$)</label><input type="number" step="0.01" id="c-valor"></div>
+        <div class="field"><label>Km</label><input type="number" step="0.01" id="c-km"></div>
+      </div>
+      <div class="field-grid" style="margin-top:8px;">
+        <div class="field"><label>Duração (min)</label><input type="number" step="0.1" id="c-duracao-min"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="c-cancel">Cancelar</button>
+        <button class="btn btn-primary" id="c-save">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HORARIOS ===================== -->
+  <section class="view" id="view-horarios">
+    <h2 class="section-title">Horários de pico</h2>
+    <div class="note">A maioria das fontes sobre este tema é conteúdo de blog, não estudo formal. Valores internacionais foram convertidos apenas como referência de padrão de horário — não use como meta direta no Brasil.</div>
+
+    <div class="region-card">
+      <div class="region-head">🇧🇷 Brasil</div>
+      <div class="slot"><div class="sl"><div class="st">06h–09h · Pico manhã</div><div class="sd">Alta demanda previsível, dias úteis</div><div class="sf">Revista Pensar / Guia do Auto, 2026</div></div><div class="sv">R$ 28/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">11h–14h · Almoço</div><div class="sd">Demanda moderada e constante</div><div class="sf">Revista Pensar, 2026</div></div><div class="sv">R$ 22/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">17h–21h · Pico tarde/noite</div><div class="sd">Melhor janela do dia útil</div><div class="sf">Revista Pensar / Jornal Informal, 2026</div></div><div class="sv">R$ 32/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">Sex/Sáb 22h–02h</div><div class="sd">Tarifa dinâmica mais frequente</div><div class="sf">Guia do Auto, 2026</div></div><div class="sv">R$ 36/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">Eventos / feriados</div><div class="sd">Pode dobrar ou triplicar o ganho normal</div><div class="sf">Vrum / Educando Seu Bolso, 2026</div></div><div class="sv">R$ 38/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">Madrugada útil (02h–05h)</div><div class="sd">Evitar, salvo áreas específicas (aeroporto)</div><div class="sf">Guia de Economia Pessoal, 2026</div></div><div class="sv">R$ 16/h</div></div>
+    </div>
+
+    <div class="region-card">
+      <div class="region-head">🇬🇧 Reino Unido (Uber/Bolt/FreeNow)</div>
+      <div class="slot"><div class="sl"><div class="st">07h–09h · Pico manhã</div><div class="sd">Janela mais forte em dias úteis</div><div class="sf">Zego, 2026</div></div><div class="sv">£13–18/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">16h–19h · Pico tarde</div><div class="sd">Perto de estações de trem</div><div class="sf">Zego, 2026</div></div><div class="sv">£14–19/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">Sex/Sáb 20h–04h</div><div class="sd">Faixa mais lucrativa da semana</div><div class="sf">Zego / TripLog, 2026</div></div><div class="sv">£18–25/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">Domingo meio-dia</div><div class="sd">Picos inesperados de brunch/lazer</div><div class="sf">TripLog, 2026</div></div><div class="sv">£12–16/h</div></div>
+    </div>
+
+    <div class="region-card">
+      <div class="region-head">🇺🇸 Estados Unidos</div>
+      <div class="slot"><div class="sl"><div class="st">06h–09h · Pico manhã / aeroporto</div><div class="sd">Viajantes a caminho do aeroporto</div><div class="sf">TripLog, 2026</div></div><div class="sv">US$18–25/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">Sábado à noite (peak)</div><div class="sd">2–3x acima de horário fraco</div><div class="sf">TripLog, 2026</div></div><div class="sv">US$30–40/h</div></div>
+      <div class="slot"><div class="sl"><div class="st">Terça à tarde</div><div class="sd">Horário fraco de referência</div><div class="sf">TripLog, 2026</div></div><div class="sv">US$12–15/h</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== ENTORNO ===================== -->
+  <section class="view" id="view-entorno">
+    <h2 class="section-title">Sinais do entorno agora</h2>
+    <div class="note">Dados públicos, ao vivo: clima (Open-Meteo), feriados (BrasilAPI) e horários de fluxo de Rio Grande/RS. Nada daqui vem da Uber — é só o cenário ao redor.</div>
+
+    <div class="entorno-card" id="weather-card">
+      <div class="ent-head">🌦️ Clima agora — Rio Grande/RS</div>
+      <div id="weather-body" class="ent-loading">Carregando dados do Open-Meteo…</div>
+    </div>
+
+    <div class="entorno-card" id="holiday-card">
+      <div class="ent-head">📅 Próximo feriado</div>
+      <div id="holiday-body" class="ent-loading">Carregando calendário…</div>
+    </div>
+
+    <h2 class="section-title">Pontos de fluxo — contagem regressiva</h2>
+    <div id="flow-points"></div>
+
+    <h2 class="section-title">Ranking de movimento (dados reais Google)</h2>
+    <div class="note">Baseado em volume histórico de avaliações no Google — o melhor proxy público disponível, já que nenhuma plataforma expõe "lotação agora" por API aberta. Não é ao vivo, é popularidade consolidada.</div>
+    <div id="ranking-movimento"></div>
+
+    <h2 class="section-title">Eventos que você conhece</h2>
+    <button class="add-btn" id="btn-add-event">+ Adicionar evento (Fenadoce, jogo, show...)</button>
+    <div id="events-list"></div>
+    <div class="empty-note" id="empty-events" style="display:none;">Nenhum evento cadastrado. Adicione feiras, jogos ou shows que você souber que vão acontecer.</div>
+
+    <h2 class="section-title">Trânsito ao vivo</h2>
+    <a href="https://www.google.com/maps/@-32.035,-52.0986,13z/data=!5m1!1e1" target="_blank" rel="noopener" class="traffic-link">
+      Abrir mapa de trânsito de Rio Grande no Google Maps ↗
+    </a>
+  </section>
+
+  <!-- modal evento -->
+  <div class="modal-backdrop" id="modal-event-backdrop">
+    <div class="modal">
+      <h3>Novo evento</h3>
+      <div class="field-grid">
+        <div class="field"><label>Nome do evento</label><input type="text" id="ev-nome" style="width:180px; text-align:left; font-family:'Manrope',sans-serif; font-weight:600; font-size:13px; color:var(--ink);"></div>
+        <div class="field"><label>Data</label><input type="date" id="ev-data"></div>
+        <div class="field"><label>Local</label><input type="text" id="ev-local" style="width:180px; text-align:left; font-family:'Manrope',sans-serif; font-weight:600; font-size:13px; color:var(--ink);"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="ev-cancel">Cancelar</button>
+        <button class="btn btn-primary" id="ev-save">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== BOAS PRATICAS ===================== -->
+  <section class="view" id="view-praticas">
+    <h2 class="section-title">Boas práticas</h2>
+    <div id="practices-container"></div>
+  </section>
+
+  <!-- ===================== FONTES ===================== -->
+  <section class="view" id="view-fontes">
+    <h2 class="section-title">Fontes consultadas</h2>
+    <div class="note">A página oficial da Uber e dados do Talent.com são as referências mais primárias; as demais são relatos consolidados de motoristas e colunistas — trate como orientação prática, não dado científico.</div>
+    <div id="sources-container"></div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast">Salvo</div>
+
+<script>
+/* ============================================================
+   STORAGE HELPERS
+   ============================================================ */
+/* ============================================================
+   STORAGE HELPERS
+   Detecta o ambiente: dentro do Claude usa window.storage (sincroniza
+   por conta), fora (GitHub Pages, arquivo local, etc.) usa localStorage
+   (fica só neste navegador/dispositivo, mas funciona sem depender do Claude
+   e libera permissão de microfone sem bloqueio de iframe).
+   ============================================================ */
+const HAS_CLAUDE_STORAGE = typeof window.storage !== 'undefined';
+const LS_PREFIX = 'painel-motorista:';
+(function setStorageLabel(){
+  const el = document.getElementById('storage-mode-label');
+  if(!el) return;
+  el.textContent = HAS_CLAUDE_STORAGE
+    ? 'salvando via Claude (sincroniza com sua conta)'
+    : 'salvando neste navegador (localStorage)';
+})();
+
+async function saveData(key, value){
+  try{
+    if(HAS_CLAUDE_STORAGE){
+      const res = await window.storage.set(key, JSON.stringify(value), false);
+      if(!res) console.error('Falha ao salvar', key);
+      return res;
+    } else {
+      localStorage.setItem(LS_PREFIX + key, JSON.stringify(value));
+      return {key, value};
+    }
+  }catch(e){ console.error('Storage error (set)', key, e); }
+}
+async function loadData(key, fallback){
+  try{
+    if(HAS_CLAUDE_STORAGE){
+      const res = await window.storage.get(key, false);
+      return res ? JSON.parse(res.value) : fallback;
+    } else {
+      const raw = localStorage.getItem(LS_PREFIX + key);
+      return raw !== null ? JSON.parse(raw) : fallback;
+    }
+  }catch(e){ return fallback; }
+}
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg || 'Salvo';
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 1400);
+}
+const BRL = n => 'R$ ' + (Number(n)||0).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+document.getElementById('tabs').addEventListener('click', (e)=>{
+  const btn = e.target.closest('button[data-view]');
+  if(!btn) return;
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+btn.dataset.view).classList.add('active');
+});
+
+/* ============================================================
+   CALCULADORA
+   ============================================================ */
+const calcDefaults = {
+  consumo:9.3, preco:6.30, fator:0.93,
+  manut:0.12, deprec:0.10, seguro:0.06, lavagem:0.02,
+  meta:25, kmh:22
+};
+let calcState = {...calcDefaults};
+
+const calcFields = {
+  consumo:'c-consumo', preco:'c-preco', fator:'c-fator',
+  manut:'c-manut', deprec:'c-deprec', seguro:'c-seguro', lavagem:'c-lavagem',
+  meta:'c-meta', kmh:'c-kmh'
+};
+
+function renderCalc(){
+  Object.entries(calcFields).forEach(([k, id])=>{
+    document.getElementById(id).value = calcState[k];
+  });
+  computeCalc();
+}
+
+function computeCalc(){
+  const s = calcState;
+  const efetivo = s.consumo * s.fator;
+  const combKm = s.preco / efetivo;
+  const outrosKm = s.manut + s.deprec + s.seguro + s.lavagem;
+  const totalKm = combKm + outrosKm;
+  const minKm = totalKm + (s.meta / s.kmh);
+  document.getElementById('r-efetivo').textContent = efetivo.toFixed(2) + ' km/l';
+  document.getElementById('r-combkm').textContent = BRL(combKm);
+  document.getElementById('r-totalkm').textContent = BRL(totalKm);
+  document.getElementById('r-minkm').textContent = BRL(minKm);
+  return {efetivo, combKm, outrosKm, totalKm, minKm};
+}
+
+Object.entries(calcFields).forEach(([k,id])=>{
+  document.getElementById(id).addEventListener('input', async (e)=>{
+    const v = parseFloat(e.target.value);
+    calcState[k] = isNaN(v) ? 0 : v;
+    computeCalc();
+    updateCostChart();
+    updateKPIs();
+    await saveData('calc-state', calcState);
+    toast('Salvo');
+  });
+});
+
+/* ============================================================
+   REGISTROS
+   ============================================================ */
+let registros = [];
+
+function computeRow(reg){
+  const {totalKm} = computeCalc();
+  const combustivel = reg.km * totalKm;
+  const liquido = reg.bruto - combustivel;
+  const porHora = reg.horas > 0 ? liquido / reg.horas : 0;
+  const porKm = reg.km > 0 ? liquido / reg.km : 0;
+  return {...reg, combustivel, liquido, porHora, porKm};
+}
+
+function renderRegistros(){
+  const tbody = document.getElementById('reg-tbody');
+  tbody.innerHTML = '';
+  const emptyNote = document.getElementById('empty-reg');
+  if(registros.length === 0){
+    emptyNote.style.display = 'block';
+  } else {
+    emptyNote.style.display = 'none';
+  }
+  const sorted = [...registros].sort((a,b)=> new Date(b.data) - new Date(a.data));
+  sorted.forEach((reg)=>{
+    const c = computeRow(reg);
+    const tr = document.createElement('tr');
+    const dataFmt = new Date(reg.data+'T00:00:00').toLocaleDateString('pt-BR', {day:'2-digit', month:'2-digit'});
+    tr.innerHTML = `
+      <td>${dataFmt}</td>
+      <td>${reg.turno}</td>
+      <td>${reg.km}</td>
+      <td>${reg.kmvazio}</td>
+      <td>${BRL(reg.bruto)}</td>
+      <td class="${c.liquido>=0?'liq-pos':'liq-neg'}">${BRL(c.liquido)}</td>
+      <td>${BRL(c.porHora)}</td>
+      <td><span class="del-x" data-id="${reg.id}">✕</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+  tbody.querySelectorAll('.del-x').forEach(el=>{
+    el.addEventListener('click', async ()=>{
+      registros = registros.filter(r=>r.id !== el.dataset.id);
+      await saveData('registros', registros);
+      renderRegistros();
+      updateKPIs();
+      updateGanhoChart();
+      toast('Removido');
+    });
+  });
+}
+
+// modal
+const modalBackdrop = document.getElementById('modal-backdrop');
+document.getElementById('btn-add').addEventListener('click', ()=>{
+  document.getElementById('m-data').value = new Date().toISOString().slice(0,10);
+  document.getElementById('m-turno').value = 'Manhã';
+  document.getElementById('m-km').value = '';
+  document.getElementById('m-kmvazio').value = '';
+  document.getElementById('m-corridas').value = '';
+  document.getElementById('m-horas').value = '';
+  document.getElementById('m-bruto').value = '';
+  modalBackdrop.classList.add('open');
+});
+document.getElementById('m-cancel').addEventListener('click', ()=> modalBackdrop.classList.remove('open'));
+modalBackdrop.addEventListener('click', (e)=>{ if(e.target === modalBackdrop) modalBackdrop.classList.remove('open'); });
+
+document.getElementById('m-save').addEventListener('click', async ()=>{
+  const reg = {
+    id: Date.now().toString(),
+    data: document.getElementById('m-data').value || new Date().toISOString().slice(0,10),
+    turno: document.getElementById('m-turno').value,
+    km: parseFloat(document.getElementById('m-km').value) || 0,
+    kmvazio: parseFloat(document.getElementById('m-kmvazio').value) || 0,
+    corridas: parseFloat(document.getElementById('m-corridas').value) || 0,
+    horas: parseFloat(document.getElementById('m-horas').value) || 0,
+    bruto: parseFloat(document.getElementById('m-bruto').value) || 0,
+  };
+  registros.push(reg);
+  await saveData('registros', registros);
+  modalBackdrop.classList.remove('open');
+  renderRegistros();
+  updateKPIs();
+  updateGanhoChart();
+  toast('Registro salvo');
+});
+
+/* ============================================================
+   KPIs
+   ============================================================ */
+function updateKPIs(){
+  if(registros.length === 0){
+    document.getElementById('kpi-liquido').textContent = 'R$ 0,00';
+    document.getElementById('kpi-hora').textContent = 'R$ 0,00';
+    document.getElementById('kpi-km').textContent = 'R$ 0,00';
+    document.getElementById('kpi-vazio').textContent = '0%';
+    return;
+  }
+  const rows = registros.map(computeRow);
+  const totalLiquido = rows.reduce((a,r)=>a+r.liquido,0);
+  const avgHora = rows.reduce((a,r)=>a+r.porHora,0) / rows.length;
+  const avgKm = rows.reduce((a,r)=>a+r.porKm,0) / rows.length;
+  const totalKm = registros.reduce((a,r)=>a+r.km,0);
+  const totalKmVazio = registros.reduce((a,r)=>a+r.kmvazio,0);
+  const pctVazio = totalKm>0 ? (totalKmVazio/totalKm*100) : 0;
+  document.getElementById('kpi-liquido').textContent = BRL(totalLiquido);
+  document.getElementById('kpi-hora').textContent = BRL(avgHora);
+  document.getElementById('kpi-km').textContent = BRL(avgKm);
+  document.getElementById('kpi-vazio').textContent = pctVazio.toFixed(1) + '%';
+}
+
+/* ============================================================
+   CHARTS
+   ============================================================ */
+Chart.defaults.color = '#8b909c';
+Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+Chart.defaults.font.size = 11;
+
+let chartGanho, chartCustos, chartHorarios;
+
+function updateGanhoChart(){
+  const emptyNote = document.getElementById('empty-ganho');
+  const canvas = document.getElementById('chartGanho');
+  if(registros.length === 0){
+    emptyNote.style.display = 'block';
+    canvas.style.display = 'none';
+    return;
+  }
+  emptyNote.style.display = 'none';
+  canvas.style.display = 'block';
+  const sorted = [...registros].sort((a,b)=> new Date(a.data) - new Date(b.data)).slice(-14);
+  const labels = sorted.map(r=> new Date(r.data+'T00:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'}));
+  const data = sorted.map(r=> computeRow(r).liquido);
+  if(chartGanho) chartGanho.destroy();
+  chartGanho = new Chart(canvas, {
+    type:'bar',
+    data:{ labels, datasets:[{ data, backgroundColor: data.map(v=> v>=0 ? 'rgba(31,217,168,0.75)' : 'rgba(255,93,93,0.75)'), borderRadius:5, maxBarThickness:28 }] },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:(ctx)=> BRL(ctx.parsed.y) } } },
+      scales:{
+        x:{ grid:{display:false}, ticks:{color:'#8b909c'} },
+        y:{ grid:{color:'rgba(255,255,255,0.06)'}, ticks:{ callback:(v)=> 'R$'+v } }
+      }
+    }
+  });
+}
+
+function updateCostChart(){
+  const {combKm} = computeCalc();
+  const s = calcState;
+  const canvas = document.getElementById('chartCustos');
+  const dataVals = [combKm, s.manut, s.deprec, s.seguro, s.lavagem];
+  const labels = ['Combustível','Manutenção','Depreciação','Seguro','Lavagem'];
+  const colors = ['#f5a623','#1fd9a8','#4f9dde','#c07be0','#585d68'];
+  if(chartCustos) chartCustos.destroy();
+  chartCustos = new Chart(canvas, {
+    type:'doughnut',
+    data:{ labels, datasets:[{ data: dataVals, backgroundColor: colors, borderColor:'#171a1f', borderWidth:3 }] },
+    options:{
+      responsive:true, maintainAspectRatio:false, cutout:'62%',
+      plugins:{
+        legend:{ position:'bottom', labels:{ boxWidth:10, padding:12, font:{family:"'Manrope', sans-serif", size:11} } },
+        tooltip:{ callbacks:{ label:(ctx)=> ctx.label+': '+BRL(ctx.parsed) } }
+      }
+    }
+  });
+}
+
+function initHorariosChart(){
+  const canvas = document.getElementById('chartHorarios');
+  const labels = ['Madrugada','Manhã (pico)','Almoço','Tarde (pico)','Sex/Sáb noite','Evento/Feriado'];
+  const data = [16, 28, 22, 32, 36, 38];
+  chartHorarios = new Chart(canvas, {
+    type:'bar',
+    data:{ labels, datasets:[{ data, backgroundColor:'rgba(245,166,35,0.75)', borderRadius:5, maxBarThickness:34 }] },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:(ctx)=> BRL(ctx.parsed.y)+'/h' } } },
+      scales:{
+        x:{ grid:{display:false}, ticks:{color:'#8b909c', font:{size:9.5}} },
+        y:{ grid:{color:'rgba(255,255,255,0.06)'}, ticks:{ callback:(v)=> 'R$'+v } }
+      }
+    }
+  });
+}
+
+/* ============================================================
+   BOAS PRATICAS
+   ============================================================ */
+const practiceGroups = [
+  { title:'As 6 alavancas que mais mudam o ganho (pesquisa EUA/Reino Unido)', items:[
+    ['filtrar-rs-hora','Filtrar cada corrida por R$/hora, não pelo valor sozinho','Uma corrida de R$14 em 45min rende R$18,67/h; a mesma R$14 em 20min rende R$42/h. Use a calculadora "Aceitar essa corrida?" no topo do Painel antes de aceitar.'],
+    ['multi-apping-lever','Rodar 2+ apps ao mesmo tempo','Motoristas que multi-appam ganham 20-40% a mais que quem roda um app só — o ganho vem de eliminar os minutos parados entre corridas, exatamente seu maior gargalo hoje.'],
+    ['janelas-recorrentes','Aprender as janelas de pico que se repetem toda semana','Fechamento de bar/balada, comute de manhã e tarde, saída de evento — são previsíveis. Estacionar perto delas rende mais que rodar a esmo.'],
+    ['parar-perseguir-surge','Parar de perseguir tarifa dinâmica no mapa','Quando o multiplicador aparece, todo motorista da região vê e converge pro mesmo lugar — o multiplicador cai antes de todo mundo chegar, e o mapa já está desatualizado em ~1 minuto. Melhor: ficar perto de onde o pico sempre acontece.'],
+    ['guardar-ganho','Registrar todo km rodado, mesmo o vazio','Cada km não registrado é dedução ou controle que você perde. Vale tanto pra imposto (MEI) quanto pra saber seu R$/km real.'],
+    ['nota-alta-acesso','Manter nota alta o suficiente pra desbloquear corridas melhores','Em vários apps (Uber Pro, níveis do Grab), nota acima de ~4.8 destrava prioridade e corridas mais longas — chegou a aparecer relato de 20-30% mais chamadas nesse patamar.'],
+  ]},
+  { title:'Gestão de tempo e horários', items:[
+    ['trabalhar-metas','Trabalhar por metas, não por horas','Definir um valor-alvo do dia e parar quando atingir; evita rodar 12h por rendimento marginal baixo.'],
+    ['horarios-proprios','Mapear seus próprios horários de pico','Usar o Registro por 2 semanas para identificar os horários mais rentáveis na sua cidade.'],
+    ['zonas-espera','Ficar perto de zonas de alta demanda nos intervalos','Aeroportos, estações e centros comerciais — aguardar próximo, não dentro da zona saturada.'],
+    ['fadiga','Evitar jornadas contínuas muito longas','Estudos com motoristas de app mostram queda de qualidade de decisão e de nota após muitas horas seguidas — pausas curtas custam menos do que parecem.'],
+  ]},
+  { title:'Redução de tempo e km ocioso', items:[
+    ['reduzir-km-vazio','Reduzir km vazio (deadheading)','Usar o mapa de calor do app pra se posicionar antes do pico, não durante.'],
+    ['alternar-entrega','Alternar para entrega em horário fraco','Evita deixar o carro parado sem gerar receita nos vales de demanda.'],
+    ['corridas-encadeadas','Usar recurso de corridas na mesma direção','Aceitar corridas alinhadas ao destino final reduz deslocamento sem passageiro.'],
+  ]},
+  { title:'Controle financeiro', items:[
+    ['custo-real-km','Calcular R$/km real, não o de fábrica','Anotar km rodado e litros abastecidos todo dia; usar a aba Calculadora.'],
+    ['separar-caixa','Separar caixa do carro do caixa pessoal','Evita descapitalização — prática recomendada por consultores financeiros.'],
+    ['reserva-diaria','Reservar valor fixo diário para manutenção','Constância importa mais que um valor alto esporádico.'],
+    ['dedução-fiscal','Guardar notas para dedução fiscal (MEI)','Manter notas de combustível e manutenção organizadas para a declaração.'],
+  ]},
+  { title:'Programas de fidelidade e benefícios', items:[
+    ['uber-pro','Uber Pro / níveis de fidelidade','Acumular pontos por avaliação e corridas pra subir de nível — tiers mais altos destravam ferramentas de priorização e visibilidade de corridas melhores.'],
+    ['rota-99','Rota 99 (Brasil)','Programa pouco usado por motoristas; oferece desconto em combustível.'],
+    ['indicacao','Programas de indicação (referral)','Bônus por indicar novos motoristas — usado no Brasil e no Reino Unido.'],
+  ]},
+  { title:'Veículo e eficiência', items:[
+    ['consumo-real','Priorizar consumo real sobre ficha técnica','Você já mediu: 9,3-9,8 km/l na cidade — use isso na Calculadora.'],
+    ['carro-limpo','Manter o carro limpo e confortável','Impacta avaliação e gorjetas em todos os mercados pesquisados.'],
+  ]},
+];
+
+let checklist = {};
+
+function renderPractices(){
+  const container = document.getElementById('practices-container');
+  container.innerHTML = '';
+  practiceGroups.forEach(group=>{
+    const gDiv = document.createElement('div');
+    gDiv.className = 'practice-group';
+    gDiv.innerHTML = `<h3>${group.title}</h3>`;
+    group.items.forEach(([id, title, desc])=>{
+      const state = checklist[id] || 'nao';
+      const div = document.createElement('div');
+      div.className = 'practice';
+      div.innerHTML = `
+        <div class="chk ${state==='sim'?'done':state==='progresso'?'prog':''}" data-id="${id}">${state==='sim'?'✓':state==='progresso'?'…':''}</div>
+        <div class="ptxt"><div class="pt">${title}</div><div class="pd">${desc}</div></div>
+      `;
+      gDiv.appendChild(div);
+    });
+    container.appendChild(gDiv);
+  });
+  container.querySelectorAll('.chk').forEach(el=>{
+    el.addEventListener('click', async ()=>{
+      const id = el.dataset.id;
+      const cur = checklist[id] || 'nao';
+      const next = cur==='nao' ? 'progresso' : cur==='progresso' ? 'sim' : 'nao';
+      checklist[id] = next;
+      await saveData('checklist', checklist);
+      renderPractices();
+    });
+  });
+}
+
+/* ============================================================
+   FONTES
+   ============================================================ */
+const fontes = [
+  ['Uber (oficial) — How Much Do Drivers Make', 'uber.com/us/en/drive/how-much-drivers-make/'],
+  ['Uber Blog UK — Tips for how to make more with Uber', 'uber.com/en-GB/blog/how-to-make-more-with-uber/'],
+  ['Mystro — How to Increase Earnings as a Rideshare Driver (6 alavancas), 2026', 'mystrodriver.com/blog/how-to-increase-earnings-as-a-rideshare-driver'],
+  ['HR&A Advisors — Uber Rideshare Driver Earnings Benchmarking Study (Chicago), 2025', 'hraadvisors.com'],
+  ['Gridwise — How Much Do Uber Drivers Make in 2026 (500k+ motoristas)', 'gridwise.io/blog/how-much-do-uber-drivers-make'],
+  ['Ridester — Multi-Apping Gig Drivers Boost Income by 40%, 2025', 'ridester.com/what-is-multi-apping/'],
+  ['Zego (UK) — Ten Ways to Make More Money with Uber, 2026', 'zego.com/blog/ten-ways-to-make-more-money-with-uber/'],
+  ['TripLog — Best Times to Drive for Uber, 2026', 'triplog.net/blog/best-times-to-drive-for-uber'],
+  ['ExpertBeacon — Complete Tech Guide to Becoming a Grab Driver (Sudeste Asiático)', 'expertbeacon.com/grab-drivers/'],
+  ['Columbia Business School / Oxford — estudos sobre precificação algorítmica, 2025-2026', 'via Brazil Economy / Revista Fórum, 2026'],
+  ['SmartIA — Dicas para motorista Uber iniciante, 2026', 'smartia.com.br/blog/dicas-para-motorista-uber-iniciante-2026/'],
+  ['Guia do Auto — Projeção de Ganhos Uber 4h/dia, 2026', 'guiadoauto.com.br'],
+  ['Revista Pensar — Ganhos Uber 6 ou 8 horas, 2026', 'revistapensar.com.br'],
+  ['Vrum / Educando Seu Bolso — 10 dicas motoristas de app, 2026', 'vrum.com.br/colunistas/portal-vrum'],
+  ['Guia de Economia Pessoal — Quanto ganha motorista Uber, 2026', 'guiadeeconomiapessoal.com.br'],
+  ['Carona BR — Ganhos por hora trabalhada, 2026', 'caronabrasil.com.br'],
+  ['Vida de Motorista de Aplicativo — Uber vs 99 em 2026', 'vidademotorista.com.br/uber-vs-99-qual-paga-mais-2026/'],
+];
+function renderFontes(){
+  const container = document.getElementById('sources-container');
+  container.innerHTML = fontes.map(([n,u])=>`<div class="source-item"><div class="sn">${n}</div><div class="su">${u}</div></div>`).join('');
+}
+
+/* ============================================================
+   CORRIDAS INDIVIDUAIS — dados reais extraídos do histórico Uber
+   ============================================================ */
+const corridasSeed = [
+  ["2026-07-11","10:26",7.06,544,3.95],
+  ["2026-07-11","10:11",6.0,278,1.63],
+  ["2026-07-10","18:48",6.0,369,1.8],
+  ["2026-07-10","18:29",6.0,356,1.47],
+  ["2026-07-10","20:04",13.7,818,9.08],
+  ["2026-07-10","19:23",17.07,1097,10.24],
+  ["2026-07-10","13:17",12.75,708,5.62],
+  ["2026-07-10","12:55",11.43,866,6.81],
+  ["2026-07-11","06:39",6.0,197,1.69],
+  ["2026-07-10","20:30",25.22,1285,17.9],
+  ["2026-07-11","10:03",6.0,270,2.16],
+  ["2026-07-11","09:45",7.27,392,3.07],
+  ["2026-07-11","15:30",12.34,890,6.94],
+  ["2026-07-11","13:22",6.19,421,2.92],
+  ["2026-07-11","07:42",7.85,365,3.0],
+  ["2026-07-11","06:46",6.0,198,1.1],
+  ["2026-07-11","16:15",7.03,428,3.4],
+  ["2026-07-11","15:50",6.0,219,1.62],
+  ["2026-07-10","16:05",14.95,1242,8.3],
+  ["2026-07-10","15:06",6.0,186,1.0],
+  ["2026-07-10","18:07",9.51,678,4.59],
+  ["2026-07-10","17:52",8.28,551,2.79],
+  ["2026-07-11","09:15",8.12,578,4.19],
+  ["2026-07-11","08:53",6.0,178,1.56],
+  ["2026-07-10","14:46",9.09,143,0.67],
+  ["2026-07-10","13:40",12.68,974,7.75],
+  ["2026-07-10","19:19",6.0,136,0.73],
+  ["2026-07-10","18:56",7.28,683,4.01],
+  ["2026-07-11","13:08",6.3,318,2.07],
+  ["2026-07-11","12:42",11.6,1096,8.79],
+  ["2026-07-11","11:13",6.0,393,2.63],
+  ["2026-07-11","10:40",6.54,337,1.77],
+  ["2026-07-11","12:33",6.56,407,3.25],
+  ["2026-07-11","12:22",6.0,266,2.18],
+  ["2026-07-11","16:35",6.0,195,1.38],
+  ["2026-07-11","16:28",7.16,394,3.06],
+  ["2026-07-11","12:01",6.24,623,2.84],
+  ["2026-07-11","11:32",6.0,329,1.81],
+].map((row, i) => ({
+  id: 'seed-' + i,
+  data: row[0], hora: row[1], valor: row[2], duracaoSeg: row[3], km: row[4],
+}));
+
+let corridas = [];
+
+function computeCorrida(c){
+  const {totalKm} = computeCalc();
+  const custo = c.km * totalKm;
+  const liquido = c.valor - custo;
+  const horas = c.duracaoSeg / 3600;
+  const rsHora = horas > 0 ? liquido / horas : 0;
+  return {...c, custo, liquido, rsHora};
+}
+
+function fmtDuracao(seg){
+  const m = Math.floor(seg/60), s = Math.round(seg%60);
+  return `${m}m${s.toString().padStart(2,'0')}s`;
+}
+
+function renderCorridas(){
+  const tbody = document.getElementById('corridas-tbody');
+  tbody.innerHTML = '';
+  const computed = corridas.map(computeCorrida);
+  const sorted = [...computed].sort((a,b)=> (b.data+b.hora).localeCompare(a.data+a.hora));
+  sorted.forEach(c=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${c.hora}</td>
+      <td>${BRL(c.valor)}</td>
+      <td>${c.km}</td>
+      <td>${fmtDuracao(c.duracaoSeg)}</td>
+      <td class="${c.liquido>=0?'liq-pos':'liq-neg'}">${BRL(c.liquido)}</td>
+      <td>${BRL(c.rsHora)}</td>
+      <td><span class="del-x" data-id="${c.id}">✕</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+  tbody.querySelectorAll('.del-x').forEach(el=>{
+    el.addEventListener('click', async ()=>{
+      corridas = corridas.filter(c=>c.id !== el.dataset.id);
+      await saveData('corridas', corridas);
+      renderCorridas();
+    });
+  });
+
+  document.getElementById('cr-count').textContent = computed.length;
+  const totalLiquido = computed.reduce((a,c)=>a+c.liquido,0);
+  const totalHoras = computed.reduce((a,c)=>a+c.duracaoSeg,0)/3600;
+  const rsHoraMedio = totalHoras > 0 ? totalLiquido/totalHoras : 0;
+  document.getElementById('cr-rshora').textContent = BRL(rsHoraMedio);
+
+  computeIdleTime();
+}
+
+async function computeIdleTime(){
+  const input = document.getElementById('cr-online-horas');
+  const result = document.getElementById('cr-idle-result');
+  const onlineHoras = parseFloat(input.value);
+  const totalDirigindoHoras = corridas.reduce((a,c)=>a+c.duracaoSeg,0)/3600;
+  if(isNaN(onlineHoras) || onlineHoras <= 0){
+    result.className = 'ent-loading';
+    result.textContent = 'Preencha as horas online pra calcular o tempo ocioso real.';
+    return;
+  }
+  const idleHoras = Math.max(0, onlineHoras - totalDirigindoHoras);
+  const pctIdle = onlineHoras > 0 ? (idleHoras/onlineHoras*100) : 0;
+  result.className = '';
+  result.innerHTML = `
+    <div class="ent-row"><span class="el">Tempo dirigindo (soma das corridas)</span><span class="ev">${totalDirigindoHoras.toFixed(2)}h</span></div>
+    <div class="ent-row"><span class="el">Tempo online total</span><span class="ev">${onlineHoras.toFixed(2)}h</span></div>
+    <div class="ent-row"><span class="el">Tempo ocioso (esperando)</span><span class="ev" style="color:var(--red);">${idleHoras.toFixed(2)}h</span></div>
+    <div class="ent-row"><span class="el">% do tempo online parado</span><span class="ev" style="color:var(--red);">${pctIdle.toFixed(0)}%</span></div>
+  `;
+  await saveData('cr-online-horas', onlineHoras);
+}
+document.getElementById('cr-online-horas').addEventListener('input', computeIdleTime);
+
+const corridaModal = document.getElementById('modal-corrida-backdrop');
+document.getElementById('btn-add-corrida').addEventListener('click', ()=>{
+  const now = new Date();
+  document.getElementById('c-data').value = now.toISOString().slice(0,10);
+  document.getElementById('c-hora').value = now.toTimeString().slice(0,5);
+  document.getElementById('c-valor').value = '';
+  document.getElementById('c-km').value = '';
+  document.getElementById('c-duracao-min').value = '';
+  corridaModal.classList.add('open');
+});
+document.getElementById('c-cancel').addEventListener('click', ()=> corridaModal.classList.remove('open'));
+corridaModal.addEventListener('click', (e)=>{ if(e.target === corridaModal) corridaModal.classList.remove('open'); });
+document.getElementById('c-save').addEventListener('click', async ()=>{
+  const valor = parseFloat(document.getElementById('c-valor').value) || 0;
+  const km = parseFloat(document.getElementById('c-km').value) || 0;
+  const duracaoMin = parseFloat(document.getElementById('c-duracao-min').value) || 0;
+  corridas.push({
+    id: Date.now().toString(),
+    data: document.getElementById('c-data').value,
+    hora: document.getElementById('c-hora').value,
+    valor, km,
+    duracaoSeg: Math.round(duracaoMin*60),
+  });
+  await saveData('corridas', corridas);
+  corridaModal.classList.remove('open');
+  renderCorridas();
+  toast('Corrida salva');
+});
+
+/* ============================================================
+   NOTAS DE VOZ — gravação de áudio hands-free
+   ============================================================ */
+let mediaRecorder = null;
+let audioChunks = [];
+let recordStartTime = null;
+let recordTimerInterval = null;
+let audioNotes = [];
+const MAX_RECORD_SECONDS = 120;
+
+function blobToBase64(blob){
+  return new Promise((resolve, reject)=>{
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+}
+
+function renderAudioNotes(){
+  const list = document.getElementById('audio-notes-list');
+  const empty = document.getElementById('empty-audio');
+  list.innerHTML = '';
+  if(audioNotes.length === 0){ empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  const sorted = [...audioNotes].sort((a,b)=> b.timestamp - a.timestamp);
+  sorted.forEach(note=>{
+    const div = document.createElement('div');
+    div.className = 'audio-note';
+    const dt = new Date(note.timestamp);
+    const dataFmt = dt.toLocaleDateString('pt-BR') + ' · ' + dt.toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
+    div.innerHTML = `
+      <div class="audio-note-head">
+        <span class="audio-note-time">${dataFmt} · ${note.duration}s</span>
+        <span class="del-x" data-id="${note.id}">✕</span>
+      </div>
+      <audio controls src="${note.dataUrl}"></audio>
+    `;
+    list.appendChild(div);
+  });
+  list.querySelectorAll('.del-x').forEach(el=>{
+    el.addEventListener('click', async ()=>{
+      audioNotes = audioNotes.filter(n=>n.id !== el.dataset.id);
+      await saveData('audio-notes', audioNotes);
+      renderAudioNotes();
+      toast('Nota removida');
+    });
+  });
+}
+
+async function startRecording(){
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || typeof MediaRecorder === 'undefined'){
+    document.getElementById('rec-status').textContent = 'Gravação de áudio não é suportada neste navegador.';
+    return;
+  }
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+    audioChunks = [];
+    const mimeType = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : '';
+    mediaRecorder = mimeType ? new MediaRecorder(stream, {mimeType}) : new MediaRecorder(stream);
+    mediaRecorder.addEventListener('dataavailable', e => { if(e.data.size > 0) audioChunks.push(e.data); });
+    mediaRecorder.addEventListener('stop', async ()=>{
+      stream.getTracks().forEach(t => t.stop());
+      const blob = new Blob(audioChunks, {type: mediaRecorder.mimeType || 'audio/webm'});
+      const durationSec = Math.round((Date.now() - recordStartTime) / 1000);
+      if(blob.size > 4 * 1024 * 1024){
+        document.getElementById('rec-status').textContent = 'Gravação muito longa pra salvar (limite ~4MB). Tente uma nota mais curta.';
+        return;
+      }
+      const dataUrl = await blobToBase64(blob);
+      const note = { id: Date.now().toString(), timestamp: Date.now(), duration: durationSec, dataUrl };
+      audioNotes.push(note);
+      const saved = await saveData('audio-notes', audioNotes);
+      if(!saved){
+        document.getElementById('rec-status').textContent = 'Falha ao salvar a nota. Tente novamente.';
+      } else {
+        document.getElementById('rec-status').textContent = 'Toque pra gravar';
+        toast('Nota de voz salva');
+      }
+      renderAudioNotes();
+    });
+    mediaRecorder.start();
+    recordStartTime = Date.now();
+    document.getElementById('rec-btn').classList.add('recording');
+    const statusEl = document.getElementById('rec-status');
+    statusEl.classList.add('active');
+    recordTimerInterval = setInterval(()=>{
+      const elapsed = Math.round((Date.now() - recordStartTime)/1000);
+      statusEl.textContent = `Gravando… ${elapsed}s (toque pra parar)`;
+      if(elapsed >= MAX_RECORD_SECONDS) stopRecording();
+    }, 250);
+  }catch(e){
+    document.getElementById('rec-status').textContent = 'Permissão de microfone negada ou indisponível. Abra este arquivo direto no navegador do celular (fora de pré-visualização) e tente de novo.';
+  }
+}
+
+function stopRecording(){
+  if(mediaRecorder && mediaRecorder.state !== 'inactive'){
+    mediaRecorder.stop();
+  }
+  clearInterval(recordTimerInterval);
+  document.getElementById('rec-btn').classList.remove('recording');
+  document.getElementById('rec-status').classList.remove('active');
+}
+
+document.getElementById('rec-btn').addEventListener('click', ()=>{
+  if(mediaRecorder && mediaRecorder.state === 'recording'){
+    stopRecording();
+  } else {
+    startRecording();
+  }
+});
+
+/* ============================================================
+   DECISÃO RÁPIDA — aceitar ou recusar corrida (Lever 1: $/hr filter)
+   ============================================================ */
+function computeDecision(){
+  const valor = parseFloat(document.getElementById('d-valor').value);
+  const km = parseFloat(document.getElementById('d-km').value);
+  const tempo = parseFloat(document.getElementById('d-tempo').value);
+  const result = document.getElementById('decide-result');
+
+  if(isNaN(valor) || isNaN(km) || isNaN(tempo) || tempo <= 0){
+    result.className = 'decide-result-empty';
+    result.textContent = 'Preencha os 3 campos pra ver o veredito.';
+    return;
+  }
+  const {totalKm} = computeCalc();
+  const custo = km * totalKm;
+  const liquido = valor - custo;
+  const horas = tempo / 60;
+  const porHora = liquido / horas;
+  const porKm = km > 0 ? valor / km : 0;
+  const meta = calcState.meta || 25;
+
+  let cls, verdict;
+  if(porHora >= meta){ cls = 'accept'; verdict = '✓ Vale a pena'; }
+  else if(porHora >= meta * 0.7){ cls = 'borderline'; verdict = '⚠ No limite'; }
+  else { cls = 'reject'; verdict = '✕ Recusar'; }
+
+  result.className = 'decide-result ' + cls;
+  result.innerHTML = `
+    <div class="decide-verdict">${verdict}</div>
+    <div class="decide-detail"><span>R$/hora líquido: </span>${BRL(porHora)}</div>
+    <div class="decide-detail"><span>R$/km bruto: </span>${BRL(porKm)} <span>· custo estimado: </span>${BRL(custo)}</div>
+  `;
+}
+['d-valor','d-km','d-tempo'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', computeDecision);
+});
+
+/* ============================================================
+   ENTORNO — clima, feriados, fluxo, eventos
+   ============================================================ */
+const RG_LAT = -32.035, RG_LON = -52.0986;
+
+async function loadWeather(){
+  const body = document.getElementById('weather-body');
+  try{
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${RG_LAT}&longitude=${RG_LON}&current=temperature_2m,precipitation,wind_speed_10m,weather_code&hourly=precipitation_probability&timezone=America%2FSao_Paulo&forecast_days=1`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const cur = data.current;
+    const nowHour = new Date().getHours();
+    const hours = data.hourly.time;
+    let idx = hours.findIndex(t => new Date(t).getHours() === nowHour);
+    if(idx < 0) idx = 0;
+    const probNow = data.hourly.precipitation_probability[idx] ?? 0;
+    const probNext = data.hourly.precipitation_probability[Math.min(idx+1, hours.length-1)] ?? 0;
+    const probNext2 = data.hourly.precipitation_probability[Math.min(idx+2, hours.length-1)] ?? 0;
+    const chuvaEmBreve = Math.max(probNow, probNext, probNext2);
+
+    body.innerHTML = `
+      <div class="ent-row"><span class="el">Temperatura</span><span class="ev">${cur.temperature_2m.toFixed(1)}°C</span></div>
+      <div class="ent-row"><span class="el">Precipitação agora</span><span class="ev">${cur.precipitation.toFixed(1)} mm</span></div>
+      <div class="ent-row"><span class="el">Vento</span><span class="ev">${cur.wind_speed_10m.toFixed(0)} km/h</span></div>
+      <div class="ent-row"><span class="el">Chance de chuva (próx. 2h)</span><span class="ev">${chuvaEmBreve}%</span></div>
+    `;
+    if(chuvaEmBreve >= 50){
+      body.innerHTML += `<div class="ent-alert warn">⚠️ Chance alta de chuva nas próximas horas — historicamente aumenta demanda e tarifa dinâmica. Bom momento pra ficar online.</div>`;
+    } else if(cur.precipitation > 0){
+      body.innerHTML += `<div class="ent-alert">Chovendo agora — demanda tende a subir. Fique atento à tarifa.</div>`;
+    }
+  }catch(e){
+    body.innerHTML = '<span style="color:var(--red);">Não foi possível carregar o clima agora. Verifique a conexão.</span>';
+  }
+}
+
+async function loadHoliday(){
+  const body = document.getElementById('holiday-body');
+  try{
+    const res = await fetch('https://brasilapi.com.br/api/feriados/v1/2026');
+    const feriados = await res.json();
+    // add known Rio Grande municipal holidays not in national list
+    const municipais = [
+      {date:'2026-02-02', name:'Nossa Sra. dos Navegantes (municipal)'},
+      {date:'2026-06-29', name:'Dia de São Pedro (municipal)'},
+    ];
+    const todos = [...feriados, ...municipais].map(f=>({...f, dateObj: new Date(f.date+'T00:00:00')}));
+    const hoje = new Date(); hoje.setHours(0,0,0,0);
+    const futuros = todos.filter(f => f.dateObj >= hoje).sort((a,b)=> a.dateObj - b.dateObj);
+    if(futuros.length === 0){
+      body.innerHTML = '<span style="color:var(--ink-faint);">Nenhum feriado futuro encontrado.</span>';
+      return;
+    }
+    const prox = futuros[0];
+    const dias = Math.round((prox.dateObj - hoje) / 86400000);
+    body.innerHTML = `
+      <div class="ent-row"><span class="el">${prox.name}</span><span class="ev">${prox.dateObj.toLocaleDateString('pt-BR')}</span></div>
+      <div class="ent-row"><span class="el">Faltam</span><span class="ev">${dias === 0 ? 'Hoje' : dias + ' dia(s)'}</span></div>
+    `;
+    if(dias <= 3){
+      body.innerHTML += `<div class="ent-alert">Feriado próximo — costuma virar viagem/passeio em família, considere reforçar horários de saída e retorno.</div>`;
+    }
+  }catch(e){
+    body.innerHTML = '<span style="color:var(--red);">Não foi possível carregar o calendário de feriados.</span>';
+  }
+}
+
+const rankingMovimento = [
+  {nome:"Praça Rio Grande Shopping", tag:"Shopping", avaliacoes:9080, horario:"10h-22h (dom 14h-20h)", bairro:"Vila Prado"},
+  {nome:"Galeteria da Nonna", tag:"Restaurante", avaliacoes:3187, horario:"11h40-14h30 · 19h30-23h", bairro:"Centro"},
+  {nome:"Mercado Público", tag:"Mercado", avaliacoes:3153, horario:"8h-19h · 20h-0h", bairro:"Centro"},
+  {nome:"Atacadão", tag:"Atacado", avaliacoes:2884, horario:"7h-22h (dom até 18h)", bairro:"Carreiros"},
+  {nome:"Stok Center", tag:"Supermercado", avaliacoes:2850, horario:"7h-22h", bairro:"São Paulo"},
+  {nome:"Supermercado Guanabara", tag:"Supermercado", avaliacoes:2227, horario:"8h-21h (dom até 20h)", bairro:"Centro"},
+  {nome:"Plaza Grill", tag:"Restaurante", avaliacoes:1448, horario:"11h-23h (seg até 14h30)", bairro:"Centro"},
+  {nome:"CLÃ Cerveja, Larica e Arte", tag:"Bar", avaliacoes:1185, horario:"18h-0h, todo dia", bairro:"Centro"},
+  {nome:"Tutti-Fratelli", tag:"Restaurante", avaliacoes:699, horario:"11h30-14h30 (fecha dom)", bairro:"Centro"},
+  {nome:"Mattilde", tag:"Bar", avaliacoes:698, horario:"14h-0h (fecha seg/dom)", bairro:"Cidade Nova"},
+  {nome:"O Seu Boteco", tag:"Bar", avaliacoes:231, horario:"19h-0h (fecha dom)", bairro:"Centro"},
+  {nome:"Boate Tropicalia", tag:"Balada", avaliacoes:36, horario:"14h-1h, todo dia", bairro:"Centro"},
+  {nome:"Boate House Deluxe RG", tag:"Balada", avaliacoes:34, horario:"21h-5h (sex/sáb, fecha dom)", bairro:"Vila Junção"},
+  {nome:"Espaço Lambe Cassino", tag:"Balada", avaliacoes:64, horario:"23h59-6h (sex/sáb)", bairro:"Cassino"},
+];
+
+function renderRanking(){
+  const container = document.getElementById('ranking-movimento');
+  container.innerHTML = '';
+  const sorted = [...rankingMovimento].sort((a,b)=> b.avaliacoes - a.avaliacoes);
+  sorted.forEach((r, i)=>{
+    const div = document.createElement('div');
+    div.className = 'rank-card';
+    div.innerHTML = `
+      <div class="rank-num">${i+1}</div>
+      <div class="rank-info">
+        <div class="rank-name">${r.nome}</div>
+        <div class="rank-meta"><span class="rank-tag">${r.tag}</span>${r.bairro} · ${r.horario}</div>
+      </div>
+      <div class="rank-score"><div class="rsv">${r.avaliacoes.toLocaleString('pt-BR')}</div><div class="rsl">avaliações</div></div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+const flowPoints = [
+  {name:'FURG · Campus Carreiros', desc:'Saída de aula', times:['12:00','17:30']},
+  {name:'Partage Rio Grande', desc:'Fechamento do shopping', times:['22:00']},
+  {name:'Praça Rio Grande Shopping', desc:'Fechamento do shopping', times:['22:00']},
+  {name:'Rodoviária de Rio Grande', desc:'Fluxo constante — sem horário fixo', times:[]},
+  {name:'HU-FURG / Santa Casa', desc:'Fluxo 24h — troca de turno hospitalar', times:['07:00','13:00','19:00']},
+];
+
+function nextOccurrence(hhmm){
+  const [h,m] = hhmm.split(':').map(Number);
+  const now = new Date();
+  const target = new Date();
+  target.setHours(h, m, 0, 0);
+  if(target <= now) target.setDate(target.getDate()+1);
+  return target;
+}
+
+function renderFlowPoints(){
+  const container = document.getElementById('flow-points');
+  container.innerHTML = '';
+  flowPoints.forEach(p=>{
+    let label, cls;
+    if(p.times.length === 0){
+      label = 'Fluxo contínuo';
+      cls = 'far';
+    } else {
+      const nexts = p.times.map(nextOccurrence).sort((a,b)=>a-b);
+      const next = nexts[0];
+      const diffMin = Math.round((next - new Date())/60000);
+      if(diffMin <= 20){ label = `em ${diffMin} min`; cls = 'now'; }
+      else if(diffMin <= 60){ label = `em ${diffMin} min`; cls = 'soon'; }
+      else {
+        const h = Math.floor(diffMin/60), m = diffMin%60;
+        label = `em ${h}h${m.toString().padStart(2,'0')}`;
+        cls = 'far';
+      }
+    }
+    const div = document.createElement('div');
+    div.className = 'flow-card';
+    div.innerHTML = `<div><div class="fn">${p.name}</div><div class="fd">${p.desc}</div></div><div class="fc ${cls}">${label}</div>`;
+    container.appendChild(div);
+  });
+}
+setInterval(renderFlowPoints, 30000);
+
+let events = [];
+function renderEvents(){
+  const list = document.getElementById('events-list');
+  const empty = document.getElementById('empty-events');
+  list.innerHTML = '';
+  if(events.length === 0){ empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  const sorted = [...events].sort((a,b)=> new Date(a.data) - new Date(b.data));
+  sorted.forEach(ev=>{
+    const div = document.createElement('div');
+    div.className = 'event-card';
+    const dataFmt = new Date(ev.data+'T00:00:00').toLocaleDateString('pt-BR');
+    div.innerHTML = `<div><div class="en">${ev.nome}</div><div class="ed">${dataFmt}${ev.local ? ' · ' + ev.local : ''}</div></div><span class="del-x" data-id="${ev.id}">✕</span>`;
+    list.appendChild(div);
+  });
+  list.querySelectorAll('.del-x').forEach(el=>{
+    el.addEventListener('click', async ()=>{
+      events = events.filter(e=>e.id !== el.dataset.id);
+      await saveData('events', events);
+      renderEvents();
+    });
+  });
+}
+const evModal = document.getElementById('modal-event-backdrop');
+document.getElementById('btn-add-event').addEventListener('click', ()=>{
+  document.getElementById('ev-nome').value = '';
+  document.getElementById('ev-data').value = new Date().toISOString().slice(0,10);
+  document.getElementById('ev-local').value = '';
+  evModal.classList.add('open');
+});
+document.getElementById('ev-cancel').addEventListener('click', ()=> evModal.classList.remove('open'));
+evModal.addEventListener('click', (e)=>{ if(e.target === evModal) evModal.classList.remove('open'); });
+document.getElementById('ev-save').addEventListener('click', async ()=>{
+  const nome = document.getElementById('ev-nome').value.trim();
+  if(!nome) return;
+  events.push({
+    id: Date.now().toString(),
+    nome,
+    data: document.getElementById('ev-data').value || new Date().toISOString().slice(0,10),
+    local: document.getElementById('ev-local').value.trim(),
+  });
+  await saveData('events', events);
+  evModal.classList.remove('open');
+  renderEvents();
+  toast('Evento salvo');
+});
+
+/* ============================================================
+   INIT
+   ============================================================ */
+async function init(){
+  calcState = await loadData('calc-state', {...calcDefaults});
+  registros = await loadData('registros', []);
+  checklist = await loadData('checklist', {});
+  events = await loadData('events', []);
+  audioNotes = await loadData('audio-notes', []);
+  corridas = await loadData('corridas', null);
+  if(corridas === null){
+    corridas = corridasSeed;
+    await saveData('corridas', corridas);
+  }
+  const savedOnlineHoras = await loadData('cr-online-horas', 12.6);
+  document.getElementById('cr-online-horas').value = savedOnlineHoras;
+
+  renderCalc();
+  renderRegistros();
+  renderPractices();
+  renderFontes();
+  renderAudioNotes();
+  renderCorridas();
+  updateKPIs();
+  initHorariosChart();
+  updateCostChart();
+  updateGanhoChart();
+
+  renderFlowPoints();
+  renderRanking();
+  renderEvents();
+  loadWeather();
+  loadHoliday();
+}
+init();
+</script>
+</body>
+</html>
