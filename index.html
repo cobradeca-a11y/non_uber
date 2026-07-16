@@ -434,6 +434,79 @@
     padding:10px 12px; border-radius:0 8px 8px 0; margin-bottom:12px;
     line-height:1.5;
   }
+
+  /* ---------- OCR import ---------- */
+  .ocr-import-btn{
+    background:linear-gradient(135deg, rgba(79,157,222,0.15), rgba(31,217,168,0.15));
+    border-color:rgba(79,157,222,0.5); color:#4f9dde; margin-top:6px;
+  }
+  .ocr-import-btn:hover{ border-color:#4f9dde; }
+  .ocr-modal{ max-width:680px; max-height:92vh; }
+  .ocr-dropzone{
+    border:2px dashed rgba(79,157,222,0.4); border-radius:14px;
+    padding:28px 16px; text-align:center; cursor:pointer;
+    background:rgba(79,157,222,0.06); transition:.2s;
+    margin-bottom:12px;
+  }
+  .ocr-dropzone:hover, .ocr-dropzone.dragover{
+    border-color:#4f9dde; background:rgba(79,157,222,0.12);
+  }
+  .ocr-dropzone-icon{ font-size:32px; margin-bottom:6px; }
+  .ocr-dropzone-text{ font-size:13px; color:var(--ink-dim); }
+  .ocr-dropzone-text strong{ color:var(--ink); }
+  .ocr-thumbs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .ocr-thumb{
+    width:56px; height:56px; border-radius:8px; object-fit:cover;
+    border:1px solid var(--line); opacity:0.7; transition:.2s;
+  }
+  .ocr-thumb.processed{ opacity:1; border-color:var(--teal); }
+  .ocr-progress-wrap{
+    background:var(--panel-raised); border-radius:8px; height:6px;
+    overflow:hidden; margin-bottom:10px; display:none;
+  }
+  .ocr-progress-bar{
+    height:100%; background:linear-gradient(90deg, #4f9dde, var(--teal));
+    border-radius:8px; transition:width .3s; width:0%;
+  }
+  .ocr-status-text{
+    font-size:11.5px; color:var(--ink-dim); margin-bottom:10px;
+    min-height:16px;
+  }
+  .ocr-preview-wrap{ overflow-x:auto; max-height:45vh; overflow-y:auto; margin-bottom:10px; }
+  .ocr-preview-wrap table{ min-width:820px; }
+  .ocr-preview-wrap thead th{ font-size:9.5px; white-space:nowrap; }
+  .ocr-preview-wrap tbody td{ padding:5px 4px; vertical-align:middle; }
+  .ocr-preview-wrap input{
+    font-family:'IBM Plex Mono',monospace; font-size:12px;
+    background:var(--panel-raised); border:1px solid var(--line);
+    color:var(--ink); border-radius:6px; padding:5px 6px; width:100%;
+  }
+  .ocr-preview-wrap input:focus{ outline:none; border-color:var(--amber); }
+  .ocr-preview-wrap input.ocr-addr{
+    font-family:'Manrope',sans-serif; font-size:11px; min-width:140px;
+  }
+  .ocr-badge{
+    display:inline-block; font-size:9px; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.03em; padding:2px 7px; border-radius:5px;
+  }
+  .ocr-badge-new{ background:var(--teal-dim); color:var(--teal); }
+  .ocr-badge-dup{ background:var(--amber-dim); color:var(--amber); }
+  .ocr-badge-inc{ background:var(--red-dim); color:var(--red); }
+  .ocr-force-label{
+    font-size:10px; color:var(--ink-faint); display:flex;
+    align-items:center; gap:4px; margin-top:3px; cursor:pointer;
+  }
+  .ocr-force-label input{ width:auto; margin:0; }
+  .ocr-row-discard{ opacity:0.35; }
+  .ocr-discard-btn{
+    background:none; border:none; color:var(--ink-faint);
+    cursor:pointer; font-size:14px; padding:2px;
+  }
+  .ocr-discard-btn:hover{ color:var(--red); }
+  .ocr-count-summary{
+    font-size:12.5px; color:var(--ink-dim); margin-bottom:8px;
+  }
+  .ocr-count-summary strong{ color:var(--teal); }
 </style>
 </head>
 <body>
@@ -616,6 +689,7 @@
     </div>
 
     <button class="add-btn" id="btn-add-corrida">+ Adicionar corrida</button>
+    <button class="add-btn ocr-import-btn" id="btn-ocr-import">📷 Importar prints do Histórico</button>
     <div class="table-scroll">
       <table>
         <thead>
@@ -644,6 +718,36 @@
       <div class="modal-actions">
         <button class="btn btn-ghost" id="c-cancel">Cancelar</button>
         <button class="btn btn-primary" id="c-save">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal OCR import -->
+  <div class="modal-backdrop" id="modal-ocr-backdrop">
+    <div class="modal ocr-modal">
+      <h3>📷 Importar do Histórico de Ganhos</h3>
+      <div class="ocr-dropzone" id="ocr-dropzone">
+        <div class="ocr-dropzone-icon">🖼️</div>
+        <div class="ocr-dropzone-text"><strong>Toque pra selecionar</strong> ou arraste prints do Histórico de Ganhos aqui</div>
+        <input type="file" id="ocr-file-input" multiple accept="image/*" style="display:none;">
+      </div>
+      <div class="ocr-thumbs" id="ocr-thumbs"></div>
+      <div class="ocr-progress-wrap" id="ocr-progress-wrap">
+        <div class="ocr-progress-bar" id="ocr-progress-bar"></div>
+      </div>
+      <div class="ocr-status-text" id="ocr-status"></div>
+      <div class="ocr-preview-wrap" id="ocr-preview-wrap" style="display:none;">
+        <table>
+          <thead>
+            <tr><th></th><th>Status</th><th>Data</th><th>Hora</th><th>Valor</th><th>Km</th><th>Duração (s)</th><th>Categoria</th><th>Origem</th><th>Destino</th><th></th></tr>
+          </thead>
+          <tbody id="ocr-preview-tbody"></tbody>
+        </table>
+      </div>
+      <div class="ocr-count-summary" id="ocr-count-summary"></div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="ocr-cancel">Cancelar</button>
+        <button class="btn btn-primary" id="ocr-confirm" disabled>Importar</button>
       </div>
     </div>
   </div>
@@ -1362,6 +1466,418 @@ document.getElementById('c-save').addEventListener('click', async ()=>{
 });
 
 /* ============================================================
+   OCR IMPORT — fluxo D+1
+   ============================================================ */
+let tesseractLoaded = false;
+let ocrWorker = null;
+let ocrParsedResults = [];
+
+function loadTesseract(){
+  if(tesseractLoaded) return Promise.resolve();
+  return new Promise((resolve, reject)=>{
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
+    s.onload = ()=>{ tesseractLoaded = true; resolve(); };
+    s.onerror = ()=> reject(new Error('Falha ao carregar Tesseract.js'));
+    document.head.appendChild(s);
+  });
+}
+
+function preprocessImage(img, maxW){
+  maxW = maxW || 2000;
+  const canvas = document.createElement('canvas');
+  let w = img.naturalWidth || img.width;
+  let h = img.naturalHeight || img.height;
+  if(w > maxW){ const r = maxW/w; w = maxW; h = Math.round(h*r); }
+  canvas.width = w; canvas.height = h;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0, w, h);
+  const imageData = ctx.getImageData(0, 0, w, h);
+  const d = imageData.data;
+  for(let i = 0; i < d.length; i += 4){
+    // grayscale
+    let gray = 0.299*d[i] + 0.587*d[i+1] + 0.114*d[i+2];
+    // contrast boost
+    gray = Math.min(255, Math.max(0, ((gray - 128) * 1.6) + 128));
+    // binarize
+    gray = gray > 140 ? 255 : 0;
+    d[i] = d[i+1] = d[i+2] = gray;
+  }
+  ctx.putImageData(imageData, 0, 0);
+  return canvas;
+}
+
+const MONTH_MAP = {
+  'jan':1,'fev':2,'mar':3,'abr':4,'mai':5,'jun':6,
+  'jul':7,'ago':8,'set':9,'out':10,'nov':11,'dez':12
+};
+
+function parseMonthPt(str){
+  const s = str.toLowerCase().replace(/\./g,'').slice(0,3);
+  return MONTH_MAP[s] || null;
+}
+
+function parseOcrText(text){
+  const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+  const results = [];
+  let currentDate = null;
+  const currentYear = new Date().getFullYear();
+
+  // Date header regex: "ter., 14 de jul." or "terça, 14 de julho"
+  const dateRe = /(?:seg|ter|qua|qui|sex|s[aá]b|dom)[a-zç]*\.?,?\s*(\d{1,2})\s*de\s*([a-zç]+)/i;
+  // Value + time on same line: R$ 6,00    16:28
+  const valueTimeRe = /R\$\s?(\d+[,.]\d{2}).*?(\d{1,2}:\d{2})/;
+  // Category + duration + distance: Uber X · 5 min 45 segundos · 1.76 km
+  const catDurDistRe = /((?:Uber\s*\w+|UberX|Comfort|Flash|Black|Moto|Priority|Green)[^·]*)\s*[·\-]\s*(\d+)\s*min\s*(?:(\d+)\s*segundo?s?)?\s*[·\-]\s*(\d+[.,]\d+)\s*km/i;
+  // Fallback: just duration + distance without category
+  const durDistRe = /(\d+)\s*min\s*(?:(\d+)\s*segundo?s?)?\s*[·\-]\s*(\d+[.,]\d+)\s*km/i;
+
+  let i = 0;
+  while(i < lines.length){
+    const line = lines[i];
+
+    // Check for date header
+    const dm = line.match(dateRe);
+    if(dm){
+      const day = parseInt(dm[1], 10);
+      const month = parseMonthPt(dm[2]);
+      if(month){
+        const pad = n => n.toString().padStart(2,'0');
+        currentDate = `${currentYear}-${pad(month)}-${pad(day)}`;
+      }
+      i++; continue;
+    }
+
+    // Check for value + time line
+    const vtm = line.match(valueTimeRe);
+    if(vtm){
+      const valor = parseFloat(vtm[1].replace(',','.'));
+      const hora = vtm[2];
+      let categoria = '', duracaoSeg = 0, km = 0;
+      let endOrigem = '', endDestino = '';
+
+      // Look ahead for category/duration/distance line
+      if(i+1 < lines.length){
+        const nextLine = lines[i+1];
+        const cdm = nextLine.match(catDurDistRe);
+        if(cdm){
+          categoria = cdm[1].trim();
+          const mins = parseInt(cdm[2],10) || 0;
+          const secs = parseInt(cdm[3],10) || 0;
+          duracaoSeg = mins * 60 + secs;
+          km = parseFloat(cdm[4].replace(',','.'));
+          i++; // consume this line
+        } else {
+          const ddm = nextLine.match(durDistRe);
+          if(ddm){
+            const mins = parseInt(ddm[1],10) || 0;
+            const secs = parseInt(ddm[2],10) || 0;
+            duracaoSeg = mins * 60 + secs;
+            km = parseFloat(ddm[3].replace(',','.'));
+            i++;
+          }
+        }
+      }
+
+      // Look ahead for address lines (lines starting with pin emoji or typical address patterns)
+      const addrLines = [];
+      let j = i + 1;
+      while(j < lines.length && addrLines.length < 2){
+        const al = lines[j];
+        // Address line: starts with 📍 or contains common address patterns
+        if(al.match(/^[📍🔵⚫●]/) || al.match(/^(?:Rua|Av|Avenida|Pra[cç]a|Rod|Estr|R\.)/i)){
+          addrLines.push(al.replace(/^[📍🔵⚫●\s]+/, '').trim());
+          j++;
+        } else {
+          break;
+        }
+      }
+      if(addrLines.length >= 1) endOrigem = addrLines[0];
+      if(addrLines.length >= 2) endDestino = addrLines[1];
+      i = j; // skip past addresses
+
+      results.push({
+        data: currentDate || new Date().toISOString().slice(0,10),
+        hora, valor, km, duracaoSeg,
+        categoria, endOrigem, endDestino
+      });
+      continue;
+    }
+    i++;
+  }
+  return results;
+}
+
+function checkDuplicates(parsed){
+  return parsed.map(p => {
+    const isDup = corridas.some(c =>
+      c.hora === p.hora &&
+      Math.abs(c.valor - p.valor) < 0.01 &&
+      Math.abs((c.km||0) - p.km) < 0.05
+    );
+    const isIncomplete = !p.valor || !p.hora;
+    let status = 'novo';
+    if(isDup) status = 'duplicata';
+    else if(isIncomplete) status = 'incompleto';
+    return { ...p, status, discarded: false, forceImport: false };
+  });
+}
+
+function renderOcrPreview(){
+  const tbody = document.getElementById('ocr-preview-tbody');
+  const wrap = document.getElementById('ocr-preview-wrap');
+  const summary = document.getElementById('ocr-count-summary');
+  const confirmBtn = document.getElementById('ocr-confirm');
+  tbody.innerHTML = '';
+
+  if(ocrParsedResults.length === 0){
+    wrap.style.display = 'none';
+    summary.textContent = '';
+    confirmBtn.disabled = true;
+    return;
+  }
+  wrap.style.display = 'block';
+
+  ocrParsedResults.forEach((r, idx) => {
+    const tr = document.createElement('tr');
+    if(r.discarded) tr.className = 'ocr-row-discard';
+    const badgeCls = r.status === 'novo' ? 'ocr-badge-new' : r.status === 'duplicata' ? 'ocr-badge-dup' : 'ocr-badge-inc';
+    const badgeText = r.status === 'novo' ? 'Novo' : r.status === 'duplicata' ? 'Já importado' : 'Incompleto';
+
+    let forceHtml = '';
+    if(r.status === 'duplicata' && !r.discarded){
+      forceHtml = `<label class="ocr-force-label"><input type="checkbox" data-idx="${idx}" class="ocr-force-chk" ${r.forceImport?'checked':''}> Forçar</label>`;
+    }
+
+    tr.innerHTML = `
+      <td><span class="ocr-discard-btn" data-idx="${idx}" title="${r.discarded?'Restaurar':'Descartar'}">${r.discarded?'↩':'✕'}</span></td>
+      <td><span class="ocr-badge ${badgeCls}">${badgeText}</span>${forceHtml}</td>
+      <td><input value="${r.data||''}" data-idx="${idx}" data-field="data" style="width:100px;"></td>
+      <td><input value="${r.hora||''}" data-idx="${idx}" data-field="hora" style="width:56px;"></td>
+      <td><input value="${r.valor||''}" data-idx="${idx}" data-field="valor" type="number" step="0.01" style="width:68px;"></td>
+      <td><input value="${r.km||''}" data-idx="${idx}" data-field="km" type="number" step="0.01" style="width:60px;"></td>
+      <td><input value="${r.duracaoSeg||''}" data-idx="${idx}" data-field="duracaoSeg" type="number" style="width:60px;"></td>
+      <td><input value="${r.categoria||''}" data-idx="${idx}" data-field="categoria" class="ocr-addr" style="min-width:80px;"></td>
+      <td><input value="${r.endOrigem||''}" data-idx="${idx}" data-field="endOrigem" class="ocr-addr"></td>
+      <td><input value="${r.endDestino||''}" data-idx="${idx}" data-field="endDestino" class="ocr-addr"></td>
+      <td></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Wire up field edits
+  tbody.querySelectorAll('input[data-field]').forEach(inp => {
+    inp.addEventListener('change', ()=>{
+      const idx = parseInt(inp.dataset.idx, 10);
+      const field = inp.dataset.field;
+      const val = ['valor','km','duracaoSeg'].includes(field) ? parseFloat(inp.value)||0 : inp.value;
+      ocrParsedResults[idx][field] = val;
+      // Re-check duplicates for edited row
+      if(['hora','valor','km'].includes(field)){
+        const p = ocrParsedResults[idx];
+        const isDup = corridas.some(c =>
+          c.hora === p.hora &&
+          Math.abs(c.valor - p.valor) < 0.01 &&
+          Math.abs((c.km||0) - p.km) < 0.05
+        );
+        p.status = isDup ? 'duplicata' : (!p.valor || !p.hora) ? 'incompleto' : 'novo';
+        renderOcrPreview();
+      }
+    });
+  });
+
+  // Wire up discard buttons
+  tbody.querySelectorAll('.ocr-discard-btn').forEach(btn => {
+    btn.addEventListener('click', ()=>{
+      const idx = parseInt(btn.dataset.idx, 10);
+      ocrParsedResults[idx].discarded = !ocrParsedResults[idx].discarded;
+      renderOcrPreview();
+    });
+  });
+
+  // Wire up force checkboxes
+  tbody.querySelectorAll('.ocr-force-chk').forEach(chk => {
+    chk.addEventListener('change', ()=>{
+      const idx = parseInt(chk.dataset.idx, 10);
+      ocrParsedResults[idx].forceImport = chk.checked;
+      updateOcrSummary();
+    });
+  });
+
+  updateOcrSummary();
+}
+
+function updateOcrSummary(){
+  const summary = document.getElementById('ocr-count-summary');
+  const confirmBtn = document.getElementById('ocr-confirm');
+  const importable = ocrParsedResults.filter(r =>
+    !r.discarded && (r.status === 'novo' || r.forceImport)
+  );
+  const dups = ocrParsedResults.filter(r => !r.discarded && r.status === 'duplicata' && !r.forceImport).length;
+  const discarded = ocrParsedResults.filter(r => r.discarded).length;
+
+  let parts = [`<strong>${importable.length}</strong> corrida(s) pra importar`];
+  if(dups > 0) parts.push(`${dups} duplicata(s) ignorada(s)`);
+  if(discarded > 0) parts.push(`${discarded} descartada(s)`);
+  summary.innerHTML = parts.join(' · ');
+
+  confirmBtn.disabled = importable.length === 0;
+  confirmBtn.textContent = `Importar ${importable.length} corrida(s)`;
+}
+
+async function confirmOcrImport(){
+  const toImport = ocrParsedResults.filter(r =>
+    !r.discarded && (r.status === 'novo' || r.forceImport)
+  );
+  if(toImport.length === 0) return;
+
+  toImport.forEach(r => {
+    corridas.push({
+      id: Date.now().toString() + '-' + Math.random().toString(36).slice(2,6),
+      data: r.data,
+      hora: r.hora,
+      valor: parseFloat(r.valor) || 0,
+      km: parseFloat(r.km) || 0,
+      duracaoSeg: parseInt(r.duracaoSeg, 10) || 0,
+      categoria: r.categoria || '',
+      endOrigem: r.endOrigem || '',
+      endDestino: r.endDestino || '',
+    });
+  });
+
+  await saveData('corridas', corridas);
+  renderCorridas();
+  closeOcrModal();
+  toast(`${toImport.length} corrida(s) importada(s)`);
+}
+
+function closeOcrModal(){
+  document.getElementById('modal-ocr-backdrop').classList.remove('open');
+  ocrParsedResults = [];
+  document.getElementById('ocr-thumbs').innerHTML = '';
+  document.getElementById('ocr-preview-tbody').innerHTML = '';
+  document.getElementById('ocr-preview-wrap').style.display = 'none';
+  document.getElementById('ocr-progress-wrap').style.display = 'none';
+  document.getElementById('ocr-status').textContent = '';
+  document.getElementById('ocr-count-summary').textContent = '';
+  document.getElementById('ocr-confirm').disabled = true;
+  document.getElementById('ocr-confirm').textContent = 'Importar';
+}
+
+function openOcrModal(){
+  closeOcrModal();
+  document.getElementById('modal-ocr-backdrop').classList.add('open');
+}
+
+// Wire up OCR modal
+document.getElementById('btn-ocr-import').addEventListener('click', openOcrModal);
+document.getElementById('ocr-cancel').addEventListener('click', closeOcrModal);
+document.getElementById('modal-ocr-backdrop').addEventListener('click', (e)=>{
+  if(e.target.id === 'modal-ocr-backdrop') closeOcrModal();
+});
+document.getElementById('ocr-confirm').addEventListener('click', confirmOcrImport);
+
+// Dropzone
+const ocrDropzone = document.getElementById('ocr-dropzone');
+const ocrFileInput = document.getElementById('ocr-file-input');
+ocrDropzone.addEventListener('click', ()=> ocrFileInput.click());
+ocrDropzone.addEventListener('dragover', (e)=>{ e.preventDefault(); ocrDropzone.classList.add('dragover'); });
+ocrDropzone.addEventListener('dragleave', ()=> ocrDropzone.classList.remove('dragover'));
+ocrDropzone.addEventListener('drop', (e)=>{
+  e.preventDefault();
+  ocrDropzone.classList.remove('dragover');
+  if(e.dataTransfer.files.length) handleOcrFiles(e.dataTransfer.files);
+});
+ocrFileInput.addEventListener('change', ()=>{
+  if(ocrFileInput.files.length) handleOcrFiles(ocrFileInput.files);
+});
+
+async function handleOcrFiles(files){
+  const statusEl = document.getElementById('ocr-status');
+  const progressWrap = document.getElementById('ocr-progress-wrap');
+  const progressBar = document.getElementById('ocr-progress-bar');
+  const thumbsEl = document.getElementById('ocr-thumbs');
+
+  statusEl.textContent = 'Carregando Tesseract.js (primeira vez pode levar alguns segundos)…';
+  progressWrap.style.display = 'block';
+  progressBar.style.width = '0%';
+
+  try {
+    await loadTesseract();
+  } catch(e){
+    statusEl.textContent = '❌ Erro ao carregar Tesseract.js. Verifique a conexão.';
+    return;
+  }
+
+  const fileArr = Array.from(files).filter(f => f.type.startsWith('image/'));
+  if(fileArr.length === 0){
+    statusEl.textContent = 'Nenhuma imagem selecionada.';
+    progressWrap.style.display = 'none';
+    return;
+  }
+
+  // Show thumbnails
+  thumbsEl.innerHTML = '';
+  const imgPromises = fileArr.map(f => {
+    return new Promise(resolve => {
+      const url = URL.createObjectURL(f);
+      const imgEl = document.createElement('img');
+      imgEl.src = url;
+      imgEl.className = 'ocr-thumb';
+      imgEl.title = f.name;
+      thumbsEl.appendChild(imgEl);
+      const imgObj = new Image();
+      imgObj.onload = ()=> resolve({ imgObj, imgEl, url });
+      imgObj.onerror = ()=> resolve(null);
+      imgObj.src = url;
+    });
+  });
+
+  const images = (await Promise.all(imgPromises)).filter(Boolean);
+  let allParsed = [];
+
+  for(let idx = 0; idx < images.length; idx++){
+    const { imgObj, imgEl, url } = images[idx];
+    const pct = Math.round(((idx) / images.length) * 100);
+    progressBar.style.width = pct + '%';
+    statusEl.textContent = `Processando imagem ${idx+1} de ${images.length}…`;
+
+    try {
+      // Preprocess
+      const canvas = preprocessImage(imgObj);
+      // OCR
+      const result = await Tesseract.recognize(canvas, 'por', {
+        logger: m => {
+          if(m.status === 'recognizing text'){
+            const innerPct = Math.round(((idx + (m.progress||0)) / images.length) * 100);
+            progressBar.style.width = innerPct + '%';
+          }
+        }
+      });
+      const parsed = parseOcrText(result.data.text);
+      allParsed = allParsed.concat(parsed);
+      imgEl.classList.add('processed');
+    } catch(e){
+      console.error('OCR error on image', idx, e);
+    }
+    URL.revokeObjectURL(url);
+  }
+
+  progressBar.style.width = '100%';
+
+  if(allParsed.length === 0){
+    statusEl.textContent = '⚠️ Nenhuma corrida reconhecida nos prints. Tente imagens mais nítidas ou com melhor resolução.';
+    progressWrap.style.display = 'none';
+    return;
+  }
+
+  ocrParsedResults = checkDuplicates(allParsed);
+  statusEl.textContent = `✅ ${allParsed.length} corrida(s) reconhecida(s). Confira e edite se necessário antes de importar.`;
+  setTimeout(()=>{ progressWrap.style.display = 'none'; }, 600);
+  renderOcrPreview();
+}
+
+/* ============================================================
    NOTAS DE VOZ — gravação de áudio hands-free
    ============================================================ */
 let mediaRecorder = null;
@@ -1703,6 +2219,10 @@ function anchorsForHour(h){
       if(th === h && !tags.includes(p.name)) tags.push(p.name);
     });
   });
+  sessoesCinema.forEach(s=>{
+    const d = new Date(s.termino);
+    if(d.getHours() === h && !tags.includes(s.cinema)) tags.push(s.cinema);
+  });
   return tags;
 }
 
@@ -1750,6 +2270,7 @@ function renderConcentracao(){
 }
 setInterval(renderConcentracao, 1800000);
 
+let sessoesCinema = [];
 const flowPoints = [
   {name:'FURG · Campus Carreiros', desc:'Saída de aula', times:['12:00','17:30']},
   {name:'Partage Rio Grande', desc:'Fechamento do shopping', times:['22:00']},
@@ -1769,17 +2290,44 @@ function nextOccurrence(hhmm){
 
 function renderFlowPoints(){
   const container = document.getElementById('flow-points');
+  if(!container) return;
   container.innerHTML = '';
-  flowPoints.forEach(p=>{
-    let label, cls;
+  const now = new Date();
+  
+  const items = [];
+  
+  flowPoints.forEach(p => {
     if(p.times.length === 0){
+      items.push({ name: p.name, desc: p.desc, isContinuous: true });
+    } else {
+      const nexts = p.times.map(nextOccurrence).sort((a,b)=>a-b);
+      items.push({ name: p.name, desc: p.desc, time: nexts[0], isContinuous: false });
+    }
+  });
+  
+  sessoesCinema.forEach(s => {
+    const terminoDate = new Date(s.termino);
+    if(terminoDate > new Date(now.getTime() - 15 * 60000)){
+      items.push({ name: s.cinema, desc: `Término da sessão: ${s.filme}`, time: terminoDate, isContinuous: false });
+    }
+  });
+  
+  items.sort((a, b) => {
+    if(a.isContinuous && !b.isContinuous) return -1;
+    if(!a.isContinuous && b.isContinuous) return 1;
+    if(a.isContinuous && b.isContinuous) return 0;
+    return a.time - b.time;
+  });
+  
+  items.forEach(item => {
+    let label, cls;
+    if(item.isContinuous){
       label = 'Fluxo contínuo';
       cls = 'far';
     } else {
-      const nexts = p.times.map(nextOccurrence).sort((a,b)=>a-b);
-      const next = nexts[0];
-      const diffMin = Math.round((next - new Date())/60000);
-      if(diffMin <= 20){ label = `em ${diffMin} min`; cls = 'now'; }
+      const diffMin = Math.round((item.time - now)/60000);
+      if(diffMin <= 0){ label = 'Saindo agora'; cls = 'now'; }
+      else if(diffMin <= 20){ label = `em ${diffMin} min`; cls = 'now'; }
       else if(diffMin <= 60){ label = `em ${diffMin} min`; cls = 'soon'; }
       else {
         const h = Math.floor(diffMin/60), m = diffMin%60;
@@ -1789,7 +2337,7 @@ function renderFlowPoints(){
     }
     const div = document.createElement('div');
     div.className = 'flow-card';
-    div.innerHTML = `<div><div class="fn">${p.name}</div><div class="fd">${p.desc}</div></div><div class="fc ${cls}">${label}</div>`;
+    div.innerHTML = `<div><div class="fn">${item.name}</div><div class="fd">${item.desc}</div></div><div class="fc ${cls}">${label}</div>`;
     container.appendChild(div);
   });
 }
@@ -1966,6 +2514,10 @@ async function initData(){
   checklist = await loadData('checklist', {});
   events = await loadData('events', []);
   audioNotes = await loadData('audio-notes', []);
+  try {
+    const sessoesRes = await fetch('./sessoes-cinema.json');
+    if(sessoesRes.ok) sessoesCinema = await sessoesRes.json();
+  } catch(e) {}
   corridas = await loadData('corridas', null);
   if(corridas === null){
     corridas = corridasSeed;
