@@ -1523,13 +1523,14 @@ function parseOcrText(text){
   let currentDate = null;
   const currentYear = new Date().getFullYear();
 
-  // Date header regex: "ter., 14 de jul."
+  // Count R$ value patterns as detection estimate (avoids false positives
+  // from OCR reading "RS" as "R$" in addresses — those lack the decimal value)
+  const detectedCount = (text.match(/R\$\s?\d+[,.]\d{2}/g) || []).length;
+
   const dateRe = /(?:seg|ter|qua|qui|sex|s[aá]b|dom)[a-zç]*\.?,?\s*(\d{1,2})\s*de\s*([a-zç]+)/i;
-  // Value + time on same line: R$ 6,00 1628 (tolerates missing colon)
   const valueTimeRe = /R\$\s?(\d+[,.]\d{2}).*?(\d{1,2}[:.]?\d{2})/;
-  // Category + duration + distance: Uber X · 5 min 45 segundos · 1.76 km (tolerates missing decimal or missing space)
+  const nextCardRe = /R\$\s?\d+[,.]\d{2}/;
   const catDurDistRe = /((?:Uber\s*\w+|UberX|Comfort|Flash|Black|Moto|Priority|Green)[^·\-]*)\s*[·\-]\s*(\d+)\s*min\s*(?:(\d+)\s*segundo?s?)?\s*[·\-]\s*(\d+[.,]?\d+)\s*km/i;
-  // Fallback: just duration + distance without category
   const durDistRe = /(\d+)\s*min\s*(?:(\d+)\s*segundo?s?)?\s*[·\-]\s*(\d+[.,]?\d+)\s*km/i;
 
   let i = 0;
@@ -1582,16 +1583,46 @@ function parseOcrText(text){
         }
       }
 
+      // Address scanning: skip noise lines, detect addresses broadly
       const addrLines = [];
       let j = i + 1;
-      while(j < lines.length && addrLines.length < 2){
+      let scanned = 0;
+      while(j < lines.length && addrLines.length < 2 && scanned < 8){
         const al = lines[j];
-        if(al.match(/^[📍🔵⚫●+=\-e]\s*/) || al.match(/^(?:Rua|Av|Avenida|Pra[cç]a|Rod|Estr|R\.)/i)){
-          addrLines.push(al.replace(/^[📍🔵⚫●+=\-e\s]+/, '').trim());
-          j++;
-        } else {
-          break;
+        scanned++;
+
+        // Stop if we hit the next card (full R$ value) or a date header
+        if(al.match(nextCardRe) || al.match(dateRe)){ break; }
+
+        // CEP continuation line (e.g. "96201-260, BR") — append to last address
+        if(al.match(/^\d{5}-?\d{3}/) && addrLines.length > 0){
+          addrLines[addrLines.length - 1] += ', ' + al;
+          j++; continue;
         }
+
+        // Known address prefixes (emoji pins or street type abbreviations)
+        const hasAddrPrefix =
+          al.match(/^[📍🔵⚫●]/) ||
+          al.match(/^(?:Rua|Av\b|Avenida|Pra[cç]a|Rod|Estr|R\.|Trav\b)/i);
+
+        // Address-like content: long line with CEP or city/state indicators
+        const hasAddrContent = al.length > 15 && (
+          al.match(/\d{5}-?\d{3}/) ||
+          al.match(/,\s*(?:Rio Grande|RS|BR|[A-Z]{2})\b/i)
+        );
+
+        if(hasAddrPrefix || hasAddrContent){
+          addrLines.push(al.replace(/^[📍🔵⚫●+=\-e\s]+/, '').trim());
+          j++; continue;
+        }
+
+        // Short noise (< 8 chars, e.g. "oe" from map icons) — skip it
+        if(al.length < 8){
+          j++; continue;
+        }
+
+        // Unknown long line — stop scanning for addresses
+        break;
       }
       if(addrLines.length >= 1) endOrigem = addrLines[0];
       if(addrLines.length >= 2) endDestino = addrLines[1];
@@ -1606,7 +1637,7 @@ function parseOcrText(text){
     }
     i++;
   }
-  return results;
+  return { results, detectedCount };
 }
 
 function checkDuplicates(parsed){
@@ -1836,6 +1867,7 @@ async function handleOcrFiles(files){
 
   const images = (await Promise.all(imgPromises)).filter(Boolean);
   let allParsed = [];
+  let totalDetected = 0;
 
   for(let idx = 0; idx < images.length; idx++){
     const { imgObj, imgEl, url } = images[idx];
@@ -1855,8 +1887,9 @@ async function handleOcrFiles(files){
           }
         }
       });
-      const parsed = parseOcrText(result.data.text);
+      const { results: parsed, detectedCount } = parseOcrText(result.data.text);
       allParsed = allParsed.concat(parsed);
+      totalDetected += detectedCount;
       imgEl.classList.add('processed');
     } catch(e){
       console.error('OCR error on image', idx, e);
@@ -1867,13 +1900,19 @@ async function handleOcrFiles(files){
   progressBar.style.width = '100%';
 
   if(allParsed.length === 0){
-    statusEl.textContent = '⚠️ Nenhuma corrida reconhecida nos prints. Tente imagens mais nítidas ou com melhor resolução.';
+    const noResultMsg = totalDetected > 0
+      ? `⚠️ ${totalDetected} padrão(ões) R$ detectado(s) no texto, mas nenhuma corrida pôde ser processada. Tente imagens mais nítidas.`
+      : '⚠️ Nenhuma corrida reconhecida nos prints. Tente imagens mais nítidas ou com melhor resolução.';
+    statusEl.textContent = noResultMsg;
     progressWrap.style.display = 'none';
     return;
   }
 
   ocrParsedResults = checkDuplicates(allParsed);
-  statusEl.textContent = `✅ ${allParsed.length} corrida(s) reconhecida(s). Confira e edite se necessário antes de importar.`;
+  const countMsg = totalDetected > allParsed.length
+    ? `✅ ${totalDetected} padrão(ões) R$ detectado(s), ${allParsed.length} corrida(s) processada(s). Confira e edite se necessário antes de importar.`
+    : `✅ ${allParsed.length} corrida(s) reconhecida(s). Confira e edite se necessário antes de importar.`;
+  statusEl.textContent = countMsg;
   setTimeout(()=>{ progressWrap.style.display = 'none'; }, 600);
   renderOcrPreview();
 }
