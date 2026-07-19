@@ -2302,6 +2302,20 @@ function anchorsForHour(h){
     const d = new Date(s.termino);
     if(d.getHours() === h && !tags.includes(s.cinema)) tags.push(s.cinema);
   });
+  
+  const dayCat = [0, 6].includes(new Date().getDay()) ? (new Date().getDay() === 0 ? 'domingo' : 'sabado') : 'util';
+  [...(transportesData.onibus||[]), ...(transportesData.lancha||[])].forEach(t => {
+    (t.horarios[dayCat]||[]).forEach(timeStr => {
+      let [th, tm] = timeStr.split(':').map(Number);
+      if(t.sentido === 'SJN->RG'){
+        tm += 30; // 30 min travessia
+        if(tm >= 60){ th += 1; tm -= 60; }
+        th = th % 24;
+      }
+      if(th === h && !tags.includes(t.nome || 'Lancha')) tags.push(t.nome || 'Lancha');
+    });
+  });
+
   return tags;
 }
 
@@ -2350,6 +2364,7 @@ function renderConcentracao(){
 setInterval(renderConcentracao, 1800000);
 
 let sessoesCinema = [];
+let transportesData = { onibus: [], lancha: [] };
 const flowPoints = [
   {name:'FURG · Campus Carreiros', desc:'Saída de aula', times:['12:00','17:30']},
   {name:'Partage Rio Grande', desc:'Fechamento do shopping', times:['22:00']},
@@ -2389,6 +2404,40 @@ function renderFlowPoints(){
     if(terminoDate > new Date(now.getTime() - 15 * 60000)){
       items.push({ name: s.cinema, desc: `Término da sessão: ${s.filme}`, time: terminoDate, isContinuous: false });
     }
+  });
+
+  // Transportes (Onibus e Lancha)
+  const dayCat = [0, 6].includes(now.getDay()) ? (now.getDay() === 0 ? 'domingo' : 'sabado') : 'util';
+  
+  [...(transportesData.onibus||[]), ...(transportesData.lancha||[])].forEach(t => {
+    const name = t.nome || 'Lancha ' + t.sentido;
+    const isLancha = !!t.sentido;
+    const futureTimes = [];
+    
+    (t.horarios[dayCat]||[]).forEach(timeStr => {
+      let [th, tm] = timeStr.split(':').map(Number);
+      if(t.sentido === 'SJN->RG'){
+        tm += 30; // 30 min travessia
+        if(tm >= 60){ th += 1; tm -= 60; }
+        th %= 24;
+      }
+      
+      const target = new Date(now);
+      target.setHours(th, tm, 0, 0);
+      
+      // If time has already passed by more than 10 mins, don't show unless it's for tomorrow, but we only care about today
+      if (target >= new Date(now.getTime() - 10 * 60000)) {
+        futureTimes.push(target);
+      }
+    });
+    
+    // Sort and take the next 2 arrivals to avoid polluting the list
+    futureTimes.sort((a,b)=>a-b).slice(0, 2).forEach(target => {
+      const desc = isLancha 
+        ? (t.sentido === 'SJN->RG' ? 'Chegada em Rio Grande' : 'Embarque p/ SJN')
+        : `Terminal - ${t.linha}`;
+      items.push({ name: name, desc: desc, time: target, isContinuous: false });
+    });
   });
   
   items.sort((a, b) => {
@@ -2596,6 +2645,10 @@ async function initData(){
   try {
     const sessoesRes = await fetch('./sessoes-cinema.json');
     if(sessoesRes.ok) sessoesCinema = await sessoesRes.json();
+  } catch(e) {}
+  try {
+    const transRes = await fetch('./transporte-horarios.json');
+    if(transRes.ok) transportesData = await transRes.json();
   } catch(e) {}
   corridas = await loadData('corridas', null);
   if(corridas === null){
