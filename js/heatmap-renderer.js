@@ -67,14 +67,39 @@ document.getElementById('timeline-upload').addEventListener('change', async (e) 
   reader.readAsText(file);
 });
 
+async function yieldThread() {
+  return new Promise(resolve => setTimeout(resolve, 0));
+}
+
 async function processarTimeline(jsonText, statusEl) {
-  const data = JSON.parse(jsonText);
-  const grid = {}; // key -> { presencaPropria: 0, frequenciaCorrida: 0 }
+  const timeoutMs = 30000; // 30s max per stage
+  let startStageTime;
+  
+  function checkTimeout(stageName) {
+    if (Date.now() - startStageTime > timeoutMs) {
+      throw new Error(`Timeout de segurança (30s) estourado na etapa: ${stageName}. O processamento foi abortado para não travar seu aparelho.`);
+    }
+  }
+
+  statusEl.textContent = "Fazendo parse do JSON (isso pode levar alguns segundos)...";
+  await yieldThread();
+  
+  startStageTime = Date.now();
+  let data;
+  try {
+    data = JSON.parse(jsonText);
+  } catch(e) {
+    throw new Error("JSON inválido: " + e.message);
+  }
+  checkTimeout("Parse JSON");
+
+  const grid = {}; 
   const forbiddenKeys = new Set();
 
   statusEl.textContent = "Calculando Zonas de Exclusão...";
+  await yieldThread();
   
-  // 1. Zonas de exclusão (HOME / WORK)
+  startStageTime = Date.now();
   if (data.userLocationProfile && data.userLocationProfile.frequentPlaces) {
     data.userLocationProfile.frequentPlaces.forEach(fp => {
       if (fp.label === 'HOME' || fp.label === 'WORK') {
@@ -84,12 +109,22 @@ async function processarTimeline(jsonText, statusEl) {
       }
     });
   }
+  checkTimeout("Zonas de exclusão");
 
-  statusEl.textContent = "Extraindo presenças da Linha do Tempo...";
+  const segments = data.semanticSegments || [];
+  const totalSegs = segments.length;
   
-  // 2. Processar Timeline Segments
-  if (data.semanticSegments) {
-    data.semanticSegments.forEach(seg => {
+  startStageTime = Date.now();
+  let processados = 0;
+  const CHUNK_SIZE = 500;
+  
+  for (let i = 0; i < totalSegs; i += CHUNK_SIZE) {
+    statusEl.textContent = `Extraindo presenças: ${i} de ${totalSegs} segmentos...`;
+    await yieldThread();
+    checkTimeout("Extraindo presenças");
+    
+    const chunk = segments.slice(i, i + CHUNK_SIZE);
+    for (const seg of chunk) {
       if (seg.visit) {
         const loc = seg.visit.location;
         if (loc && loc.latitudeE7) {
@@ -111,49 +146,56 @@ async function processarTimeline(jsonText, statusEl) {
           grid[key].presencaPropria++;
         }
       }
-    });
+    }
   }
 
   statusEl.textContent = "Cruzando com Histórico de Corridas...";
+  await yieldThread();
+  startStageTime = Date.now();
 
-  // 3. Processar Corridas (global 'corridas' do index.html)
   const geocodeCache = await carregarGeocodeCache();
   if (window.corridas) {
-    window.corridas.forEach(c => {
-      // Origem
-      if (c.endOrigem) {
-        const origKey = normalizeAddress(c.endOrigem);
-        if (geocodeCache[origKey]) {
-          const loc = geocodeCache[origKey];
-          const key = getCellKey(loc.lat, loc.lng);
-          if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
-          grid[key].frequenciaCorrida++;
+    const totalCorridas = window.corridas.length;
+    for (let i = 0; i < totalCorridas; i += CHUNK_SIZE) {
+      statusEl.textContent = `Cruzando corridas: ${i} de ${totalCorridas}...`;
+      await yieldThread();
+      checkTimeout("Cruzando corridas");
+      
+      const chunk = window.corridas.slice(i, i + CHUNK_SIZE);
+      for (const c of chunk) {
+        if (c.endOrigem) {
+          const origKey = normalizeAddress(c.endOrigem);
+          if (geocodeCache[origKey]) {
+            const loc = geocodeCache[origKey];
+            const key = getCellKey(loc.lat, loc.lng);
+            if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
+            grid[key].frequenciaCorrida++;
+          }
+        }
+        if (c.endDestino) {
+          const destKey = normalizeAddress(c.endDestino);
+          if (geocodeCache[destKey]) {
+            const loc = geocodeCache[destKey];
+            const key = getCellKey(loc.lat, loc.lng);
+            if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
+            grid[key].frequenciaCorrida++;
+          }
         }
       }
-      // Destino
-      if (c.endDestino) {
-        const destKey = normalizeAddress(c.endDestino);
-        if (geocodeCache[destKey]) {
-          const loc = geocodeCache[destKey];
-          const key = getCellKey(loc.lat, loc.lng);
-          if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
-          grid[key].frequenciaCorrida++;
-        }
-      }
-    });
+    }
   }
 
   statusEl.textContent = "Aplicando Regras de Privacidade e Arredondamento...";
-
-  // 4. Remover chaves proibidas (HOME/WORK) para anonimização total do grid
+  await yieldThread();
+  
   forbiddenKeys.forEach(k => {
     delete grid[k];
   });
 
-  // 5. Salvar Grid Anonimizado
   localStorage.setItem('heatmap_grid', JSON.stringify(grid));
   
   statusEl.textContent = "Renderizando Mapa...";
+  await yieldThread();
   renderGrid(grid);
   statusEl.textContent = "Processamento concluído. Mapa atualizado!";
 }
