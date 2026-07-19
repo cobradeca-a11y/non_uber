@@ -81,6 +81,11 @@ async function processarTimeline(jsonText, statusEl) {
     }
   }
 
+  // Dependência: TimelineUtils (global no browser). Se não existir, falha com mensagem útil.
+  if (typeof TimelineUtils === 'undefined') {
+    throw new Error('TimelineUtils não encontrado. Certifique-se de carregar js/timeline-utils.js antes de processar a linha do tempo.');
+  }
+
   statusEl.textContent = "Fazendo parse do JSON (isso pode levar alguns segundos)...";
   await yieldThread();
   
@@ -100,12 +105,15 @@ async function processarTimeline(jsonText, statusEl) {
   await yieldThread();
   
   startStageTime = Date.now();
+  // frequentPlaces[] -> placeLocation (string ou object)
   if (data.userLocationProfile && data.userLocationProfile.frequentPlaces) {
     data.userLocationProfile.frequentPlaces.forEach(fp => {
       if (fp.label === 'HOME' || fp.label === 'WORK') {
-        const lat = fp.location.latitudeE7 / 1e7;
-        const lng = fp.location.longitudeE7 / 1e7;
-        forbiddenKeys.add(getCellKey(lat, lng));
+        // placeLocation pode ser string "-32..., -52..." ou objeto compatível
+        const parsed = TimelineUtils.parsePossibleLatLng(fp.placeLocation || fp.placeLocationString || fp.location);
+        if (parsed) {
+          forbiddenKeys.add(getCellKey(parsed.lat, parsed.lng));
+        }
       }
     });
   }
@@ -125,23 +133,31 @@ async function processarTimeline(jsonText, statusEl) {
     
     const chunk = segments.slice(i, i + CHUNK_SIZE);
     for (const seg of chunk) {
+      // Visits: use extractVisitLatLng (lida com topCandidate.placeLocation.latLng string)
       if (seg.visit) {
-        const loc = seg.visit.location;
-        if (loc && loc.latitudeE7) {
-          const key = getCellKey(loc.latitudeE7 / 1e7, loc.longitudeE7 / 1e7);
+        // Se a visita tem semanticType INFERRED_HOME/WORK, adiciona diretamente à zona proibida
+        if (TimelineUtils.isVisitInferredHomeOrWork(seg)) {
+          const v = TimelineUtils.extractVisitLatLng(seg);
+          if (v) forbiddenKeys.add(getCellKey(v.lat, v.lng));
+          continue; // não contar essas visitas como presencaPropria
+        }
+
+        const v = TimelineUtils.extractVisitLatLng(seg);
+        if (v) {
+          const key = getCellKey(v.lat, v.lng);
           if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
           grid[key].presencaPropria++;
         }
-      } else if (seg.activity && seg.activity.activityType === 'IN_PASSENGER_VEHICLE') {
-        const start = seg.activity.startLocation;
-        const end = seg.activity.endLocation;
-        if (start && start.latitudeE7) {
-          const key = getCellKey(start.latitudeE7 / 1e7, start.longitudeE7 / 1e7);
+      } else {
+        // Atividades: extractActivityLatLngs já filtra por IN_PASSENGER_VEHICLE
+        const { start, end } = TimelineUtils.extractActivityLatLngs(seg);
+        if (start) {
+          const key = getCellKey(start.lat, start.lng);
           if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
           grid[key].presencaPropria++;
         }
-        if (end && end.latitudeE7) {
-          const key = getCellKey(end.latitudeE7 / 1e7, end.longitudeE7 / 1e7);
+        if (end) {
+          const key = getCellKey(end.lat, end.lng);
           if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
           grid[key].presencaPropria++;
         }
