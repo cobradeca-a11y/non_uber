@@ -2881,6 +2881,9 @@ async function initData(){
   renderFlowPoints();
   renderRanking();
   renderEvents();
+  
+  window.corridas = corridas; // Exposto para o heatmap-renderer.js
+  
   loadWeather();
   loadHoliday();
 }

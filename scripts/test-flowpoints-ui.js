@@ -11,10 +11,11 @@ async function main() {
   await page.goto('http://127.0.0.1:8086/index.html');
   await page.setViewport({ width: 400, height: 1000 });
   
-  // Override Geolocation
+  // Override Geolocation - Vila da Mangueira (east of the bay)
   const context = browser.defaultBrowserContext();
   await context.overridePermissions('http://127.0.0.1:8086', ['geolocation']);
-  await page.setGeolocation({ latitude: -32.05, longitude: -52.14 });
+  // Vila da Mangueira coords
+  await page.setGeolocation({ latitude: -32.0592, longitude: -52.1228 });
   
   // Wait for login skip and click it
   await page.waitForSelector('#login-skip');
@@ -32,7 +33,7 @@ async function main() {
   
   await new Promise(r => setTimeout(r, 500));
   
-  await page.screenshot({ path: 'C:/Users/snake/.gemini/antigravity-ide/brain/2376b31c-e6e5-4fbf-b8ea-f4bc69dc3967/geoloc_preview.png', fullPage: true });
+  await page.screenshot({ path: 'C:/Users/snake/.gemini/antigravity-ide/brain/2376b31c-e6e5-4fbf-b8ea-f4bc69dc3967/haversine_water_test.png', fullPage: true });
   
   await browser.close();
   server.kill();

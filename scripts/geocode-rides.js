@@ -24,12 +24,20 @@ if (fs.existsSync(cachePath)) {
   cache = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
 }
 
+function normalizeAddress(addr) {
+  if (!addr) return '';
+  return addr.trim().toLowerCase()
+    .replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+    .replace(/\s{2,}/g," ");
+}
+
 async function geocode(address) {
   if (!address) return null;
-  const key = address.trim();
+  const key = normalizeAddress(address);
   if (cache[key]) return cache[key];
 
-  const query = encodeURIComponent(`${key}, Rio Grande, RS, Brasil`);
+  // Mantemos o endereço original para fazer a query no google maps
+  const query = encodeURIComponent(`${address.trim()}, Rio Grande, RS, Brasil`);
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${API_KEY}`;
   
   try {
@@ -67,13 +75,15 @@ async function main() {
 
   for (const corrida of corridas) {
     if (corrida.endOrigem) {
-      if (!cache[corrida.endOrigem.trim()]) {
+      const origKey = normalizeAddress(corrida.endOrigem);
+      if (!cache[origKey]) {
         const p = await geocode(corrida.endOrigem);
         if (p) novas++;
       }
     }
     if (corrida.endDestino) {
-      if (!cache[corrida.endDestino.trim()]) {
+      const destKey = normalizeAddress(corrida.endDestino);
+      if (!cache[destKey]) {
         const p = await geocode(corrida.endDestino);
         if (p) novas++;
       }

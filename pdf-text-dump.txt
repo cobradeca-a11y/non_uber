@@ -1,0 +1,7182 @@
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Domingos e Feriados – Centro/Bairro 
+P18 - CASTELO BRANCO - SANTA ROSA  
+P19 - CASTELO BRANCO 
+P20 - SANTA ROSA 
+P21 - SANTA ROSA - ÁGUEDA 
+P22 - SANTA ROSA - ASSIS BRASIL 
+Viagem Horário Junção Tamandaré Linha Via 
+1 05:45   P20/J05 BARRA 
+2 06:15     P22   COHAB ST. ROSA AGUEDA AB 
+3 06:50     P20/J05 BARRA 
+4 07:35     P21  COHAB ST. ROSA ÁGUEDA 
+5 08:10     P18  CB I E II COHAB ST. ROSA ÁGUEDA AB 
+6 08:45     P18  CB I E II COHAB ST. ROSA ESQUERDA 
+7 09:05   P21  COHAB ST. ROSA AGUEDA 
+8 09:35     P22   COHAB ST. ROSA ÁGUEDA AB 
+9 10:05     P18  CB I E II COHAB ST. ROSA ESQUERDA 
+10 10:35     P21  COHAB ST. ROSA ÁGUEDA 
+11 10:55     P20  COHAB ST. ROSA ESQUERDA 
+12 11:30   P18  CB I E II COHAB ST. ROSA AGUEDA 
+13 12:10     P21  COHAB ST. ROSA AGUEDA 
+14 12:30     P18   CB I E II COHAB ST. ROSA ESQUERDA 
+15 13:00   P21  COHAB ST. ROSA AGUEDA 
+16 13:35     P21  COHAB ST. ROSA AGUEDA 
+17 14:00     P18  CB I E II COHAB ST. ROSA ESQUERDA 
+18 14:25   P21  COHAB ST. ROSA AGUEDA 
+19 14:55     P21  COHAB ST. ROSA AGUEDA 
+20 15:20     P18  CB I E II COHAB ST. ROSA ÁGUEDA AB 
+21 15:55   P18  CB I E II COHAB ST. ROSA AGUEDA 
+22 16:15     P21  COHAB ST. ROSA AGUEDA 
+23 16:50     P20  COHAB ST. ROSA AGUEDA 
+24 17:20     P18  CB I E II COHAB ST. ROSA AGUEDA 
+25 17:35   P21  COHAB ST. ROSA AGUEDA 
+26 18:00     P18  CB I E II COHAB ST. ROSA AGUEDA AB 
+27 18:25   P20  COHAB ST. ROSA ESQUERDA 
+28 18:50     P21  COHAB ST. ROSA AGUEDA 
+29 19:10   P18  CB I E II COHAB ST. ROSA AGUEDA 
+30 19:40     P20  COHAB ST. ROSA ESQUERDA 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+31 20:15     P22   COHAB ST. ROSA AGUEDA AB 
+32 20:45     P18  CB I E II COHAB ST. ROSA AGUEDA 
+33 21:10   P22   COHAB ST. ROSA AGUEDA AB 
+34 21:35     P21  COHAB ST. ROSA ÁGUEDA 
+35 22:05   P20  COHAB ST. ROSA ESQUERDA 
+36 22:40     P18  CB I E II COHAB ST. ROSA ÁGUEDA  AB 
+37 23:15     P18  CB I E II COHAB STA ROSA ESQUERDA 
+38 00:00     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+39 00:30   P18  CB I E II COHAB ST. ROSA AGUEDA AB 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Sábado – Centro/Bairro 
+P18 - CASTELO BRANCO - SANTA ROSA  
+P19 - CASTELO BRANCO 
+P20 - SANTA ROSA 
+P21 - SANTA ROSA - ÁGUEDA 
+P22 - SANTA ROSA - ASSIS BRASIL 
+Viagens Horário Junção Tamandaré Linha Via 
+1 07:00     P21   COHAB STA ROSA ÁGUEDA 
+2 07:15   P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+3 07:30     P22  COHAB ST. ROSA ÁGUEDA AB 
+4 07:45   P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+5 08:00     P22  COHAB ST. ROSA ÁGUEDA AB 
+6 08:15   P21  COHAB ST. ROSA ÁGUEDA 
+7 08:30     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+8 08:45     P21  COHAB ST. ROSA ÁGUEDA 
+9 09:00     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+10 09:30     P21  COHAB ST. ROSA ÁGUEDA 
+11 10:00     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+12 10:30     P20  COHAB ST. ROSA ESQUERDA 
+13 11:00     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+14 11:20     P22  CB I E II COHAB ST. ROSA ÁGUEDA AB 
+15 11:40     P20  COHAB ST. ROSA ESQUERDA 
+16 12:00     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+17 12:15     P22  COHAB ST. ROSA ÁGUEDA AB 
+18 12:30     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+19 12:45     P21  COHAB ST. ROSA ÁGUEDA 
+20 13:00     P18  CB I E II COHAB ST. ROSA ESQUERDA 
+21 13:15   P20  COHAB ST. ROSA ESQUERDA 
+22 13:30     P18  CB I E II COHAB ST. ROSA ÁGUEDA  
+23 13:45   P21  COHAB ST. ROSA ÁGUEDA 
+24 14:00     P21  COHAB ST. ROSA ÁGUEDA 
+25 14:20     P18  CB I E II COHAB ST. ROSA ESQUERDA 
+26 14:40   P21  COHAB ST. ROSA ÁGUEDA 
+27 15:00     P22  COHAB ST. ROSA ÁGUEDA AB 
+28 15:20   P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+29 15:40     P21  COHAB STA ROSA ÁGUEDA 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+30 16:05     P18  CB I E II COHAB ST. ROSA ESQUERDA 
+31 16:30     P20  COHAB ST. ROSA ESQUERDA 
+32 16:55     P21  COHAB ST. ROSA ÁGUEDA  
+33 17:15     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+34 17:35     P21  COHAB ST. ROSA ÁGUEDA 
+35 17:55     P18  CB I E II COHAB ST. ROSA ÁGUEDA AB 
+36 18:15     P20  COHAB ST. ROSA ESQUERDA 
+37 18:35     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+38 18:55     P20  COHAB ST. ROSA ESQUERDA 
+39 19:15     P21   COHAB ST. ROSA ÁGUEDA 
+40 19:40     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+41 20:05     P21  COHAB ST. ROSA ÁGUEDA 
+42 20:30    P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+43 21:00     P21  COHAB ST. ROSA ÁGUEDA 
+44 21:30   P20  COHAB ST. ROSA ESQUERDA 
+45 22:00     P21  COHAB ST. ROSA ÁGUEDA 
+46 22:30     P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+47 23:00   P21  COHAB ST. ROSA ÁGUEDA 
+48 23:45     P18  CB I E II COHAB ST. ROSA ÁGUEDA  
+49 00:30     P18  CB I E II COHAB ST. ROSA ÁGUEDA  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Segunda à Sexta – Centro/Bairro 
+P18 - CASTELO BRANCO - SANTA ROSA  
+P19 - CASTELO BRANCO 
+P20 - SANTA ROSA 
+P21 - SANTA ROSA - ÁGUEDA 
+P22 - SANTA ROSA - ASSIS BRASIL 
+Viagens Saída Tamandaré Junção Bairro Linha Via 
+1 06:45    P21  COHAB STA ROSA ÁGUEDA 
+2 07:00   P20  COHAB ST. ROSA ESQUERDA 
+3 07:15   P18  CB I E II COHAB ST. ROSA ÁGUEDA  
+4 07:35   P21   COHAB ST. ROSA ÁGUEDA 
+5 07:50   P18   CB I E II COHAB ST. ROSA ESQUERDA 
+6 08:05   P21  COHAB ST. ROSA ÁGUEDA 
+7 08:20   P18   CB I E II COHAB ST. ROSA ESQUERDA 
+8 08:40   P22  COHAB ST. ROSA ÁGUEDA  
+9 09:00   P20    COHAB ST. ROSA ÁGUEDA 
+10 09:20   P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+11 09:45   P22   COHAB ST. ROSA ÁGUEDA AB 
+12 10:05   P20   COHAB ST. ROSA ÁGUEDA 
+13 10:20   P18   CB I E II COHAB ST. ROSA ÁGUEDA  
+14 10:40   P20  COHAB ST. ROSA ÁGUEDA 
+15 11:00   P22   COHAB ST. ROSA ÁGUEDA  
+16 11:15   P18  CB I E II COHAB STA ROSA ÁGUEDA 
+17 11:35   P21  COHAB ST. ROSA ÁGUEDA  
+18 11:55   P21  COHAB STA ROSA ÁGUEDA 
+19 12:05   P18   CB I E II COHAB ST. ROSA ÁGUEDA  
+20 12:15   P20   COHAB ST. ROSA ESQUERDA 
+21 12:25   P21   COHAB ST. ROSA ÁGUEDA 
+22 12:40   P18   CB I E II COHAB ST. ROSA ÁGUEDA 
+23 13:05   P21   COHAB ST. ROSA ÁGUEDA 
+24 13:25   P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+25 13:50   P20  COHAB ST. ROSA ÁGUEDA 
+26 14:10   P18   CB I E II COHAB ST. ROSA ESQUERDA 
+27 14:30   P22   COHAB ST. ROSA ÁGUEDA  
+28 14:50   P18  CB I E II COHAB ST. ROSA ÁGUEDA  
+29 15:10   P21  COHAB ST. ROSA ÁGUEDA 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+30 15:30   P18   CB I E II COHAB ST. ROSA ESQUERDA 
+31 15:40   P21   COHAB ST. ROSA ÁGUEDA AB 
+32 16:00   P20  COHAB STA ROSA ÁGUEDA 
+33 16:15   P18   CB I E II COHAB ST. ROSA ESQUERDA 
+34 16:30   P20   COHAB STA ROSA 
+35 16:45   P18  CB I E II COHAB STA ROSA ÁGUEDA 
+36 17:00   P21  COHAB ST. ROSA ÁGUEDA 
+37 17:10   P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+38 17:20   P22   COHAB ST. ROSA ÁGUEDA  
+39 17:30   P18   CB I E II COHAB ST. ROSA ÁGUEDA AB 
+40 17:40   P20   COHAB ST. ROSA ESQUERDA 
+41 17:50   P21  COHAB ST. ROSA ÁGUEDA  
+42 18:00   P18   CB I E II COHAB ST. ROSA ÁGUEDA  
+43 18:10   P20  COHAB ST. ROSA ESQUERDA 
+44 18:25   P18  CB I E II COHAB ST. ROSA ESQUERDA 
+45 18:40   P20   COHAB ST. ROSA ÁGUEDA AB 
+46 18:55   P20  COHAB ST. ROSA ÁGUEDA 
+47 19:15   P21  COHAB ST. ROSA ÁGUEDA AB 
+48 19:30   P18  CB I E II COHAB ST. ROSA ÁGUEDA AB 
+49 19:45   P20  COHAB ST. ROSA ÁGUEDA 
+50 20:00   P18  CB I E II COHAB ST. ROSA ÁGUEDA 
+51 20:15   P22  COHAB STA ROSA ÁGUEDA  
+52 20:30   P18   CB I E II COHAB ST. ROSA ÁGUEDA 
+53 21:00   P20   COHAB ST. ROSA ÁGUEDA  
+54 21:30   P18  CB I E II COHAB ST. ROSA ÁGUEDA  
+55 22:00   P18  CB I E II COHAB ST. ROSA ESQUERDA 
+56 22:40   P21    COHAB ST. ROSA ÁGUEDA 
+57 23:25   P18  CB I E II COHAB ST. ROSA ÁGUEDA  
+58 00:00   P18   CB I E II COHAB ST. ROSA ÁGUEDA  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Domingos e Feriados – Bairro/Centro 
+P18 - CASTELO BRANCO - SANTA ROSA  
+P19 - CASTELO BRANCO 
+P20 - SANTA ROSA 
+P21 - SANTA ROSA - ÁGUEDA 
+P22 - SANTA ROSA - ASSIS BRASIL 
+Viagens Saída Santa Rosa Junção Tamandaré Linha Via 
+1 05:00   P18  COHAB ST. ROSA CB I E II 
+2 05:15   P18  COHAB ST. ROSA CB I E II 
+3 05:30     P18  AGD ST. ROSA CB I E II 
+4 06:00   P18  AB AGD ST. ROSA CB I E II PORTO 
+5 06:25     P18  AB AGD ST. ROSA CB I E II PORTO 
+6 07:05     P20  ST. ROSA COHAB 
+7 07:35   P18  AB AGD ST. ROSA COHAB CB I E II  
+8 08:05     P18  COHAB ST. ROSA CB I E II 
+9 08:30     P21  AGD  ST. ROSA COHAB   
+10 09:00     P21  AGD  ST. ROSA COHAB   
+11 09:30     P18  COHAB ST. ROSA CB I E II 
+12 10:00     P21  AGD  ST. ROSA COHAB   
+13 10:20     P22  AB AGD ST ROSA COHAB 
+14 10:55     P18  COHAB ST. ROSA CB I E II 
+15 11:25     P21  AGD  ST. ROSA COHAB   
+16 11:40     P20  COHAB ST. ROSA PORTO 
+17 12:20     P18  AGD ST. ROSA CB I E II 
+18 12:55     P21  AGD  ST. ROSA COHAB   
+19 13:20     P18  COHAB ST. ROSA CB I E II 
+20 13:50     P21  AGD  ST. ROSA COHAB   
+21 14:20     P21  AGD  ST. ROSA COHAB   
+22 14:45     P18  COHAB ST. ROSA CB I E II 
+23 15:15     P18  AGD ST. ROSA CB I E II 
+24 15:40     P21  AGD  ST. ROSA COHAB   
+25 16:15     P18  AB AGD ST ROSA COHAB CB I E II 
+26 16:40     P20  COHAB ST. ROSA 
+27 17:00     P21  AGD  ST. ROSA COHAB   
+28 17:30     P18  AB AGD ST ROSA COHAB CB I E II 
+29 18:05     P20  ST. ROSA COHAB 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+30 18:20     P21  AGD  ST. ROSA COHAB   
+31 19:00     P18  COHAB ST. ROSA CB I E II 
+32 19:35     P21  AGD  ST. ROSA COHAB   
+33 20:00     P20  COHAB ST. ROSA 
+34 20:30     P18  AB AGD ST ROSA COHAB CB I E II 
+35 21:00     P21  AGD  ST. ROSA COHAB   
+36 21:30     P18  COHAB ST. ROSA CB I E II 
+37 22:15     P18  AB AGD ST ROSA CB I E II 
+38 22:50     P18  COHAB ST. ROSA CB I E II 
+39 23:40     P18  AB AGD ST ROSA COHAB CB I E II 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Sábado – Bairro/Centro 
+P18 - CASTELO BRANCO - SANTA ROSA  
+P19 - CASTELO BRANCO 
+P20 - SANTA ROSA 
+P21 - SANTA ROSA - ÁGUEDA 
+P22 - SANTA ROSA - ASSIS BRASIL 
+Viagens Saída Santa Rosa Junção Tamandaré Linha Via 
+1 05:00   P18   ÁGUEDA ST. ROSA CB I E II 
+2 05:30   P21  ÁGUEDA COHAB ST. ROSA 
+3 06:00 
+    
+P18  AB AGD ST. ROSA COHAB CB I E II  
+4 06:20     P18  AGD ST. ROSA COHAB CB I E II 
+5 06:40     P18  AGD ST. ROSA COHAB CB I E II 
+6 06:50   P21  AGD  ST. ROSA COHAB   
+7 07:00     P18  AB AGD COHAB ST ROSA CB I E II 
+8 07:10     P20  ST. ROSA COHAB 
+9 07:25     P18  AB AGD COHAB ST ROSA CB I E II 
+10 07:40     P20  COHAB ST. ROSA 
+11 07:55     P18  AGD COHAB ST ROSA CB I E II 
+12 08:10     P21  AGD  ST. ROSA COHAB   
+13 08:25     P20  COHAB ST. ROSA 
+14 08:40     P18  AB AGD ST. ROSA COHAB CB I E II  
+15 08:55     P21  AGD  ST. ROSA COHAB   
+16 09:10     P18  AGD ST. ROSA COHAB CB I E II 
+17 09:25     P22  AB AGD ST. ROSA COHAB 
+18 09:45     P21  AGD  ST. ROSA COHAB   
+19 10:05     P18  AGD ST. ROSA CB I E II 
+20 10:30     P21  ÁGUEDA COHAB ST. ROSA 
+21 11:00     P20  COHAB ST. ROSA 
+22 11:25     P18  AGD ST. ROSA CB I E II 
+23 11:50     P21  ÁGUEDA COHAB ST. ROSA 
+24 12:10     P21  ÁGUEDA COHAB ST. ROSA 
+25 12:35     P18  ST. ROSA COHAB CB I E II 
+26 13:00     P21  ÁGUEDA COHAB ST. ROSA 
+27 13:25     P22  AB AGD ST. ROSA COHAB 
+28 13:45     P18  ST. ROSA COHAB CB I E II 
+29 14:00     P20   ST. ROSA COHAB 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+30 14:20     P18  ÁGUEDA ST. ROSA COHAB CB I E II 
+31 14:45     P21  AGD COHAB ST ROSA 
+32 15:05     P20  ST. ROSA COHAB 
+33 15:35     P20  AGD ST. ROSA COHAB CB I E II 
+34 16:00     P22  AB AGD COHAB ST ROSA COHAB 
+35 16:15     P21  AGD ST. ROSA COHAB   
+36 16:40     P18  AGD ST. ROSA COHAB CB I E II 
+37 17:05     P20  COHAB ST. ROSA 
+38 17:25     P18  AB AGD ST ROSA COHAB CB I E II 
+39 17:55     P21  AGD COHAB ST ROSA 
+40 18:20     P21  ST. ROSA COHAB CB I E II 
+41 18:50     P18  ST. ROSA COHAB CB I E II 
+42 19:20     P22  AB AGD ST ROSA COHAB 
+43 19:50     P20  COHAB ST. ROSA 
+44 20:20   P18  AGD ST. ROSA CB I E II 
+45 21:00   P21  AGD  ST. ROSA COHAB   
+46 21:30   P18  COHAB ST. ROSA CB I E II 
+47 22:15   P20  ST. ROSA COHAB 
+48 23:05   P18  AGD ST. ROSA CB I E II 
+49 23:50   P21  AGD COHAB ST ROSA 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Segunda à Sexta – Bairro/Centro 
+P18 - CASTELO BRANCO - SANTA ROSA  
+P19 - CASTELO BRANCO 
+P20 - SANTA ROSA 
+P21 - SANTA ROSA - ÁGUEDA 
+P22 - SANTA ROSA - ASSIS BRASIL 
+Viagens 
+Saída Santa 
+Rosa 
+Junção Tamandaré Linha Via 
+1 04:45   P18  ÁGUEDA ST. ROSA CB I E II 
+2 05:05     P20  COHAB STA ROSA 
+3 05:30     P18  AB AGD. ST. ROSA COHAB CB I E II  
+4 06:00     P18  AGD. ST. ROSA COHAB CB I E II  
+5 06:15     P18  AB AGD. ST. ROSA COHAB CB I E II  
+6 06:25   P20  ST. ROSA COHAB   
+7 06:35     P21  ÁGUEDA STA ROSA COHAB 
+8 06:45     P18   ÁGUEDA ST. ROSA CB I E II  
+9 06:55     P20 COHAB STA ROSA 
+10 07:05     P20  ÁGUEDA COHAB ST. ROSA PORTO 
+11 07:15     P18  
+AB ÁGUEDA COHAB ST. ROSA CB I E II 
+FURG 
+12 07:25     P20  ST. ROSA COHAB   
+13 07:35     P18  AGD ST. ROSA COHAB CB I E II PORTO 
+14 07:45     P20  ST. ROSA COHAB  
+15 07:55     P18  ST. ROSA COHAB CB I E II 
+16 08:05     P21  AGD ST. ROSA COHAB  
+17 08:15     P18   ST. ROSA COHAB CB I E II 
+18 08:25     P21 ÁGUEDA STA ROSA COHAB 
+19 08:40     P18  ST. ROSA COHAB CB I E II 
+20 09:00     P21  ÁGUEDA ST. ROSA COHAB 
+21 09:20     P18 COHAB STA ROSA CB I E II 
+22 09:40      P22 AB AGD ST. ROSA 
+23 10:00     P20   ST. ROSA COHAB  
+24 10:20     P18   ÁGUEDA ST. ROSA CB I E II 
+25 10:50     P22  AB AGD ST. ROSA COHAB  
+26 11:05     P21  ÁGUEDA ST. ROSA COHAB 
+27 11:20     P18  ÁGUEDA ST. ROSA CB I E II 
+28 11:40     P20   ST. ROSA COHAB  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+29 12:00     P18  AB ÁGUEDA ST. ROSA COHAB CB I E II 
+30 12:15     P21  ÁGUEDA ST. ROSA COHAB PORTO 
+31 12:30     P18  COHAB ST. ROSA CB I E II FURG 
+32 12:45     P21  ÁGUEDA COHAB ST. ROSA PORTO 
+33 13:00     P20  ST. ROSA COHAB 
+34 13:15     P18  ÁGUEDA ST. ROSA CB I E II 
+35 13:25     P22  AB AGD ST. ROSA COHAB  
+36 13:40     P18   COHAB ST.ROSA CB I E II 
+37 13:55     P21  ÁGUEDA COHAB ST. ROSA  
+38 14:10     P21  ÁGUEDA/SANTA ROSA/COHAB 
+39 14:25     P18  COHAB ST. ROSA CB I E II 
+40 14:40     P22  AB ÁGUEDA ST. ROSA COHAB 
+41 14:55     P21  ÁGUEDA/SANTA ROSA/COHAB 
+42 15:25     P18  SANTA ROSA/COHAB/CASTELO I E II 
+43 15:45     P21  ÁGUEDA/SANTA ROSA/COHAB 
+44 16:05     P21  SANTA ROSA/COHAB/CASTELO I E II 
+45 16:25     P22  
+ASSIS BRASIL/ÁGUEDA/COHAB/SANTA 
+ROSA 
+46 16:45     P18   
+ÁGUEDA/SANTA ROSA/COHAB/CASTELO I 
+E II 
+47 17:00     P20  SANTA ROSA/COHAB 
+48 17:15   P22  
+ASSIS BRASIL/ÁGUEDA/COHAB/SANTA 
+ROSA 
+49 17:25     P20  SANTA ROSA/COHAB 
+50 17:35     P18  SANTA ROSA/COHAB/CASTELO I E II 
+51 17:45   P21 ÁGUEDA COHAB ST. ROSA 
+52 18:00     P20  COHAB/SANTA ROSA 
+53 18:15     P20  SANTA ROSA/COHAB 
+54 18:30     P18  
+ÁGUEDA/COHAB/SANTA ROSA/CASTELO I 
+E II 
+55 18:50     P20  COHAB/SANTA ROSA 
+56 19:05     P21  ÁGUEDA /SANTA ROSA/COHAB 
+57 19:20   P21 ÁGUEDA /SANTA ROSA/COHAB 
+58 19:40     P21  ÁGUEDA /SANTA ROSA/COHAB 
+59 20:00     P18  
+ÁGUEDA /SANTA ROSA/COHAB/CASTELO I 
+E II 
+60 20:40     P18 SANTA ROSA/COHAB/CASTELO I E II 
+61 21:20     P20 ÁGUEDA /SANTA ROSA/COHAB 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+62 22:00     P18  AB AGD ST. ROSA COHAB CB I E II 
+63 22:45     P18  ÁGUEDA COHAB ST. ROSA CB I E II 
+64 23:30     P18  ÁGUEDA ST. ROSA CB I E II 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Segunda à Sexta – Centro/Bairro 
+Expresso Santa Rosa 
+Viagens Saída Tamandaré Junção Bairro Linha Via 
+1 18:30   P18 SANTA ROSA 
+2 19:00   P18 SANTA ROSA 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Segunda à Sexta 
+D01 - TAIM 
+Viagens Saída Hotel Portugal Junção Saída Serraria Dias Linha 
+1 05:45  07:25 D-01 D-01 
+2 10:50  12:50 D-01 D-01 
+3 15:50  17:50 D-01 D-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Sábados, Domingos e Feriados 
+D01 - TAIM 
+Viagens Saída Hotel Portugal Dias Saída Serraria Dias Linha 
+1 -----  09:00 Sábado D-01 
+2 11:00 Sábado/Domingo 12:50 Domingo D-01 
+3 16:00 Sábado/Domingo 18:00 Sábado/Domingo D-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Sábado – Centro – Bairro 
+P-17 – MARLUZ 
+Viagens Porto Tamandaré Junção Campus Furg Linha Sentido 
+1 07:25 07:35   P-17 MARLUZ CENTRO/BAIRRO 
+2  08:55   P-17 MARLUZ CENTRO/BAIRRO 
+3  10:15   P-17 MARLUZ CENTRO/BAIRRO 
+4  11:35   P-17 MARLUZ CENTRO/BAIRRO 
+5  12:55   P-17 MARLUZ CENTRO/BAIRRO 
+6  14:15   P-17 MARLUZ CENTRO/BAIRRO 
+7  15:35   P-17 MARLUZ CENTRO/BAIRRO 
+8  16:55   P-17 MARLUZ CENTRO/BAIRRO 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Segunda à Sexta – Centro – Bairro 
+P-17 – MARLUZ 
+Viagens Porto Tamandaré Junção Campus Furg Linha Sentido 
+1  07:00  07:24 P-17 MARLUZ CENTRO/BAIRRO 
+2 07:28 07:40  08:04 P-17 MARLUZ CENTRO/BAIRRO 
+3  08:20  08:44 P-17 MARLUZ CENTRO/BAIRRO 
+4 08:48 09:00  09:24 P-17 MARLUZ CENTRO/BAIRRO 
+5  09:40  10:04 P-17 MARLUZ CENTRO/BAIRRO 
+6  10:20  10:44 P-17 MARLUZ CENTRO/BAIRRO 
+7  11:00  11:24 P-17 MARLUZ CENTRO/BAIRRO 
+8  11:40  12:05 P-17 MARLUZ CENTRO/BAIRRO 
+9  12:20  12:44 P-17 MARLUZ CENTRO/BAIRRO 
+10  12:55  13:24 P-17 MARLUZ CENTRO/BAIRRO 
+11 13:45 13:57  14:21 P-17 MARLUZ CENTRO/BAIRRO 
+12  14:20  14:44 P-17 MARLUZ CENTRO/BAIRRO 
+13  15:00  15:24 P-17 MARLUZ CENTRO/BAIRRO 
+14  15:35  16:04 P-17 MARLUZ CENTRO/BAIRRO 
+15  16:15  16:40 P-17 MARLUZ CENTRO/BAIRRO 
+16  16:55  17:24 P-17 MARLUZ CENTRO/BAIRRO 
+17  17:35  18:04 P-17 MARLUZ CENTRO/BAIRRO 
+18 17:55 18:15  18:44 P-17 MARLUZ CENTRO/BAIRRO 
+19  18:55  19:24 P-17 MARLUZ CENTRO/BAIRRO 
+20  19:35   P-17 MARLUZ CENTRO/BAIRRO 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Sábado – Bairro – Centro 
+P-17 – MARLUZ 
+Viagens 
+Entrada 
+Marluz 
+Campus 
+Furg 
+Junção Tamandaré Linha Sentido 
+1 06:40 06:44   P-17 MARLUZ  
+2 08:00 08:04   P-17 MARLUZ BAIRRO 
+3 09:20 09:24   P-17 MARLUZ BAIRRO/CENTRO 
+4 10:40 10:44   P-17 MARLUZ BAIRRO/CENTRO 
+5 12:00 12:04   P-17 MARLUZ BAIRRO/CENTRO 
+6 13:20 13:24   P-17 MARLUZ BAIRRO/CENTRO 
+7 14:40 14:44   P-17 MARLUZ BAIRRO/CENTRO 
+8 16:00 16:04   P-17 MARLUZ BAIRRO/CENTRO 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Segunda à Sexta – Bairro – Centro 
+P-17 – MARLUZ 
+Viagens 
+Entrada 
+Marluz 
+Campus 
+Furg 
+Junção Tamandaré Linha Sentido 
+1 06:40 06:44   P-17 MARLUZ 
+BAIRRO/CENTRO/POR
+TO 
+2 07:20 07:24   P-17 MARLUZ BAIRRO/CENTRO/IFRS 
+3 08:00 08:04   P-17 MARLUZ 
+BAIRRO/CENTRO/POR
+TO 
+4 08:40 08:44   P-17 MARLUZ BAIRRO/CENTRO 
+5 09:20 09:24   P-17 MARLUZ BAIRRO/CENTRO 
+6 10:00 10:04   P-17 MARLUZ BAIRRO/CENTRO 
+7 10:40 10:44   P-17 MARLUZ BAIRRO/CENTRO 
+8 11:20 11:24   P-17 MARLUZ BAIRRO/CENTRO 
+9 12:00 12:05   P-17 MARLUZ BAIRRO/CENTRO 
+10 12:40 12:45   P-17 MARLUZ BAIRRO/CENTRO/IFRS 
+11 13:20 13:24   P-17 MARLUZ BAIRRO/CENTRO 
+12 14:00 14:04   P-17 MARLUZ BAIRRO/CENTRO 
+13 14:40 14:44   P-17 MARLUZ BAIRRO/CENTRO 
+14 15:20 15:24   P-17 MARLUZ BAIRRO/CENTRO 
+15 16:00 16:04   P-17 MARLUZ BAIRRO/CENTRO 
+16 16:40 16:44   P-17 MARLUZ BAIRRO/CENTRO 
+17 17:20 17:24   P-17 MARLUZ 
+BAIRRO/CENTRO/POR
+TO 
+18 18:00 18:04   P-17 MARLUZ BAIRRO/CENTRO 
+19 18:40 18:44   P-17 MARLUZ BAIRRO/CENTRO 
+20 19:20 19:24   P-17 MARLUZ BAIRRO/CENTRO 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Domingos e Feriados 
+J-05 BARRA 
+Viagens Saída Junção Tamandaré Barra Petrobras 
+1 05:45 06:00  06:35 06:50 
+2 06:50 07:05  07:33 07:48 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Sábados 
+J-05 BARRA 
+Viagens Saída Junção Tamandaré Barra Petrobras 
+1 05:40(SAÍDA D. ALMEIDA) 05:45  06:40 07:00 
+2 06:00 06:15  07:00 07:20 
+3 06:40 06:55  07:40 08:00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+Segunda à Sexta  
+J-05 BARRA 
+Viagens Saída Junção Tamandaré Barra Petrobras 
+1 05:30 05:45  06:20 06:40 
+2 ----- 06:10  06:45 07:00 
+3 06:20 06:35  07:10 07:30 
+4 06:45 07:00  07:35 07:55 
+5 15:50 16:05  16:40 17:00 
+6 16:35 16:55  17:25 17:40 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+AV. PELOTAS - SEG. A SEX. - INVERNO - 06/03/2017 
+VIAGEM VIA 
+ESTAÇÃO SATURNINO 
+TAMANDARÉ DE BRITO 
+1 Av. Pel. 06:20 06:48 
+2 Av. Pel. 06:48 07:16 
+3 Av. Pel. 07:16 07:44 
+4 Av. Pel. 07:44 08:12 
+5 Av. Pel. 08:12 08:40 
+6 Av. Pel. 09:15 09:43 
+7 Av. Pel. 09:50 10:18 
+8 Av. Pel. 11:00 11:28 
+9 Av. Pel. 11:28 11:56 
+10 Av. Pel. 11:56 12:24 
+11 Av. Pel. 12:24 12:52 
+12 Av. Pel. 12:52 13:20 
+13 Av. Pel. 13:20 13:48 
+14 Av. Pel. 13:55 14:23 
+15 Av. Pel. 14:30 14:58 
+16 Av. Pel. 15:00 15:26 
+17 Av. Pel. 15:30 15:50 
+18 Av. Pel. 15:45 16:10 
+19 Av. Pel. 16:00 16:28 
+20 Av. Pel. 16:30 16:58 
+21 Av. Pel. 16:45 17:05 
+22 Av. Pel. 17:00 17:28 
+23 Av. Pel. 17:30 17:58 
+24 Av. Pel. 18:00 18:28 
+25 Av. Pel. 18:30 18:53 
+26 Av. Pel. 19:00 19:28 
+27 Av. Pel. 20:00 20:20 
+28 Av. Pel. 21:20 21:40 
+29 Av. Pel. 22:40 23:00 
+30 Av. Pel. 00:00 00:20 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+AV.PELOTAS - SÁBADO -  INVERNO - 06/03/2017 
+VIAGEM VIA 
+ESTAÇÃO SATURNINO 
+TAMANDARÉ DE BRITO 
+1 Av. Pel. 06:20 06:45 
+2 Av. Pel. 07:00 07:25 
+3 Av. Pel. 07:40 08:05 
+4 Av. Pel. 08:20 08:45 
+5 Av. Pel. 09:00 09:25 
+6 Av. Pel. 09:40 10:05 
+7 Av. Pel. 10:20 10:45 
+8 Av. Pel. 11:00 11:25 
+9 Av. Pel. 11:40 12:05 
+10 Av. Pel. 12:20 12:45 
+11 Av. Pel. 13:00 13:25 
+12 Av. Pel. 13:40 14:05 
+13 Av. Pel. 14:20 14:45 
+14 Av. Pel. 15:00 15:25 
+15 Av. Pel. 15:40 16:05 
+16 Av. Pel. 16:20 16:45 
+17 Av. Pel. 17:00 17:25 
+18 Av. Pel. 17:40 18:05 
+19 Av. Pel. 18:20 18:45 
+20 Av. Pel. 19:00 19:20 
+21 Av. Pel. 19:40 20:05 
+22 Av. Pel. 20:30 20:55 
+23 Av. Pel. 21:30 21:55 
+24 Av. Pel. 22:30 22:55 
+25 Av. Pel. 23:30 23:50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+AV.PELOTAS - DOMINGO E FERIADOS -  INVERNO - 06/03/2017 
+VIAGEM VIA 
+ESTAÇÃO SATURNINO 
+TAMANDARÉ DE BRITO 
+1 Av. Pel. 06:20 06:45 
+2 Av. Pel. 07:05 07:30 
+3 Av. Pel. 07:50 08:15 
+4 Av. Pel. 08:35 09:00 
+5 Av. Pel. 09:20 09:45 
+6 Av. Pel. 10:05 10:30 
+7 Av. Pel. 10:50 11:15 
+8 Av. Pel. 11:35 12:00 
+9 Av. Pel. 12:20 12:45 
+10 Av. Pel. 13:05 13:30 
+11 Av. Pel. 13:50 14:15 
+12 Av. Pel. 14:35 15:00 
+13 Av. Pel. 15:20 15:45 
+14 Av. Pel. 16:05 16:30 
+15 Av. Pel. 16:50 17:15 
+16 Av. Pel. 17:35 18:00 
+17 Av. Pel. 18:20 18:45 
+18 Av. Pel. 19:05 19:30 
+19 Av. Pel. 19:50 20:15 
+20 Av. Pel. 20:35 21:00 
+21 Av. Pel. 21:20 21:45 
+22 Av. Pel. 22:05 22:30 
+23 Av. Pel. 22:50 23:15 
+24 Av. Pel. 23:35 00:00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+BARRA / PSP - DOMINGO E FERIADOS - INVERNO REVISADO 06/03/2017 
+ VIA 
+SAÍDA 
+BARRA 
+B. 
+NOVA 
+EST. 
+TAM. 
+EST. 
+JUNÇÃO 
+ENTRA. 
+P.S.P. 
+SAÍDA 
+P.S.P. 
+EST. 
+JUNÇÃO 
+EST. 
+TAM. 
+B. 
+NOVA 
+1 Barra     05:00 05:10 05:20 05:39  
+2 Barra     05:35 05:45 05:55 06:14  
+3 Barra     06:10 06:20 06:30 06:49  
+4 Barra     06:45 06:55 07:05 07:24  
+5 Barra 06:20  06:50 07:05 07:22 07:32 07:42 08:01  
+6 Barra 06:55 07:03 07:25 07:40 07:59 08:09 08:19 08:38  
+7 Barra 07:30  08:00 08:15 08:34 08:44 08:54 09:13  
+8 
+Barra 
+Nova 
+08:05  08:35 08:50 09:09 09:19 09:29 09:48 10:12 
+9 Barra 08:40  09:10 09:25 09:44 09:54 10:04 10:23  
+10 Barra 09:15  09:45 10:00 10:19 10:29 10:39 10:58  
+11 Barra 09:50  10:20 10:35 10:54 11:04 11:14 11:33  
+12 Barra 10:25  10:55 11:10 11:29 11:39 11:49 12:08  
+13 
+Barra 
+Nova 
+11:00  11:30 11:45 12:04 12:14 12:24 12:43 13:07 
+14 Barra 11:35  12:05 12:20 12:39 12:49 12:59 13:18  
+15 Barra 12:10 12:17 12:40 12:55 13:14 13:24 13:34 13:53  
+16 Barra 12:45  13:15 13:30 13:49 13:59 14:09 14:28  
+17 Barra 13:20  13:50 14:05 14:24 14:34 14:44 15:03  
+18 Barra 13:55  14:25 14:40 14:59 15:09 15:19 15:38  
+19 Barra 14:30  15:00 15:15 15:34 15:44 15:54 16:13  
+20 Barra 15:05 15:12 15:35 15:50 16:09 16:19 16:29 16:48  
+21 
+Barra 
+Nova 
+15:40  16:10 16:25 16:44 16:54 17:04 17:23 17:47 
+22 Barra 16:15  16:45 17:00 17:19 17:29 17:39 17:58  
+23 Barra 16:50  17:20 17:35 17:54 18:04 18:14 18:33  
+24 Barra 17:25  17:55 18:10 18:29 18:39 18:49 19:08  
+25 Barra 18:00 18:07 18:30 18:45 19:04 19:14 19:24 19:43  
+26 Barra 18:35  19:05 19:20 19:39 19:49 19:59 20:18  
+27 Barra 19:10  19:40 19:55 20:14 20:24 20:34 20:53  
+28 Barra 19:45  20:15 20:30 20:45 20:55 21:05 21:24  
+29 
+Barra 
+Nova 
+20:30  21:00 21:15 21:30 21:40 21:50 22:09 22:30 
+30 Barra 21:15  21:45 22:00 22:15 22:25 22:35 22:54  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+31 Barra 22:00 22:07 22:30 22:45 23:00 23:10 23:20 23:39  
+32 Barra 22:45  23:15 23:30 23:45 23:55 00:05 00:24  
+33 Barra 23:30  00:00 00:15 00:30 RECOLHE 
+34 Barra 00:20  00:50 01:05 01:22 RECOLHE 
+35 Barra 01:10  01:40 01:55 02:12 RECOLHE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+BARRA / PSP – SÁBADO - INVERNO REVISADO 06/03/2017 
+ VIA 
+SAÍDA 
+BARRA 
+B. 
+NOVA 
+EST. 
+TAM. 
+EST. 
+JUNÇÃO 
+ENTRA. 
+P.S.P. 
+SAÍDA 
+P.S.P. 
+EST. 
+JUNÇÃO 
+EST. 
+TAM. 
+B. 
+NOVA 
+1 Barra     05:00 05:10 05:20 05:39  
+2 
+Barra 
+Nova 
+    05:35 05:45 05:55 06:14 06:43 
+3 Barra     06:10 06:20 06:30 06:49  
+4 
+Barra 
+Nova 
+    06:45 06:55 07:05 07:24 07:48 
+5 Barra 06:20  06:50 07:10 07:22 07:32 07:42 08:00  
+6 Barra 06:55 07:03 07:25 07:45 07:59 08:09 08:19 08:38  
+7 Barra 07:30  08:00 08:20 08:34 08:44 08:54 09:13  
+8 Barra 08:05  08:35 08:55 09:09 09:19 09:29 09:48  
+9 Barra 08:40  09:10 09:30 09:44 09:54 10:04 10:23  
+10 
+Barra 
+Nova 
+09:15  09:45 10:05 10:19 10:29 10:39 10:58 11:22 
+11 Barra 09:50  10:20 10:40 10:54 11:04 11:14 11:33  
+12 Barra 10:25  10:55 11:15 11:29 11:39 11:49 12:08  
+13 
+Barra 
+Nova 
+11:00  11:30 11:50 12:04 12:14 12:24 12:43 13:07 
+14 Barra 11:35  12:05 12:25 12:39 12:49 12:59 13:18  
+15 
+Barra 
+Nova 
+12:10 12:17 12:40 13:00 13:14 13:24 13:34 13:53 14:17 
+16 Barra 12:45  13:15 13:35 13:49 13:59 14:09 14:28  
+17 Barra 13:20  13:50 14:10 14:24 14:34 14:44 15:03  
+18 Barra 13:55  14:25 14::45 14:59 15:09 15:19 15:38  
+19 Barra 14:30  15:00 15:20 15:34 15:44 15:54 16:13  
+20 Barra 15:05 15:12 15:35 15:55 16:09 16:16 16:29 16:48  
+21 Barra 15:40  16:10 16:30 16:44 16:54 17:04 17:23  
+22 
+Barra 
+Nova 
+16:15  16:45 17:05 17:19 17:29 17:39 17:58 18:22 
+23 Barra 16:50  17:20 17:40 17:54 18:04 18:14 18:33  
+24 Barra 17:25  17:55 18:15 18:29 18:39 18:49 19:08  
+25 Barra 18:00 18:07 18:30 18:50 19:04 19:14 19:24 19:43  
+26 Barra 18:35  19:05 19:25 19:39 19:49 19:59 20:18  
+27 Barra 19:10  19:40 20:00 20:14 20:24 20:34 20:53  
+28 
+Barra 
+Nova 
+19:45  20:15 20:35 20:45 20:55 21:05 21:24 21:45 
+29 Barra 20:30  21:00 21:20 21:30 21:40 21:50 22:09  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+30 Barra 21:15  21:45 22:05 22:15 22:25 22:35 22:54  
+31 Barra 22:00 22:07 22:30 22:50 23:00 23:10 23:20 23:39  
+32 Barra 22:45  23:15 23:35 23:45 23:55 00:05 00:24  
+33 Barra 23:30  00:00 00:20 00:30 RECOLHE ----- 
+34 Barra 00:20  00:50 01:10 01:22 RECOLHE ----- 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+BARRA / PSP – SEGUNDA À SEXTA - INVERNO REVISADO 06/03/2017 
+ VIA 
+SAÍDA 
+BARRA 
+B. 
+NOVA 
+EST. 
+TAM. 
+EST. 
+JUNÇÃO 
+ENTRA. 
+P.S.P. 
+SAÍDA 
+P.S.P. 
+EST. 
+JUNÇÃO 
+EST. 
+TAM. 
+B. 
+NOVA 
+1 Barra     05:00 05:12 05:25 05:45  
+2 
+Barra 
+Nova 
+    05:25 05:37 05:50 06:10 06:38 
+3 Barra     05:50 06:02 06:15 06:35  
+4 Barra     06:03 06:15 06:28 06:48  
+5 Barra     06:16 06:28 06:41 07:01  
+6 
+Barra 
+Nova 
+    06:30 06:42 06:55 07:15 07:43 
+7 Barra     06:38 06:50 07:03 07:23  
+8 VIA 01     06:43 06:55 07:08 07:28  
+9 Barra     06:55 07:07 07:20 07:40  
+10 Barra 06:02  06:42 07:02 07:10 07:22 07:35 07:55  
+11 Barra 06:20  07:00 07:20 07:32 07:44 07:57 08:17  
+12 
+Barra 
+Nova 
+06:40 06:47 07:20 07:40 07:55 08:07 08:20 08:40  
+13 ABRIGO 07:05  07:45 ATÉ O ABRIGO  -----   
+14 Barra 07:05  07:45 08:05 08:20 08:32 08:45 09:05  
+15 
+Barra 
+Nova 
+07:30 07:37 08:10 08:30 08:45 08:57 09:10 09:30  
+16 Barra 07:55  08:35 08:55 09:10 09:22 09:35 09:55  
+17 Barra 08:20  09:00 09:20 09:35 09:47 10:00 10:20  
+18 
+Barra 
+Nova 
+08:45 08:52 09:25 09:45 10:00 10:12 10:25 10:45  
+19 Barra 09:10  09:50 10:10 10:25 10:37 10:50 11:10  
+20 Barra 09:35  10:15 10:35 10:50 11:02 11:15 11:35  
+ÀS 11:15HS ENTRADA DO P. S. P. ENTRAR NA SANTA TEREZA INDO PARA A BARRA 
+21 Barra 10:00  10:40 11:00 11:15 11:27 11:40 12:00  
+22 
+SAÍDA DO P. SAO PEDRO 
+11:40 11:52 12:05 12:25 12:58 
+23 
+Barra 
+Nova 
+10:25 10:32 11:05 11:25 11:40 11:52 12:05 12:25 12:58 
+24 
+Barra 
+Nova 
+10:50 10:57 11:30 11:50 12:05 12:17 12:30 12:50 13:23 
+25 Barra 11:15  11:55 12:15 12:30 12:42 12:55 13:15  
+26 
+Barra 
+Nova 
+11:40 11:47 12:20 12:40 12:55 13:07 13:20 13:40  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+27 Barra 12:05  12:45 13:05 13:20 13:32 13:45 14:05  
+28 Barra 12:30  13:10 13:30 13:45 13:57 14:10 14:30  
+29 Barra 12:55  13:35 13:55 14:10 14:22 14:35 14:55  
+30 
+Barra 
+Nova 
+13:20 13:28 14:00 14:20 14:35 14:47 15:00 15:20  
+31 Barra 13:45  14:25 14:45 15:00 15:12 15:25 15:45  
+32 
+Barra 
+Nova 
+14:10 14:17 14:50 15:10 15:25 15:37 15:50 16:10  
+33 Barra 14:35  15:15 15:35 15:50 16:02 16:15 16:35  
+34 Barra 15:00  15:40 16:00 16:20 16:32 16:45 17:05  
+35 Barra 15:25  16:05 16:25 16:45 16:57 17:10 17:30  
+NO HORÁRIO DAS 16:45HS ENTRADA DO P. SÃO PEDRO ENTRAR NA SANTA TEREZA 
+INDO PARA A BARRA 
+36 Barra 15:50  16:30 16:50 17:10 17:22 17:35 17:55  
+37 Barra 16:10  16:50 17:10 17:30 17:42 17:55 18:15  
+38 VIA 01 SAI 18:04HS DO FINAL DA VIA 01 INDO ATÉ O P. SÃO PEDRO   
+39 Barra 16:30  17:10 17:30 17:50 18:02 18:15 18:35  
+40 Barra 16:50  17:30 17:50 18:15 18:27 18:40 19:00  
+41 Barra 17:10  17:50 18:10 18:35 18:47 19:00 19:20  
+42 
+Barra 
+Nova 
+17:30 17:37 18:10 18:30 18:55 19:07 19:20 19:40 20:13 
+43 
+Barra Via 
+01 
+17:50  18:30 18:50 19:15 19:27 19:40 20:00  
+44 
+Barra 
+Nova 
+18:10 18:17 18:50 19:10 19:35 19:47 20:00 20:20  
+45 Barra 18:30  19:10 19:30 19:55 20:07 20:20 20:40  
+46 Barra 19:00  19:40 20:00 20:15 20:22 20:42 21:02  
+47 Barra 19:30 19:37 20:10 20:30 ATÉ P. SÃO PEDRO RECOLHE 
+48 Barra 20:00  20:30 20:40 20:50 21:02 21:10 21:30  
+49 Barra 20:45  21:15 21:25 21:35 21:47 21:55 22:15  
+50 Barra  21:30 21:35 22:00 22:10 22:20 22:32 22:40 23:00 23:25 
+51 Barra 22:20  22:50 23:00 23:10 23:22 23:32 23:52  
+52 Barra 23:00  23:30 23:40 23:50 00:02 00:12 00:32  
+53 Barra 23:45  00:15 00:25 00:35 00:47 00:57 01:17  
+54 Barra 00:30  01:00 01:10 
+ATÉ P. SÃO PEDRO RECOLHE 
+55 Barra 01:15  01:45 01:55 
+ATÉ P. SÃO PEDRO RECOLHE 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+BERNADETH - INVERNO REVISADO 06/03/2017 
+ VIA SAÍDA  PASSADA 
+  JUNÇÃO ANTENA 
+1 Bernadeth 06:40 06:50 
+2 Bernadeth 07:00 07:10 
+3 Bernadeth 07:30 07:40 
+4 Bernadeth 08:00 08:10 
+5 Bernadeth 08:30 08:40 
+6 Bernadeth 09:00 09:10 
+7 Bernadeth 10:30 10:40 
+8 Bernadeth 11:00 11:10 
+9 Bernadeth 11:30 11:40 
+10 Bernadeth 12:00 12:10 
+11 Bernadeth 12:30 12:40 
+12 Bernadeth 13:00 13:10 
+13 Bernadeth 13:30 13:40 
+14 Bernadeth 14:00 14:10 
+15 Bernadeth 14:30 14:40 
+16 Bernadeth 15:00 15:10 
+17 Bernadeth 15:30 15:40 
+18 Bernadeth 16:00 16:10 
+19 Bernadeth 16:40 16:50 
+20 Bernadeth 17:20 17:30 
+21 Bernadeth 17:50 18:00 
+22 Bernadeth 18:20 18:30 
+23 Bernadeth 18:50 19:00 
+24 Bernadeth 19:20 19:30 
+25 Bernadeth 19:50 20:00 
+26 Bernadeth 20:20 20:30 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+BOSQUE - DOMINGO E FERIADOS - INVERNO REVISADO 06/03/2017 
+VIA 
+ESTAÇÃO PASSADA ESTAÇÃO PASSADA 
+JUNÇÃO BOSQUE TAMAND. BOSQUE 
+BOSQUE 06:20 06:30 06:52 07:14 
+BOSQUE 06:45 06:55 07:17 07:39 
+BOSQUE 07:25 07:35 07:57 08:19 
+BOSQUE 08:05 08:15 08:37 08:59 
+BOSQUE 08:45 08:55 09:17 09:39 
+BOSQUE 09:25 09:35 09:57 10:19 
+BOSQUE 10:05 10:15 10:37 10:59 
+BOSQUE 10:45 10:55 11:17 11:39 
+BOSQUE 11:25 11:35 11:57 12:19 
+BOSQUE 12:05 12:15 12:37 12:59 
+BOSQUE 12:45 12:55 13:17 13:39 
+BOSQUE 13:25 13:35 13:57 14:19 
+BOSQUE 14:05 14:15 14:37 14:59 
+BOSQUE 14:45 14:55 15:17 15:39 
+BOSQUE 15:25 15:35 15:57 16:19 
+BOSQUE 16:05 16:15 16:37 16:59 
+BOSQUE 16:45 16:55 17:17 17:39 
+BOSQUE 17:25 17:35 17:57 18:19 
+BOSQUE 18:05 18:15 18:37 18:59 
+BOSQUE 18:45 18:55 19:17 19:39 
+BOSQUE 19:25 19:35 19:57 20:19 
+BOSQUE 20:05 20:15 20:37 20:59 
+BOSQUE 20:45 20:55 21:17 21:39 
+BOSQUE 
+21:25 21:35 21:57 22:19 
+BOSQUE 
+22:05 22:15 22:37 22:59 
+BOSQUE 
+22:45 22:55 23:17 23:39 
+BOSQUE 
+23:30 23:40 00:02 00:24 
+BOSQUE 
+00:05 00:15 00:37 00:59 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+BOSQUE – SÁBADO - INVERNO REVISADO 06/03/2017 
+VIA 
+ESTAÇÃO PASSADA ESTAÇÃO PASSADA 
+JUNÇÃO BOSQUE TAMAND. BOSQUE 
+BOSQUE 06:05 06:18 06:45 07:12 
+BOSQUE 06:50 07:03 07:30 07:57 
+BOSQUE 07:30 07:43 08:10 08:37 
+BOSQUE 08:10 08:23 08:50 09:17 
+BOSQUE 08:50 09:03 09:30 09:57 
+BOSQUE 09:30 09:43 10:10 10:37 
+BOSQUE 10:10 10:23 10:50 11:17 
+BOSQUE 10:50 11:03 11:30 11:57 
+BOSQUE 11:30 11:43 12:10 12:37 
+BOSQUE 12:10 12:23 12:50 13:17 
+BOSQUE 12:50 13:03 13:30 13:57 
+BOSQUE 13:30 13:43 14:10 14:37 
+BOSQUE 14:10 14:23 14:50 15:17 
+BOSQUE 15:00 15:13 15:40 16:07 
+BOSQUE 15:40 15:53 16:20 16:47 
+BOSQUE 16:20 16:33 17:00 17:27 
+BOSQUE 17:01 17:14 17:41 18:08 
+BOSQUE 17:42 17:55 18:22 18:49 
+BOSQUE 18:23 18:36 19:03 19:30 
+BOSQUE 19:04 19:17 19:44 20:11 
+BOSQUE 20:26 20:39 21:06 21:33 
+BOSQUE 21:35 21:48 22:15 22:42 
+BOSQUE 23:30 23:40 00:00 00:20 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+BOSQUE – SEX À SÁBADO - INVERNO REVISADO 06/03/2017 
+VIA 
+ESTAÇÃO PASSADA ESTAÇÃO PASSADA 
+JUNÇÃO BOSQUE TAMAND. BOSQUE 
+BOSQUE 06:00 06:13 06:45 07:22 
+BOSQUE 06:30 06:43 07:15 07:50 
+BOSQUE/IFRS 06:50 07:03 ATÉ O IFRS 
+BOSQUE 07:00 07:13 07:40 08:00 
+BOSQUE 07:10 07:23 07:55 08:32 
+BOSQUE 07:25 07:38 08:10 08:47 
+BOSQUE 07:40 07:53 08:25 09:05 
+BOSQUE 07:55 08:08 ATÉ O CENTRO  
+BOSQUE 08:10 08:23 08:55 09:32 
+BOSQUE 08:30 08:43 09:15 09:52 
+BOSQUE 09:00 09:13 09:45 10:22 
+BOSQUE 09:30 09:43 10:15 10:52 
+BOSQUE 10:00 10:13 10:45 11:22 
+BOSQUE 10:30 10:43 11:15 11:52 
+BOSQUE SAI DO CENTRO  11:30 12:07 
+BOSQUE 11:00 11:13 11:45 12:22 
+BOSQUE 11:30 11:43 12:15 12:52 
+BOSQUE 12:00 12:13 12:45 13:22 
+BOSQUE 12:30 12:43 ATÉ O CENTRO  
+BOSQUE 12:30 12:43 13:15 13:52 
+BOSQUE 13:00 13:13 13:45 14:22 
+BOSQUE 13:20 13:33 14:05 14:42 
+BOSQUE 13:40 13:53 14:25 15:02 
+BOSQUE 14:00 14:13 14:45 15:22 
+BOSQUE 14:20 14:33 15:05 15:42 
+BOSQUE 14:50 15:03 15:35 16:12 
+BOSQUE 15:20 15:33 16:05 16:42 
+BOSQUE 15:50 16:03 16:35 17:12 
+BOSQUE SAI DO CENTRO  16:50 17:27 
+BOSQUE 16:20 16:33 17:05 17:42 
+BOSQUE SAI DO CENTRO  17:20 17:57 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+BOSQUE 16:50 17:03 17:35 18:12 
+BOSQUE SAI DO CENTRO  17:50 18:27 
+BOSQUE 17:20 17:33 18:05 18:42 
+BOSQUE 17:40 17:53 18:20 18:57 
+BOSQUE 18:00 18:13 18:45 19:22 
+BOSQUE 
+18:20 18:33 19:05 19:42 
+BOSQUE 
+18:40 18:53 19:25 20:02 
+BOSQUE 
+19:00 19:13 19:40 20:10 
+BOSQUE 
+19:50 20:03 20:35 21:12 
+BOSQUE 
+20:40 20:53 21:25 22:02 
+BOSQUE 
+21:30 21:43 22:20 22:52 
+BOSQUE 
+22:30 22:43 23:15 23:52 
+BOSQUE 
+23:30 23:43 00:25 00:52 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+B. MACEDO - SEG. A SEX. - INVERNO - 06/03/2017 
+VIAGEM VIA 
+ESTAÇÃO SATURNINO 
+TAMANDARÉ DE BRITO 
+1 B. Mac. 06:34 07:02 
+2 B. Mac. 07:02 07:30 
+3 B. Mac. 07:30 07:58 
+4 B. Mac. 07:58 08:26 
+5 B. Mac. 08:26 08:54 
+6 B. Mac. 08:54 09:22 
+7 B. Mac. 09:29 09:57 
+8 
+B. Mac. 10:04 10:32 
+9 B. Mac. 10:30 10:58 
+10 B. Mac. 11:20 11:48 
+11 B. Mac. 11:50 12:18 
+12 B. Mac. 12:20 12:48 
+13 B. Mac. 12:38 13:06 
+14 B. Mac. 13:06 13:34 
+15 B. Mac. 13:34 14:00 
+16 
+B. Mac. 14:09 14:37 
+17 B. Mac. 14:44 15:12 
+18 B. Mac. 15:20 15:48 
+19 B. Mac. 15:54 16:22 
+20 B. Mac. 16:29 16:57 
+21 B. Mac. 17:04 17:32 
+22 B. Mac. 17:20 17:48 
+23 B. Mac. 17:50 18:18 
+24 
+B. Mac. 18:35 19:03 
+25 B. Mac. 19:20 19:40 
+26 B. Mac. 20:00 20:20 
+27 B. Mac. 20:40 21:00 
+28 
+B. Mac. 22:00 22:20 
+29 B. Mac. 23:20 23:40 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+B.MACEDO - SÁBADO - INVERNO - 06/03/2017 
+VIAGEM VIA 
+ESTAÇÃO SATURNINO 
+TAMANDARÉ DE BRITO 
+1 B. Mac. 06:39 07:02 
+2 B. Mac. 07:17 07:40 
+3 B. Mac. 07:55 08:18 
+4 B. Mac. 08:33 08:56 
+5 B. Mac. 09:11 09:34 
+6 
+B. Mac. 09:49 10:12 
+7 B. Mac. 10:27 10:50 
+8 B. Mac. 11:05 11:28 
+9 B. Mac. 11:43 12:06 
+10 
+B. Mac. 12:21 12:44 
+11 B. Mac. 12:59 13:22 
+12 B. Mac. 13:37 14:00 
+13 B. Mac. 14:15 14:38 
+14 B. Mac. 14:53 15:16 
+15 B. Mac. 15:31 15:54 
+16 B. Mac. 16:09 16:32 
+17 B. Mac. 16:47 17:10 
+18 
+B. Mac. 17:25 17:48 
+19 B. Mac. 18:03 18:26 
+20 B. Mac. 18:41 19:04 
+21 B. Mac. 19:19 19:42 
+22 
+B. Mac. 20:00 20:23 
+23 B. Mac. 20:50 21:13 
+24 B. Mac. 21:40 22:03 
+25 B. Mac. 22:30 22:53 
+26 B. Mac. 23:20 23:43 
+27 B. Mac. 00:10 00:33 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+B.MACEDO - DOMINGO E FERIADOS -  INVERNO - 06/03/2017 
+VIAGEM VIA 
+ESTAÇÃO SATURNINO 
+TAMANDARÉ DE BRITO 
+1 B. Mac. 06:43 07:08 
+2 B. Mac. 07:28 07:53 
+3 B. Mac. 08:13 08:38 
+4 B. Mac. 08:58 09:23 
+5 B. Mac. 09:43 10:08 
+6 B. Mac. 10:28 10:53 
+7 B. Mac. 11:13 11:38 
+8 
+B. Mac. 11:58 12:23 
+9 B. Mac. 12:43 13:08 
+10 B. Mac. 13:28 13:53 
+11 B. Mac. 14:13 14:38 
+12 
+B. Mac. 14:58 15:23 
+13 B. Mac. 15:43 16:08 
+14 B. Mac. 16:28 16:53 
+15 B. Mac. 17:13 17:38 
+16 B. Mac. 17:58 18:23 
+17 B. Mac. 18:43 19:08 
+18 
+B. Mac. 19:28 19:53 
+19 B. Mac. 20:13 20:38 
+20 
+B. Mac. 20:58 21:23 
+21 B. Mac. 21:43 22:08 
+22 B. Mac. 22:28 22:53 
+23 B. Mac. 23:13 23:38 
+24 
+B. Mac. 00:00 00:25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CASSINO - SEG. A SEX. - INVERNO REVISADO 06/03/2017  
+VIAGEM VIA  
+TERM.  
+INTEGRAÇÃO  QUERÊNCIA  
+SAÍDA  
+INTEGRAÇÃO 
+TAMAND.  
+JUNÇÃO 
+ 
+CASSINO 
+JUNÇÃO 
+1 VIA 9  05:10h CASSINO PRAIA  
+ 
+05:10 05:40 
+2  
+05:15h da Ent. P. 
+Guanabara 
+05:25 05:45 06:15 
+3 VIA 9  
+05:35h da frente P.São 
+Pedro  - - - - 
+05:55 06:25 
+4 - - -  - - - -  
+- - - -  - - - -  06:10 06:40 
+5  06:00H ATLÂNTICO SUL  
+06:10 06:25 06:55 
+6 VIA QPG  05:15 
+05:35 06:20 06:40 07:10 
+7 VIA QPG  05:45 
+06:05 06:45 07:00 07:30 
+8 VIA 9  06:30 LOMBADA BOLAXA  
+- - - - 06:40 07:10 
+9 VIA 9  06:20 DA BRIGADA  
+- - - -  06:40 07:10 
+10 - - -  06:00 
+06:20 - - - -  06:50 IFRS 07:20 
+11 - - -  - - -  
+- - -  - - - -  
+07:05 
+FURG 07:35 
+12 - - -  
+- - - -  - - -  - - -  
+07:05 
+FURG 07:35 
+13 VIA QPG  06:15 
+06:35 
+06:55 
+ENT.PG  07:15 07:45 
+14 
+- - - -  - - - -  - - - -  - - - -  07:30 08:00 
+15 
+- - - -  06:40 07:00  07:45 08:15 
+16 - - -  07:00 
+07:20 - - - -  08:00 08:30 
+17 - - -  07:20 
+07:40 - - - -  08:15 08:45 
+18 - - -  07:35 
+07:55 - - - -  08:30 09:00 
+19 - - -  07:45 
+08:05 - - - -  08:45 09:15 
+20 - - -  08:00 
+08:20 - - - -  09:00 09:30 
+21 - - -  08:20 
+08:40 - - - -  09:20 09:50 
+22 - - -  08:40 
+09:00 - - - -  09:40 10:10 
+23 - - -  09:00 
+09:20 - - - -  10:00 10:30 
+24 - - -  09:25 
+09:45 - - - -  10:25 10:55 
+25 - - -  09:50 
+10:10 - - - -  10:50 11:20 
+26 - - -  10:15 
+10:35 - - - -  11:15 11:45 
+27 
+- - -  10:40 11:00 - - - -  11:40 12:10 
+28 
+- - -  - - -  - - -  - - - -  11:50 IFRS 12:20 
+29 
+- - -  11:00 11:20 - - - -  12:05 12:35 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+30 
+- - -  11:15 11:35 - - - -  12:15 12:45 
+31 
+- - -  11:30 11:50 - - - -  12:30 13:00 
+32 
+- - -  11:45 12:05 - - - -  12:45 13:15 
+33 
+- - -  11:55 12:15 - - - -  
+12:55 
+FURG 13:25 
+34 
+- - -  12:05 12:25 - - - -  13:00 13:30 
+35 
+- - -  12:15 12:35 - - - -  13:15 13:45 
+36 
+- - -  12:30 12:50 - - - -  13:30 14:00 
+37 
+- - -  12:45 13:05 - - - -  13:45 14:15 
+38 
+- - -  13:00 13:20 - - - -  14:00 14:30 
+39 
+- - -  13:20 13:40 - - - -  14:10 14:40 
+40 
+- - -  13:40 14:00 - - - -  14:40 15:10 
+41 
+- - -  14:00 14:20 - - - -  15:00 15:30 
+42 
+- - -  14:20 14:40 - - - -  15:20 15:50 
+43 
+- - -  14:40 15:00 - - - -  15:40 16:10 
+44 
+- - -  15:00 15:20 - - - -  16:00 16:30 
+45 
+- - -  15:20 15:40 - - - -  16:20 16:50 
+46 
+- - -  15:40 16:00 - - - -  16:35 17:05 
+47 
+- - -  16:00 16:20 - - - -  17:00 17:30 
+48 
+- - -  16:15 16:35 - - - -  17:15 17:45 
+49 
+- - -  16:30 16:50 - - - -  17:30 18:00 
+50 
+- - -  16:45 17:05 - - - -  17:45 18:15 
+51 
+- - -  17:00 17:20 - - - -  
+18:05 
+FURG 18:35 
+52 
+- - -  17:10 17:30 - - - -  
+18:10 
+FURG 18:40 
+53 
+- - -  17:20 17:40 - - - -  18:15 18:45 
+54 
+- - -  17:30 17:50 - - - -  18:30 19:00 
+55 
+VIA 09 17:40 - - - -  - - - -  18:40 19:10 
+56 
+- - -  17:50 18:10 - - - -  18:50 19:20 
+57 
+- - -  18:00 18:20 - - - -  19:00 ATÉ O CASSINO 
+58 
+- - -  18:12 18:32 - - - -  19:10 19:40 
+59 
+- - -  18:24 18:44 - - - -  19:20 19:50 
+60 
+- - -  18:40 19:00 - - - -  19:35 20:05 
+61 
+- - -  18:55 19:15 - - - -  19:50 20:20 
+62 
+- - -  19:10 19:30 - - - -  20:15 20:45 
+63 
+- - -  19:30 19:50 - - - -  20:30 21:00 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+64 
+- - -  19:45 20:05 - - - -  20:50 21:20 
+65 
+- - -  20:10 20:30 - - - -  21:00 ATÉ O CASSINO 
+66 
+- - -  20:20 20:40 - - - -  21:20 21:50 
+67 
+- - -  20:40 21:00 - - - -  21:30 ATÉ O CASSINO 
+68 
+- - -  21:00 21:20 - - - -  22:00 22:30 
+69 
+- - -  21:30 21:50 - - - -  22:20 22:50 
+70 
+- - -  22:00 22:20 - - - -  23:00 23:30 
+71 
+QUE / PG 22:30 22:50 23:20 23:30 00:00 
+72 
+ABC /Q/ PG 
+/ATL  23:00 23:20 23:50 00:00 00:30 
+73 
+ABC /Q/ PG 
+/ATL  23:30 23:50 00:20 00:30 01:00 
+74 
+QUE / PG 00:00 00:20 00:50 01:00 01:30 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CASSINO - SÁBADO -  INVERNO REVISADO 06/03/2017 
+VIAGEM VIA 
+TERM. INTEGRAÇÃO 
+QUERÊNCIA 
+SAÍDA INTEGRAÇÃO 
+TAMAND. JUNÇÃO CASSINO JUNÇÃO 
+1 ---- 05:10 05:29 ---- 05:55 06:25 
+2 ---- --- ---- ---- 06:10 06:40 
+3 Puxa 06:00hrs da Ent. P. Guanabara 06:10 06:25 06:55 
+4 ---- ---- ---- ---- 06:45  07:15 
+5 Via 9 06h40Min DA LOMBA BOLAXA  - - - - 06:50 ---- 
+6 QPG 05:45 06:04 06:45 07:00 07:30 
+7  - - -  06:15 06:34  - - - - 07:20 07:50 
+8  - - -  06:40 06:59  - - - - 07:40 08:10 
+9  - - -  07:00 07:19 ---- 08:00 08:30 
+10  - - -  07:20 07:39 --- 08:20 08:50 
+11  - - -  07:40 07:59  - - -  08:40 09:10 
+12  - - -  08:00 08:19  - - - - 09:00 09:30 
+13  - - -  08:20 08:39  - - - - 09:20 09:50 
+14  - - -  08:40 08:59  - - - - 09:40 10:10 
+15  - - -  09:00 09:19 --- 10:00 10:30 
+16  - - -  09:20 09:39 --- 10:20 10:50 
+17  - - -  09:40 09:59  - - - - 10:40 11:10 
+18  - - -  10:00 10:19  - - - - 11:00 11:30 
+19  - - -  10:20 10:39  - - - - 11:20 11:50 
+20  - - -  10:40 10:59  - - -  11:40 12:10 
+21  - - -  11:00 11:19  - - - - 12:00 12:30 
+22  - - -  11:20 11:39  - - - - 12:20 12:50 
+23  - - -  11:40 11:59  - - - - 12:40 13:10 
+24  - - -  12:00 12:19  - - - - 13:00 13:30 
+25  - - -  12:20 12:39 ---- 13:20 13:50 
+26  - - -  12:40 12:59 --- 13:40 14:10 
+27  - - -  13:00 13:19 --- 14:00 14:30 
+28  - - -  13:20 13:39  - - -  14:20 14:50 
+29  - - -  13:40 13:59  - - - - 14:40 15:10 
+30  - - -  14:00 14:19  - - - - 15:00 15:30 
+31  - - -  14:20 14:39  - - - - 15:20 15:50 
+32  - - -  14:40 14:59 --- 15:40 16:10 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+33  - - -  15:00 15:19  - - -  16:00 16:30 
+34  - - -  15:20 15:39  - - - - 16:20 16:50 
+35  - - -  15:40 15:59  - - - - 16:40 17:10 
+36  - - - - 16:00 16:19  - - - - 17:00 17:30 
+37  - - -  16:20 16:39  - - - - 17:20 17:50 
+38  - - -  16:40 16:59 --- 17:40 18:10 
+39  - - -  17:00 17:19  - - - - 18:00 18:30 
+40  - - -  17:20 17:39  - - -  18:20 18:50 
+41 VIA 9 17:40 ----  - - -  18:30 19:00 
+42  - - -  17:40 17:59  - - - - 18:40 19:10 
+43  - - -  18:00 18:19  - - - - 19:00 19:30 
+44  - - -  18:20 18:39  - - - - 19:20 19:50 
+45  - - -  18:40 18:59  - - - - 19:40 20:05 
+46  - - -  19:00 19:19  - - - - 20:00 20:30 
+47  - - -  19:20 19:39  - - - - 20:20 20:50 
+48  - - -  19:40 19:59  - - - - 20:40 21:05 
+49  - - -  20:00 20:19  - - - - 21:00 21:30 
+50  - - -  20:20 20:40  - - - - 21:20 21:50 
+51  - - -  20:50 21:09  - - - - 21:50 22:15 
+52  - - -  21:15 21:34  - - -  22:15 22:40 
+53  - - -  21:40 21:59  - - - - 22:35 23:05 
+54 QPG 22:05 22:24 23:15 23:20 23:50 
+55  - - -  22:30 22:49 --- 23:40 00:05 
+56 QUE 22:55 23:14  - - - - 00:05 00:30 
+57 ABC  23:20 23:39  - - - - 00:30 01:00 
+58 QPG 23:45 00:04 00:55 01:00 01:30 
+59  - - - - 00:10 00:29  - - - - ---- ---- 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CASSINO - DOMINGO E FERIADOS -  INVERNO REVISADO 06/03/2017 
+VIAGEM VIA 
+TERM. INTEGRAÇÃO 
+QUERÊNCIA 
+SAÍDA INTEGRAÇÃO 
+TAMAND. JUNÇÃO CASSINO JUNÇÃO 
+1 --- 05:10 05:25 --- 05:55 06:32 
+2 
+06:00H ENTRADA 
+P GUANAB. 
+  06:10 06:20 06:57 
+3 ---- ---- ---- ---- 06:45 07:22 
+4 VIA 9 06:35 SAI DA FRENTE DO P.S PEDRO 06:50  - - - - 
+5 QPG 05:45 06:02  06:45 07:00 07:37 
+6 --- 06:15 06:32  - - -  07:15 07:52 
+7 --- 06:40 06:57 --- 07:40 08:17 
+8  - - -  07:05 07:22 --- 08:05 08:42 
+9  - - -  07:30 07:47  08:30 09:07 
+10  - - -  07:55 08:12 --- 08:55 09:32 
+11  - - -  08:20 08:37  - - -  09:20 09:57 
+12  - - -  08:45 09:02 --- 09:40 10:17 
+13  - - -  09:10 09:27 --- 10:00 10:37 
+14  - - -  09:35 09:52 --- 10:20 10:57 
+15  - - -  10:00 10:17 --- 11:00 11:37 
+16  - - -  10:25 10:42 --- 11:20 11:57 
+17  - - -  10:40 10:57 --- 11:40 12:17 
+18  - - -  11:00 11:17 --- 12:00 12:37 
+19  - - -  11:25 11:42 --- 12:20 12:57 
+20  - - -  11:50 12:07  - - -  12:40 13:17 
+21  - - -  12:15 12:32 --- 13:15 13:52 
+22  - - -  12:40 12:57 --- 13:40 14:17 
+23  - - -  13:00 13:17 --- 14:00 14:37 
+24  - - -  13:20 13:37 --- 14:20 14:57 
+25  - - -  13:40 13:57 ---- 14:40 15:17 
+26  - - -  14:00 14:17 --- 15:00 15:37 
+27  - - -  14:20 14:37 --- 15:25 16:02 
+28  - - -  14:40 14:57  - - -  15:40 16:17 
+29  - - -  15:00 15:17 --- 16:00 16:37 
+30  - - -  15:20 15:37 --- 16:20 16:57 
+31  - - -  15:40 15:57 --- 16:40 17:17 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+32  - - -  16:00 16:17 --- 17:00 17:37 
+33  - - -  16:20 16:37 --- 17:20 17:57 
+34  - - -  16:40 16:57 -- 17:40 18:17 
+35  - - -  17:00 17:17 --- 18:00 18:28 
+36 --- 17:20 17:37 --- 18:20 18:57 
+37  - - -  17:40 17:57 --- 18:40 19:17 
+38  - - -  18:00 18:17 --- 19:00 19:37 
+39  - - -  18:20 18:37 --- 19:20 19:57 
+40  - - -  18:40 18:57 --- 19:40 20:17 
+41  - - -  19:00 19:17 --- 20:00 20:37 
+42  - - -  19:20 19:37 --- 20:20 20:57 
+43  - - -  19:40 19:57 --- 20:40 21:17 
+44  - - -  20:00 20:17 --- 21:00 21:37 
+45  - - -  20:25 20:42 --- 21:25 22:02 
+46  - - -  20:50 21:07 --- 21:50 22:27 
+47  - - -  21:15 21:32 --- 22:10 22:47 
+48  - - -  21:40 21:57 --- 22:40 23:17 
+49 QPG 22:05 22:22 23:15 23:20 23:57 
+50  - - -  22:30 22:47 --- 23:45 00:22 
+51 QUE 23:00 23:17 00:00 00:10 00:47 
+52 ABC  23:20 23:37 --- RECOLHE --- 
+53 QPG 23:45 00:02 00:55 01:05 01:35 
+54 --- 00:10 00:27 01:15 RECOLHE --- 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CASSINO VIA CIDADE NOVA - DOMINGO E FERIADOS - INVERNO REVISADO 06/03/2017  
+VIAGEM VIA  
+ESTAÇÃO ESTAÇÃO ESTAÇÃO ESTAÇÃO 
+TAMAND. JUNÇÃO CASSINO JUNÇÃO 
+1 CN  - - - -  - - - - 
+06:50 07:23 
+2 CN 06:30 
+06:49 07:30 08:03 
+3 CN 07:10 
+07:29 08:10 08:43 
+4 CN 07:50 
+08:09 08:50 09:23 
+5 CN 08:30 
+08:49 09:30 10:03 
+6 CN 09:10 
+09:29 10:10 10:43 
+7 CN 
+09:50 10:09 10:50 11:23 
+8 CN 
+10:30 10:49 11:30 12:03 
+9 CN 
+11:10 11:29 12:10 12:43 
+10 CN 
+11:50 12:09 12:50 13:23 
+11 CN 
+12:30 12:49 13:30 14:03 
+12 CN 
+13:10 13:29 14:10 14:43 
+13 CN 
+13:50 14:09 14:50 15:23 
+14 CN 
+14:30 14:49 15:30 16:03 
+15 CN 
+15:10 15:29 16:10 16:43 
+16 CN 
+15:50 16:09 16:50 17:23 
+17 CN 
+16:30 16:49 17:30 18:03 
+18 CN 
+17:10 17:29 18:10 18:43 
+19 CN 
+17:50 18:09 18:50 19:21 
+20 CN 
+18:40 18:59 19:30 20:03 
+21 CN 
+19:40 19:59 20:50 21:23 
+22 CN 
+20:30 20:49 21:30 22:03 
+23 CN 
+21:30 21:49 22:30 23:03 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CASSINO VIA CIDADE NOVA - SÁBADO - INVERNO REVISADO 06/03/2017  
+VIAGEM VIA  
+ESTAÇÃO INT. ESTAÇÃO INT. 
+TAMAND. JUNÇÃO CASSINO JUNÇÃO 
+1 CN  - - - -  - - - -  06:50 07:20 
+2 CN  06:30 06:50 07:30 08:00 
+3 CN  07:10 07:30 08:10 08:40 
+4 CN  07:50 08:10 08:50 09:20 
+5 CN  08:30 08:50 09:30 10:00 
+6 CN  09:10 09:30 10:10 10:40 
+7 CN  09:50 10:10 10:50 11:20 
+8 CN  10:45 11:05 11:30 12:00 
+9 CN  11:20 11:40 12:10 12:40 
+10 CN  11:50 12:10 12:50 13:20 
+11 CN  12:30 12:50 13:30 14:00 
+12 CN  13:10 13:30 14:10 14:40 
+13 CN  13:50 14:10 14:50 15:20 
+14 CN  14:30 14:50 15:30 16:00 
+15 CN  15:10 15:30 16:10 16:40 
+16 CN  15:50 16:10 16:50 17:20 
+17 CN  16:30 16:50 17:30 18:00 
+18 CN  17:10 17:30 18:10 18:40 
+19 CN  17:50 18:10 18:50 19:20 
+20 CN  18:30 18:50 19:30 20:00 
+21 CN  19:10 19:30 20:10 20:40 
+22 CN  19:50 20:10 20:50 21:20 
+23 CN  20:30 20:50 21:30 22:00 
+24 CN  21:10 21:30 22:10 22:40 
+25 
+CN  21:50 22:10 22:50 23:20 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CASSINO VIA CIDADE NOVA - SEG. A SEX. - INVERNO REVISADO 06/03/2017  
+VIAGEM VIA 
+ESTAÇÃO INT. ESTAÇÃO INT. 
+TAMAND. JUNÇÃO CASSINO JUNÇÃO 
+1 CN  - - - -  - - - - 06:50 07:23 
+2 CN 06:20 06:40 07:20 07:53 
+3 CN 07:00 07:20 08:00 08:33 
+4 CN 07:30 07:50 08:30 09:03 
+5 CN 08:00 08:20 09:00 09:31 
+6 CN 08:30 08:50 09:32 10:05 
+7 CN 09:00 09:20 10:00 10:33 
+8 CN 09:30 09:50 10:30 11:00 
+9 CN 10:00 10:20 11:00 11:33 
+10 CN 10:30 10:50 11:30 12:01 
+11 CN 11:00 11:20 12:00 12:33 
+12 CN 11:30 11:50 12:35 13:08 
+13 CN 12:00 12:20 13:00 13:33 
+14 CN 12:30 12:50 13:30 14:03 
+15 CN 13:00 13:20 14:00 14:33 
+16 CN 13:30 14:00 14:30 15:03 
+17 CN 14:00 14:20 15:00 15:33 
+18 CN 14:30 14:50 15:30 16:03 
+19 CN 15:00 15:20 16:00 16:33 
+20 CN 15:30 15:49 16:23 16:56 
+21 CN 16:00 16:19 17:05 17:36 
+22 CN 16:30 16:50 17:30 18:03 
+23 CN 17:00 17:20 18:00 FURG 18:33 
+24 CN 17:30 17:50 18:30 19:03 
+25 CN 18:00 18:20 19:00 19:31 
+26 CN 18:30 18:50 19:30 20:03 
+27 CN 
+19:10 19:30 20:10 20:43 
+28 CN 
+19:30 19:45 20:20 20:50 
+29 CN 
+20:00 20:19 21:00 21:33 
+30 CN 
+20:30 20:50 21:30 22:03 
+31 CN 
+21:00 21:20 22:00 22:33 
+32 CN 
+21:30 21:50 22:30 23:03 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+CIRC. BOLAX - SEG À DOM - INVERNO REVISADO 06/03/2017 
+VIAGEM ESTAÇÃO PASSADA ESTAÇÃO 
+ CASSINO BOLAXA CASSINO 
+1 12:15 12:30 12:47 
+2 15:00 15:15 15:32 
+3 17:45 18:00 18:17 
+4 18:40 18:55 19:12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CIRCULAR CIDADE NOVA - SEG. A SEX. - INVERNO - 06/03/2017  
+VIAGEM 
+SAÍDA ESTAÇÃO PASSADA ESTAÇÃO 
+AV. BRASIL TAMANDARÉ BARROSO TAMANDARÉ 
+1 07:00 07:17 07:22 07:32 
+2 07:24 07:41 07:46 07:56 
+3 07:48 08:05 08:10 08:20 
+4 08:12 08:29 08:34 08:44 
+5 08:36 08:53 08:58 09:08 
+6 09:00 09:17 09:22 09:32 
+7 09:24 09:41 09:46 09:56 
+8 09:48 10:05 10:10 10:20 
+9 10:12 10:29 10:34 10:44 
+10 10:36 10:53 10:58 11:08 
+11 11:00 11:17 11:22 11:32 
+12 11:24 11:41 11:46 11:56 
+13 11:48 12:05 12:10 12:20 
+14 12:12 12:29 12:34 12:44 
+15 12:36 12:53 12:58 13:08 
+16 13:00 13:17 13:22 13:32 
+17 13:24 13:41 13:46 13:56 
+18 13:48 14:05 14:10 14:20 
+19 14:12 14:29 14:34 14:44 
+20 14:36 14:53 14:58 15:08 
+21 15:00 15:17 15:22 15:32 
+22 15:24 15:41 15:46 15:56 
+23 15:48 16:05 16:10 16:20 
+24 16:12 16:29 16:34 16:44 
+25 16:36 16:53 16:58 17:08 
+26 17:00 17:17 17:22 17:32 
+27 17:24 17:41 17:46 17:56 
+28 17:48 18:05 18:10 18:20 
+29 18:12 18:29 18:34 18:44 
+30 18:36 18:53 18:58 19:08 
+31 19:00 19:17 19:22 19:32 
+32 19:24 19:41 19:46 19:56 
+33 19:48 20:05 20:10 20:20 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+CIRCULAR CIDADE NOVA  - SÁBADO - INVERNO - 06/03/2017 
+VIAGEM 
+SAÍDA ESTAÇÃO PASSADA  ESTAÇÃO 
+AV. BRASIL TAMANDARÉ BARROSO TAMANDARÉ 
+1 07:00 07:15 07:20 07:25 
+2 07:40 07:55 08:00 08:05 
+3 08:20 08:35 08:40 08:45 
+4 09:00 09:15 09:20 09:25 
+5 09:40 09:55 10:00 10:05 
+6 10:20 10:35 10:40 10:45 
+7 11:00 11:15 11:20 11:25 
+8 11:40 11:55 12:00 12:05 
+9 12:20 12:35 12:40 12:45 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CIRCULAR QUINTA/DISTRITOS - DOMINGO E FERIADOS – INVERNO REVISADO 
+06/03/2017 
+ VIA 
+SAÍDA PASSADA PASSADA PASSADA PASSADA 
+QUINTA P. NOVO TOROTAMA LEONIDIO P. NOVO 
+1 LEONIDIO 08:05 - - - - - - 08:25 - - - 
+2 LEONIDIO 18:40 - - - - - - 19:00 - - - 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CIRCULAR QUINTA /DISTRITOS - SÁBADO - INVERNO REVISADO 06/03/2017 
+ VIA 
+SAÍDA PASSADA PASSADA PASSADA PASSADA PASSADA CHEGADA 
+QUINTA P. NOVO PETROLINE TOROTAMA LEONIDiO P. NOVO QUINTA 
+1 LEONIDIO 08:05 - - - - - - - - - 08:25 - - - 09:25 
+2 
+TOROTAMA/P. 
+NOVO 
+08:20 08:40 - - - 09:10 - - - 09:40 10:00 
+3 
+TOROTAMA/P. 
+NOVO 
+16:45 17:05 - - - 17:35 - - - 18:05 18:25 
+4 LEONIDIO 18:40 - - - - - - - - - 19:00 - - - 20:00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CIRCULAR QUINTA/DISTRITOS - 2ª - 4ª E 5ª -INVERNO REVISADO 06/03/2017  
+ VIA 
+SAÍDA PASSADA PASSADA PASSADA PASSADA PASSADA CHEGADA 
+QUINTA P. NOVO PETROLINE TOROTAMA LEONIDiO P. NOVO QUINTA 
+1 LEONIDIO 06:30 - - - - - - - - - 06:50 - - - 07:50 
+2 
+TOROTAMA/P. 
+NOVO 
+08:20 08:40 - - - 09:10 - - - 09:40 10:00 
+3 PALMA 10:10 - - - 10:45 - - - - - - - - - 11:10 
+4 PALMA 15:20 - - - 15:50 - - - - - - - - - 16:20 
+5 
+TOROTAMA/P. 
+NOVO 
+16:45 17:05 - - - 17:35 - - - 18:05 18:25 
+6 LEONIDIO 18:40 - - - - - - - - - 19:00 - - - 20:00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CIRCULAR QUINTA/DISTRITOS 3ª E 6ª - INVERNO REVISADO 06/03/2017  
+ VIA 
+SAÍDA PASSADA PASSADA PASSADA PASSADA PASSADA CHEGADA 
+QUINTA P. NOVO PETROLINE TOROTAMA LEONIDiO P. NOVO QUINTA 
+1 LEONIDIO 06:30 - - - - - - - - - 06:50 - - - 07:50 
+2 
+TOROTAMA/P. 
+NOVO 
+08:20 08:40 - - - 09:10 - - - 09:40 10:00 
+3 PALMA 10:10 - - - 10:45 - - - - - - - - - 11:10 
+4 PALMA 15:20 - - - 15:50 - - - - - - - - - 16:20 
+5 
+TOROTAMA/P. 
+NOVO 
+16:45 17:05 - - - 17:35 - - - 18:05 18:25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+MANGUEIRA - SEG. A SÁB. - INVERNO - 06/03/2017  
+VIAGEM VIA 
+ESTAÇÃO ENTRADA  ESTAÇÃO 
+TAMANDARÉ MANGUEIRA TAMANDARÉ 
+1 Mangueira 07:05 07:30 08:00 
+2 Mangueira 08:20 08:45 09:15 
+3 Mangueira 09:20 09:45 10:15 
+4 Mangueira 10:20 10:45 11:15 
+5 Mangueira 11:20 11:45 12:10 
+6 Mangueira 12:10 12:35 13:05 
+7 Mangueira 13:10 13:35 14:05 
+8 Mangueira 14:10 14:35 15:05 
+9 Mangueira 15:10 15:35 16:05 
+10 Mangueira 16:10 16:35 17:05 
+11 Mangueira 17:10 17:35 18:05 
+12 Mangueira 18:10 18:35 19:05 
+13 Mangueira 19:10 19:35 20:05 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+CORUJÃO - SEG X DOM - INVERNO REVISADO 06/03/2017  
+ 
+BIG 
+PORTO ABRIGO B. MACEDO CABINE CABINE GAR. CHEGA 
+BIG PORTÃO 4 CENTRAL /COLOMBO POLIV. P.S.P. N. MAR ABRIGO 
+1 
+01:30 
+01:40 
+01:50 01:55 02:20 02:40 03:02 03:15 03:30 
+2 
+03:30 03:40 03:50 03:55 04:20 04:40 05:02 05:15 05:25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+FURG - DOMINGO E FERIADOS - INVERNO REVISADO 06/03/2017 
+VIAGEM SAIDA  ENTRADA 
+ IFRS FURG CARREIROS 
+1 07:00 07:33 
+2 08:10 08:44 
+3 09:20 09:54 
+4 10:30 11:04 
+5 11:40 12:14 
+6 12:50 13:24 
+7 14:00 14:34 
+8 15:10 15:44 
+9 16:20 16:54 
+10 17:30 18:04 
+11 18:40 19:14 
+12 19:50 20:24 
+13 21:00 21:34 
+14 22:10 22:44 
+15 23:20 23:54 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+FURG - SÁBADOS - INVERNO REVISADO 06/03/2017 
+ SAIDA  ENTRADA 
+ IFRS FURG CARREIROS 
+1 - - - - - 06:20 
+2 - - - - - 06:52 
+3 06:58 07:28 
+4 07:34 08:04 
+5 08:10 08:40 
+6 08:46 09:16 
+7 09:22 09:52 
+8 09:58 10:28 
+9 10:34 11:04 
+10 11:10 11:40 
+11 11:46 12:16 
+12 12:22 12:52 
+13 12:58 13:28 
+14 13:34 14:04 
+15 14:10 14:40 
+16 14:46 15:16 
+17 15:22 15:52 
+18 15:58 16:28 
+19 16:34 17:04 
+20 17:10 17:40 
+21 17:46 18:16 
+22 18:22 18:52 
+23 18:58 19:28 
+24 19:34 20:04 
+25 20:10 20:40 
+26 21:20 21:50 
+27 22:30 23:00 
+28 23:40 00:10 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+FURG – SEGUNDA A SEXTA - INVERNO REVISADO 06/03/2017 
+ SAÍDA ESTAÇÃO INTEGRAÇÃO ENTRADA  SAÍDA INTEGRAÇÃO ESTAÇÃO 
+ IFRS TAMAND. JUNÇÃO FURG CARR. FURG CARR. JUNÇÃO TAMAND. 
+1 - - - - - - - - - - - - - - - 06:00 06:08 06:16 06:36 
+2 - - - - - - - - - - - - - - - 06:30 06:38 06:46 07:06 
+3 06:30 06:38 06:58 07:06 07:14 07:22 07:42 
+4 06:50 06:58 07:18 07:26 07:34 07:42 08:02 
+5 07:10 07:18 07:38 07:46 07:54 08:02 08:22 
+6 07:30 07:38 07:58 08:06 08:14 08:22 08:42 
+7 07:50 07:58 08:18 08:26 08:34 08:42 09:02 
+8 08:10 08:18 08:38 08:46 08:54 09:02 09:22 
+9 08:30 08:38 08:58 09:06 09:14 09:22 09:42 
+10 08:50 08:58 09:18 09:26 09:34 09:42 10:02 
+11 09:20 09:28 09:48 09:56 10:04 10:12 10:32 
+12 09:50 09:58 10:18 10:26 10:34 10:42 11:02 
+13 10:20 10:28 10:48 10:56 11:04 11:12 11:32 
+14 10:50 10:58 11:18 11:26 11:34 11:42 12:02 
+15 11:20 11:28 11:48 11:56 12:04 12:12 12:32 
+16 11:40 11:48 12:08 12:16 12:24 12:32 12:52 
+17 12:00 12:08 12:28 12:36 12:44 12:52 13:12 
+18 12:20 12:28 12:48 12:56 13:04 13:12 13:32 
+19 12:40 12:48 13:08 13:16 13:24 13:32 13:52 
+20 13:00 13:08 13:28 13:36 13:44 13:52 14:12 
+21 13:30 13:38 13:58 14:06 14:14 14:22 14:42 
+22 14:00 14:08 14:28 14:36 14:44 14:52 15:12 
+23 14:30 14:38 14:58 15:06 15:14 15:22 15:42 
+24 15:00 15:08 15:28 15:36 15:44 15:52 16:12 
+25 15:30 15:38 15:58 16:06 16:14 16:22 16:42 
+26 16:00 16:08 16:28 16:36 16:44 16:52 17:12 
+27 16:20 16:28 16:48 16:56 17:04 17:12 17:32 
+28 16:40 16:48 17:08 17:16 17:24 17:32 17:52 
+29 17:00 17:08 17:28 17:36 17:44 17:52 18:12 
+30 17:20 17:28 17:48 17:56 18:04 18:12 18:32 
+31 17:40 17:48 18:08 18:10 18:15 18:20 18:35 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+32 17:50 17:58 18:18 18:20 18:28 18:33 18:45 
+33 18:00 18:08 18:28 18:30 18:38 18:43 18:55 
+34 18:20 18:28 18:48 18:56 19:03 19:10 19:20 
+35 18:40 18:48 19:08 19:16 19:24 19:32 19:52 
+36 19:00 19:08 19:28 19:36 19:44 19:52 20:12 
+37 19:30 19:38 19:58 20:06 20:14 20:22 20:42 
+38 20:00 20:05 20:20 20:30 20:35 20:40 20:55 
+39 20:30 20:35 20:50 21:00 21:05 21:10 21:25 
+40 21:00 21:05 21:20 21:30 21:35 21:40 21:55 
+41 21:30 21:35 21:50 22:00 22:05 22:10 22:25 
+42 22:00 22:05 22:20 22:30 22:35 22:40 22:55 
+43 22:30 22:35 22:50 23:00 23:05 23:10 23:25 
+44 23:00 23:05 23:20 23:30 23:35 23:40 23:55 
+45 23:30 23:35 23:50 00:00 ATÉ A FURG CARREIROS  
+46 00:00 00:05 00:20 00:30 ATÉ A FURG CARREIROS  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+JUNCÃO CASSINO - DOMINGO E FERIADOS - INVERNO REVISADO 06/03/2017 
+VIAGEM SAÍDA JUNÇÃO SAÍDA CASSINO 
+1 06:30 07:34 
+2 07:35 08:39 
+3 08:40 09:44 
+4 09:45 10:49 
+5 10:50 11:54 
+6 11:55 12:59 
+7 13:00 14:04 
+8 14:15 15:19 
+9 15:05 16:09 
+10 16:25 17:29 
+11 17:15 18:21 
+12 18:35 19:39 
+13 19:27 20:31 
+14 20:45 21:49 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+JUNCÃO CASSINO - SÁBADO -  INVERNO REVISADO 06/03/2017 
+VIAGEM SAÍDA JUNÇÃO SAÍDA CASSINO 
+1 06:05 07:10 
+2 07:02 08:12 
+3 07:15  
+4 07:35 08:45 
+5 08:00  - - - - - 
+6 08:30 09:30 
+7 09:15 10:10 
+8 10:00 10:55 
+9 10:55 11:50 
+10 11:50 12:45 
+11 12:45 13:40 
+12 13:40 14:35 
+13 14:35 15:30 
+14 15:30 16:25 
+15 16:25 17:20 
+16  - - - -  17:50 
+17 17:20 18:15 
+18 ----- 18:45 
+19 18:15 19:10 
+20 19:10 20:05 
+21 20:05 21:15 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+JUNCÃO CASSINO - SEG. A SEX. -INVERNO REVISADO 06/03/2017  
+VIAGEM ESTAÇÃO JUNÇÃO ESTAÇÃO CASSINO 
+1 06:05 07:05 VIA FURG 
+2 06:40 ----- 
+3 07:00 07:59 
+4 07:15 ----- 
+5 07:35 VIA FURG  08:40 VIA FURG 
+6 07:55 VIA FURG  ----- 
+7 08:20 09:25 
+8 09:15 VIA FURG 10:20 
+9 10:20 11:25 VIA FURG 
+10 11:25 VIA FURG 12:30 VIA FURG 
+11 12:30 VIA FURG 13:35 VIA FURG 
+12 13:35 VIA FURG 14:40 VIA FURG 
+13 14:40 15:45 
+14 15:45 16:50 
+15  - - - -  17:30 VIA FURG 
+16 16:50 18:00 VIA FURG 
+17 17:20 VIA FURG 18:30 VIA FURG 
+18 18:00 VIA FURG 19:10 
+19 19:10 20:20 
+20 20:20 21:15 
+21 21:20 22:30 
+22 22:20 23:30 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+JUNÇÃO PRADO VIA PRESIDENTE VARGAS/ VIA MATADOURO - DOMINGO E FERIADOS -
+ INVERNO - 06/03/2017 
+       
+VIAGEM 
+VIA 
+ESTAÇÃO ESTAÇÃO ESTAÇÃO 
+TAMAND. JUNÇÃO TAMAND. 
+1 MAT 05:50 06:17 06:36 
+2 PRES.VAR. 06:40 06:59 07:26 
+3 MAT 07:30 07:57 08:16 
+4 PRES.VAR. 08:20 08:39 09:06 
+5 MAT 09:10 09:37 09:56 
+6 PRES.VAR. 10:00 10:19 10:45 
+7 MAT 10:45 11:10 11:27 
+8 PRES.VAR. 11:27 11:44 12:09 
+9 MAT 12:30 12:57 13:16 
+10 PRES.VAR. 13:20 13:39 14:06 
+11 MAT 14:10 14:37 14:56 
+12 PRES.VAR. 15:00 15:19 15:46 
+13 MAT 15:50 16:17 16:36 
+14 PRES.VAR. 16:40 16:59 17:26 
+15 MAT 17:30 17:57 18:16 
+16 PRES.VAR. 18:20 18:39 19:06 
+17 MAT 19:20 19:37 19:56 
+18 PRES.VAR. 20:10 20:27 20:52 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+JUNÇÃO PRADO VIA PRESIDENTE VARGAS/ VIA MATADOURO  - SÁBADO -  INVERNO - 
+06/03/2017 
+       
+VIAGEM 
+VIA 
+ESTAÇÃO ESTAÇÃO ESTAÇÃO 
+TAMAND. JUNÇÃO TAMAND. 
+1 MAT  06:10 06:36 
+2 PRES.VAR. 06:38 06:55 07:25 
+3 MAT 07:25 07:53 08:12 
+4 PRES.VAR. 08:12 08:29 08:59 
+5 MAT 08:59 09:27 09:46 
+6 PRES.VAR. 09:46 10:03 10:33 
+7 MAT 10:33 11:01 11:20 
+8 PRES.VAR. 11:20 11:37 12:07 
+9 MAT 12:07 12:35 12:54 
+10 PRES.VAR. 12:54 13:11 13:41 
+11 MAT 13:41 14:09 14:28 
+12 PRES.VAR. 14:28 14:45 15:15 
+13 MAT 15:15 15:43 16:02 
+14 PRES.VAR. 16:02 16:19 16:49 
+15 MAT 16:49 17:17 17:36 
+16 PRES.VAR. 17:36 17:53 18:30 
+17 MAT 18:30 18:51 19:10 
+18 PRES.VAR. 19:10 19:27 19:57 
+19 MAT 19:57 20:25 20:45 
+20 PRES.VAR. 20:45 21:02 21:45 
+21 PRES.VAR. 21:45 22:13 00:00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+JUNÇÃO PRADO VIA PRESIDENTE VARGAS/ VIA MATADOURO - SEG. A SEX. - INVERNO - 
+06/03/2017  
+VIAGEM 
+VIA 
+ESTAÇÃO ESTAÇÃO ESTAÇÃO 
+TAMAND. JUNÇÃO TAMAND. 
+1 MAT 05:50 06:17 06:36 
+2 PRES.VAR. 06:40 06:59 07:26 
+3 MAT 07:30 07:57 08:16 
+4 PRES.VAR. 08:20 08:39 09:06 
+5 MAT 09:10 09:37 09:56 
+6 PRES.VAR. 10:00 10:19 10:45 
+7 MAT 10:45 11:10 11:27 
+8 PRES.VAR. 11:27 11:44 12:09 
+9 MAT 12:30 12:57 13:16 
+10 PRES.VAR. 13:20 13:39 14:06 
+11 MAT 14:10 14:37 14:56 
+12 PRES.VAR. 15:00 15:19 15:46 
+13 MAT 15:50 16:17 16:36 
+14 PRES.VAR. 16:40 16:59 17:26 
+15 MAT 17:30 17:57 18:16 
+16 BOSQUE 18:20 18:39 19:06 
+17 MAT 19:10 19:37 19:56 
+18 MAT 20:30 20:48 21:05 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+LAR GAÚCHO/SANTA TEREZA – DOMINGO E FERIADOS -   
+INVERNO REVISADO 06/03/2017 
+VIAGEM VIA 
+TERMINAL TAMANDARÉ PORTO PORTÃO 4 CHEGADA TAMANDARÉ 
+1 
+STA 06:30 06:40 
+07:00 
+2 
+LG 07:20 07:40 
+07:50 
+3 
+STA 07:55 08:05 
+08:25 
+4 
+LG 08:30 08:50 
+09:00 
+5 
+STA 09:05 09:15 
+09:35 
+6 
+LG 09:40 10:00 
+10:10 
+7 
+STA 10:15 10:25 
+10:45 
+8 
+LG 10:50 11:10 
+11:20 
+9 
+STA 11:25 11:35 
+11:55 
+10 
+LG 12:00 12:20 
+12:30 
+11 
+STA 12:35 12:45 
+13:05 
+12 
+LG 13:10 13:30 
+13:40 
+13 
+STA 13:45 13:55 
+14:15 
+14 
+LG 14:20 14:40 
+14:50 
+15 
+STA 14:55 15:05 
+15:25 
+16 
+LG 15:30 15:50 
+16:00 
+17 
+STA 16:05 16:15 
+16:35 
+18 
+LG 16:40 17:00 
+17:10 
+19 
+STA 17:15 17:25 
+17:45 
+20 
+LG 17:50 18:10 
+18:20 
+21 
+STA 18:25 18:35 
+18:55 
+22 
+LG 19:00 19:20 
+19:30 
+23 
+STA 19:35 19:45 
+20:05 
+24 
+LG 20:10 20:30 
+20:40 
+25 
+STA 20:45 20:55 
+21:15 
+26 
+LG 21:20 21:40 
+21:50 
+27 
+STA 21:55 22:05 
+22:25 
+28 
+LG 22:30 22:50 
+23:00 
+29 
+LG 23:15 23:35 
+23:45 
+30 
+LG 00:00 00:20 
+00:30 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+LAR GAÚCHO/SANTA TEREZA – SÁBADOS 
+INVERNO REVISADO 06/03/2017 
+VIAGEM VIA 
+TERMINAL PORTO CHEGADA TAMANADARÉ 
+TAMANDARÉ PORTÃO 4 
+ 
+1 
+STA 06:25 06:35 
+06:55 
+2 
+LG 07:00 07:22 
+07:33 
+3 
+STA 07:19 07:29 
+07:52 
+4 
+LG 07:38 08:00 
+08:11 
+5 
+STA 07:57 08:07 
+08:30 
+6 
+LG 08:16 08:38 
+08:49 
+7 
+STA 08:35 08:45 
+09:08 
+8 
+LG 08:54 09:16 
+09:27 
+9 
+STA 09:13 09:23 
+09:46 
+10 
+LG 09:32 09:54 
+10;05 
+11 
+STA 09:51 10:01 
+10:24 
+12 
+LG 10:10 10:32 
+10:43 
+13 
+STA 10:29 10:39 
+11:02 
+14 
+LG 10:48 11:10 
+11:21 
+15 
+STA 11:07 11:17 
+11:40 
+16 
+LG 11:26 11:48 
+11:59 
+17 
+STA 11:45 11:55 
+12:18 
+18 
+LG 12:04 12:26 
+12:37 
+19 
+STA 12:23 12:33 
+12:56 
+20 
+LG 12:42 13:04 
+13:15 
+21 
+STA 13:01 13:11 
+13:34 
+22 
+LG 13:20 13:42 
+13:53 
+23 
+STA 13:39 13:49 
+14:12 
+24 
+LG 13:58 14:20 
+14:31 
+25 
+STA 14:17 14:27 
+14:50 
+26 
+LG 14:36 14:58 
+15:09 
+27 
+STA 14:55 15:05 
+15:28 
+28 
+LG 15:14 15:36 
+15:47 
+29 
+STA 15:33 15:43 
+16:04 
+30 
+LG 16:09 16:30 
+16:40 
+31 
+STA 16:45 16:55 
+17:16 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+32 
+LG 17:21 17:41 
+17:52 
+33 
+STA 17:57 18:07 
+18:28 
+34 
+LG 18:33 18:53 
+19:04 
+35 
+STA 19:09 19:19 
+19:40 
+36 
+LG 19:45 20:05 
+20:16 
+37 
+STA 20:21 20:31 
+20:52 
+38 
+LG 20:57 21:17 
+21:28 
+39 
+STA 21:33 21:43 
+22:04 
+40 
+LG 22:09 22:29 
+22:40 
+41 
+LG 23:15 23:35 
+23:46 
+42 
+LG 00:00 00:20 
+00:31 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+LAR GAÚCHO/SANTA TEREZA – SEGUNDA À SEXTA 
+INVERNO REVISADO 06/03/2017 
+VIAGEM VIA TERMINAL TAMANDARÉ PORTO PORTÃO 4 
+1 
+STA 06:20 06:42 
+2 
+LG 06:40 07:02 
+3 
+STA 07:00 07:22 
+4 
+LG 07:25 07:47 
+5 
+STA 07:50 08:12 
+6 
+LG 08:15 08:37 
+7 
+STA 08:40 09:02 
+8 
+LG 09:05 09:27 
+9 
+STA 09:30 09:52 
+10 
+LG 09:55 10:17 
+11 
+STA 10:20 10:42 
+12 
+LG 10:45 11:07 
+13 
+STA 11:10 11:32 
+14 
+LG 11:35 11:57 
+15 
+STA 12:00 12:22 
+16 
+LG 12:25 12:47 
+17 
+STA 12:50 13:12 
+18 
+LG 13:15 13:37 
+19 
+STA 13:40 14:02 
+20 
+LG 14:05 14:27 
+21 
+STA 14:30 14:52 
+22 
+LG 14:55 15:17 
+23 
+STA 15:20 15:42 
+24 
+LG 15:45 16:07 
+25 
+STA 16:10 16:32 
+26 
+LG 16:35 16:57 
+27 
+STA 17:00 17:22 
+28 
+LG 17:25 17:47 
+29 
+STA 17:50 18:12 
+30 
+LG 18:15 18:37 
+31 
+STA 18:40 19:02 
+32 
+LG 19:05 19:27 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+33 
+STA 19:30 19:52 
+34 
+LG 19:55 20:17 
+35 
+STA 20:20 20:42 
+36 
+LG 21:00 21:22 
+37 
+STA 21:40 22:02 
+38 
+LG 22:20 22:42 
+39 
+STA 23:20 23:42 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+LEONÍDIO – TERÇAS E SEXTAS – INVERNO 
+REVISADO 016/03/2017 
+  SAI SAI LEONIDIO 
+  HOTEL JUNÇÃO   
+1   06:00 06:50 
+2 18:00:00   19:10:00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+PALMA-DOMINGO E FERIADOS -INVERNO  
+REVISADO 06/03/2017 
+ SAI PETROLINE 
+ HOTEL  
+1 07:40 08:55 
+2 11:10 12:30 
+3 17:00 18:25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+PALMA – SÁBADO - INVERNO  
+REVISADO 06/03/2017 
+ SAI PETROLINE 
+ HOTEL  
+1 07:00 08:20 
+2 11:10 12:30 
+3 17:00 18:25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+PALMA – SEG À SEXTA - INVERNO  
+REVISADO 06/03/2017 
+ SAI PETROLINE 
+ HOTEL  
+1 07:00 08:15 
+2 11:10 12:40 
+3 17:15 18:40 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+P. MARINHA - DOMINGO E FERIADOS - INVERNO REVISADO 06/03/2017 
+ VIA 
+ESTAÇÃO ESTAÇÃO ENTRADA  SAÍDA ESTAÇÃO 
+TAMAN JUNÇÃO P.M - J.SOL  P.M - J.SOL  JUNÇÃO 
+1 PM - - - - - - - - - - 05:10 05:19 05:30 
+2 PM 05:10 05:25 05:37 05:46 05:57 
+3 PM 05:35 05:50 06:02 06:11 06:22 
+4 PM 06:00 06:15 06:27 06:36 06:47 
+5 PM 06:25 06:40 06:52 07:01 07:12 
+6 PM 06:50 07:05 07:17 07:26 07:37 
+7 PM 07:15 07:30 07:42 07:51 08:02 
+8 PM 07:40 07:55 08:07 08:16 08:27 
+9 JS HUMAITA 08:05 08:20 08:32 08:41 08:52 
+10 PM 08:30 08:45 08:57 09:06 09:17 
+11 PM 08:55 09:10 09:22 09:31 09:42 
+12 JS HUMAITA 09:20 09:35 09:47 09:56 10:07 
+13 PM 09:45 10:00 10:12 10:21 10:32 
+14 PM 10:10 10:25 10:37 10:46 10:57 
+15 PM 10:35 10:50 11:02 11:11 11:22 
+16 PM 11:00 11:15 11:27 11:36 11:47 
+17 JS HUMAITA 11:25 11:40 11:52 12:01 12:12 
+18 PM 11:50 12:05 12:17 12:26 12:37 
+19 PM 12:15 12:30 12:42 12:51 13:02 
+20 PM 12:40 12:55 13:07 13:16 13:27 
+21 JS HUMAITA 13:05 13:20 13:32 13:41 13:52 
+22 PM 13:30 13:45 13:57 14:06 14:17 
+23 PM 13:55 14:10 14:22 14:31 14:42 
+24 PM 14:20 14:35 14:47 14:56 15:07 
+25 JS HUMAITA 14:45 15:00 15:12 15:21 15:32 
+26 PM 15:10 15:25 15:37 15:46 15:57 
+27 PM 15:35 15:50 16:02 16:11 16:22 
+28 JS HUMAITA 16:00 16:15 16:27 16:36 16:47 
+29 PM 16:25 16:40 16:52 17:01 17:12 
+30 PM 16:50 17:05 17:17 17:26 17:37 
+31 PM 17:15 17:30 17:42 17:51 18:02 
+32 PM 17:40 17:55 18:07 18:16 18:27 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+33 PM 18:05 18:20 18:32 18:41 18:52 
+34 PM 18:30 18:45 18:57 19:06 19:17 
+35 PM 18:55 19:10 19:22 19:31 19:42 
+36 JS HUMAITA 19:20 19:35 19:47 19:56 20:07 
+37 PM 19:45 20:00 20:12 20:21 20:32 
+38 PM 20:10 20:25 20:37 20:46 20:57 
+39 PM 20:35 20:50 21:02 21:11 21:22 
+40 JS HUMAITA 21:00 21:15 21:27 21:36 21:47 
+41 PM 21:30 21:45 21:57 22:06 22:17 
+42 PM 22:00 22:15 22:27 22:36 22:47 
+43 JS HUMAITA 22:30 22:45 22:57 23:06 23:17 
+44 PM 23:05 23:20 23:32 23:41 23:52 
+45 PM 23:30 23:45 23:57 00:06 00:17 
+46 JS HUMAITA 00:05 00:20 00:32 00:41 00:52 
+47 PM 00:30 00:45 00:57 01:06 01:17 
+48 PM 01:00 01:15 01:27 01:36 01:47 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+P. MARINHA - SÁBADO – INVERNO REVISADO 06/03/2017 
+ VIA ESTAÇÃO ESTAÇÃO ENTRADA  SAÍDA ESTAÇÃO 
+  TAMAND. JUNÇÃO P.M - J.SOL  P.M - J.SOL  JUNÇÃO 
+1 PM - - - - - - - - 05:10 05:25 05:40 
+2 PM 05:10 05:20 05:30 05:40 05:50 
+3 PM 05:42 05:59 06:14 06:29 06:44 
+4 PM - - - - - - - - 06:35 06:50 07:05 
+5 JS HUMAITA 06:20 06:37 06:52 07:07 07:22 
+6 PM 06:40 06:57 07:12 07:27 07:42 
+7 JS HUMAITA - - - - - - - - 07:25 07:40 07:55 
+8 PM 07:10 07:27 07:42 07:57 08:12 
+9 PM 07:25 07:42 07:57 08:12 08:27 
+10 PM 07:45 08:02 08:17 08:32 08:47 
+11 PM 08:10 08:27 08:42 08:57 09:12 
+12 JS HUMAITA 08:30 08:47 09:02 09:17 09:32 
+13 PM 08:50 09:07 09:22 09:37 09:52 
+14 PM 09:10 09:27 09:42 09:57 10:12 
+15 PM 09:30 09:47 10:02 10:17 10:32 
+16 PM 09:50 10:07 10:22 10:37 10:52 
+17 PM 10:10 10:27 10:42 10:57 11:12 
+18 PM 10:30 10:47 11:02 11:17 11:32 
+19 PM 10:50 11:07 11:22 11:37 11:52 
+20 JS HUMAITA 11:10 11:27 11:42 11:57 12:12 
+21 PM 11:30 11:47 12:02 12:17 12:32 
+22 PM 11:50 12:07 12:22 12:37 12:52 
+23 PM 12:10 12:27 12:42 12:57 13:12 
+24 PM 12:30 12:47 13:02 13:17 13:32 
+25 PM 12:50 13:07 13:22 13:37 13:52 
+26 JS HUMAITA 13:10 13:27 13:42 13:57 14:12 
+27 PM 13:30 13:47 14:02 14:17 14:32 
+28 PM 13:50 14:07 14:22 14:37 14:52 
+29 PM 14:10 14:27 14:42 14:57 15:12 
+30 PM 14:30 14:47 15:02 15:17 15:32 
+31 PM 14:50 15:07 15:22 15:37 15:52 
+32 JS HUMAITA 15:10 15:27 15:42 15:57 16:12 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+33 PM 15:30 15:47 16:02 16:17 16:32 
+34 PM 15:50 16:07 16:22 16:37 16:52 
+35 PM 16:10 16:27 16:42 16:57 17:12 
+36 PM 16:30 16:47 17:02 17:17 17:32 
+37 JS HUMAITA 16:50 17:07 17:22 17:37 17:52 
+38 PM 17:10 17:27 17:42 17:57 18:12 
+39 PM 17:30 17:47 18:02 18:15 18:25 
+40 PM 17:50 18:07 18:22 18:37 18:52 
+41 JS HUMAITA 18:10 18:27 18:42 18:57 19:12 
+42 PM 18:30 18:47 19:02 19:17 19:32 
+43 PM 18:50 19:07 19:22 19:37 19:52 
+44 JS HUMAITA 19:10 19:27 19:42 19:55 20:05 
+45 PM 19:30 19:47 20:02 20:17 20:32 
+46 PM 19:50 20:07 20:22 20:37 20:52 
+47 PM 20:20 20:37 20:52 21:05 21:16 
+48 PM 20:55 21:12 21:27 21:42 21:57 
+49 PM 21:35 21:52 22:07 22:22 22:37 
+50 JS HUMAITA 22:10 22:27 22:42 22:57 23:10 
+51 PM 23:00 23:17 23:32 23:47 00:00 
+52 PM 23:35 23:50 00:00 00:10 00:20 
+53 PM 00:15 00:32 00:47 01:02 01:17 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+P. MARINHA - SEG. A SEX. - INVERNO REVISADO 06/03/2017 
+ VIA ESTAÇÃO ESTAÇÃO ENTRADA  SAÍDA ESTAÇÃO 
+  TAMANDARÉ JUNÇÃO J.SOL / PM J. SOL /PM JUNÇÃO 
+1 PM - - -  - - -  04:55 05:12 05:26 
+2 PM - - -  - - -  05:30 05:47 06:01 
+3 PM 05:30 05:50 06:04 06:21 06:35 
+4 PM - - -  - - -  06:18 06:35 06:49 
+5 PM 06:00 06:20 06:34 06:51 07:05 
+6 JS 06:15 06:35 06:49 07:06 07:20 
+7  PM VIA IFRS  06:55 07:12 07:26 
+8  JS VIA IFRS  06:55 07:12 07:26 
+9 PM 06:30 06:50 07:04 07:21 07:35 
+10 PM - - -  - - -  07:10 07:27 07:41 
+11 PM - - -  - - -  07:23 07:40 07:54 
+12 JS 07:00 07:20 07:34 07:51 08:05 
+13 PM 07:30 07:50 08:04 08:21 08:35 
+14 PM - - -  - - - 08:18 08:35 08:49 
+15 JS 08:00 08:20 08:34 08:51 09:05 
+16 PM 08:15 08:35 08:49 09:06 09:20 
+17 JS 08:35 08:55 09:09 09:26 09:40 
+18 PM 08:55 09:15 09:29 09:46 10:00 
+19 PM 09:15 09:35 09:49 10:06 10:20 
+20 PM 09:40 10:00 10:14 10:31 10:45 
+21 PM 10:00 10:20 10:34 10:51 11:05 
+22 JS 10:15 10:35 10:49 11:06 11:20 
+23 PM 10:35 10:55 11:09 11:26 11:40 
+24 PM 10:55 11:15 11:29 11:46 12:00 
+25 JS 11:10 11:30 11:44 12:01 12:15 
+26 PM 11:20 11:40 11:54 12:11 12:25 
+27 PM 11:30 11:50 12:04 12:21 12:35 
+28 JS VIA IFRS 12:05 12:22 12:36 
+29 JS 11:50 12:10 12:24 12:41 12:55 
+30 PM 12:05 12:25 12:39 12:56 13:10 
+31 PM 12:15 12:35 12:49 13:06 13:20 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+32 JS 12:30 12:50 13:04 13:21 13:35 
+33 PM 12:45 13:05 13:19 13:36 13:50 
+34 PM 13:00 13:20 13:34 13:51 14:05 
+35 PM 13:15 13:35 13:49 14:06 14:20 
+36 JS 13:30 13:50 14:04 14:21 14:35 
+37 JS 13:45 14:05 14:19 14:36 14:50 
+38 PM 14:00 14:20 14:34 14:51 15:05 
+39 JS 14:15 14:35 14:49 15:06 15:20 
+40 PM 14:30 14:50 15:04 15:21 15:35 
+41 PM 14:45 15:05 15:19 15:36 15:50 
+42 PM 15:00 15:20 15:34 15:51 16:05 
+43 JS 15:20 15:40 15:54 16:11 16:25 
+44 PM 15:40 16:00 16:14 16:31 16:45 
+45 PM 16:00 16:20 16:34 16:51 17:00 
+46 PM 16:20 16:40 16:54 17:11 17:25 
+47 JS 16:40 17:00 17:14 17:31 17:45 
+48 PM 17:00 17:20 17:34 17:51 18:05 
+49 PM 17:12 17:32 17:46 ATE O P.MARINHA 
+50 PM 17:24 17:44 17:58 18:15 18:29 
+51 JS 17:36 17:56 18:10 18:27 18:41 
+52 PM 17:48 18:08 18:22 18:39 18:53 
+53 PM 18:00 18:20 18:34 18:51 19:05 
+54 JS 18:12 18:32 18:46 19:03 19:17 
+55 PM 18:24 18:44 18:55 ATE O P.MARINHA 
+56 PM 18:36 18:56 19:10 19:27 19:41 
+57 JS 18:48 19:08 19:22 19:39 19:53 
+58 PM 19:00 19:20 19:34 19:51 20:05 
+59 PM 19:20 19:40 19:54 20:11 20:25 
+60 JS 19:40 20:00 20:14 20:31 20:45 
+61 PM 20:00 20:20 20:34 20:51 21:05 
+62 PM 20:30 20:50 21:04 21:21 21:35 
+63 JS-HUMAITA 21:00 21:20 21;34 21:51 22:05 
+64 PM 21:30 21:50 22:04 22:21 22:35 
+65 JS 22:05 22:25 22:39 22:56 23:10 
+66 PM 22:30 22:50 23:04 23:21 23:35 
+67 JS-HUMAITA 23:00 23:20 23:34 23:51 00:05 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+68 PM 23:30 23:50 00:04 00:21 00:35 
+69 JS-HUMAITA 00:10 00:30 00:44 01:01 01:15 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+POLIVALENTE - SEG. A SEX. - INVERNO - 06/03/2017 
+Viagem Via 
+SAI 
+Sat. Brito 
+Estação Porto Santa  Estação 
+Sat. Brito 
+Terminal Tamand. Portão 4 Teresa Tamand. 
+1 
+PORT 05:20  - - - - 06:01 06:12  - - - - 06:23  - - - - 
+2 
+BM 05:40 05:55 06:21  - - - 06:36 06:51 07:16 
+3 
+PORT 06:05  - - - - 06:46 06:57  - - - - 07:08  - - - - 
+4 
+PORT 06:25  - - - - 07:06 07:17  - - - - 07:28  - - - - 
+5 
+BM 06:25 06:40 07:06  - - - - 07:21 07:36 08:01 
+6 
+PORT 06:50  - - - - 07:31 07:42  - - - - 07:53  - - - - 
+7 
+PORT 07:00  - - - - 07:41  - - - -  - - - -  - - - -  - - - - 
+8 
+BM 07:10 07:25 07:51  - - - - 08:06 08:21 08:46 
+9 
+PORT 07:25  - - - - 08:06  - - -  - - -  - - -   - - -  
+10 
+PORT 07:35  - - - - 08:16 08:27  - - - - 08:38  - - - - 
+11 
+BM 07:55 08:10 08:36  - - - - 08:51 09:06 09:31 
+12 
+PORT 08:10  - - - - 08:51 09:02  - - - - 09:13  - - - - 
+13 
+BM 08:20 08:35 09:01  - - - - 09:16 09:31 09:56 
+14 
+BM 08:40 08:55 09:21  - - - - 09:36 09:51 10:16 
+15 
+PORT 09:05  - - - - 09:46 09:57  - - - - 10:08  - - - - 
+16 
+BM 09:25 09:40 10:06  - - - - 10:21 10:36 11:01 
+17 
+PORT 09:50  - - - - 10:31 10:42  - - - - 10:53  - - - - 
+18 
+BM 10:10 10:25 10:51  - - - - 11:06 11:21 11:46 
+19 
+PORT 10:35  - - - - 11:16 11:27  - - - - 11:38  - - - - 
+20 
+BM 10:55 11:10 11:36  - - - - 11:51 12:06 12:31 
+21 
+PORT 11:20  - - - - 12:01 12:12  - - - - 12:23  - - - - 
+22 
+BM 11:40 11:55 12:21  - - - - 12:36 12:51 13:16 
+23 
+PORT 11:45  - - --  12:26 12:37  - - - - 12:48  - - -  
+24 
+PORT 12:05  - - - - 12:46 12:57  - - - - 13:08  - - - - 
+25 
+BM 12:25 12:40 13:06  - - -  13:21 13:36 14:01 
+26 
+PORT 12:50  - - - - 13:31 13:42  - - - - 13:53  - - - - 
+27 
+BM 13:10 13:25 13:51  - - - - 14:06 14:21 14:46 
+28 
+PORT 13:35  - - - - 14:16 14:27  - - - - 14:38  - - - - 
+29 
+BM 13:55 14:10 14:36  - - - - 14:51 15:06 15:31 
+30 
+PORT 14:20  - - - - 15:01 15:12  - - - - 15:23  - - - - 
+31 
+BM 14:40 14:55 15:21  - - - - 15:36 15:51 16:16 
+32 
+PORT 15:05  - - - - 15:46 15:57  - - - - 16:08  - - - - 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+33 
+BM 15:25 15:40 16:06  - - - - 16:21 16:36 17:01 
+34 
+PORT 15:35  - - - - 16:16 16:27  - - - - 16:38  - - - - 
+35 
+BM 16:10 16:25 16:51  - - - - 17:06 17:21 17:46 
+36 
+BM 16:20 16:35 17:01  - - - - 17:16 17:31 17:56 
+37 
+PORT 16:35  - - - - 17:16 17:27  - - - - 17:38  - - - - 
+38 
+BM 16:55 17:10 17:36  - - - - 17:51 18:06 18:31 
+39 
+PORT 17:20  - - - - 18:01 18:12  - - - - 18:23  - - - - 
+40 
+BM 17:40 17:55 18:21  - - - - 18:36 18:51 19:16 
+41 
+PORT 18:05  - - - - 18:46 18:57  - - - - 19:08  - - - - 
+42 
+BM 18:25 18:40 19:06  - - - - 19:21 19:36 20:01 
+43 
+PORT 18:25  - - - - 19:06 19:17  - - - - 19:28  - - - - 
+44 
+PORT 18:50  - - - - 19:31 19:42  - - - - 19:53  - - - - 
+45 
+BM 19:10 19:25 19:51  - - - - 20:06 20:21 20:46 
+46 
+PORT 19:35  - - - - 20:16 20:27  - - - - 20:38  - - - - 
+47 
+BM 19:55 20:10 20:36  - - - - 20:51 21:06 21:31 
+48 
+PORT 20:20  - - - - 21:01 21:12  - - - - 21:23  - - - - 
+49 
+BM 20:40 20:55 21:21  - - - - 21:36 21:51 22:16 
+50 
+PORT 21:05  - - - - 21:46 21:57  - - - - 22:08  - - - - 
+51 
+BM 21:25 21:40 22:06  - - - - 22:21 22:36 23:01 
+52 
+PORT 21:50  - - - - 22:31 22:42  - - - - 22:53  - - - - 
+53 
+BM 22:10 22:25 22:51  - - - - 23:06 23:21 23:46 
+54 
+PORT 22:35  - - - - 23:16 23:27  - - - - 23:38  - - - - 
+55 
+BM 22:55 23:10 23:36  - - - - 23:51 00:06 00:31 
+56 
+PORT 23:20  - - - - 00:01 00:12  - - - - 00:23  - - - 
+57 
+BM 23:40 23:55 00:21  - - - - 00:36 00:51 01:16 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+POLIVALENTE  - SÁBADO - INVERNO - 06/03/2017 
+Viagem Via 
+SAI Integração Integração Porto Santa  Integração Integração 
+Terminal Junção Tamand. Portão 2 Teresa Tamand. Junção 
+1 
+PORT 05:40  - - - - 06:21 06:32  06:43  - - - - 
+2 
+BM 05:50 06:05 06:31  - - - 06:46 07:01 07:26 
+3 
+PORT 06:20  - - - - 07:01 07:12  07:23  - - - - 
+4 
+BM 06:40 06:55 07:21  - - - 07:36 07:51 08:16 
+5 
+PORT 07:00  - - - - 07:41 07:52  08:03  - - - - 
+6 
+BM 07:32 07:47 08:13 08:24  - - - - 08:35 09:00 
+7 
+PORT 07:42  - - - - 08:23 08:34  08:45  - - - - 
+8 
+BM 08:12 08:27 08:53  - - - 09:08 09:23 09:48 
+9 
+PORT 08:32  - - - - 09:13 09:24  09:35  - - - - 
+10 
+BM 08:52 09:07 09:33 09:44  - - - - 09:55 10:20 
+11 
+PORT 09:00  - - - - 09:41 09:52  10:03  - - - - 
+12 
+BM 09:32 09:47 10:13 10:24  - - - - 10:35 11:00 
+13 
+PORT 09:40  - - - - 10:21 10:32  10:43  - - - - 
+14 
+BM 10:16 10:31 10:57 11:08  - - - - 11:19 11:44 
+15 
+PORT 10:20  - - - - 11:01 11:12  11:23  - - - - 
+16 
+BM 10:52 11:07 11:33 11:44  - - - - 11:55 12:20 
+17 
+PORT 11:00  - - - - 11:41 11:52  12:03  - - - - 
+18 
+BM 11:32 11:47 12:13 12:24  - - - - 12:35 13:00 
+19 
+PORT 11:40  - - - - 12:21 12:32  12:43  - - - - 
+20 
+BM 12:12 12:27 12:53 13:04  - - - - 13:15 13:40 
+21 
+PORT 12:20  - - - - 13:01 13:12  13:23  - - - - 
+22 
+BM 12:52 13:07 13:33  - - - 13:48 14:03 14:28 
+23 
+PORT 13:00  - - - - 13:41 13:52  14:03  - - - - 
+24 
+BM 13:32 13:47 14:13  - - - 14:28 14:43 15:08 
+25 
+PORT 13:40  - - --  14:21 14:32  14:43  - - -  
+26 
+BM 14:12 14:27 14:53 15:04  - - - - 15:15 15:40 
+27 
+PORT 14:20  - - - - 15:01 15:12  15:23  - - - - 
+28 
+BM 14:52 15:07 15:33 15:44  - - - - 15:55 16:20 
+29 
+PORT 15:00  - - - - 15:41 15:52  16:03  - - - - 
+30 
+BM 15:32 15:47 16:13 16:24  - - - - 16:35 17:00 
+31 
+PORT 15:40  - - - - 16:21 16:32  16:43  - - - - 
+32 
+BM 16:12 16:27 16:53 17:04  - - - - 17:15 17:40 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+33 
+PORT 16:20  - - - - 17:01 17:12  17:23  - - - - 
+34 
+BM 16:52 17:07 17:33 17:44  - - - - 17:55 18:20 
+35 
+PORT 17:00  - - - - 17:41 17:52  18:03  - - - - 
+36 
+BM 17:32 17:47 18:13 18:24  - - - - 18:35 19:00 
+37 
+PORT 17:40  - - - - 18:21 18:32  18:43  - - - - 
+38 
+BM 18:12 18:27 18:53 19:04  - - - - 19:15 19:40 
+39 
+PORT 18:20  - - - - 19:01 19:12  19:23  - - - - 
+40 
+BM 18:52 19:07 19:33  - - - 19:48 20:03 20:28 
+41 
+PORT 19:00  - - - - 19:41 19:52  20:03  - - - - 
+42 
+BM 19:32 19:47 20:13 20:24  - - - - 20:35 21:00 
+43 
+PORT 19:40  - - - - 20:21 20:32  20:43  - - - - 
+44 
+BM 20:10 20:25 20:51 21:02  - - - - 21:13 21:38 
+45 
+PORT 20:40  - - - - 21:21 21:32  21:43  - - - - 
+46 
+BM 20:52 21:07 21:33 21:44  - - - - 21:55 22:20 
+47 
+PORT 21:30  - - - - 22:11 22:22  22:33  - - - - 
+48 
+BM 21:32 21:47 22:13 22:24  - - - - 22:35 23:00 
+49 
+PORT 22:20  - - - - 23:01 23:12  23:23  - - - - 
+50 
+BM 22:32 22:47 23:13 23:24  - - - - 23:35 00:00 
+51 
+PORT 23:20  - - - - 00:01 00:12  00:23  - - - - 
+52 
+BM 23:40 23:55 00:21 00:32  - - - - 00:43 01:08 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+POLIVALENTE - DOMINGO E FERIADOS -  INVERNO - 06/03/2017 
+Viagem Via 
+SAI Sat. Estação Porto Santa  Estação Sat. 
+Terminal Brito Tamand. Portão 4 Teresa Tamand. Brito 
+1 
+PORT 05:40  - - - - 06:21 06:32  - - - - 06:43  - - - - 
+2 
+BM 05:50 06:05 06:31  - - - - 06:46 07:01 07:26 
+3 
+PORT 06:20  - - - - 07:01 07:12  - - - - 07:23  - - - - 
+4 
+BM 06:40 06:55 07:21  - - - - 07:36 07:51 08:16 
+5 
+PORT 07:00  - - - - 07:41 07:52  - - - - 08:03  - - - - 
+6 
+BM 07:32 07:47 08:13 08:24  - - - - 08:35 09:00 
+7 
+PORT 07:42  - - - - 08:23 08:34  - - - - 08:45  - - - - 
+8 
+BM 08:12 08:27 08:53  - - - - 09:08 09:23 09:48 
+9 
+PORT 08:32  - - - - 09:13 09:24  - - - - 09:35  - - - - 
+10 
+BM 08:52 09:07 09:33 09:44  - - - - 09:55 10:20 
+11 
+PORT 09:00  - - - - 09:41 09:52  - - - - 10:03  - - - - 
+12 
+BM 09:32 09:47 10:13 10:24  - - - - 10:35 11:00 
+13 
+PORT 09:40  - - - - 10:21 10:32  - - - - 10:43  - - - - 
+14 
+BM 10:16 10:31 10:57 11:08  - - - - 11:19 11:44 
+15 
+PORT 10:20  - - - - 11:01 11:12  - - - - 11:23  - - - - 
+16 
+BM 10:52 11:07 11:33 11:44  - - - - 11:55 12:20 
+17 
+PORT 11:00  - - - - 11:41 11:52  - - - - 12:03  - - - - 
+18 
+BM 11:32 11:47 12:13 12:24  - - - - 12:35 13:00 
+19 
+PORT 11:40  - - - - 12:21 12:32  - - - - 12:43  - - - - 
+20 
+BM 12:12 12:27 12:53 13:04  - - - - 13:15 13:40 
+21 
+PORT 12:20  - - - - 13:01 13:12  - - - - 13:23  - - - - 
+22 
+BM 12:52 13:07 13:33  - - - - 13:48 14:03 14:28 
+23 
+PORT 13:00  - - - - 13:41 13:52  - - - - 14:03  - - - - 
+24 
+BM 13:32 13:47 14:13  - - - - 14:28 14:43 15:08 
+25 
+PORT 13:40  - - --  14:21 14:32  - - - - 14:43  - - -  
+26 
+BM 14:12 14:27 14:53 15:04  - - - - 15:15 15:40 
+27 
+PORT 14:20  - - - - 15:01 15:12  - - - - 15:23  - - - - 
+28 
+BM 14:52 15:07 15:33 15:44  - - - - 15:55 16:20 
+29 
+PORT 15:00  - - - - 15:41 15:52  - - - - 16:03  - - - - 
+30 
+BM 15:32 15:47 16:13 16:24  - - - - 16:35 17:00 
+31 
+PORT 15:40  - - - - 16:21 16:32  - - - - 16:43  - - - - 
+32 
+BM 16:12 16:27 16:53 17:04  - - - - 17:15 17:40 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+33 
+PORT 16:20  - - - - 17:01 17:12  - - - - 17:23  - - - - 
+34 
+BM 16:52 17:07 17:33 17:44  - - - - 17:55 18:20 
+35 
+PORT 17:00  - - - - 17:41 17:52  - - - - 18:03  - - - - 
+36 
+BM 17:32 17:47 18:13 18:24  - - - - 18:35 19:00 
+37 
+PORT 17:40  - - - - 18:21 18:32  - - - - 18:43  - - - - 
+38 
+BM 18:12 18:27 18:53 19:04  - - - - 19:15 19:40 
+39 
+PORT 18:20  - - - - 19:01 19:12  - - - - 19:23  - - - - 
+40 
+BM 18:52 19:07 19:33  - - - - 19:48 20:03 20:28 
+41 
+PORT 19:00  - - - - 19:41 19:52  - - - - 20:03  - - - - 
+42 
+BM 19:32 19:47 20:13 20:24  - - - - 20:35 21:00 
+43 
+PORT 19:40  - - - - 20:21 20:32  - - - - 20:43  - - - - 
+44 
+BM 20:10 20:25 20:51 21:02  - - - - 21:13 21:38 
+45 
+PORT 20:40  - - - - 21:21 21:32  - - - - 21:43  - - - - 
+46 
+BM 20:52 21:07 21:33 21:44  - - - - 21:55 22:20 
+47 
+PORT 21:30  - - - - 22:11 22:22  - - - - 22:33  - - - - 
+48 
+BM 21:32 21:47 22:13 22:24  - - - - 22:35 23:00 
+49 
+PORT 22:20  - - - - 23:01 23:12  - - - - 23:23  - - - - 
+50 
+BM 22:32 22:47 23:13 23:24  - - - - 23:35 00:00 
+51 
+PORT 23:20  - - - - 00:01 00:12  - - - - 00:23  - - - - 
+52 
+BM 23:40 23:55 00:21 00:32  - - - - 00:43 01:08 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+POVO NOVO - DOMINGO E FERIADOS - INVERNO REVISADO 06/03/2017 
+VIAGEM 
+SAI SAI 
+HOTEL P. NOVO 
+1 07:20 08:35 
+2 12:20 13:30 
+3 16:40 17:50 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+POVO NOVO – SÁBADO - INVERNO REVISADO 06/03/2017 
+ SAI SAI 
+ HOTEL P. NOVO 
+1 Via Super Porto 05:45 
+2 06:50 08:00 
+3 12:10 13:25 
+4 17:10 18:25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+POVO NOVO (SEGUNDA, QUARTA E SEXTA) - INVERNO REVISADO 06/03/2017 
+VIAGEM 
+SAI SAI 
+HOTEL P. NOVO 
+1 SAI PUXANDO DO P. NOVO VIA S. PORTO 05:40 
+2 06:55 Gen. Neto 08:15 
+3 12:20 13:40 
+4 17:05 18:25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+POVO NOVO VIA BARRO VERMELHO (TERÇA E QUINTA) - INVERNO REVISADO 
+06/03/2017 
+VIAGEM 
+SAI SAI 
+HOTEL P. NOVO 
+1 SAI PUXANDO DO P. NOVO VIA S. PORTO 05:40 
+2 06:55 Gen. Neto 08:40 
+3 12:20 13:40 
+4 17:05 19:00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+P.SÃO PEDRO - SEG. A SEX. - INVERNO - 06/03/2017  
+VIAGEM VIA 
+ESTAÇÃO ESTAÇÃO ENTRADA SAIDA ESTAÇÃO 
+TAMANDARÉ JUNÇÃO PSP PSP JUNÇÃO 
+1 PSP - - - - - - 06:30 06:41 06:55 
+2 PSP/IFRS - - - - - - 07:00 07:11 07:26 
+3 PSP 07:15 07:34 07:45 07:56 08:06 
+4 PSP 08:47 09:06 09:17 09:28 09:41 
+5 PSP 10:15 10:34 10:45 10:57 11:08 
+6 PSP 11:45 12:04 12:15 12:27 12:41 
+7 PSP 12:30 12:49 13:00 13:12 13:23 
+8 PSP 13:15 13:34 13:45 13:57 14:08 
+9 PSP 14:00 14:19 14:30 14:42 14:52 
+10 PSP 14:45 15:04 15:15 15:27 15:41 
+11 PSP 15:30 15:49 16:00 16:12 16:23 
+12 PSP 16:15 16:34 16:45 16:57 17:08 
+13 PSP 17:00 17:19 17:30 17:42 17:53 
+14 PSP 17:45 18:04 18:15 18:27 18:38 
+15 PSP 18:30 18:49 19:00 19:12 19:23 
+16 PSP 19:15 19:34 19:45 ÁTE O PSP  
+17 PSP 20:00 20:19 20:30 ÁTE O PSP  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+QUINTA – DOMINGOS E FERIADOS - INVERNO  
+REVISADO 06/03/2017 
+ 
+SAI ESTAÇÃO AV  SAI 
+ 
+HOTEL JUNÇÃO A LOMBA 
+1 - - - - - - - - - - - - - - - 06:00 
+2 - - - - - - - - - - - - - - - 06:30 
+3 - - - - - - - - - - - - - - - 07:00 
+4 - - - - - - - - - - 07:25 07:30 
+5 07:00 07:19 - - - - - 08:00 
+6 07:34 07:53 - - - - - 08:39 
+7 08:08 08:27 - - - - - 09:13 
+8 08:42 09:01 - - - - - 09:47 
+9 09:16 09:35 - - - - - 10:21 
+10 09:50 10:09 - - - - - 10:55 
+11 10:24 10:43 - - - - - 11:29 
+12 10:58 11:17 - - - - - 12:03 
+13 11:32 11:51 - - - - - 12:37 
+14 12:06 12:25 - - - - - 13:11 
+15 12:40 12:59 - - - - - 13:45 
+16 13:14 13:33 - - - - - 14:19 
+17 13:48 14:07 - - - - - 14:53 
+18 14:22 14:41 15:22 15:27 
+19 14:56 15:15 - - - - - 16:01 
+20 15:30 15:49 - - - - - 16:35 
+21 16:04 16:23 - - - - - 17:09 
+22 16:38 16:57 - - - - - 17:43 
+23 17:12 17:31 - - - - - 18:17 
+24 17:46 18:05 - - - - - 18:51 
+25 18:20 18:39 19:20 19:25 
+26 18:54 19:13 - - - - - 19:59 
+27 19:35 19:54 - - - - - 20:40 
+28 20:20 20:39 - - - - - 21:25 
+29 20:50 21:09 - - - - - 21:55 
+30 21:30 21:49 - - - - - - - - 
+31 22:20 22:39 - - - - - 23:25 
+32 23:30 23:49 - - - - - 00:35 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+QUINTA - SÁBADO - INVERNO  
+REVISADO 06/03/2017 
+ SAI AV SAI 
+ HOTEL A LOMBA 
+1 - - - - - - - - - - 05:50 
+2 - - - - - - - - - - 06:20 
+3 - - - - - - - - - - 06:35 
+4   06:50 
+5 - - - - - - - - - - 07:05 
+6 - - - - - 07:15 07:20 
+7 - - - - - - - - - - 07:35 
+8 - - - - - - - - - - 07:50 
+9 07:15 - - - - - 08:15 
+10 07:45 - - - - - 08:40 
+11 08:10 - - - - - 09:11 
+12 08:34 - - - - - 09:39 
+13 09:02 - - - - - 10:00 
+14 09:35 - - - - - 10:35 
+15 09:58 - - - - - 11:00 
+16 10:26 - - - - - 11:25 
+17 11:00 - - - - - 11:59 
+18 11:22 - - - - - 12:27 
+19 11:55 - - - - - 12:55 
+20 12:20 - - - - - 13:23 
+21 12:46 - - - - - 13:51 
+22 13:14 - - - - - 14:19 
+23 13:42 - - - - - 14:47 
+24 14:10 15:10 15:15 
+25 14:38 - - - - - 15:43 
+26 15:06 - - - - - 16:11 
+27 15:34 - - - - - 16:44 
+28 16:02 - - - - - 17:12 
+29 16:30 - - - - - 17:40 
+30 16:58 - - - - - 18:00 
+31 17:15 - - - - - 18:20 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+32 17:54 19:00 19:04 
+33 18:20 - - - - - 19:30 
+34 18:50 - - - - - 20:00 
+35 19:15 - - - - - 20:15 
+36 20:00 - - - - - 20:51 
+37 20:30 - - - - - 21:19 
+38 20:50 - - - - - 21:40 
+39 21:40 - - - - - 22:30 
+40 22:30 - - - - - 23:35 
+41 23:30 - - - - - 00:35 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+QUINTA - SEG. A SEX. - INVERNO REVISADO 06/03/2017 
+ SAIDA ESTAÇÃO AVENIDA SAI ESTAÇÃO 
+ HOTEL JUNÇÃO 'A' LOMBA JUNÇÃO 
+1 SUPER PORTO 05:50 ---- 
+2 ---- ---- ---- 05:50 06:25 
+3 ---- ---- ---- 06:05 06:40 
+4 ---- ---- 06:20 06:25 07:00 
+5 ---- ---- ---- 06:40 07:15 
+6 ---- ---- 06:45 06:50 07:20 
+7 ---- ---- 07:05 07:10 07:40 
+8 06:20 06:40 ---- 07:25 07:50 
+9 ---- ---- ---- 07:40 08:10 
+10 ---- ---- ---- 08:00 08:30 
+11 07:20 07:40 ---- 08:15 08:50 
+12 07:40 08:00 08:30 08:35 09:10 
+13 08:00 08:20 ---- 08:55 09:30 
+14 08:20 08:40 ---- 09:15 09:50 
+15 08:40 09:00 ---- 09:35 10:10 
+16 09:00 09:20 09:50 09:55 10:30 
+17 09:25 09:45 ---- 10:20 10:55 
+18 09:50 10:10 - - - - 10:45 11:20 
+19 10:15 10:35 ---- 11:10 11:45 
+20 10:40 11:00 ---- 11:35 12:10 
+21 11:05 11:25 ---- 12:00 12:35 
+22 11:30 11:50 12:20 12:25 13:00 
+23 11:50 12:10 ---- 12:45 13:20 
+24 12:10 12:30 ---- 13:05 13:40 
+25 12:30 12:50 ---- 13:25 14:00 
+26 13:00 13:20 ---- 13:55 14:30 
+27 13:30 13:50 ---- 14:25 15:00 
+28 14:00 14:20 ---- 14:55 15:30 
+29 14:30 14:50 ---- 15:25 16:00 
+30 15:00 15:20 15:50 15:55 16:30 
+31 15:30 15:50 ---- 16:25 17:00 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+32 15:50 16:20 ---- 16:55 17:30 
+33 16:20 16:40 ---- 17:20 17:55 
+34 16:45 17:05 ---- 17:40 18:15 
+35 ----- ----- ---- 17:55 18:30 
+36 17:15 17:35 ---- 18:10 18:45 
+37 17:40 - - - - SUPER PORTO SAI 17:40 ATE A QUINTA 
+38 17:45 18:05 ---- 18:40 19:15 
+39 ---- ---- ---- 19:15 19:50 
+40 18:20 18:40 ---- 19:35 20:05 
+41 18:45 19:05 RECOLHE 
+42 19:00 19:20 19:50 19:55 20:25 
+43 19:15 19:15 RECOLHE 
+44 19:30 19:50 ---- 20:30 21:00 
+45 20:00 20:20 RECOLHE 
+46 20:30 20:50 ---- 21:25 21:55 
+47 21:00 21:20 RECOLHE 
+48 21:30 21:50 ---- 22:25 23:00 
+49 22:10 22:30 FURG APÓS RECOLHE 
+50 22:40 23:00  23:45 00:20 
+51 23:20 23:40 RECOLHE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+QUINTA X CASSINO - SEG. A DOM. - INVERNO REVISADO 06/03/2017 
+Viagem LOMBA ENTRADA CHEGADA 
+ 
+QUINTA P. MARINHA CASSINO 
+1 07:30 07:52 08:25 
+ 
+SAÍDA  ENTRADA CHEGADA 
+ 
+CASSINO P. SÃO PEDRO LOMBA 
+2 18:30 18:48 19:25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+QUINTA EXPRESSO- SEG. A SEX. -INVERNO REVISADO 06/03/2017 
+Viagem 
+SAIDA  SAIDA 
+HOTEL PORTUGuAL LOMBA 
+1 - - - 07:00 
+2 17:00 - - - 
+3 18:00 - - - 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+TOROTAMA - DOMINGO E FERIADOS - INVERNO  
+REVISADO 06/03/2017 
+Viagem 
+SAI SAI 
+HOTEL TOROTAMA 
+1 06:00 07:30 
+2 11:35 13:00 
+3 18:10 19:40 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+TOROTAMA – SÁBADO - INVERNO  
+REVISADO 06/03/2017 
+Viagem 
+SAI SAI 
+HOTEL TOROTAMA 
+1 05:50 07:20 
+2 11:50 13:20 
+3 18:40 20:00 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+TOROTAMA – SEG A SEXTA - INVERNO  
+REVISADO 06/03/2017 
+Viagem 
+SAI SAI 
+HOTEL TOROTAMA 
+1 04:55 06:15 
+2 11:20 13:05 
+3 16:00 Somente nos primeiros 10 dias úteis 
+4 18:40 20:15 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+TREVO BARRA/PORTO - DOMINGO E FERIADOS -  INVERNO - REVISADO 06/03/2017 
+VIAGEM 
+VIA 
+ENTRADA SAÍDA INTEGRAÇÃO VILA PORTO INTEGRAÇÃO 
+J.SOL 
+P.SÃO 
+PEDRO TREVO BARRA 
+PORTÃO 
+4 TREVO 
+1 BAR./POR 05:30 05:46 05:49 06:14 06:37 07:00 
+2 BAR./POR 07:00 07:16 - - - - - 07:41 08:04 08:27 
+3 BAR./POR 08:30 08:46 - - - - - 09:11 09:34 09:57 
+4 BAR./POR 10:00 10:16 - - - - - 10:41 11:04 11:27 
+5 BAR./POR 11:30 11:46 - - - - - 12:11 12:34 12:57 
+6 BAR./POR 13:00 13:16 - - - - - 13:41 14:04 14:27 
+7 BAR./POR 14:30 14:46 - - - - - 15:11 15:34 15:57 
+8 BAR./POR 16:00 16:16 - - - - - 16:41 17:04 17:27 
+9 BAR./POR 17:30 17:46 - - - - - 18:11 18:34 18:57 
+10 BAR./POR 19:00 19:16 - - - - - 19:41 20:04 20:27 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+TREVO BARRA/PORTO  - SÁBADO -  INVERNO - REVISADO 06/03/2017 
+VIAGEM 
+VIA 
+ENTRADA SAÍDA INTEGRAÇÃO VILA PORTO INTEGRAÇÃO 
+J.SOL 
+P.SÃO 
+PEDRO TREVO BARRA 
+PORTÃO 
+4 TREVO 
+1 BARRA/LS 05:30 05:48 05:52 06:19 - - - - - 06:36 
+2 PORTO 05:45 06:03 06:07 - - - - - 06:32 06:52 
+3 PORTO 06:10 06:28 06:32 - - - - - 06:57 07:17 
+4 BARRA 06:40 06:58 - - - - -  07:20  - - - - - 
+5 BARRA/LS 06:40 06:58 - - - - -  07:25 - - - - - 07:42 
+6 PORTO 06:56 07:14 - - - - -  - - - - - 07:39 07:59 
+7 PORTO 07:21 07:39 - - - - -   08:04 08:24 
+8 BAR./POR 07:46 08:04 - - - - -  08:31 08:54 09:17 
+9 BAR./POR 08:26 08:44 - - - - -  09:11 09:34 09:57 
+10 BAR./POR 09:21 09:39 - - - - -  10:06 10:29 10:52 
+11 BAR./POR 10:56 11:14 - - - - -  11:41 12:04 12:27 
+12 BAR./POR 12:31 12:49 - - - - -  13:16 13:39 14:02 
+13 BAR./POR 14:06 14:24 - - - - -  14:51 15:14 15:37 
+14 BAR/POR 15:41 15:59 - - - - -  16:26 16:49 17:12 
+15 PORTO 16:45 17:03 - - - - -   17:28 17:51 
+16 BARRA 17:16 17:34 - - - - -  18:01  18:18 
+17 PORTO 17:55 18:13 - - - - -   18:38 19:01 
+18 BAR./POR 18:22 18:40 - - - - -  19:07 19:30 19:50 
+19 BAR/POR 19:05 19:23  19:50 20:13 20:38 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+TREVO BARRA/PORTO - SEG. A SEX. - INVERNO REVISADO 06/03/2017  
+VIAGEM 
+VIA 
+ENTRADA SAÍDA INTEGRAÇÃO VILA PORTO INTEGRAÇÃO 
+J.SOL 
+P.SÃO 
+PEDRO TREVO BARRA 
+PORTÃO 
+4 TREVO 
+1 BARRA/LS 05:30 05:48 05:52 06:19 - - - - - 06:36 
+2 PORTO 05:45 06:03 06:07 - - - - - 06:32 07:15 
+3 PORTO 06:10 06:28 06:32 - - - - - 06:57 07:40 
+4 PORTO 06:10 06:28 06:32  06:57  
+5 BARRA/LS 06:40 06:58 - - - - -  07:25 - - - - - 07:55 
+6 PORTO 07:19 07:37 - - - - -  - - - - - 08:02 08:22 
+7 PORTO 07:44 08:02 - - - - -  - - - - - 08:27 08:47 
+8 BAR./POR 07:59 08:17 - - - - -  08:44 09:07 09:25 
+9 BAR./POR 08:51 09:09 - - - - -  09:36 09:59 10:22 
+10 BAR./POR 09:29 09:47 - - - - -  10:14 10:37 11:00 
+11 BAR./POR 11:04 11:22 - - - - -  11:49 12:12 12:35 
+12 BAR./POR 12:39 12:57 - - - - -  13:24 13:47 14:10 
+13 BAR./POR 14:14 14:32 - - - - -  14:59 15:22 15:45 
+14 BAR./POR 15:49 16:07 - - - - -  16:34 16:57 17:20 
+15 PORTO 16:45 17:03 - - - - -  - - - - - 17:28 17:51 
+16 BARRA 17:24 17:42 - - - - -  18:09 - - - - - 18:26 
+17 PORTO 17:55 18:13 - - - - -  - - - - - 18:38 19:01 
+18 BAR./POR 18:30 18:48 - - - - -  19:15 19:38 19:58 
+19 BAR./POR 19:05 19:23 - - - - -  19:50 20:13 20:38 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+Linhas do Transporte Urbano – Rio Grande 
+TREVO-HUMAITÁ- INVERNO - SEG A SEXTA REVISADO EM 06/03/2017 
+Viagem Via 
+TERMINAL INTEGRAÇÃO PASSADA INTEGRAÇÃO 
+TAMANDARÉ JUNÇÃO TREVO JUNÇÃO 
+1 
+HUMAITA - - - - - - - - 06:40IFRS 06:50 
+2 
+HUMAITA 07:40 07:58 08:10 08:20 
+3 
+HUMAITA 08:45 09:03 09:15 09:25 
+4 
+HUMAITA 09:50 10:08 10:20 10:30 
+5 
+HUMAITA 10:55 11:13 11:25 11:35 
+6 
+HUMAITA 12:00 12:18 12:35 12:45 
+7 
+HUMAITA 13:10 13:28 13:45 13:55 
+8 
+HUMAITA 14:20 14:38 14:55 15:05 
+9 
+HUMAITA 15:30 15:48 16:05 16:15 
+10 
+HUMAITA 16:40 16:58 17:15 17:25 
+11 
+HUMAITA 17:55 18:13 18:40 18:50 
+12 
+HUMAITA 19:30 19:50 20:10 
+ATE O  
+TREVO 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ Linhas do Transporte Urbano – Rio Grande 
+CIRCULAR CASSINO – SEGUNDA À SÁBADO -  INVERNO REVISADO 06/03/2017  
+  
+SAI Saída 
+ATL. S. 
+CHEGA SAI 
+ABC CAMP 
+CHEGA 
+  
+ABRIGO P.Guan. ABRIGO ABRIGO ABRIGO 
+1 
+Puxa 06:05 do 
+Camping 
+- - - - - - - - - - - - - - - - - - 06:25 
+2 
+Puxa 06:25 do 
+Camping 
+- - - - - - - - - - - - - - - - - - 06:50 
+3 
+06:30 06:43 06:50 07:00 07:05 07:15 - - - 07:25 
+NA VIAGEM DAS 07:28HS ENTRA PELO ARROIO GRANDE FAZ TODO CAMPING ABC RETORNA PELO 
+WANDA ROCHA 
+4 
+06:58 07:11 07:18 
+07:28 
+07:28 07:41 07:35 08:00 
+5 
+07:30 07:43 07:50 08:00 08:05 08:14 08:17 08:30 
+6 
+08:00 08:13 08:20 08:30 08:32 08:42 - - - 08:52 
+7 
+08:30 - - - 08:43 08:55 08:57 09:07 09:10 09:22 
+NA VIAGEM DAS 08:50HS VOLTAR POR DENTRO DO P. GUANABARA 
+8 08:50 
+09:03 09:10 09:20 09:22 09:32 - - - 09:42 
+9 
+09:24 09:37 09:42 09:49 09:52 10:02 - - - 10:12 
+10 
+09:44 - - - 09:57 10:09 10:14 10:24 - - - 10:34 
+11 
+10:14 10:27 10:32 10:39 10:44 10:54 - - - 11:04 
+12 
+10:42 - - - 10:55 11:07 11:12 11:22 - - - 11:32 
+NA VIAGEM DAS 11:50HS VAI NA ESCOLA WANDA ROCHA APÓS CAMPING NA VOLTA PELO ABC 
+13 
+11:10 11:23 11:28 11:35 
+11:50 
+12:00 12:03 12:15 
+14 
+11:38 - - - 11:51 12:03 - - - - - - - - - - - - 
+15 
+12:06 12:19 12:24 12:31 12:36 12:46 - - - 12:56 
+NA VIAGEM DAS 12:55HS VAI ABC CAMPING E WANDA ROCHA 
+16 
+12:20 12:35 12:40 12:50 
+12:55 
+13:05 - - - 13:30 
+17 
+13:02 13:15 13:22 13:27 13:32 13:42 - - - 13:52 
+18 
+13:30 - - - 13:43 13:55 14:00 14:10 14:13 14:25 
+NA VIAGEM DAS 13:50HS VOLTA POR DENTRO DO P. GUANABARA 
+19 13:50 
+- - - 14:03 14:25 14:28 14:38 - - - 14:48 
+20 
+14:26 - - - 14:39 14:51 - - - - - - - - - - - - 
+21 
+14:54 15:07 15:12 15:19 15:24 15:34 - - - 15:44 
+22 
+15:25 - - - 15:38 15:50 15:53 16:03 - - - 16:13 
+23 
+15:50 16:03 16:08 16:15 16:20 16:30 - - - 16:40 
+24 
+16:18 - - - 16:31 16:43 16:48 16:58 - - - 17:08 
+VIAGEM DAS 17:12HS ENTRA PELO ARROIO GRANDE FAZ TODO CAMPING ABC RETORNA WANDA ROCHA 
+25 
+16:46 16:59 17:04 17:11 
+17:12 
+17:25 17:29 17:41 
+VIAGEM 17:14HS ENTRA NA ANTIGA COLONIA FÉRIAS DA CEEE PASSA NA ESCOLA DOLORES GARCIA 
+26 17:14 
+- - - 17:27 17:39 17:44 17:54 - - - 18:04 
+27 
+17:42 17:55 18:00 18:07 18:20 18:30 18:33 18:40 
+28 
+18:10 - - - 18:23 18:35 - - - - - - - - - - - - 
+29 
+18:40 18:53 18:58 19:05 19:10 19:20 - - - 19:30 
+30 
+19:06 - - - 19:19 19:31 19:36 19:46 - - - 19:56 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+31 
+19:34 19:47 19:52 19:59 20:04 20:13 - - - 20:24 
+32 
+19:56 20:09 20:16 20:21 20:26 20:36 20:39 20:50 
+33 
+20:30 20:43 20:50 20:55 21:00 21:10 - - - 21:20 
+NA VOLTA DAS 21:23HS VAI WANDA ROCHA CAMPING E APÓS ABC 
+34 
+20:58 - - - 21:11 
+21:23 
+21:23 21:33 21:35 21:43 
+35 
+21:26 21:39 21:44 21:51 21:56 22:06 - - - 22:16 
+36 
+21:54 - - - 22:07 22:15 - - - - - - - - - - - - 
+37 
+22:22 22:35 22:40 22:47 - - - - - - - - - - - - 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Linhas do Transporte Urbano – Rio Grande
+CIRCULAR CASSINO – SEGUNDA À SÁBADO -  INVERNO REVISADO 06/03/2017 
+2617:14- - -17:2717:3917:4417:54- - -18:04
+2717:4217:5518:0018:0718:2018:3018:3318:40
+2818:10- - -18:2318:35- - -- - -- - -- - -
+2918:4018:5318:5819:0519:1019:20- - -19:30
+3019:06- - -19:1919:3119:3619:46- - -19:56
+3119:3419:4719:5219:5920:0420:13- - -20:24
+3219:5620:0920:1620:2120:2620:3620:3920:50
+3320:3020:4320:5020:5521:0021:10- - -21:20
+NA VOLTA DAS 21:23HS VAI WANDA ROCHA CAMPING E APÓS ABC
+3420:58- - -21:1121:2321:2321:3321:3521:43
+3521:2621:3921:4421:5121:5622:06- - -22:16
+3621:54- - -22:0722:15- - -- - -- - -- - -
+3722:2222:3522:4022:47- - -- - -- - -- - -
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ Linhas do Transporte Urbano – Rio Grande 
+CIRCULAR CASSINO - DOMINGO E FERIADOS -  INVERNO REVISADO 06/03/2017  
+  
+SAI Saída 
+ATL. S. 
+CHEGA SAI 
+ABC CAMP 
+CHEGA 
+  
+ABRIGO P.Guan. ABRIGO ABRIGO ABRIGO 
+1 
+Puxa 06:13 do 
+Camping 
+  
+- - - - - - - - - 
+06:21 
+- - - 06:30 
+2 
+06:35 06:46 06:52 07:04 07:06 07:15 - - - 07:25 
+3 
+07:27 07:38 07:44 07:55 07:57 08:06 - - - 08:16 
+4 
+08:21 - - - 08:38 08:50 08:52 09:01 09:06 09:11 
+5 
+08:48 08:59 09:05 09:17 09:19 09:28 - - - 09:38 
+6 
+09:15 - - - 09:32 09:44 09:46 09:55 - - - 10:05 
+7 
+09:42 09:53 09:59 10:11 10:13 10:22 - - - 10:32 
+8 
+10:09 - - - 10:26 10:38 10:40 10:49 - - - 10:59 
+9 
+10:36 10:47 10:53 11:05 11:07 11:16 - - - 11:26 
+10 
+11:03 - - - 11:20 11:32 11:34 11:43 - - - 11:53 
+11 
+11:30 11:41 11:47 11:59 - - - - - - - - - - - - 
+12 
+11:57 - - - 12:14 12:26 12:28 12:37 12:43 12:47 
+13 
+12:24 12:35 12:41 12:53 12:55 13:04 - - - 13:14 
+14 
+12:51 13:02 13:08 13:20 13:22 13:31 13:37 13:41 
+15 
+13:18 - - - 13:35 13:47 13:49 13:58 - - - 14:08 
+16 
+13:45 13:56 14:02 14:14 14:16 14:25 - - - 14:35 
+17 
+14:12 - - - 14:29 14:41 14:43 14:52 14:58 15:02 
+18 
+14:39 14:50 14:56 15:05 - - - - - - - - - - - - 
+19 
+15:06 - - - 15:23 15:35 15:37 15:46 - - - 15:56 
+20 
+15:33 15:44 15:50 16:02 16:04 16:13 - - - 16:23 
+21 
+16:00 - - - 16:17 16:29 16:31 16:40 - - - 16:50 
+22 
+16:27 16:38 16:44 16:56 16:58 17:07 17:13 17:17 
+23 
+16:54 - - - 17:11 17:23 17:25 17:34 - - - 17:44 
+24 
+17:21 17:32 17:38 17:50 17:52 18:01 - - - 18:11 
+25 
+17:48 - - - 18:05 18:17 18:22 18:31 - - - 18:41 
+26 
+18:15 18:26 18:32 18:44 - - - - - - - - - - - - 
+27 
+18:42 - - - 18:59 19:10 19:12 19:21 - - - 19:31 
+28 
+19:09 19:20 19:26 19:38 19:40 19:49 - - - 19:59 
+29 
+19:36 - - - 19:53 20:05 20:07 20:16 - - - 20:26 
+30 
+20:03 20:14 20:20 20:32 20:34 20:43 - - - 20:53 
+31 
+20:30 - - - 20:47 20:59 21:01 21:10 - - - 21:20 
+32 
+20:57 21:08 21:14 21:26 21:28 21:37 - - - 21:47 
+33 
+21:24 - - - 21:41 21:53 21:53 22:02 - - - 22:10 
+34 
+21:51 22:02 22:08 22:18 - - - - - - - - - - - - 
+35 
+22:10 22:20 22:26 22:37 22:37 22:46 - - - 22:56 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ Linhas do Transporte Urbano – Rio Grande 
+ATENDIMENTO FURG – SEG. À SEXTA - INVERNO REVISADO 06/03/2017 
+  ESTAÇÃO CASSINO LINHA VIA 
+1 7:00 CASSINO FURG 
+2 7:05 CASSINO ATÉ A FURG 
+3 7:10 JUNÇÃO CASSINO FURG 
+4 8:45 JUNÇÃO CASSINO FURG 
+5 11:30 JUNÇÃO CASSINO FURG 
+6 11:50 CASSINO FURG 
+7 12:35 JUNÇÃO CASSINO FURG 
+8 13:00 CASSINO FURG 
+9 13:35 JUNÇÃO CASSINO FURG 
+10 14:40 JUNÇÃO CASSINO FURG 
+11 17:25 CASSINO FURG 
+12 18:00 CASSINO FURG 
+13 18:10 CASSINO FURG 
+14 18:30 JUNÇÃO CASSINO FURG 
+15 18:05 CASSINO FURG 
+  SAÍDA FURG LINHA VIA 
+16 6:55 FURG CN VIA FURG 
+17 18:15 FURG CN VIA FURG 
+  SAÍDA FURG LINHA VIA 
+18 21:30 FURG PM VIA HUMAITA ATÉ O PSP 
+19 21:35 FURG ATÉ O CASSINO 
+20 22:30 FURG ATÉ HIDROVIARIA 
+21 22:30 FURG PM VIA HUMAITA ATÉ O PSP 
+22 22:30 FURG ATÉ ABC 
+23 22:30 FURG QUERÊNCIA VIA PQG ATÉ O ATL SUL 
+24 22:30 FURG CIDADE NOVA 
+25 22:30 FURG SÃO JOÃO 
+26 22:30 FURG CIDADE NOVA ATÉ O BGV 
+  ESTAÇÃO CASSINO LINHA VIA 
+27 7:35 JUNÇÃO CASSINO FURG 
+28 7:55 JUNÇÃO CASSINO FURG 
+29 9:15 JUNÇÃO CASSINO FURG 
+30 11:25 JUNÇÃO CASSINO FURG 
+31 12:30 JUNÇÃO CASSINO FURG 
+32 13:35 JUNÇÃO CASSINO FURG 
+33 17:20 JUNÇÃO CASSINO FURG 
+34 18:10 JUNÇÃO CASSINO FURG 
+  ESTAÇÃO TAMANDARÉ LINHA VIA 
+35 12:47 CASSINO CID. NOVA FURG 
+  SAÍDA HOTEL LINHA VIA 
+36 22:10 QUINTA FURG 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+Linhas do Transporte Urbano – Rio Grande 
+PARQUE MARINHA EXPRESSO SEG À SEX  
+REVISADO 06/03/2017 
+ 
+Saída 
+ 
+Entrada 
+ 
+ 
+Centro 
+ 
+PM 
+ 
+ 
+--- 
+ 
+06:50 
+ 
+ 
+--- 
+ 
+08:00 
+ 
+ 
+17:30 
+ 
+--- 
+ 
+ 
+18:00 
+ 
+--- 
+ 
+ 
+18:15 
+ 
+--- 
+ 
+ 
+18:30 
+ 
+--- 
+ 
+ 
+18:55 
+ 
+--- 
+ 
+ 
+19:30 
+ 
+--- 
+ 
+ 
+  
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Secretaria de Município de Mobilidade Urbana e Acessibilidade - SMMUA 
+Av. Major Carlos Pinto, 660 B – Fone/:(53) 3233.7294 
+Cidade Nova – CEP 96211-020 – Rio Grande – RS 
+ 
+ 
+Linhas de Transporte Urbano - Rio Grande 
+CIRCULAR SHOPPING – SEG. A DOMINGO - INVERNO 
+REVISADO 06/03/2017 
+ 
+               Circular  Shopping:  Haverá  um  ônibus 
+circular  ligando  a  Estação  Junção  ao  Shopping 
+aproximadamente  a  cada  20  minutos,  das  9:20h 
+às 23:00h, diariamente, com o objetivo de realizar 
+a  integração  de  todas  as  linhas  que  passam  na 
+Junção ao Shopping. 
+ 

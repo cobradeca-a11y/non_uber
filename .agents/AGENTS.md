@@ -20,7 +20,7 @@ O próximo passo previsto (Fase 3) é o **Mapa de Calor de Destino**. Hoje o app
 O usuário é extremamente técnico e exige um processo de revisão inquebrável. Siga essas regras sob pena de comprometer a relação de confiança:
 
 1. **Aprovação Explícita é Lei:**
-   Nunca inicie a geração ou alteração massiva de código baseando-se apenas num bypass automatizado ("Auto-Approve Policy" do IDE). Para mudanças de arquitetura (Fases), elabore o plano (`implementation_plan.md`) e **Aguarde o usuário digitar explicitamente 'Aprovado'** no chat. Ausência de veto não significa aprovação.
+   Nunca inicie a geração ou alteração massiva de código baseando-se apenas num bypass automatizado ("Auto-Approve Policy" do IDE). Para mudanças de arquitetura (Fases), elabore o plano (`implementation_plan.md`) e **Aguarde o usuário aprovar**. Essa aprovação pode vir tanto por um clique seu no botão 'Approve/Proceed' da interface do IDE, quanto pela digitação da palavra 'Aprovado' no chat. Ausência de ação (só ler sem aprovar ou vetar) não significa aprovação.
 
 2. **Apresente Dados Brutos, Não Apenas Resumos:**
    Se você executar um refactor ou um teste (como scraper de OCR, logs de extração de PDF, ou comparações), não confie apenas em apresentar uma tabela markdown resumida ou dizer "tudo correu bem". **O usuário exige ver o log bruto (stdout/stderr)** ou hashes/diffs exatos que provem que a alteração funcionou. (Ex: em refatores do DOM, validamos com snapshot byte-a-byte via Puppeteer/JSDOM).

@@ -19,6 +19,13 @@ function getBoundsFromKey(key) {
   ];
 }
 
+function normalizeAddress(addr) {
+  if (!addr) return '';
+  return addr.trim().toLowerCase()
+    .replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+    .replace(/\s{2,}/g," ");
+}
+
 async function carregarGeocodeCache() {
   try {
     const res = await fetch('./geocode-cache.json');
@@ -113,18 +120,24 @@ async function processarTimeline(jsonText, statusEl) {
   if (window.corridas) {
     window.corridas.forEach(c => {
       // Origem
-      if (c.endOrigem && geocodeCache[c.endOrigem.trim()]) {
-        const loc = geocodeCache[c.endOrigem.trim()];
-        const key = getCellKey(loc.lat, loc.lng);
-        if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
-        grid[key].frequenciaCorrida++;
+      if (c.endOrigem) {
+        const origKey = normalizeAddress(c.endOrigem);
+        if (geocodeCache[origKey]) {
+          const loc = geocodeCache[origKey];
+          const key = getCellKey(loc.lat, loc.lng);
+          if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
+          grid[key].frequenciaCorrida++;
+        }
       }
       // Destino
-      if (c.endDestino && geocodeCache[c.endDestino.trim()]) {
-        const loc = geocodeCache[c.endDestino.trim()];
-        const key = getCellKey(loc.lat, loc.lng);
-        if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
-        grid[key].frequenciaCorrida++;
+      if (c.endDestino) {
+        const destKey = normalizeAddress(c.endDestino);
+        if (geocodeCache[destKey]) {
+          const loc = geocodeCache[destKey];
+          const key = getCellKey(loc.lat, loc.lng);
+          if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
+          grid[key].frequenciaCorrida++;
+        }
       }
     });
   }
