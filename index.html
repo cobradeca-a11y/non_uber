@@ -2467,7 +2467,7 @@ function renderFlowPoints(){
     // Sort and take the next 2 arrivals to avoid polluting the list
     futureTimes.sort((a,b)=>a-b).slice(0, 2).forEach(target => {
       const desc = isLancha 
-        ? (t.sentido === 'SJN->RG' ? 'Chegada em Rio Grande' : 'Embarque p/ SJN')
+        ? (t.sentido === 'SJN->RG' ? '~Chegada em Rio Grande (estimada)' : 'Embarque p/ SJN')
         : `Terminal - ${t.linha}`;
       items.push({ name: name, desc: desc, time: target, isContinuous: false });
     });
