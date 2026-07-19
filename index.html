@@ -6,6 +6,9 @@
 <title>Painel do Motorista</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <style>
@@ -23,6 +26,8 @@
     --ink:#e8e9ec;
     --ink-dim:#8b909c;
     --ink-faint:#585d68;
+    --border: var(--line);
+    --bg-alt: var(--panel-raised);
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
@@ -538,6 +543,7 @@
   <button data-view="corridas">Corridas</button>
   <button data-view="horarios">Horários</button>
   <button data-view="entorno">Entorno</button>
+  <button data-view="mapa">Meu Mapa</button>
   <button data-view="praticas">Boas Práticas</button>
   <button data-view="fontes">Fontes</button>
 </nav>
@@ -847,7 +853,27 @@
     </div>
   </div>
 
-  <!-- ===================== BOAS PRATICAS ===================== -->
+  <!-- ===================== MEU MAPA ===================== -->
+  <section class="view" id="view-mapa">
+    <h2 class="section-title">Mapa de Calor Pessoal</h2>
+    <div class="note">Cruze seu histórico de corridas com sua Linha do Tempo para descobrir onde você converte mais e onde perde tempo. Tudo processado 100% no seu aparelho.</div>
+    
+    <div class="decide-card" style="margin-bottom: 24px;">
+      <div class="decide-sub">Faça o upload do seu JSON de Linha do Tempo (Google Takeout). O arquivo NÃO será enviado a nenhum servidor.</div>
+      <input type="file" id="timeline-upload" accept=".json" style="margin-top: 12px; width:100%; border:1px dashed var(--border); padding: 8px;">
+      <div id="timeline-status" style="margin-top:8px; font-size:13px; color:var(--ink-dim);">Aguardando arquivo...</div>
+    </div>
+
+    <div class="heatmap-legend" style="display: flex; gap: 8px; margin-bottom: 12px; font-size: 12px;">
+      <div style="display:flex; align-items:center; gap:4px;"><div style="width:12px;height:12px;background:rgba(31,217,168,0.6);border-radius:2px;"></div> Confirmada</div>
+      <div style="display:flex; align-items:center; gap:4px;"><div style="width:12px;height:12px;background:rgba(239,68,68,0.6);border-radius:2px;"></div> Sem Retorno</div>
+      <div style="display:flex; align-items:center; gap:4px;"><div style="width:12px;height:12px;background:rgba(59,130,246,0.6);border-radius:2px;"></div> Oportunidade</div>
+    </div>
+
+    <div id="heatmap-container" style="width: 100%; height: 60vh; background: var(--bg-alt); border-radius: 8px; overflow: hidden; border: 1px solid var(--border);"></div>
+  </section>
+
+  <!-- ===================== BOAS PRÁTICAS ===================== -->
   <section class="view" id="view-praticas">
     <h2 class="section-title">Boas práticas</h2>
     <div id="practices-container"></div>
@@ -2864,6 +2890,13 @@ async function init(){
   await initData();
 }
 init();
+</script>
+
+<script>
+// Importar script do Heatmap
+const scriptHeatmap = document.createElement('script');
+scriptHeatmap.src = 'js/heatmap-renderer.js';
+document.body.appendChild(scriptHeatmap);
 </script>
 </body>
 </html>
