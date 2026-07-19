@@ -26,9 +26,10 @@ if (fs.existsSync(cachePath)) {
 
 function normalizeAddress(addr) {
   if (!addr) return '';
-  return addr.trim().toLowerCase()
-    .replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()]/g,"")
-    .replace(/\s{2,}/g," ");
+  return addr.toLowerCase()
+    .replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()]/g," ")
+    .replace(/\s{2,}/g," ")
+    .trim();
 }
 
 async function geocode(address) {
