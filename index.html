@@ -2406,6 +2406,96 @@ const flowPoints = [
   {name:'HU-FURG / Santa Casa', desc:'Fluxo 24h — troca de turno hospitalar', times:['07:00','13:00','19:00']},
 ];
 
+let todasAncoras = [];
+
+function buildUnifiedAnchors() {
+  todasAncoras = [];
+  const now = new Date();
+  const dayCat = [0, 6].includes(now.getDay()) ? (now.getDay() === 0 ? 'domingo' : 'sabado') : 'util';
+  
+  // 1. FlowPoints (Fixo do App)
+  flowPoints.forEach(p => {
+    let tipo = 'fluxo_continuo';
+    let confianca = 'fixo_diario';
+    let direcao_provavel = 'desconhecida';
+    let forca_sinal = 2; // peso base
+    
+    if(p.times.length > 0) {
+      if(p.name.includes('FURG')) { tipo = 'saida_escola'; direcao_provavel = 'casa'; forca_sinal = 3; }
+      else if(p.name.includes('Shopping')) { tipo = 'fechamento_comercio'; direcao_provavel = 'casa'; forca_sinal = 3; }
+      else if(p.name.includes('Hospital') || p.name.includes('Santa Casa')) { tipo = 'saida_escola'; direcao_provavel = 'casa'; forca_sinal = 3; } // Turno
+    }
+    
+    let local = ANCHOR_COORDS[p.name] || null;
+    
+    if(p.times.length === 0) {
+      todasAncoras.push({ id: p.name, nome: p.name, local, tipo, confianca, direcao_provavel, forca_sinal, isContinuous: true, desc: p.desc });
+    } else {
+      const nexts = p.times.map(tStr => nextOccurrence(tStr)).sort((a,b)=>a-b);
+      todasAncoras.push({ id: p.name, nome: p.name, local, tipo, confianca, direcao_provavel, forca_sinal, horario_previsto: nexts[0], isContinuous: false, desc: p.desc });
+    }
+  });
+
+  // 2. Cinemas
+  sessoesCinema.forEach((s, idx) => {
+    let local = ANCHOR_COORDS[s.cinema] || null;
+    todasAncoras.push({
+      id: `cinema-${idx}`,
+      nome: s.cinema,
+      local,
+      tipo: 'fim_sessao_cinema',
+      confianca: 'variavel_diario',
+      direcao_provavel: 'casa',
+      forca_sinal: 4,
+      horario_previsto: new Date(s.termino),
+      isContinuous: false,
+      desc: `Término da sessão: ${s.filme}`
+    });
+  });
+
+  // 3. Transportes (Lancha e Ônibus)
+  [...(transportesData.onibus||[]), ...(transportesData.lancha||[])].forEach((t, tIdx) => {
+    const isLancha = !!t.sentido;
+    const name = t.nome || 'Lancha ' + t.sentido;
+    
+    let local = ANCHOR_COORDS[name];
+    if(!local && t.linha && t.linha.includes('14')) local = ANCHOR_COORDS['FURG · Campus Carreiros'];
+    if(!local && t.linha && t.linha.includes('06')) local = ANCHOR_COORDS['Cassino'];
+    if(!local) local = ANCHOR_COORDS['Centro']; // fallback p/ onibus sem rota especifica
+    
+    let tipo = isLancha ? 'desembarque_lancha' : 'chegada_onibus';
+    let forca_sinal = isLancha ? 5 : 3;
+    let desc = isLancha ? (t.sentido === 'SJN->RG' ? '~Chegada em Rio Grande (estimada)' : 'Embarque p/ SJN') : `Terminal - ${t.linha}`;
+    
+    (t.horarios[dayCat]||[]).forEach((timeStr, hIdx) => {
+      let [th, tm] = timeStr.split(':').map(Number);
+      if(t.sentido === 'SJN->RG') {
+        tm += 30; // 30 min travessia
+        if(tm >= 60){ th += 1; tm -= 60; }
+        th %= 24;
+      }
+      const target = new Date(now);
+      target.setHours(th, tm, 0, 0);
+      
+      // Filtro básico diário: apenas eventos de hoje que não passaram há muito tempo
+      if (target >= new Date(now.getTime() - 30 * 60000)) {
+        todasAncoras.push({
+          id: `transp-${tIdx}-${hIdx}`,
+          nome: name,
+          local,
+          tipo,
+          confianca: 'fixo_diario',
+          direcao_provavel: 'desconhecida',
+          forca_sinal,
+          horario_previsto: target,
+          isContinuous: false,
+          desc
+        });
+      }
+    });
+  });
+}
+
 function nextOccurrence(hhmm){
   const [h,m] = hhmm.split(':').map(Number);
   const now = new Date();
@@ -2421,63 +2511,29 @@ function renderFlowPoints(){
   container.innerHTML = '';
   const now = new Date();
   
-  const items = [];
+  // Limita transporte para não poluir (pegar só os 2 próximos de cada linha)
+  const transpFilterMap = {};
   
-  flowPoints.forEach(p => {
-    if(p.times.length === 0){
-      items.push({ name: p.name, desc: p.desc, isContinuous: true });
-    } else {
-      const nexts = p.times.map(nextOccurrence).sort((a,b)=>a-b);
-      items.push({ name: p.name, desc: p.desc, time: nexts[0], isContinuous: false });
-    }
-  });
-  
-  sessoesCinema.forEach(s => {
-    const terminoDate = new Date(s.termino);
-    if(terminoDate > new Date(now.getTime() - 15 * 60000)){
-      items.push({ name: s.cinema, desc: `Término da sessão: ${s.filme}`, time: terminoDate, isContinuous: false });
-    }
-  });
-
-  // Transportes (Onibus e Lancha)
-  const dayCat = [0, 6].includes(now.getDay()) ? (now.getDay() === 0 ? 'domingo' : 'sabado') : 'util';
-  
-  [...(transportesData.onibus||[]), ...(transportesData.lancha||[])].forEach(t => {
-    const name = t.nome || 'Lancha ' + t.sentido;
-    const isLancha = !!t.sentido;
-    const futureTimes = [];
+  let items = todasAncoras.filter(a => {
+    if (a.isContinuous) return true;
     
-    (t.horarios[dayCat]||[]).forEach(timeStr => {
-      let [th, tm] = timeStr.split(':').map(Number);
-      if(t.sentido === 'SJN->RG'){
-        tm += 30; // 30 min travessia
-        if(tm >= 60){ th += 1; tm -= 60; }
-        th %= 24;
-      }
-      
-      const target = new Date(now);
-      target.setHours(th, tm, 0, 0);
-      
-      // If time has already passed by more than 10 mins, don't show unless it's for tomorrow, but we only care about today
-      if (target >= new Date(now.getTime() - 10 * 60000)) {
-        futureTimes.push(target);
-      }
-    });
+    // Ignorar eventos que já passaram há mais de 10 minutos
+    if (a.horario_previsto < new Date(now.getTime() - 10 * 60000)) return false;
     
-    // Sort and take the next 2 arrivals to avoid polluting the list
-    futureTimes.sort((a,b)=>a-b).slice(0, 2).forEach(target => {
-      const desc = isLancha 
-        ? (t.sentido === 'SJN->RG' ? '~Chegada em Rio Grande (estimada)' : 'Embarque p/ SJN')
-        : `Terminal - ${t.linha}`;
-      items.push({ name: name, desc: desc, time: target, isContinuous: false });
-    });
+    if (a.tipo === 'chegada_onibus' || a.tipo === 'desembarque_lancha') {
+      const g = a.nome;
+      transpFilterMap[g] = transpFilterMap[g] || 0;
+      if (transpFilterMap[g] >= 2) return false;
+      transpFilterMap[g]++;
+    }
+    return true;
   });
   
   items.sort((a, b) => {
     if(a.isContinuous && !b.isContinuous) return -1;
     if(!a.isContinuous && b.isContinuous) return 1;
     if(a.isContinuous && b.isContinuous) return 0;
-    return a.time - b.time;
+    return a.horario_previsto - b.horario_previsto;
   });
   
   items.forEach(item => {
@@ -2486,7 +2542,7 @@ function renderFlowPoints(){
       label = 'Fluxo contínuo';
       cls = 'far';
     } else {
-      const diffMin = Math.round((item.time - now)/60000);
+      const diffMin = Math.round((item.horario_previsto - now)/60000);
       if(diffMin <= 0){ label = 'Saindo agora'; cls = 'now'; }
       else if(diffMin <= 20){ label = `em ${diffMin} min`; cls = 'now'; }
       else if(diffMin <= 60){ label = `em ${diffMin} min`; cls = 'soon'; }
@@ -2498,7 +2554,7 @@ function renderFlowPoints(){
     }
     const div = document.createElement('div');
     div.className = 'flow-card';
-    div.innerHTML = `<div><div class="fn">${item.name}</div><div class="fd">${item.desc}</div></div><div class="fc ${cls}">${label}</div>`;
+    div.innerHTML = `<div><div class="fn">${item.nome}</div><div class="fd">${item.desc}</div></div><div class="fc ${cls}">${label}</div>`;
     container.appendChild(div);
   });
   
@@ -2526,42 +2582,33 @@ async function obterRecomendacao() {
     const items = window.lastRenderedItems || [];
     
     items.forEach(item => {
-      let coords = ANCHOR_COORDS[item.name];
-      if(!coords && item.desc.includes('Cassino')) coords = ANCHOR_COORDS['Cassino'];
-      if(!coords && item.desc.includes('Centro')) coords = ANCHOR_COORDS['Centro'];
-      if(!coords) return; // Ignore if we can't geolocate it for now
+      const coords = item.local;
+      if(!coords) return; // Ignora se não tem localização
       
       const dist = calcDistance(latitude, longitude, coords.lat, coords.lng);
       // Fator de ajuste urbano (1.4) + Velocidade média 35 km/h
       const estMin = (dist * 1.4 / 35) * 60; 
       
       let score = 0;
-      let force = 0;
       let labelT = '';
       
       if(item.isContinuous) {
-        force = 2; // Fluxo constante tem peso menor, mas sempre válido
         labelT = 'Fluxo contínuo';
-        score = force / (estMin + 1);
+        score = item.forca_sinal / (estMin + 1);
       } else {
-        const diffMin = Math.round((item.time - new Date())/60000);
+        const diffMin = Math.round((item.horario_previsto - new Date())/60000);
         if(diffMin < -15) return; // Evento já passou faz muito tempo
         
+        let force = item.forca_sinal;
         // Se vou demorar mais pra chegar do que o evento falta pra acontecer, penaliza
-        if(estMin > diffMin + 10) {
-          force = 1;
-        } else {
-          if(item.name.includes('Lancha')) force = 5;
-          else if(item.name.includes('Cine')) force = 4;
-          else force = 3;
-        }
+        if(estMin > diffMin + 10) force = 1;
         
         labelT = diffMin <= 0 ? 'acontecendo agora' : `em ${diffMin} min`;
         // Prioriza quem está mais perto do tempo exato e perto geograficamente
         score = force / ((estMin + Math.abs(diffMin - estMin)) + 1); 
       }
       
-      candidates.push({ item, estMin, score, labelT });
+      candidates.push({ item, estMin, score, labelT, coords });
     });
     
     // 2. Coletar concentração de corridas (histórico do usuário)
@@ -2586,10 +2633,10 @@ async function obterRecomendacao() {
     const best = candidates[0];
     
     resDiv.style.display = 'block';
-    resDiv.innerHTML = `<strong>Vá para ${best.item.name}</strong><br>
+    resDiv.innerHTML = `<strong>Vá para ${best.item.nome}</strong><br>
       <span style="font-size:12px;color:var(--ink-dim)">
       Motivo: ${best.item.desc} (${best.labelT})<br>
-      Você está a ~${Math.ceil(best.estMin)} min de distância (${calcDistance(latitude, longitude, ANCHOR_COORDS[best.item.name]?.lat||0, ANCHOR_COORDS[best.item.name]?.lng||0).toFixed(1)} km).</span>`;
+      Você está a ~${Math.ceil(best.estMin)} min de distância (${calcDistance(latitude, longitude, best.coords.lat, best.coords.lng).toFixed(1)} km).</span>`;
     
     btn.textContent = '🎯 Encerrei, pra onde agora?';
     btn.disabled = false;
@@ -2804,6 +2851,7 @@ async function initData(){
   updateCostChart();
   updateGanhoChart();
 
+  buildUnifiedAnchors();
   renderFlowPoints();
   renderRanking();
   renderEvents();
