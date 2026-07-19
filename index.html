@@ -492,6 +492,9 @@
   .ocr-badge-new{ background:var(--teal-dim); color:var(--teal); }
   .ocr-badge-dup{ background:var(--amber-dim); color:var(--amber); }
   .ocr-badge-inc{ background:var(--red-dim); color:var(--red); }
+  .ocr-badge-suspect{ background:#5c3a00; color:#ffb347; animation:ocr-pulse 1.5s infinite; }
+  @keyframes ocr-pulse{ 0%,100%{opacity:1;} 50%{opacity:.6;} }
+  .ocr-input-suspect{ border-color:#ffb347 !important; background:#3a2800 !important; }
   .ocr-force-label{
     font-size:10px; color:var(--ink-faint); display:flex;
     align-items:center; gap:4px; margin-top:3px; cursor:pointer;
@@ -1640,8 +1643,18 @@ function parseOcrText(text){
   return { results, detectedCount };
 }
 
+function horaToMin(h){
+  if(!h) return -1;
+  const parts = h.split(':');
+  if(parts.length !== 2) return -1;
+  return parseInt(parts[0],10)*60 + parseInt(parts[1],10);
+}
+
 function checkDuplicates(parsed){
-  return parsed.map(p => {
+  // Uber History lists cards in descending time order (most recent first).
+  // Detect chronological anomalies: if a card's time jumps UP or drops
+  // by more than 4 hours relative to its neighbors, flag it as suspect.
+  const flagged = parsed.map((p, idx) => {
     const isDup = corridas.some(c =>
       c.hora === p.hora &&
       Math.abs(c.valor - p.valor) < 0.01 &&
@@ -1651,8 +1664,33 @@ function checkDuplicates(parsed){
     let status = 'novo';
     if(isDup) status = 'duplicata';
     else if(isIncomplete) status = 'incompleto';
-    return { ...p, status, discarded: false, forceImport: false };
+
+    // Suspect flags for individual fields
+    const suspectFields = [];
+
+    // Check chronological order (descending): previous card hora > current hora
+    if(idx > 0 && parsed[idx-1].data === p.data){
+      const prevMin = horaToMin(parsed[idx-1].hora);
+      const curMin = horaToMin(p.hora);
+      if(prevMin >= 0 && curMin >= 0){
+        // In descending order, prev should be >= cur.
+        // Flag if cur > prev (went up) or gap > 4h (suspiciously large drop)
+        if(curMin > prevMin || (prevMin - curMin) > 240){
+          suspectFields.push('hora');
+        }
+      }
+    }
+
+    // Flag absurd km via speed check: if average speed > 150 km/h, likely lost decimal
+    if(p.km > 100 || (p.duracaoSeg > 0 && p.km / (p.duracaoSeg / 3600) > 150)){
+      suspectFields.push('km');
+    }
+
+    if(suspectFields.length > 0 && status === 'novo') status = 'suspeito';
+
+    return { ...p, status, suspectFields, discarded: false, forceImport: false };
   });
+  return flagged;
 }
 
 function renderOcrPreview(){
@@ -1673,8 +1711,8 @@ function renderOcrPreview(){
   ocrParsedResults.forEach((r, idx) => {
     const tr = document.createElement('tr');
     if(r.discarded) tr.className = 'ocr-row-discard';
-    const badgeCls = r.status === 'novo' ? 'ocr-badge-new' : r.status === 'duplicata' ? 'ocr-badge-dup' : 'ocr-badge-inc';
-    const badgeText = r.status === 'novo' ? 'Novo' : r.status === 'duplicata' ? 'Já importado' : 'Incompleto';
+    const badgeCls = r.status === 'novo' ? 'ocr-badge-new' : r.status === 'duplicata' ? 'ocr-badge-dup' : r.status === 'suspeito' ? 'ocr-badge-suspect' : 'ocr-badge-inc';
+    const badgeText = r.status === 'novo' ? 'Novo' : r.status === 'duplicata' ? 'Já importado' : r.status === 'suspeito' ? '⚠ Conferir' : 'Incompleto';
 
     let forceHtml = '';
     if(r.status === 'duplicata' && !r.discarded){
@@ -1685,9 +1723,9 @@ function renderOcrPreview(){
       <td><span class="ocr-discard-btn" data-idx="${idx}" title="${r.discarded?'Restaurar':'Descartar'}">${r.discarded?'↩':'✕'}</span></td>
       <td><span class="ocr-badge ${badgeCls}">${badgeText}</span>${forceHtml}</td>
       <td><input value="${r.data||''}" data-idx="${idx}" data-field="data" style="width:100px;"></td>
-      <td><input value="${r.hora||''}" data-idx="${idx}" data-field="hora" style="width:56px;"></td>
+      <td><input value="${r.hora||''}" data-idx="${idx}" data-field="hora" style="width:56px;" class="${(r.suspectFields||[]).includes('hora')?'ocr-input-suspect':''}"></td>
       <td><input value="${r.valor||''}" data-idx="${idx}" data-field="valor" type="number" step="0.01" style="width:68px;"></td>
-      <td><input value="${r.km||''}" data-idx="${idx}" data-field="km" type="number" step="0.01" style="width:60px;"></td>
+      <td><input value="${r.km||''}" data-idx="${idx}" data-field="km" type="number" step="0.01" style="width:60px;" class="${(r.suspectFields||[]).includes('km')?'ocr-input-suspect':''}"></td>
       <td><input value="${r.duracaoSeg||''}" data-idx="${idx}" data-field="duracaoSeg" type="number" style="width:60px;"></td>
       <td><input value="${r.categoria||''}" data-idx="${idx}" data-field="categoria" class="ocr-addr" style="min-width:80px;"></td>
       <td><input value="${r.endOrigem||''}" data-idx="${idx}" data-field="endOrigem" class="ocr-addr"></td>
@@ -1712,7 +1750,8 @@ function renderOcrPreview(){
           Math.abs(c.valor - p.valor) < 0.01 &&
           Math.abs((c.km||0) - p.km) < 0.05
         );
-        p.status = isDup ? 'duplicata' : (!p.valor || !p.hora) ? 'incompleto' : 'novo';
+        const hasSuspect = (p.suspectFields||[]).length > 0;
+        p.status = isDup ? 'duplicata' : (!p.valor || !p.hora) ? 'incompleto' : hasSuspect ? 'suspeito' : 'novo';
         renderOcrPreview();
       }
     });
@@ -1743,7 +1782,7 @@ function updateOcrSummary(){
   const summary = document.getElementById('ocr-count-summary');
   const confirmBtn = document.getElementById('ocr-confirm');
   const importable = ocrParsedResults.filter(r =>
-    !r.discarded && (r.status === 'novo' || r.forceImport)
+    !r.discarded && (r.status === 'novo' || r.status === 'suspeito' || r.forceImport)
   );
   const dups = ocrParsedResults.filter(r => !r.discarded && r.status === 'duplicata' && !r.forceImport).length;
   const discarded = ocrParsedResults.filter(r => r.discarded).length;
