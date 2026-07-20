@@ -2896,10 +2896,15 @@ init();
 </script>
 
 <script>
-// Importar script do Heatmap
-const scriptHeatmap = document.createElement('script');
-scriptHeatmap.src = 'js/heatmap-renderer.js';
-document.body.appendChild(scriptHeatmap);
+// Importar TimelineUtils primeiro (dependência), depois HeatmapRenderer
+const scriptTimelineUtils = document.createElement('script');
+scriptTimelineUtils.src = 'js/timeline-utils.js';
+scriptTimelineUtils.onload = () => {
+  const scriptHeatmap = document.createElement('script');
+  scriptHeatmap.src = 'js/heatmap-renderer.js';
+  document.body.appendChild(scriptHeatmap);
+};
+document.body.appendChild(scriptTimelineUtils);
 </script>
 </body>
 </html>

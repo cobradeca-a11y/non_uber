@@ -1,7 +1,22 @@
 node_modules/
-node_modules/
 
+# Dados sensíveis - Linha do Tempo do Google
 *Linha_do_Tempo*
 *timeline*.json
 *Timeline*.json
 
+# Dados de OCR/Tesseract (grandes, baixados em runtime)
+por.traineddata
+
+# Dump de texto de PDF (artefato de debug)
+pdf-text-dump.txt
+
+# Snapshots de teste (gerados por scripts)
+snapshot-before.html
+snapshot-after.html
+
+# Artefato abandonado (dados movidos para rankingMovimento no index.html)
+places-config.json
+
+# Script de migração privado (contém dados reais até ser limpo)
+scripts/seed-corridas-privado.js
