@@ -4,6 +4,42 @@
 const CELL_SIZE = 0.0025; // aprox 250m
 let map = null;
 let rectangles = [];
+let currentJanela = 'manha';
+
+const WINDOWS = {
+  'manha': { start: 6 * 60, end: 9 * 60 },
+  'tarde': { start: 13 * 60, end: 15 * 60 },
+  'rush':  { start: 17 * 60, end: 20 * 60 + 30 },
+  'noite': { start: 21 * 60 + 30, end: 23 * 60 }
+};
+
+function getJanelaHoraria(timeStr) {
+  if (!timeStr) return null;
+  const parts = timeStr.split(':');
+  if (parts.length !== 2) return null;
+  const m = parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+
+  for (const [name, bounds] of Object.entries(WINDOWS)) {
+    if (m >= bounds.start && m <= bounds.end) return name;
+  }
+  let minDistance = Infinity;
+  let closestWindow = null;
+  for (const [name, bounds] of Object.entries(WINDOWS)) {
+    const distStart = Math.min(Math.abs(m - bounds.start), 1440 - Math.abs(m - bounds.start));
+    const distEnd = Math.min(Math.abs(m - bounds.end), 1440 - Math.abs(m - bounds.end));
+    const dist = Math.min(distStart, distEnd);
+    if (dist < minDistance) { minDistance = dist; closestWindow = name; }
+  }
+  return closestWindow;
+}
+
+function extractTimeStrFromSegment(seg) {
+  const timeStr = seg.startTime || (seg.duration && seg.duration.startTimestamp);
+  if (!timeStr) return '12:00'; // fallback se o mock/json nao tiver hora
+  const d = new Date(timeStr);
+  if (isNaN(d.getTime())) return '12:00';
+  return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+}
 
 function getCellKey(lat, lng) {
   const kLat = Math.floor(lat / CELL_SIZE);
@@ -98,7 +134,7 @@ async function processarTimeline(jsonText, statusEl) {
   }
   checkTimeout("Parse JSON");
 
-  const grid = {}; 
+  const grid = { manha: {}, tarde: {}, rush: {}, noite: {} }; 
   const forbiddenKeys = new Set();
 
   statusEl.textContent = "Calculando Zonas de Exclusão...";
@@ -145,21 +181,29 @@ async function processarTimeline(jsonText, statusEl) {
         const v = TimelineUtils.extractVisitLatLng(seg);
         if (v) {
           const key = getCellKey(v.lat, v.lng);
-          if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
-          grid[key].presencaPropria++;
+          const timeStr = extractTimeStrFromSegment(seg);
+          const janela = getJanelaHoraria(timeStr);
+          if (janela && grid[janela]) {
+            if (!grid[janela][key]) grid[janela][key] = { presencaPropria: 0, frequenciaCorrida: 0 };
+            grid[janela][key].presencaPropria++;
+          }
         }
       } else {
         // Atividades: extractActivityLatLngs já filtra por IN_PASSENGER_VEHICLE
         const { start, end } = TimelineUtils.extractActivityLatLngs(seg);
-        if (start) {
-          const key = getCellKey(start.lat, start.lng);
-          if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
-          grid[key].presencaPropria++;
-        }
-        if (end) {
-          const key = getCellKey(end.lat, end.lng);
-          if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
-          grid[key].presencaPropria++;
+        const timeStr = extractTimeStrFromSegment(seg);
+        const janela = getJanelaHoraria(timeStr);
+        if (janela && grid[janela]) {
+          if (start) {
+            const key = getCellKey(start.lat, start.lng);
+            if (!grid[janela][key]) grid[janela][key] = { presencaPropria: 0, frequenciaCorrida: 0 };
+            grid[janela][key].presencaPropria++;
+          }
+          if (end) {
+            const key = getCellKey(end.lat, end.lng);
+            if (!grid[janela][key]) grid[janela][key] = { presencaPropria: 0, frequenciaCorrida: 0 };
+            grid[janela][key].presencaPropria++;
+          }
         }
       }
     }
@@ -184,17 +228,11 @@ async function processarTimeline(jsonText, statusEl) {
           if (geocodeCache[origKey]) {
             const loc = geocodeCache[origKey];
             const key = getCellKey(loc.lat, loc.lng);
-            if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
-            grid[key].frequenciaCorrida++;
-          }
-        }
-        if (c.endDestino) {
-          const destKey = normalizeAddress(c.endDestino);
-          if (geocodeCache[destKey]) {
-            const loc = geocodeCache[destKey];
-            const key = getCellKey(loc.lat, loc.lng);
-            if (!grid[key]) grid[key] = { presencaPropria: 0, frequenciaCorrida: 0 };
-            grid[key].frequenciaCorrida++;
+            const janela = getJanelaHoraria(c.hora);
+            if (janela && grid[janela]) {
+              if (!grid[janela][key]) grid[janela][key] = { presencaPropria: 0, frequenciaCorrida: 0 };
+              grid[janela][key].frequenciaCorrida++;
+            }
           }
         }
       }
@@ -205,18 +243,30 @@ async function processarTimeline(jsonText, statusEl) {
   await yieldThread();
   
   forbiddenKeys.forEach(k => {
-    delete grid[k];
+    delete grid.manha[k];
+    delete grid.tarde[k];
+    delete grid.rush[k];
+    delete grid.noite[k];
   });
 
+  window.cachedGrid = grid;
   localStorage.setItem('heatmap_grid', JSON.stringify(grid));
   
   statusEl.textContent = "Renderizando Mapa...";
   await yieldThread();
-  renderGrid(grid);
+  renderGrid(grid, currentJanela);
   statusEl.textContent = "Processamento concluído. Mapa atualizado!";
 }
 
-function renderGrid(grid) {
+window.setHeatmapJanela = function(j) {
+  currentJanela = j;
+  if (window.cachedGrid) {
+    renderGrid(window.cachedGrid, currentJanela);
+  }
+};
+
+function renderGrid(fullGrid, janela = 'manha') {
+  const grid = fullGrid[janela] || {};
   // Inicializar o mapa se não existir
   if (!map) {
     map = L.map('heatmap-container').setView([-32.0332, -52.0986], 13);
@@ -284,10 +334,12 @@ const observer = new MutationObserver(() => {
     else {
       const cachedGrid = localStorage.getItem('heatmap_grid');
       if (cachedGrid) {
-        renderGrid(JSON.parse(cachedGrid));
+        window.cachedGrid = JSON.parse(cachedGrid);
+        renderGrid(window.cachedGrid, currentJanela);
       } else {
         // Inicializa vazio
-        renderGrid({});
+        window.cachedGrid = { manha: {}, tarde: {}, rush: {}, noite: {} };
+        renderGrid(window.cachedGrid, currentJanela);
       }
     }
   }
