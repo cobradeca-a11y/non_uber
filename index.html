@@ -145,8 +145,17 @@
     background:var(--panel-raised); border:1px solid rgba(245,166,35,0.35); color:var(--amber);
     border-radius:8px; padding:7px 9px; width:110px; text-align:right;
   }
-  .field select{ text-align:left; width:150px; color:var(--ink); border-color:var(--line); font-family:'Manrope',sans-serif; font-weight:600; font-size:13px;}
-  .field input:focus, .field select:focus{ outline:none; border-color:var(--amber); }
+  .field select{ height:42px; border-radius:10px; font-size:14px; color:var(--ink); padding:0 14px;
+    background:var(--panel-raised); border:1px solid var(--line); font-family:'Manrope',sans-serif;
+  }
+  input.calc-input[readonly]{
+    background:transparent; border-color:transparent; pointer-events:none; font-weight:700;
+    padding:0; color:var(--amber);
+  }
+  input.calc-input.editing{
+    background:var(--panel-raised); border:1px solid var(--amber); pointer-events:auto;
+  }
+  input:focus, select:focus{ outline:none; border-color:var(--amber); }
 
   .result-row{
     display:flex; justify-content:space-between; align-items:center;
@@ -634,27 +643,38 @@
 
   <!-- ===================== CALCULADORA ===================== -->
   <section class="view" id="view-calc">
-    <h2 class="section-title">Veículo e combustível</h2>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <h2 class="section-title" style="margin-bottom:0;">Veículo e combustível</h2>
+      <div id="calc-toolbar-view">
+        <button class="btn btn-ghost" id="calc-btn-edit" style="font-size:12px; padding:6px 10px;">✏️ Editar configurações</button>
+      </div>
+      <div id="calc-toolbar-edit" style="display:none; gap:6px;">
+        <button class="btn btn-ghost" id="calc-btn-default" style="font-size:11px; padding:6px 8px;" title="Preencher com valores de referência">Restaurar padrão</button>
+        <button class="btn btn-ghost" id="calc-btn-cancel" style="font-size:12px; padding:6px 10px;">Cancelar</button>
+        <button class="btn btn-primary" id="calc-btn-save" style="font-size:12px; padding:6px 14px;">Salvar</button>
+      </div>
+    </div>
+    
     <div class="field-grid">
-      <div class="field"><label>Consumo real na cidade (km/l, vazio)</label><input type="number" step="0.1" id="c-consumo"></div>
-      <div class="field"><label>Preço do combustível (R$/l)</label><input type="number" step="0.01" id="c-preco"></div>
-      <div class="field"><label>Fator de carga (consumo c/ passageiro)</label><input type="number" step="0.01" id="c-fator"></div>
+      <div class="field"><label>Consumo real na cidade (km/l, vazio)</label><input type="number" step="0.1" id="c-consumo" class="calc-input"></div>
+      <div class="field"><label>Preço do combustível (R$/l)</label><input type="number" step="0.01" id="c-preco" class="calc-input"></div>
+      <div class="field"><label>Fator de carga (consumo c/ passageiro)</label><input type="number" step="0.01" id="c-fator" class="calc-input"></div>
     </div>
     <div class="result-row"><span class="rl">Consumo efetivo (km/l)</span><span class="rv num" id="r-efetivo">–</span></div>
     <div class="result-row"><span class="rl">Custo de combustível por km</span><span class="rv num" id="r-combkm">–</span></div>
 
     <h2 class="section-title">Outros custos por km (reserva)</h2>
     <div class="field-grid">
-      <div class="field"><label>Manutenção / peças</label><input type="number" step="0.01" id="c-manut"></div>
-      <div class="field"><label>Depreciação do veículo</label><input type="number" step="0.01" id="c-deprec"></div>
-      <div class="field"><label>Seguro (rateado por km)</label><input type="number" step="0.01" id="c-seguro"></div>
-      <div class="field"><label>Lavagem / limpeza</label><input type="number" step="0.01" id="c-lavagem"></div>
+      <div class="field"><label>Manutenção / peças</label><input type="number" step="0.01" id="c-manut" class="calc-input"></div>
+      <div class="field"><label>Depreciação do veículo</label><input type="number" step="0.01" id="c-deprec" class="calc-input"></div>
+      <div class="field"><label>Seguro (rateado por km)</label><input type="number" step="0.01" id="c-seguro" class="calc-input"></div>
+      <div class="field"><label>Lavagem / limpeza</label><input type="number" step="0.01" id="c-lavagem" class="calc-input"></div>
     </div>
 
     <h2 class="section-title">Meta e ponto de equilíbrio</h2>
     <div class="field-grid">
-      <div class="field"><label>Meta de ganho líquido por hora</label><input type="number" step="1" id="c-meta"></div>
-      <div class="field"><label>Km médio rodado por hora</label><input type="number" step="1" id="c-kmh"></div>
+      <div class="field"><label>Meta de ganho líquido por hora</label><input type="number" step="1" id="c-meta" class="calc-input"></div>
+      <div class="field"><label>Km médio rodado por hora</label><input type="number" step="1" id="c-kmh" class="calc-input"></div>
     </div>
     <div class="result-row warn"><span class="rl">Custo total por km (combustível + reserva)</span><span class="rv num" id="r-totalkm">–</span></div>
     <div class="result-row hi"><span class="rl">Faturamento bruto mínimo por km para bater a meta</span><span class="rv num" id="r-minkm">–</span></div>
@@ -1082,6 +1102,8 @@ const calcDefaults = {
   meta:25, kmh:22
 };
 let calcState = {...calcDefaults};
+let calcDraftState = {...calcDefaults};
+let isCalcEditing = false;
 
 const calcFields = {
   consumo:'c-consumo', preco:'c-preco', fator:'c-fator',
@@ -1090,14 +1112,26 @@ const calcFields = {
 };
 
 function renderCalc(){
+  const stateToUse = isCalcEditing ? calcDraftState : calcState;
   Object.entries(calcFields).forEach(([k, id])=>{
-    document.getElementById(id).value = calcState[k];
+    const el = document.getElementById(id);
+    el.value = stateToUse[k];
+    if(isCalcEditing){
+      el.removeAttribute('readonly');
+      el.classList.add('editing');
+    } else {
+      el.setAttribute('readonly', 'true');
+      el.classList.remove('editing');
+    }
   });
-  computeCalc();
+  
+  document.getElementById('calc-toolbar-view').style.display = isCalcEditing ? 'none' : 'flex';
+  document.getElementById('calc-toolbar-edit').style.display = isCalcEditing ? 'flex' : 'none';
+  
+  computeCalc(stateToUse);
 }
 
-function computeCalc(){
-  const s = calcState;
+function computeCalc(s = calcState){
   const efetivo = s.consumo * s.fator;
   const combKm = s.preco / efetivo;
   const outrosKm = s.manut + s.deprec + s.seguro + s.lavagem;
@@ -1111,15 +1145,40 @@ function computeCalc(){
 }
 
 Object.entries(calcFields).forEach(([k,id])=>{
-  document.getElementById(id).addEventListener('input', async (e)=>{
+  document.getElementById(id).addEventListener('input', (e)=>{
+    if(!isCalcEditing) return;
     const v = parseFloat(e.target.value);
-    calcState[k] = isNaN(v) ? 0 : v;
-    computeCalc();
-    updateCostChart();
-    updateKPIs();
-    await saveData('calc-state', calcState);
-    toast('Salvo');
+    calcDraftState[k] = isNaN(v) ? 0 : v;
+    computeCalc(calcDraftState); // Preview in real time
   });
+});
+
+document.getElementById('calc-btn-edit').addEventListener('click', ()=>{
+  isCalcEditing = true;
+  calcDraftState = {...calcState}; // copy current to draft
+  renderCalc();
+});
+
+document.getElementById('calc-btn-default').addEventListener('click', ()=>{
+  calcDraftState = {...calcDefaults};
+  renderCalc();
+});
+
+document.getElementById('calc-btn-cancel').addEventListener('click', ()=>{
+  isCalcEditing = false;
+  renderCalc(); // restores view mode using calcState
+});
+
+document.getElementById('calc-btn-save').addEventListener('click', async ()=>{
+  calcState = {...calcDraftState};
+  isCalcEditing = false;
+  await saveData('calc-state', calcState);
+  renderCalc(); // restore view mode
+  updateCostChart();
+  updateKPIs();
+  renderRegistros(); // Re-render tables as global totalKm changed
+  renderCorridas();
+  toast('Configurações salvas');
 });
 
 /* ============================================================
