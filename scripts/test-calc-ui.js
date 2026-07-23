@@ -64,6 +64,19 @@ const path = require('path');
 
   console.log(`Saved Consumo: ${savedConsumo}`);
 
+  // 3.5. Click Edit -> Click Restore Default -> Click Save
+  await page.click('#calc-btn-edit');
+  await new Promise(r => setTimeout(r, 200));
+  await page.click('#calc-btn-default');
+  await new Promise(r => setTimeout(r, 200));
+  const defaultConsumo = await getConsumo();
+  
+  await page.click('#calc-btn-save');
+  await new Promise(r => setTimeout(r, 200));
+  const savedDefaultConsumo = await getConsumo();
+  
+  console.log(`Restored Default Consumo: ${defaultConsumo}, Saved as: ${savedDefaultConsumo}`);
+
   // 4. Reload page and assert saved value persists
   await page.reload({waitUntil: 'networkidle0'});
   await page.click('button[data-view="calc"]');
@@ -78,7 +91,9 @@ const path = require('path');
   if (isEditingReadonly) failures.push('Edit mode is still readonly');
   if (canceledConsumo !== initialConsumo) failures.push(`Cancel failed: expected ${initialConsumo}, got ${canceledConsumo}`);
   if (savedConsumo !== '12') failures.push(`Save failed: expected 12, got ${savedConsumo}`);
-  if (reloadedConsumo !== '12') failures.push(`Persist failed: expected 12, got ${reloadedConsumo}`);
+  if (defaultConsumo !== '9.3') failures.push(`Restore failed: expected 9.3, got ${defaultConsumo}`);
+  if (savedDefaultConsumo !== '9.3') failures.push(`Save after restore failed: expected 9.3, got ${savedDefaultConsumo}`);
+  if (reloadedConsumo !== '9.3') failures.push(`Persist failed: expected 9.3, got ${reloadedConsumo}`);
   if (!isReloadedReadonly) failures.push('Reloaded state is not readonly');
 
   if (failures.length > 0) {
