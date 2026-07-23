@@ -193,7 +193,19 @@
     font-family:'Rajdhani',sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;
     color:var(--ink-faint); font-size:10.5px; text-align:right; padding:6px 6px; border-bottom:1px solid var(--line);
   }
-  thead th:first-child{ text-align:left; }
+   thead th:first-child{ text-align:left; }
+   thead th.sortable{ cursor:pointer; user-select:none; white-space:nowrap; }
+   thead th.sortable:hover{ color:var(--amber); }
+   thead th.sort-active{ color:var(--amber); }
+   thead th .sort-arrow{ font-size:9px; margin-left:2px; opacity:0.7; }
+   .filter-row th{ padding:4px 6px; border-bottom:1px solid var(--line); }
+   .filter-row input{
+     width:100%; box-sizing:border-box; font-family:'IBM Plex Mono',monospace; font-size:11px;
+     background:var(--panel-raised); border:1px solid var(--line); color:var(--ink);
+     border-radius:6px; padding:4px 6px; text-align:right;
+   }
+   .filter-row th:first-child input{ text-align:left; }
+   .filter-row input:focus{ outline:none; border-color:var(--amber); }
   tbody td{ padding:9px 6px; text-align:right; border-bottom:1px solid var(--line); font-family:'IBM Plex Mono',monospace; }
   tbody td:first-child{ text-align:left; font-family:'Manrope',sans-serif; font-weight:600;}
   tbody tr:active{ background:rgba(255,255,255,0.03); }
@@ -709,9 +721,10 @@
     <button class="add-btn ocr-import-btn" id="btn-ocr-import">📷 Importar prints do Histórico</button>
     <div class="table-scroll">
       <table>
-        <thead>
-          <tr><th>Hora</th><th>Valor</th><th>Km</th><th>Duração</th><th>Líquido</th><th>R$/h</th><th></th></tr>
-        </thead>
+         <thead>
+           <tr id="corridas-header-row"></tr>
+           <tr class="filter-row" id="corridas-filter-row"></tr>
+         </thead>
         <tbody id="corridas-tbody"></tbody>
       </table>
     </div>
@@ -1401,14 +1414,104 @@ function fmtDuracao(seg){
   return `${m}m${s.toString().padStart(2,'0')}s`;
 }
 
+const CORRIDAS_COLUMNS = [
+  { key:'data',       label:'Dia',      numeric:false, get:c=>c.data,       fmt:c=>c.data },
+  { key:'hora',       label:'Hora',     numeric:false, get:c=>c.hora,       fmt:c=>c.hora },
+  { key:'valor',      label:'Valor',    numeric:true,  get:c=>c.valor,      fmt:c=>BRL(c.valor) },
+  { key:'km',         label:'Km',       numeric:true,  get:c=>c.km,         fmt:c=>c.km },
+  { key:'duracaoSeg', label:'Duração',  numeric:true,  get:c=>c.duracaoSeg, fmt:c=>fmtDuracao(c.duracaoSeg) },
+  { key:'liquido',    label:'Líquido',  numeric:true,  get:c=>c.liquido,    fmt:c=>BRL(c.liquido), cls:c=>c.liquido>=0?'liq-pos':'liq-neg' },
+  { key:'rsHora',     label:'R$/h',     numeric:true,  get:c=>c.rsHora,     fmt:c=>BRL(c.rsHora) },
+];
+
+let corridasSort = { key:'data', dir:'desc' };
+let corridasFilters = {};
+
+function buildCorridasHeader(){
+  const headerRow = document.getElementById('corridas-header-row');
+  const filterRow = document.getElementById('corridas-filter-row');
+  if(!headerRow || !filterRow) return;
+  if(headerRow.dataset.built) return;
+
+  headerRow.innerHTML = CORRIDAS_COLUMNS.map(col=>
+    `<th class="sortable" data-key="${col.key}">${col.label} <span class="sort-arrow" data-arrow="${col.key}"></span></th>`
+  ).join('') + '<th></th>';
+
+  filterRow.innerHTML = CORRIDAS_COLUMNS.map(col=>
+    `<th><input type="text" class="filter-input" data-key="${col.key}" placeholder="filtrar..."></th>`
+  ).join('') + '<th></th>';
+
+  headerRow.querySelectorAll('th[data-key]').forEach(th=>{
+    th.addEventListener('click', ()=>{
+      const key = th.dataset.key;
+      if(corridasSort.key === key){
+        corridasSort.dir = corridasSort.dir === 'asc' ? 'desc' : 'asc';
+      } else {
+        corridasSort = { key, dir: 'asc' };
+      }
+      renderCorridas();
+    });
+  });
+
+  filterRow.querySelectorAll('.filter-input').forEach(input=>{
+    input.addEventListener('input', ()=>{
+      corridasFilters[input.dataset.key] = input.value.trim().toLowerCase();
+      renderCorridas();
+    });
+  });
+
+  headerRow.dataset.built = '1';
+}
+
+function updateSortArrows(){
+  document.querySelectorAll('#corridas-header-row th[data-key]').forEach(th=>{
+    th.classList.toggle('sort-active', th.dataset.key === corridasSort.key);
+  });
+  document.querySelectorAll('.sort-arrow').forEach(span=>{
+    if(span.dataset.arrow === corridasSort.key){
+      span.textContent = corridasSort.dir === 'asc' ? '▲' : '▼';
+    } else {
+      span.textContent = '';
+    }
+  });
+}
+
+function applyCorridasFiltersAndSort(computed){
+  let rows = computed;
+
+  Object.entries(corridasFilters).forEach(([key, term])=>{
+    if(!term) return;
+    const col = CORRIDAS_COLUMNS.find(c=>c.key===key);
+    if(!col) return;
+    rows = rows.filter(c => String(col.fmt(c)).toLowerCase().includes(term));
+  });
+
+  const col = CORRIDAS_COLUMNS.find(c=>c.key===corridasSort.key);
+  if(col){
+    rows = [...rows].sort((a,b)=>{
+      let av = col.get(a), bv = col.get(b);
+      if(!col.numeric){ av = String(av); bv = String(bv); }
+      let cmp = av < bv ? -1 : av > bv ? 1 : 0;
+      if(cmp === 0 && col.key === 'data'){
+        cmp = a.hora < b.hora ? -1 : a.hora > b.hora ? 1 : 0;
+      }
+      return corridasSort.dir === 'asc' ? cmp : -cmp;
+    });
+  }
+  return rows;
+}
+
 function renderCorridas(){
+  buildCorridasHeader();
   const tbody = document.getElementById('corridas-tbody');
   tbody.innerHTML = '';
   const computed = corridas.map(computeCorrida);
-  const sorted = [...computed].sort((a,b)=> (b.data+b.hora).localeCompare(a.data+a.hora));
-  sorted.forEach(c=>{
+  const rows = applyCorridasFiltersAndSort(computed);
+
+  rows.forEach(c=>{
     const tr = document.createElement('tr');
     tr.innerHTML = `
+      <td>${c.data}</td>
       <td>${c.hora}</td>
       <td>${BRL(c.valor)}</td>
       <td>${c.km}</td>
@@ -1420,12 +1523,14 @@ function renderCorridas(){
     tbody.appendChild(tr);
   });
   tbody.querySelectorAll('.del-x').forEach(el=>{
-    el.addEventListener('click', async ()=>{
+    el.addEventListener('click', async()=>{
       corridas = corridas.filter(c=>c.id !== el.dataset.id);
       await saveData('corridas', corridas);
       renderCorridas();
     });
   });
+
+  updateSortArrows();
 
   document.getElementById('cr-count').textContent = computed.length;
   const totalLiquido = computed.reduce((a,c)=>a+c.liquido,0);
