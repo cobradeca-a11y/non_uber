@@ -215,6 +215,30 @@
   .table-scroll{ overflow-x:auto; }
   .table-scroll table{ min-width:640px; }
 
+  /* ---------- row actions menu (⋮) ---------- */
+  .row-actions-wrap{ position:relative; display:inline-block; }
+  .row-actions-btn{
+    background:none; border:none; color:var(--ink-faint); cursor:pointer;
+    font-size:18px; line-height:1; padding:2px 6px; border-radius:6px;
+    transition:background .15s, color .15s;
+  }
+  .row-actions-btn:hover{ background:var(--panel-raised); color:var(--ink); }
+  .row-menu{
+    display:none; position:absolute; right:0; top:100%; z-index:30;
+    background:var(--panel-raised); border:1px solid var(--line); border-radius:10px;
+    min-width:140px; padding:4px 0; box-shadow:0 8px 24px rgba(0,0,0,0.45);
+    animation:fadeIn .15s ease;
+  }
+  .row-menu.open{ display:block; }
+  .row-menu-item{
+    display:block; width:100%; background:none; border:none; color:var(--ink);
+    font-family:'Manrope',sans-serif; font-size:13px; font-weight:500;
+    padding:9px 14px; text-align:left; cursor:pointer; transition:background .12s;
+  }
+  .row-menu-item:hover{ background:rgba(255,255,255,0.06); }
+  .row-menu-item.danger{ color:var(--red); }
+  .row-menu-item.danger:hover{ background:var(--red-dim); }
+
   /* ---------- horarios / referencia ---------- */
   .region-card{
     background:var(--panel); border:1px solid var(--line); border-radius:14px; margin-bottom:12px; overflow:hidden;
@@ -1518,15 +1542,60 @@ function renderCorridas(){
       <td>${fmtDuracao(c.duracaoSeg)}</td>
       <td class="${c.liquido>=0?'liq-pos':'liq-neg'}">${BRL(c.liquido)}</td>
       <td>${BRL(c.rsHora)}</td>
-      <td><span class="del-x" data-id="${c.id}">✕</span></td>
+      <td>
+        <div class="row-actions-wrap">
+          <button class="row-actions-btn" data-id="${c.id}" title="Ações">⋮</button>
+          <div class="row-menu" data-menu-id="${c.id}">
+            <button class="row-menu-item" data-action="editar" data-id="${c.id}">✏️ Editar</button>
+            <button class="row-menu-item" data-action="duplicar" data-id="${c.id}">📋 Duplicar</button>
+            <button class="row-menu-item danger" data-action="excluir" data-id="${c.id}">🗑️ Excluir</button>
+          </div>
+        </div>
+      </td>
     `;
     tbody.appendChild(tr);
   });
-  tbody.querySelectorAll('.del-x').forEach(el=>{
-    el.addEventListener('click', async()=>{
-      corridas = corridas.filter(c=>c.id !== el.dataset.id);
-      await saveData('corridas', corridas);
-      renderCorridas();
+
+  // ⋮ menu toggle
+  tbody.querySelectorAll('.row-actions-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const menu = btn.nextElementSibling;
+      // close all other menus first
+      document.querySelectorAll('.row-menu.open').forEach(m=>{ if(m!==menu) m.classList.remove('open'); });
+      menu.classList.toggle('open');
+    });
+  });
+
+  // Close menus on outside click
+  document.addEventListener('click', ()=>{
+    document.querySelectorAll('.row-menu.open').forEach(m=>m.classList.remove('open'));
+  }, {once:false});
+
+  // Menu actions
+  tbody.querySelectorAll('.row-menu-item').forEach(item=>{
+    item.addEventListener('click', async (e)=>{
+      e.stopPropagation();
+      const id = item.dataset.id;
+      const action = item.dataset.action;
+      // Close menu
+      item.closest('.row-menu').classList.remove('open');
+
+      if(action === 'excluir'){
+        corridas = corridas.filter(c=>c.id !== id);
+        await saveData('corridas', corridas);
+        renderCorridas();
+      } else if(action === 'duplicar'){
+        const orig = corridas.find(c=>c.id === id);
+        if(!orig) return;
+        const clone = {...orig, id: Date.now().toString()};
+        corridas.push(clone);
+        await saveData('corridas', corridas);
+        renderCorridas();
+        toast('Corrida duplicada');
+      } else if(action === 'editar'){
+        openCorridaEditModal(id);
+      }
     });
   });
 
@@ -1566,13 +1635,30 @@ async function computeIdleTime(){
 document.getElementById('cr-online-horas').addEventListener('input', computeIdleTime);
 
 const corridaModal = document.getElementById('modal-corrida-backdrop');
+let editingCorridaId = null; // null = new, string = editing existing
+
+function openCorridaEditModal(id){
+  const c = corridas.find(x=>x.id === id);
+  if(!c) return;
+  editingCorridaId = id;
+  document.getElementById('c-data').value = c.data || '';
+  document.getElementById('c-hora').value = c.hora || '';
+  document.getElementById('c-valor').value = c.valor || '';
+  document.getElementById('c-km').value = c.km || '';
+  document.getElementById('c-duracao-min').value = c.duracaoSeg ? (c.duracaoSeg/60).toFixed(1) : '';
+  document.querySelector('#modal-corrida-backdrop h3').textContent = 'Editar corrida';
+  corridaModal.classList.add('open');
+}
+
 document.getElementById('btn-add-corrida').addEventListener('click', ()=>{
+  editingCorridaId = null;
   const now = new Date();
   document.getElementById('c-data').value = now.toISOString().slice(0,10);
   document.getElementById('c-hora').value = now.toTimeString().slice(0,5);
   document.getElementById('c-valor').value = '';
   document.getElementById('c-km').value = '';
   document.getElementById('c-duracao-min').value = '';
+  document.querySelector('#modal-corrida-backdrop h3').textContent = 'Nova corrida';
   corridaModal.classList.add('open');
 });
 document.getElementById('c-cancel').addEventListener('click', ()=> corridaModal.classList.remove('open'));
@@ -1581,17 +1667,30 @@ document.getElementById('c-save').addEventListener('click', async ()=>{
   const valor = parseFloat(document.getElementById('c-valor').value) || 0;
   const km = parseFloat(document.getElementById('c-km').value) || 0;
   const duracaoMin = parseFloat(document.getElementById('c-duracao-min').value) || 0;
-  corridas.push({
-    id: Date.now().toString(),
-    data: document.getElementById('c-data').value,
-    hora: document.getElementById('c-hora').value,
-    valor, km,
-    duracaoSeg: Math.round(duracaoMin*60),
-  });
+  if(editingCorridaId){
+    const idx = corridas.findIndex(c=>c.id === editingCorridaId);
+    if(idx >= 0){
+      corridas[idx].data = document.getElementById('c-data').value;
+      corridas[idx].hora = document.getElementById('c-hora').value;
+      corridas[idx].valor = valor;
+      corridas[idx].km = km;
+      corridas[idx].duracaoSeg = Math.round(duracaoMin*60);
+    }
+    editingCorridaId = null;
+    toast('Corrida atualizada');
+  } else {
+    corridas.push({
+      id: Date.now().toString(),
+      data: document.getElementById('c-data').value,
+      hora: document.getElementById('c-hora').value,
+      valor, km,
+      duracaoSeg: Math.round(duracaoMin*60),
+    });
+    toast('Corrida salva');
+  }
   await saveData('corridas', corridas);
   corridaModal.classList.remove('open');
   renderCorridas();
-  toast('Corrida salva');
 });
 
 /* ============================================================
