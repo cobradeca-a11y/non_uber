@@ -1786,45 +1786,177 @@ function preprocessImage(img, maxW){
     // grayscale
     let gray = 0.299*d[i] + 0.587*d[i+1] + 0.114*d[i+2];
     // contrast boost
-    gray = Math.min(255, Math.max(0, ((gray - 128) * 1.6) + 128));
-    // binarize
-    gray = gray > 140 ? 255 : 0;
-    d[i] = d[i+1] = d[i+2] = gray;
-  }
-  ctx.putImageData(imageData, 0, 0);
-  return canvas;
-}
-
-const MONTH_MAP = {
-  'jan':1,'fev':2,'mar':3,'abr':4,'mai':5,'jun':6,
-  'jul':7,'ago':8,'set':9,'out':10,'nov':11,'dez':12
-};
-
-function parseMonthPt(str){
-  const s = str.toLowerCase().replace(/\./g,'').slice(0,3);
-  return MONTH_MAP[s] || null;
-}
-
-function parseOcrText(text){
+  function parseOcrText(text){
   const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
   const results = [];
   let currentDate = null;
   const currentYear = new Date().getFullYear();
 
-  // Count R$ value patterns as detection estimate (avoids false positives
-  // from OCR reading "RS" as "R$" in addresses — those lack the decimal value)
-  const detectedCount = (text.match(/R\$\s?\d+[,.]\d{2}/g) || []).length;
+  // Count R$ value patterns as detection estimate
+  const detectedCount = (text.match(/R\$\s?\d+[,.]?\d{0,2}/g) || []).length;
 
+  // ── Regex patterns ──
+
+  // History-list date header: "segunda, 10 de julho"
   const dateRe = /(?:seg|ter|qua|qui|sex|s[aá]b|dom)[a-zç]*\.?,?\s*(\d{1,2})\s*de\s*([a-zç]+)/i;
-  const valueTimeRe = /R\$\s?(\d+[,.]\d{2}).*?(\d{1,2}[:.]?\d{2})/;
+
+  // Detail-view header: "Uber X · 10 de jul. de 2026 · 12:55"
+  const detailHeaderRe = /Uber\s*\w*\s*[·\-\.•]\s*(\d{1,2})\s*de\s*([a-zç.]+)(?:\s*de)?\s*(\d{4})?\s*[·\-\.•]\s*(\d{1,2})[:\.](\d{2})/i;
+
+  // History-list: "R$ 11,43  12:55" (value + time on same line)
+  const valueTimeRe = /R\$\s?(\d+[,.]\d{2}).*?(\d{1,2}[:\.]?\d{2})/;
+
+  // Standalone value: "R$ 11,43" (just the value, no time)
+  const standaloneValueRe = /^R\$\s?(\d+[,.]\d{2})\s*$/;
+
   const nextCardRe = /R\$\s?\d+[,.]\d{2}/;
   const catDurDistRe = /((?:Uber\s*\w+|UberX|Comfort|Flash|Black|Moto|Priority|Green)[^·\-]*)\s*[·\-]\s*(\d+)\s*min\s*(?:(\d+)\s*segundo?s?)?\s*[·\-]\s*(\d+[.,]?\d+)\s*km/i;
-  const durDistRe = /(\d+)\s*min\s*(?:(\d+)\s*segundo?s?)?\s*[·\-]\s*(\d+[.,]?\d+)\s*km/i;
+  const durDistRe = /(\d+)\s*min\s*(?:(\d+)\s*segundo?s?)?\s*[·\-]?\s*(\d+[.,]?\d+)\s*km/i;
+
+  // Detail-view duration/distance on separate lines:
+  // "14 min 26 segundos" and "6.81 km" or "6,81 km"  
+  const durOnlyRe = /(\d+)\s*min\s*(?:(\d+)\s*segundo?s?)?/i;
+  const distOnlyRe = /(\d+[.,]\d+)\s*km/i;
 
   let i = 0;
   while(i < lines.length){
     const line = lines[i];
 
+    // ── Try detail-view header: "Uber X · 10 de jul. de 2026 · 12:55" ──
+    const dhm = line.match(detailHeaderRe);
+    if(dhm){
+      const day = parseInt(dhm[1], 10);
+      const month = parseMonthPt(dhm[2]);
+      const year = dhm[3] ? parseInt(dhm[3], 10) : currentYear;
+      const horaH = dhm[4];
+      const horaM = dhm[5];
+      if(month){
+        const pad = n => n.toString().padStart(2,'0');
+        currentDate = `${year}-${pad(month)}-${pad(day)}`;
+        const hora = `${pad(parseInt(horaH,10))}:${pad(parseInt(horaM,10))}`;
+
+        // Next line(s) should contain the R$ value
+        let valor = 0;
+        let searchLimit = Math.min(i + 5, lines.length);
+        let vi = i + 1;
+        while(vi < searchLimit){
+          const vm = lines[vi].match(/R\$\s?(\d+[,.]\d{2})/);
+          if(vm){
+            valor = parseFloat(vm[1].replace(',','.'));
+            break;
+          }
+          vi++;
+        }
+
+        // Scan ahead for duration and distance (can be far below due to map)
+        let duracaoSeg = 0, km = 0;
+        let categoria = '';
+        let endOrigem = '', endDestino = '';
+        
+        // Try to find "Duração" / duration and "Distância" / distance  
+        let si = vi + 1;
+        let scanEnd = Math.min(i + 30, lines.length); // scan up to 30 lines ahead (map area)
+        while(si < scanEnd){
+          const sl = lines[si];
+          
+          // Combined: "14 min 26 segundos   6.81 km"
+          const combinedDurDist = sl.match(durDistRe);
+          if(combinedDurDist){
+            const mins = parseInt(combinedDurDist[1],10) || 0;
+            const secs = parseInt(combinedDurDist[2],10) || 0;
+            duracaoSeg = mins * 60 + secs;
+            km = parseFloat(combinedDurDist[3].replace(',','.'));
+            si++;
+            break;
+          }
+          
+          // Duration only line: "14 min 26 segundos"
+          const durM = sl.match(durOnlyRe);
+          if(durM && !sl.match(/R\$/)){
+            const mins = parseInt(durM[1],10) || 0;
+            const secs = parseInt(durM[2],10) || 0;
+            duracaoSeg = mins * 60 + secs;
+            // Check next line for km
+            if(si + 1 < scanEnd){
+              const distM = lines[si+1].match(distOnlyRe);
+              if(distM){
+                km = parseFloat(distM[1].replace(',','.'));
+                si += 2;
+              } else {
+                si++;
+              }
+            } else {
+              si++;
+            }
+            break;
+          }
+
+          // Distance only line: "6.81 km"
+          const distM = sl.match(distOnlyRe);
+          if(distM && sl.length < 20 && !sl.match(/R\$/)){
+            km = parseFloat(distM[1].replace(',','.'));
+            si++;
+            // Already got duration? then break
+            if(duracaoSeg > 0) break;
+            continue;
+          }
+
+          si++;
+        }
+
+        // Address scanning from current position
+        const addrLines = [];
+        let aj = si;
+        let addrScanned = 0;
+        while(aj < lines.length && addrLines.length < 2 && addrScanned < 12){
+          const al = lines[aj];
+          addrScanned++;
+
+          // Stop at next Uber header or new R$ card
+          if(al.match(detailHeaderRe) || al.match(dateRe)) break;
+          // Stop at "Pontos ganhos" or "Seus ganhos" (bottom of detail page)
+          if(al.match(/pontos?\s*ganhos?|seus\s*ganhos/i)) break;
+
+          // CEP continuation
+          if(al.match(/^\d{5}-?\d{3}/) && addrLines.length > 0){
+            addrLines[addrLines.length - 1] += ', ' + al;
+            aj++; continue;
+          }
+
+          // Address-like content
+          const hasAddrPrefix = al.match(/^(?:Rua|Av\b|Avenida|Pra[cç]a|Rod|Estr|R\.|Trav\b|Cond|Val\s|Parque)/i);
+          const hasAddrContent = al.length > 15 && (
+            al.match(/\d{5}-?\d{3}/) ||
+            al.match(/,\s*(?:Rio Grande|RS|BR|[A-Z]{2})\b/i)
+          );
+
+          if(hasAddrPrefix || hasAddrContent){
+            addrLines.push(al.replace(/^[📍🔵⚫●+=\-e\s]+/, '').trim());
+            aj++; continue;
+          }
+
+          // Short noise — skip
+          if(al.length < 8){ aj++; continue; }
+
+          // Unknown long line — skip (detail pages have lots of map noise)
+          aj++; continue;
+        }
+        if(addrLines.length >= 1) endOrigem = addrLines[0];
+        if(addrLines.length >= 2) endDestino = addrLines[1];
+
+        if(valor > 0){
+          results.push({
+            data: currentDate,
+            hora, valor, km, duracaoSeg,
+            categoria, endOrigem, endDestino
+          });
+        }
+        i = aj;
+        continue;
+      }
+    }
+
+    // ── History-list date header: "segunda, 10 de julho" ──
     const dm = line.match(dateRe);
     if(dm){
       const day = parseInt(dm[1], 10);
@@ -1836,6 +1968,7 @@ function parseOcrText(text){
       i++; continue;
     }
 
+    // ── History-list value+time: "R$ 11,43  12:55" ──
     const vtm = line.match(valueTimeRe);
     if(vtm){
       const valor = parseFloat(vtm[1].replace(',','.'));
@@ -1871,29 +2004,24 @@ function parseOcrText(text){
         }
       }
 
-      // Address scanning: skip noise lines, detect addresses broadly
+      // Address scanning
       const addrLines = [];
       let j = i + 1;
       let scanned = 0;
       while(j < lines.length && addrLines.length < 2 && scanned < 8){
         const al = lines[j];
         scanned++;
-
-        // Stop if we hit the next card (full R$ value) or a date header
         if(al.match(nextCardRe) || al.match(dateRe)){ break; }
 
-        // CEP continuation line (e.g. "96201-260, BR") — append to last address
         if(al.match(/^\d{5}-?\d{3}/) && addrLines.length > 0){
           addrLines[addrLines.length - 1] += ', ' + al;
           j++; continue;
         }
 
-        // Known address prefixes (emoji pins or street type abbreviations)
         const hasAddrPrefix =
           al.match(/^[📍🔵⚫●]/) ||
           al.match(/^(?:Rua|Av\b|Avenida|Pra[cç]a|Rod|Estr|R\.|Trav\b)/i);
 
-        // Address-like content: long line with CEP or city/state indicators
         const hasAddrContent = al.length > 15 && (
           al.match(/\d{5}-?\d{3}/) ||
           al.match(/,\s*(?:Rio Grande|RS|BR|[A-Z]{2})\b/i)
@@ -1904,12 +2032,7 @@ function parseOcrText(text){
           j++; continue;
         }
 
-        // Short noise (< 8 chars, e.g. "oe" from map icons) — skip it
-        if(al.length < 8){
-          j++; continue;
-        }
-
-        // Unknown long line — stop scanning for addresses
+        if(al.length < 8){ j++; continue; }
         break;
       }
       if(addrLines.length >= 1) endOrigem = addrLines[0];
@@ -1926,7 +2049,6 @@ function parseOcrText(text){
     i++;
   }
   return { results, detectedCount };
-}
 
 function horaToMin(h){
   if(!h) return -1;
