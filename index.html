@@ -3111,8 +3111,11 @@ async function initData(){
   } catch(e) {}
   corridas = await loadData('corridas', null);
   if(corridas === null){
-    corridas = corridasSeed;
-    await saveData('corridas', corridas);
+    if (typeof supabaseUser !== 'undefined' && supabaseUser) {
+      corridas = [];
+    } else {
+      corridas = corridasSeed;
+    }
   }
   const savedOnlineHoras = await loadData('cr-online-horas', 12.6);
   document.getElementById('cr-online-horas').value = savedOnlineHoras;
