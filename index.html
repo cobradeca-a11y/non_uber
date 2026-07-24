@@ -2083,7 +2083,7 @@ function updateOcrSummary(){
 
 async function confirmOcrImport(){
   const toImport = ocrParsedResults.filter(r =>
-    !r.discarded && (r.status === 'novo' || r.forceImport)
+    !r.discarded && (r.status === 'novo' || r.status === 'suspeito' || r.forceImport)
   );
   if(toImport.length === 0) return;
 
