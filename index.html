@@ -2334,6 +2334,7 @@ async function handleOcrFiles(files){
   const images = (await Promise.all(imgPromises)).filter(Boolean);
   let allParsed = [];
   let totalDetected = 0;
+  let allRawTexts = [];
 
   for(let idx = 0; idx < images.length; idx++){
     const { imgObj, imgEl, url } = images[idx];
@@ -2353,7 +2354,11 @@ async function handleOcrFiles(files){
           }
         }
       });
-      const { results: parsed, detectedCount } = parseOcrText(result.data.text);
+      const rawText = result.data.text;
+      console.log(`--- TEXTO BRUTO DO OCR (Imagem ${idx+1}) ---\n`, rawText);
+      allRawTexts.push(rawText);
+
+      const { results: parsed, detectedCount } = parseOcrText(rawText);
       allParsed = allParsed.concat(parsed);
       totalDetected += detectedCount;
       imgEl.classList.add('processed');
@@ -2369,7 +2374,11 @@ async function handleOcrFiles(files){
     const noResultMsg = totalDetected > 0
       ? `⚠️ ${totalDetected} padrão(ões) R$ detectado(s) no texto, mas nenhuma corrida pôde ser processada. Tente imagens mais nítidas.`
       : '⚠️ Nenhuma corrida reconhecida nos prints. Tente imagens mais nítidas ou com melhor resolução.';
-    statusEl.textContent = noResultMsg;
+    statusEl.innerHTML = `<span style="color:var(--orange)">${noResultMsg}</span>
+<details style="margin-top:10px;text-align:left;background:rgba(255,255,255,0.05);padding:10px;border-radius:6px;max-height:200px;overflow-y:auto;font-family:monospace;font-size:11px;white-space:pre-wrap;">
+<summary style="cursor:pointer;color:var(--orange);font-weight:bold">[Debug] Ver texto cru extraído (Clique para expandir)</summary>
+${allRawTexts.join('\n\n--- PRÓXIMA IMAGEM ---\n\n').replace(/</g, '&lt;')}
+</details>`;
     progressWrap.style.display = 'none';
     return;
   }
