@@ -2043,7 +2043,8 @@ function parseOcrText(text){
 
         const hasAddrContent = al.length > 15 && (
           al.match(/\d{5}-?\d{3}/) ||
-          al.match(/,\s*(?:Rio Grande|RS|BR|[A-Z]{2})\b/i)
+          al.match(/,\s*(?:Rio Grande|RS|BR|[A-Z]{2})\b/i) ||
+          al.match(/,\s*[A-Z][a-zçáéíóú]/) // relaxed check for neighborhoods like "Junção"
         );
 
         if(hasAddrPrefix || hasAddrContent){
@@ -2134,6 +2135,37 @@ function renderOcrPreview(){
     return;
   }
   wrap.style.display = 'block';
+  
+  // Create a debug button for raw text to help troubleshooting
+  if (!document.getElementById('debug-raw-btn')) {
+    const btn = document.createElement('button');
+    btn.id = 'debug-raw-btn';
+    btn.className = 'ocr-btn-secondary';
+    btn.style.marginLeft = '10px';
+    btn.textContent = 'Ver Texto Cru (Debug)';
+    btn.onclick = () => {
+      const debugPre = document.getElementById('debug-raw-pre');
+      if (debugPre) {
+        debugPre.style.display = debugPre.style.display === 'none' ? 'block' : 'none';
+      }
+    };
+    document.getElementById('ocr-status').appendChild(btn);
+    
+    const pre = document.createElement('pre');
+    pre.id = 'debug-raw-pre';
+    pre.style.display = 'none';
+    pre.style.background = '#111';
+    pre.style.color = '#0f0';
+    pre.style.padding = '10px';
+    pre.style.marginTop = '10px';
+    pre.style.fontSize = '11px';
+    pre.style.maxHeight = '200px';
+    pre.style.overflow = 'auto';
+    pre.textContent = window.lastRawOcrText || 'Nenhum texto disponível.';
+    document.getElementById('ocr-status').appendChild(pre);
+  } else {
+    document.getElementById('debug-raw-pre').textContent = window.lastRawOcrText || 'Nenhum texto disponível.';
+  }
 
   ocrParsedResults.forEach((r, idx) => {
     const tr = document.createElement('tr');
@@ -2357,6 +2389,7 @@ async function handleOcrFiles(files){
       const rawText = result.data.text;
       console.log(`--- TEXTO BRUTO DO OCR (Imagem ${idx+1}) ---\n`, rawText);
       allRawTexts.push(rawText);
+      window.lastRawOcrText = rawText;
 
       const { results: parsed, detectedCount } = parseOcrText(rawText);
       allParsed = allParsed.concat(parsed);
