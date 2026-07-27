@@ -3035,69 +3035,133 @@ async function obterRecomendacao() {
   btn.textContent = 'Buscando satélite...';
   btn.disabled = true;
   
-  navigator.geolocation.getCurrentPosition(pos => {
+  navigator.geolocation.getCurrentPosition(async pos => {
     const { latitude, longitude } = pos.coords;
+    const origKey = `${longitude.toFixed(4)},${latitude.toFixed(4)}`; // Arredondado para ~11m
     
-    // 1. Coletar candidatos de fluxo contínuo e futuro
-    const candidates = [];
+    // Cache em memória (persistente na sessão)
+    window.osrmCache = window.osrmCache || new Map();
+    
+    // 1. Coletar candidatos e preparar chamadas
+    let candidates = [];
     const items = window.lastRenderedItems || [];
+    const uniqueCoordsMap = new Map();
     
     items.forEach(item => {
       const coords = item.local;
-      if(!coords) return; // Ignora se não tem localização
+      if(!coords) return; 
       
       const dist = calcDistance(latitude, longitude, coords.lat, coords.lng);
-      // Fator de ajuste urbano (1.4) + Velocidade média 35 km/h
-      const estMin = (dist * 1.4 / 35) * 60; 
+      const estMin = (dist * 1.4 / 35) * 60; // Fallback Haversine
       
+      const cand = { item, coords, dist, estMin };
+      candidates.push(cand);
+      
+      const coordKey = `${coords.lng.toFixed(5)},${coords.lat.toFixed(5)}`;
+      const cacheKey = `${origKey}_${coordKey}`;
+      
+      if (window.osrmCache.has(cacheKey)) {
+        const cached = window.osrmCache.get(cacheKey);
+        cand.estMin = cached.durSec / 60;
+        cand.dist = cached.distM / 1000;
+        cand.fromCache = true;
+      } else {
+        if (!uniqueCoordsMap.has(coordKey)) {
+          uniqueCoordsMap.set(coordKey, { lng: coords.lng, lat: coords.lat, cacheKey, candidates: [] });
+        }
+        uniqueCoordsMap.get(coordKey).candidates.push(cand);
+      }
+    });
+    
+    if(candidates.length === 0) {
+      btn.textContent = '🎯 Encerrei, pra onde agora?';
+      btn.disabled = false;
+      resDiv.style.display = 'block';
+      resDiv.innerHTML = 'Nenhum evento mapeado com coordenadas no momento.';
+      return;
+    }
+
+    // 2. Roteamento Real OSRM (Matriz) para os não cacheados
+    let osrmSuccess = false;
+    const coordEntries = Array.from(uniqueCoordsMap.values());
+    
+    if (coordEntries.length > 0) {
+      btn.textContent = 'Calculando rotas reais...';
+      try {
+        const coordsStr = coordEntries.map(c => `${c.lng},${c.lat}`).join(';');
+        const url = `https://router.project-osrm.org/table/v1/driving/${longitude},${latitude};${coordsStr}?sources=0&annotations=duration,distance`;
+        
+        const res = await fetch(url);
+        if (res.ok) {
+          const data = await res.json();
+          if(data.code === 'Ok' && data.durations && data.durations[0]) {
+            for (let i = 0; i < coordEntries.length; i++) {
+              const durSec = data.durations[0][i + 1];
+              const distM = data.distances[0][i + 1];
+              
+              if (durSec != null && distM != null) {
+                window.osrmCache.set(coordEntries[i].cacheKey, { durSec, distM });
+                coordEntries[i].candidates.forEach(c => {
+                  c.estMin = durSec / 60;
+                  c.dist = distM / 1000;
+                });
+              }
+            }
+            osrmSuccess = true;
+          }
+        }
+      } catch(err) {
+        console.warn("OSRM falhou, usando Haversine", err);
+      }
+    } else {
+      // Todos vieram do cache
+      osrmSuccess = true;
+    }
+    
+    // 3. Calcular Score final
+    candidates.forEach(cand => {
       let score = 0;
       let labelT = '';
+      const { item, estMin } = cand;
       
       if(item.isContinuous) {
         labelT = 'Fluxo contínuo';
         score = item.forca_sinal / (estMin + 1);
       } else {
         const diffMin = Math.round((item.horario_previsto - new Date())/60000);
-        if(diffMin < -15) return; // Evento já passou faz muito tempo
+        if(diffMin < -15) { cand.score = -1; return; }
         
         let force = item.forca_sinal;
-        // Se vou demorar mais pra chegar do que o evento falta pra acontecer, penaliza
         if(estMin > diffMin + 10) force = 1;
         
         labelT = diffMin <= 0 ? 'acontecendo agora' : `em ${diffMin} min`;
-        // Prioriza quem está mais perto do tempo exato e perto geograficamente
         score = force / ((estMin + Math.abs(diffMin - estMin)) + 1); 
       }
-      
-      candidates.push({ item, estMin, score, labelT, coords });
+      cand.score = score;
+      cand.labelT = labelT;
     });
     
-    // 2. Coletar concentração de corridas (histórico do usuário)
-    const hist = buildHourlyHistogram();
-    const curH = new Date().getHours();
-    if(hist[curH] >= 2) { // Só recomenda se houver volume
-      // Onde foram essas corridas? (Para Fase 1: assume que o motorista já sabe onde é, mas na Fase 2 será destino)
-      // Como não temos a coordenada do mapa de calor ainda, vamos omitir o score de distância ou atribuir um fallback
-      // Por ora, vamos focar nos Flow Points (eventos). O Ranking de Movimento também entra.
-    }
-    
-    // Fallback se não houver candidatos mapeados
+    candidates = candidates.filter(c => c.score >= 0);
     if(candidates.length === 0) {
       btn.textContent = '🎯 Encerrei, pra onde agora?';
       btn.disabled = false;
       resDiv.style.display = 'block';
-      resDiv.innerHTML = 'Nenhum evento com horário próximo mapeado com coordenadas no momento.';
+      resDiv.innerHTML = 'Nenhum evento com horário próximo mapeado.';
       return;
     }
     
     candidates.sort((a,b) => b.score - a.score);
     const best = candidates[0];
     
+    const aviso = osrmSuccess 
+      ? `<span style="color:var(--blue);"><br>ℹ️ Estimativa de rota livre, sem trânsito (OSRM)</span>`
+      : `<span style="color:var(--orange);"><br>⚠️ Estimativa aproximada (Serviço de rotas offline)</span>`;
+      
     resDiv.style.display = 'block';
     resDiv.innerHTML = `<strong>Vá para ${best.item.nome}</strong><br>
       <span style="font-size:12px;color:var(--ink-dim)">
       Motivo: ${best.item.desc} (${best.labelT})<br>
-      Você está a ~${Math.ceil(best.estMin)} min de distância (${calcDistance(latitude, longitude, best.coords.lat, best.coords.lng).toFixed(1)} km).</span>`;
+      Você está a ~${Math.ceil(best.estMin)} min de distância (${best.dist.toFixed(1)} km).</span>${aviso}`;
     
     btn.textContent = '🎯 Encerrei, pra onde agora?';
     btn.disabled = false;
