@@ -1,77 +1,162 @@
 [
   {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Muito Prazer",
-    "termino": "2026-08-28T19:38:00"
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Authentic Games No Império Desconectado",
+    "termino": "2026-08-29T14:11:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Colegas E O Herdeiro",
+    "termino": "2026-08-29T14:25:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Trago Seu Amor",
+    "termino": "2026-08-29T14:27:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Toy Story 5",
-    "termino": "2026-08-28T19:50:00"
+    "filme": "Patrulha Canina: Uma Aventura Dino",
+    "termino": "2026-08-29T15:33:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Colegas E O Herdeiro",
+    "termino": "2026-08-29T15:45:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Coyote Vs. Acme",
+    "termino": "2026-08-29T15:53:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Ponto Sem Retorno",
-    "termino": "2026-08-28T20:08:00"
+    "termino": "2026-08-29T15:58:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Patrulha Canina: Uma Aventura Dino",
+    "termino": "2026-08-29T15:58:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Muito Prazer",
+    "termino": "2026-08-29T16:38:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Sobrenatural - Agora Entre Nós",
+    "termino": "2026-08-29T17:00:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-08-28T20:24:00"
+    "termino": "2026-08-29T17:24:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Colegas E O Herdeiro",
+    "termino": "2026-08-29T17:40:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Coyote Vs. Acme",
+    "termino": "2026-08-29T17:43:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Coyote Vs. Acme",
-    "termino": "2026-08-28T20:28:00"
+    "termino": "2026-08-29T18:13:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Homem-Aranha: Um Novo Dia",
+    "termino": "2026-08-29T18:54:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Homem-Aranha: Um Novo Dia",
+    "termino": "2026-08-29T18:54:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "O Fim Da Rua",
+    "termino": "2026-08-29T18:55:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Muito Prazer",
+    "termino": "2026-08-29T19:38:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Toy Story 5",
+    "termino": "2026-08-29T19:50:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Ponto Sem Retorno",
+    "termino": "2026-08-29T20:08:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Homem-Aranha: Um Novo Dia",
+    "termino": "2026-08-29T20:24:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Coyote Vs. Acme",
+    "termino": "2026-08-29T20:28:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Sobrenatural - Agora Entre Nós",
-    "termino": "2026-08-28T20:50:00"
+    "termino": "2026-08-29T20:50:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Ponto Sem Retorno",
-    "termino": "2026-08-28T21:28:00"
+    "termino": "2026-08-29T21:28:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Sobrenatural - Agora Entre Nós",
-    "termino": "2026-08-28T21:50:00"
+    "termino": "2026-08-29T21:50:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-08-28T21:54:00"
+    "termino": "2026-08-29T21:54:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-08-28T22:34:00"
+    "termino": "2026-08-29T22:34:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Ponto Sem Retorno",
-    "termino": "2026-08-28T22:38:00"
+    "termino": "2026-08-29T22:38:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Ponto Sem Retorno",
-    "termino": "2026-08-28T22:58:00"
+    "termino": "2026-08-29T22:58:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Sobrenatural - Agora Entre Nós",
-    "termino": "2026-08-28T23:05:00"
+    "termino": "2026-08-29T23:05:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-08-28T23:24:00"
+    "termino": "2026-08-29T23:24:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-08-29T00:24:00"
+    "termino": "2026-08-30T00:24:00"
   }
 ]
