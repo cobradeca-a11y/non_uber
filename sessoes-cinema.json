@@ -1,142 +1,147 @@
 [
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Authentic Games No Império Desconectado",
-    "termino": "2026-09-02T14:11:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Colegas E O Herdeiro",
-    "termino": "2026-09-02T14:25:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Trago Seu Amor",
-    "termino": "2026-09-02T14:27:00"
+    "termino": "2026-09-03T14:17:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Ponto Sem Retorno",
-    "termino": "2026-09-02T15:58:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Patrulha Canina: Uma Aventura Dino",
-    "termino": "2026-09-02T15:58:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Muito Prazer",
-    "termino": "2026-09-02T16:38:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-02T17:24:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Colegas E O Herdeiro",
-    "termino": "2026-09-02T17:40:00"
+    "termino": "2026-09-03T14:55:00"
   },
   {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Coyote Vs. Acme",
-    "termino": "2026-09-02T17:43:00"
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-03T14:58:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Coyote Vs. Acme",
-    "termino": "2026-09-02T18:13:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Muito Prazer",
-    "termino": "2026-09-02T18:38:00"
+    "termino": "2026-09-03T16:23:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-02T18:54:00"
+    "termino": "2026-09-03T16:24:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-02T18:54:00"
+    "filme": "Coyote Vs. Acme",
+    "termino": "2026-09-03T16:43:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Fim Da Rua",
-    "termino": "2026-09-02T18:55:00"
+    "filme": "Idiotas",
+    "termino": "2026-09-03T17:08:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-03T17:28:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-03T17:28:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Toy Story 5",
-    "termino": "2026-09-02T19:50:00"
+    "termino": "2026-09-03T17:40:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Ponto Sem Retorno",
-    "termino": "2026-09-02T20:08:00"
+    "termino": "2026-09-03T18:08:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Ponto Sem Retorno",
+    "termino": "2026-09-03T18:58:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Idiotas",
+    "termino": "2026-09-03T19:23:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-02T20:24:00"
+    "termino": "2026-09-03T19:24:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Homem-Aranha: Um Novo Dia",
+    "termino": "2026-09-03T19:44:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Coyote Vs. Acme",
-    "termino": "2026-09-02T20:28:00"
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-03T19:58:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-03T19:58:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "O Sorveteiro",
+    "termino": "2026-09-03T20:06:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-03T20:18:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Sobrenatural - Agora Entre Nós",
-    "termino": "2026-09-02T20:50:00"
+    "termino": "2026-09-03T20:50:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Ponto Sem Retorno",
-    "termino": "2026-09-02T21:28:00"
+    "filme": "O Sorveteiro",
+    "termino": "2026-09-03T21:26:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "O Sorveteiro",
+    "termino": "2026-09-03T22:06:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Sobrenatural - Agora Entre Nós",
-    "termino": "2026-09-02T21:50:00"
+    "termino": "2026-09-03T22:10:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Homem-Aranha: Um Novo Dia",
+    "termino": "2026-09-03T22:24:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-03T22:28:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-03T22:28:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-02T21:54:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Harry Potter E A Pedra Filosofal (Relançamento)",
-    "termino": "2026-09-02T22:02:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Ponto Sem Retorno",
-    "termino": "2026-09-02T22:38:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Ponto Sem Retorno",
-    "termino": "2026-09-02T22:58:00"
+    "termino": "2026-09-03T22:44:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Sobrenatural - Agora Entre Nós",
-    "termino": "2026-09-02T23:05:00"
+    "termino": "2026-09-03T23:05:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-02T23:24:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-03T00:24:00"
+    "filme": "O Sorveteiro",
+    "termino": "2026-09-03T23:26:00"
   }
 ]
