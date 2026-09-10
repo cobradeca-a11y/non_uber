@@ -1,147 +1,137 @@
 [
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Trago Seu Amor",
-    "termino": "2026-09-09T14:17:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Colegas E O Herdeiro",
-    "termino": "2026-09-09T14:55:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-09T14:58:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Coyote Vs. Acme",
-    "termino": "2026-09-09T16:23:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-09T16:24:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Coyote Vs. Acme",
-    "termino": "2026-09-09T16:43:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Idiotas",
-    "termino": "2026-09-09T17:08:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-09T17:28:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-09T17:28:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Toy Story 5",
-    "termino": "2026-09-09T17:40:00"
+    "termino": "2026-09-10T15:25:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-10T15:28:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "A Maravilhosa Árvore Encantada",
+    "termino": "2026-09-10T16:10:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Coyote Vs. Acme",
+    "termino": "2026-09-10T16:58:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Ponto Sem Retorno",
-    "termino": "2026-09-09T18:08:00"
+    "filme": "A Maravilhosa Árvore Encantada",
+    "termino": "2026-09-10T17:20:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-10T17:28:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Ponto Sem Retorno",
-    "termino": "2026-09-09T18:58:00"
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-10T17:58:00"
   },
   {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Idiotas",
-    "termino": "2026-09-09T19:23:00"
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-10T18:08:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-09T19:24:00"
+    "termino": "2026-09-10T18:24:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Da Magia À Sedução: Feitiço De Amor",
+    "termino": "2026-09-10T18:36:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Código: Vingança",
+    "termino": "2026-09-10T19:05:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-09T19:44:00"
+    "filme": "A Maravilhosa Árvore Encantada",
+    "termino": "2026-09-10T19:40:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Minha Melhor Amiga",
+    "termino": "2026-09-10T19:58:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Código: Vingança",
+    "termino": "2026-09-10T20:15:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Da Magia À Sedução: Feitiço De Amor",
+    "termino": "2026-09-10T20:16:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-09T19:58:00"
+    "termino": "2026-09-10T20:28:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Código: Vingança",
+    "termino": "2026-09-10T21:15:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Da Magia À Sedução: Feitiço De Amor",
+    "termino": "2026-09-10T21:21:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Homem-Aranha: Um Novo Dia",
+    "termino": "2026-09-10T21:24:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Homem-Aranha: Um Novo Dia",
+    "termino": "2026-09-10T22:24:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-09T19:58:00"
+    "termino": "2026-09-10T22:28:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "O Sorveteiro",
-    "termino": "2026-09-09T20:06:00"
+    "filme": "Código: Vingança",
+    "termino": "2026-09-10T22:35:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Da Magia À Sedução: Feitiço De Amor",
+    "termino": "2026-09-10T22:56:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-09T20:18:00"
+    "termino": "2026-09-10T22:58:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Sobrenatural - Agora Entre Nós",
-    "termino": "2026-09-09T20:50:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Sorveteiro",
-    "termino": "2026-09-09T21:26:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "O Sorveteiro",
-    "termino": "2026-09-09T22:06:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Sobrenatural - Agora Entre Nós",
-    "termino": "2026-09-09T22:10:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-09T22:24:00"
+    "termino": "2026-09-10T23:10:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-09T22:28:00"
+    "termino": "2026-09-10T23:58:00"
   },
   {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-09T22:28:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Homem-Aranha: Um Novo Dia",
-    "termino": "2026-09-09T22:44:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Sobrenatural - Agora Entre Nós",
-    "termino": "2026-09-09T23:05:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Sorveteiro",
-    "termino": "2026-09-09T23:26:00"
+    "termino": "2026-09-11T00:24:00"
   }
 ]
