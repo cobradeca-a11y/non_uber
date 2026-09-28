@@ -1,152 +1,132 @@
 [
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Máfia De Pelúcia",
-    "termino": "2026-09-27T14:10:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Se A Vida Começasse Agora",
-    "termino": "2026-09-27T14:46:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-27T14:58:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "A Ilha Esquecida",
-    "termino": "2026-09-27T15:04:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-27T16:28:00"
+    "filme": "Antártida",
+    "termino": "2026-09-28T16:18:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Marido De Aluguel",
-    "termino": "2026-09-27T16:34:00"
+    "termino": "2026-09-28T16:34:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Marido De Aluguel",
-    "termino": "2026-09-27T16:39:00"
+    "termino": "2026-09-28T16:39:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-27T16:58:00"
+    "termino": "2026-09-28T16:58:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-27T17:28:00"
+    "termino": "2026-09-28T17:28:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "A Ilha Esquecida",
-    "termino": "2026-09-27T17:29:00"
+    "termino": "2026-09-28T17:29:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Marido De Aluguel",
-    "termino": "2026-09-27T18:24:00"
+    "termino": "2026-09-28T18:24:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "A Ilha Esquecida",
-    "termino": "2026-09-27T18:29:00"
+    "termino": "2026-09-28T18:29:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Coração Selvagem",
-    "termino": "2026-09-27T18:56:00"
+    "termino": "2026-09-28T18:56:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Resident Evil",
-    "termino": "2026-09-27T19:34:00"
+    "termino": "2026-09-28T19:34:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Vingadores: Ultimato Encore (Relançamento)",
-    "termino": "2026-09-27T19:55:00"
+    "termino": "2026-09-28T19:55:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-27T19:58:00"
+    "termino": "2026-09-28T19:58:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Vingadores: Ultimato Encore (Relançamento)",
-    "termino": "2026-09-27T20:05:00"
+    "termino": "2026-09-28T20:05:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-27T20:08:00"
+    "termino": "2026-09-28T20:08:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Coração Selvagem",
-    "termino": "2026-09-27T20:31:00"
+    "termino": "2026-09-28T20:31:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Resident Evil",
-    "termino": "2026-09-27T20:34:00"
+    "termino": "2026-09-28T20:34:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Coração Selvagem",
-    "termino": "2026-09-27T21:11:00"
+    "termino": "2026-09-28T21:11:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Resident Evil",
-    "termino": "2026-09-27T21:34:00"
+    "termino": "2026-09-28T21:34:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-27T22:28:00"
+    "termino": "2026-09-28T22:28:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Resident Evil",
-    "termino": "2026-09-27T22:34:00"
+    "termino": "2026-09-28T22:34:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Minha Melhor Amiga",
-    "termino": "2026-09-27T22:38:00"
+    "termino": "2026-09-28T22:38:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Coração Selvagem",
-    "termino": "2026-09-27T22:51:00"
+    "termino": "2026-09-28T22:51:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Coração Selvagem",
-    "termino": "2026-09-27T23:31:00"
+    "termino": "2026-09-28T23:31:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Resident Evil",
-    "termino": "2026-09-27T23:34:00"
+    "termino": "2026-09-28T23:34:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Vingadores: Ultimato Encore (Relançamento)",
-    "termino": "2026-09-27T23:35:00"
+    "termino": "2026-09-28T23:35:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Vingadores: Ultimato Encore (Relançamento)",
-    "termino": "2026-09-27T23:50:00"
+    "termino": "2026-09-28T23:50:00"
   }
 ]
