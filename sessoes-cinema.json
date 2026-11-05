@@ -1,132 +1,122 @@
 [
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Consequências Paralelas",
-    "termino": "2026-11-04T16:20:00"
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-05T16:57:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Se Eu Fosse Você 3",
-    "termino": "2026-11-04T16:22:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Minha Melhor Amiga",
-    "termino": "2026-11-04T17:28:00"
+    "filme": "O Gatola Da Cartola",
+    "termino": "2026-11-05T17:01:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "O Bosque Selvagem",
-    "termino": "2026-11-04T18:00:00"
+    "termino": "2026-11-05T17:50:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Verity",
-    "termino": "2026-11-04T18:08:00"
+    "filme": "As Dez Vantagens De Morrer Depois De Você",
+    "termino": "2026-11-05T17:56:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "O Gatola Da Cartola",
+    "termino": "2026-11-05T18:01:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Klara E O Sol",
+    "termino": "2026-11-05T18:16:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-05T18:22:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Assalto À Brasileira",
+    "termino": "2026-11-05T18:28:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-05T19:12:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "O Gatola Da Cartola",
+    "termino": "2026-11-05T19:31:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "100 Dias",
+    "termino": "2026-11-05T20:26:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "O Bosque Selvagem",
+    "termino": "2026-11-05T20:30:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Assalto À Brasileira",
+    "termino": "2026-11-05T20:38:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Klara E O Sol",
+    "termino": "2026-11-05T20:46:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-05T20:52:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "O Bosque Selvagem",
-    "termino": "2026-11-04T18:10:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "100 Dias",
-    "termino": "2026-11-04T18:26:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "As Dez Vantagens De Morrer Depois De Você",
-    "termino": "2026-11-04T18:36:00"
+    "termino": "2026-11-05T21:10:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "As Dez Vantagens De Morrer Depois De Você",
-    "termino": "2026-11-04T18:46:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "100 Dias",
-    "termino": "2026-11-04T18:56:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Minha Melhor Amiga",
-    "termino": "2026-11-04T19:58:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Cara-De-Barro",
-    "termino": "2026-11-04T20:33:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "O Bosque Selvagem",
-    "termino": "2026-11-04T20:40:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "As Dez Vantagens De Morrer Depois De Você",
-    "termino": "2026-11-04T20:46:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Bosque Selvagem",
-    "termino": "2026-11-04T20:55:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Cara-De-Barro",
-    "termino": "2026-11-04T20:58:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "As Dez Vantagens De Morrer Depois De Você",
-    "termino": "2026-11-04T21:06:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "100 Dias",
-    "termino": "2026-11-04T21:26:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Minha Melhor Amiga",
-    "termino": "2026-11-04T22:28:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Cara-De-Barro",
-    "termino": "2026-11-04T22:58:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "100 Dias",
-    "termino": "2026-11-04T23:16:00"
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-05T21:27:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Cara-De-Barro",
-    "termino": "2026-11-04T23:18:00"
+    "termino": "2026-11-05T22:58:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "O Bosque Selvagem",
-    "termino": "2026-11-04T23:20:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "As Dez Vantagens De Morrer Depois De Você",
-    "termino": "2026-11-04T23:26:00"
+    "filme": "Godzilla Minus Zero",
+    "termino": "2026-11-05T23:05:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "O Bosque Selvagem",
-    "termino": "2026-11-04T23:40:00"
+    "termino": "2026-11-05T23:10:00"
   },
   {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-05T23:12:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
     "filme": "100 Dias",
-    "termino": "2026-11-04T23:56:00"
+    "termino": "2026-11-05T23:16:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Cara-De-Barro",
+    "termino": "2026-11-05T23:33:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-05T23:42:00"
   }
 ]
