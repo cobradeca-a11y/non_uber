@@ -1,142 +1,132 @@
 [
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Gatola Da Cartola",
-    "termino": "2026-11-11T15:31:00"
+    "filme": "Deixe-me Viver",
+    "termino": "2026-11-12T16:13:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Assalto À Brasileira",
-    "termino": "2026-11-11T15:38:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "100 Dias",
-    "termino": "2026-11-11T15:41:00"
+    "filme": "Ebenezer E Os Fantasmas Do Natal",
+    "termino": "2026-11-12T16:27:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Os Farofeiros 3",
-    "termino": "2026-11-11T16:57:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Gatola Da Cartola",
-    "termino": "2026-11-11T17:46:00"
+    "termino": "2026-11-12T18:12:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "O Bosque Selvagem",
-    "termino": "2026-11-11T17:50:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "As Dez Vantagens De Morrer Depois De Você",
-    "termino": "2026-11-11T17:56:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Gatola Da Cartola",
-    "termino": "2026-11-11T18:01:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Klara E O Sol",
-    "termino": "2026-11-11T18:16:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Os Farofeiros 3",
-    "termino": "2026-11-11T18:22:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Assalto À Brasileira",
-    "termino": "2026-11-11T18:28:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Os Farofeiros 3",
-    "termino": "2026-11-11T19:12:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "100 Dias",
-    "termino": "2026-11-11T20:26:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "O Bosque Selvagem",
-    "termino": "2026-11-11T20:30:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Gatola Da Cartola",
-    "termino": "2026-11-11T20:31:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Assalto À Brasileira",
-    "termino": "2026-11-11T20:38:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Klara E O Sol",
-    "termino": "2026-11-11T20:46:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Os Farofeiros 3",
-    "termino": "2026-11-11T20:52:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Bosque Selvagem",
-    "termino": "2026-11-11T21:10:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Os Farofeiros 3",
-    "termino": "2026-11-11T21:27:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Cara-De-Barro",
-    "termino": "2026-11-11T22:58:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Godzilla Minus Zero",
-    "termino": "2026-11-11T23:05:00"
-  },
-  {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "O Bosque Selvagem",
-    "termino": "2026-11-11T23:10:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Os Farofeiros 3",
-    "termino": "2026-11-11T23:12:00"
+    "filme": "A Virada - Ignição Da Alma",
+    "termino": "2026-11-12T18:13:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "100 Dias",
-    "termino": "2026-11-11T23:16:00"
+    "termino": "2026-11-12T18:16:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-12T18:22:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "O Bosque Selvagem",
+    "termino": "2026-11-12T18:30:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Cara-De-Barro",
-    "termino": "2026-11-11T23:33:00"
+    "filme": "A Virada - Ignição Da Alma",
+    "termino": "2026-11-12T18:33:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "O Bosque Selvagem",
+    "termino": "2026-11-12T18:55:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Ebenezer E Os Fantasmas Do Natal",
+    "termino": "2026-11-12T18:57:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Como Roubar Um Banco",
+    "termino": "2026-11-12T20:20:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-12T20:27:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Ebenezer E Os Fantasmas Do Natal",
+    "termino": "2026-11-12T20:37:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Velozes & Furiosos (25º Aniversário)",
+    "termino": "2026-11-12T20:46:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-12T20:52:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "A Virada - Ignição Da Alma",
+    "termino": "2026-11-12T21:03:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Velozes & Furiosos (25º Aniversário)",
+    "termino": "2026-11-12T21:16:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Ebenezer E Os Fantasmas Do Natal",
+    "termino": "2026-11-12T21:27:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Como Roubar Um Banco",
+    "termino": "2026-11-12T22:50:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Godzilla Minus Zero",
-    "termino": "2026-11-11T23:35:00"
+    "termino": "2026-11-12T23:05:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Ebenezer E Os Fantasmas Do Natal",
+    "termino": "2026-11-12T23:07:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Os Farofeiros 3",
+    "termino": "2026-11-12T23:12:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
-    "filme": "Os Farofeiros 3",
-    "termino": "2026-11-11T23:42:00"
+    "filme": "Deixe-me Viver",
+    "termino": "2026-11-12T23:13:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Godzilla Minus Zero",
+    "termino": "2026-11-12T23:20:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Lago Dos Ossos",
+    "termino": "2026-11-12T23:24:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Cara-De-Barro",
+    "termino": "2026-11-12T23:48:00"
   }
 ]
