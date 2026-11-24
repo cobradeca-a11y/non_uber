@@ -1,62 +1,82 @@
 [
   {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Jogos Vorazes: Amanhecer Na Colheita",
+    "termino": "2026-11-24T19:54:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Ebenezer E Os Fantasmas Do Natal",
+    "termino": "2026-11-24T19:57:00"
+  },
+  {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Os Farofeiros 3",
-    "termino": "2026-11-23T20:22:00"
-  },
-  {
-    "cinema": "Cineflix - Partage Rio Grande",
-    "filme": "Eu Sou O Rocky",
-    "termino": "2026-11-23T20:48:00"
+    "termino": "2026-11-24T20:22:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Jogos Vorazes: Amanhecer Na Colheita",
-    "termino": "2026-11-23T20:59:00"
+    "termino": "2026-11-24T20:39:00"
   },
   {
-    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Eu Sou O Rocky",
-    "termino": "2026-11-23T21:08:00"
+    "termino": "2026-11-24T20:48:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Jogos Vorazes: Amanhecer Na Colheita",
-    "termino": "2026-11-23T21:39:00"
+    "termino": "2026-11-24T20:54:00"
+  },
+  {
+    "cinema": "Cineflix - Partage Rio Grande",
+    "filme": "Jogos Vorazes: Amanhecer Na Colheita",
+    "termino": "2026-11-24T20:59:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Eu Sou O Rocky",
+    "termino": "2026-11-24T21:08:00"
+  },
+  {
+    "cinema": "Cinesystem - Praça Rio Grande Shopping",
+    "filme": "Ebenezer E Os Fantasmas Do Natal",
+    "termino": "2026-11-24T22:27:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Ebenezer E Os Fantasmas Do Natal",
-    "termino": "2026-11-23T22:57:00"
+    "termino": "2026-11-24T22:57:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Jogos Vorazes: Amanhecer Na Colheita",
-    "termino": "2026-11-23T23:09:00"
+    "termino": "2026-11-24T23:09:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Eu Sou O Rocky",
-    "termino": "2026-11-23T23:28:00"
+    "termino": "2026-11-24T23:28:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Jogos Vorazes: Amanhecer Na Colheita",
-    "termino": "2026-11-23T23:49:00"
+    "termino": "2026-11-24T23:49:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Eu Sou O Rocky",
-    "termino": "2026-11-23T23:53:00"
+    "termino": "2026-11-24T23:53:00"
   },
   {
     "cinema": "Cinesystem - Praça Rio Grande Shopping",
     "filme": "Jogos Vorazes: Amanhecer Na Colheita",
-    "termino": "2026-11-24T00:09:00"
+    "termino": "2026-11-25T00:09:00"
   },
   {
     "cinema": "Cineflix - Partage Rio Grande",
     "filme": "Jogos Vorazes: Amanhecer Na Colheita",
-    "termino": "2026-11-24T00:09:00"
+    "termino": "2026-11-25T00:09:00"
   }
 ]
